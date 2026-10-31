@@ -136,11 +136,17 @@ body[data-view="edit"] .home{display:none!important}
 .curcolor b{display:block;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .curcolor small{display:block;color:var(--muted);font-size:11.5px;line-height:1.25;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .dock{container-type:inline-size;container-name:dock;position:relative}
-#palette{display:grid;grid-template-columns:repeat(12,minmax(0,38px));gap:2px 1px;flex:1;min-width:0;justify-content:start}
-#palette .hexbtn:nth-child(n+13){display:none}
-@container dock (min-width:1090px){#palette{grid-template-columns:repeat(16,minmax(0,38px))}#palette .hexbtn:nth-child(n+13){display:block}}
-@container dock (max-width:600px){#palette{grid-template-columns:repeat(8,minmax(0,38px))}}
+/* as cores do desenho ficam na lista "Contas por cor" do painel da direita (clicável); aqui só a cor atual e o menu com as 120. A faixa #palUsed (só as cores DESTE desenho) aparece quando o painel não está à vista */
+#palHint{flex:1;min-width:0;color:var(--muted);font-size:12.5px;line-height:1.3}
+#palUsed{display:none;order:1;flex:1;min-width:0;flex-wrap:wrap;align-content:flex-start;gap:2px 1px;max-height:98px;overflow-y:auto}
+#palUsed .hexbtn{width:38px}
+#palUsed .hexbtn.used::after{display:none}
 #palMore{flex:none;white-space:nowrap}.palcount{opacity:.6;font-weight:500;margin-left:2px}
+#palMore::after{content:"";display:inline-block;width:6px;height:6px;margin:0 2px 1px 9px;border-top:2px solid currentColor;border-right:2px solid currentColor;transform:rotate(-45deg);opacity:.65;vertical-align:middle}
+#palMore[aria-expanded="true"]::after{transform:rotate(135deg);margin-bottom:3px}
+.app[data-panel="closed"] #palUsed{display:flex}
+.app[data-panel="closed"] #palMore{order:2}
+.app[data-panel="closed"] #palHint{display:none}
 .palpop{position:absolute;left:10px;right:10px;bottom:calc(100% + 6px);z-index:30;max-height:min(62vh,470px);display:flex;flex-direction:column;background:var(--panel);border:1px solid var(--line-strong);border-radius:14px;box-shadow:0 10px 34px rgba(0,0,0,.28)}
 .palpop[hidden]{display:none}
 .palpop-h{display:flex;gap:8px;align-items:center;padding:10px 12px;border-bottom:1px solid var(--line)}
@@ -170,10 +176,13 @@ body[data-view="edit"] .home{display:none!important}
 .listhead h3{margin:0}
 .stockchk{display:flex;align-items:center;gap:8px;margin:0 0 10px;font-size:13px;cursor:pointer}
 .stockchk input{width:16px;height:16px;accent-color:var(--accent)}
-.crow{display:grid;grid-template-columns:38px 1fr auto;align-items:center;gap:10px;padding:7px 8px;border-radius:10px;border:1px solid transparent;position:relative;cursor:default}
+.crow{display:grid;grid-template-columns:38px 1fr auto;align-items:center;gap:10px;padding:7px 8px;border-radius:10px;border:1px solid transparent;position:relative;cursor:pointer;touch-action:manipulation}
 #countList.stock-on .crow{grid-template-columns:38px 1fr auto 70px}
 .crow .stockbox{display:none} #countList.stock-on .crow .stockbox{display:flex}
-.crow:hover{background:var(--panel-2)} .crow.lock{border-color:var(--accent);background:var(--accent-soft)}
+.crow:hover{background:var(--panel-2)}
+.crow.on{border-color:var(--accent);background:var(--accent-soft)}                     /* a cor com que o pincel está pintando agora */
+.crow.lock .nm small::after{content:" · destaque fixo";color:var(--accent);font-weight:650}
+.crow:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
 .swb{display:grid;filter:drop-shadow(0 0 .7px color-mix(in srgb,var(--ink) 60%,transparent))}
 .crow .sw{width:34px;height:38px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);display:grid;place-items:center;font-size:11px;font-weight:700}
 .crow .nm b{display:block;font-weight:600;line-height:1.15} .crow .nm small{color:var(--muted);font-size:11.5px}
@@ -535,6 +544,7 @@ dialog{border-radius:var(--r-lg);box-shadow:var(--shadow-lg)}
   .rail .rsep{width:1px;height:26px;margin:0 6px}
   .dock{order:3;flex-wrap:wrap}
   .curcolor{width:100%}
+  #palUsed{display:flex;flex:1 1 100%;max-height:180px}#palMore{order:2}#palHint{display:none}
   .right{order:4;border:0}
   .home-top,.home-main{padding-left:16px;padding-right:16px}
   .resume{flex-wrap:wrap}
@@ -868,8 +878,9 @@ kbd{display:inline-block;min-width:22px;padding:1px 7px;border:1px solid var(--l
   <!-- ===================== PALETA ===================== -->
   <footer class="dock" id="dock">
     <div class="curcolor"><div class="big" id="curBig"></div><div><b id="curName"></b><small id="curMeta"></small></div></div>
-    <div id="palette" aria-label="Cores recentes"></div>
-    <button class="btn" id="palMore" aria-haspopup="true" aria-expanded="false" title="Abrir as 120 cores (busque por código ou nome)">Todas as cores <span class="palcount">120</span></button>
+    <button class="btn" id="palMore" aria-haspopup="true" aria-expanded="false" title="Abrir todas as 120 cores do kit, por família (busque por código ou nome)">Todas as cores <span class="palcount">120</span></button>
+    <span id="palHint">As cores do desenho estão na lista à direita: clique numa para pintar com ela.</span>
+    <div id="palUsed" aria-label="Cores deste desenho"></div>
     <div id="palPop" class="palpop" hidden role="dialog" aria-label="Todas as cores">
       <div class="palpop-h"><input id="palSearch" type="search" placeholder="Buscar: código (B13) ou nome (verde)" autocomplete="off" aria-label="Buscar cor"><button class="btn sm" id="palClose">Fechar</button></div>
       <div class="palpop-b" id="palBody"></div>
@@ -900,7 +911,7 @@ kbd{display:inline-block;min-width:22px;padding:1px 7px;border:1px solid var(--l
         </div>
         <label class="stockchk"><input type="checkbox" id="stockOn"> Conferir meu estoque</label>
         <div id="countList"></div>
-        <p class="note" id="countNote">Passe o mouse numa cor para ver onde ela está no desenho; clique para fixar.</p>
+        <p class="note" id="countNote">Clique numa cor para pintar com ela. Passe o mouse para ver onde ela está no desenho; dois cliques deixam o destaque fixo.</p>
       </div>
     </section>
 
@@ -1153,7 +1164,7 @@ kbd{display:inline-block;min-width:22px;padding:1px 7px;border:1px solid var(--l
 <input type="file" id="fileImg" accept="image/*" hidden>
 <div id="toast" role="status"></div>
 
-<script>(function(){var b='20261031c',v=b;try{var s=JSON.parse(localStorage.getItem('beadstudio.tplv')||'null');if(s&&s.base===b)v=b+'-'+s.t}catch(e){}window.TPL_BASE_V=b;document.write('<script src="templates.js?v='+v+'"><\/script><script src="projetos3d.js?v='+b+'"><\/script>')})();</script>
+<script>(function(){var b='20261031i',v=b;try{var s=JSON.parse(localStorage.getItem('beadstudio.tplv')||'null');if(s&&s.base===b)v=b+'-'+s.t}catch(e){}window.TPL_BASE_V=b;document.write('<script src="templates.js?v='+v+'"><\/script><script src="projetos3d.js?v='+b+'"><\/script>')})();</script>
 <script>
 'use strict';
 /* =====================================================================
@@ -1893,16 +1904,8 @@ function syncZoomUI(){$('#zoom').value=S.zoom;$('#zoomVal').textContent=S.zoom+'
 /* =====================================================================
    Seleção de cor / UI da esquerda
    ===================================================================== */
-const RECENT_KEY='beadstudio.recent';
-const RECENT_DEFAULT=['H7','H2','F5','A7','A4','B5','C8','D7','E4','G7','H4','B8','C5','G1','E2','H3'];
-let recent=[];
-function loadRecent(){
-  let r=[];try{r=JSON.parse(localStorage.getItem(RECENT_KEY)||'[]')}catch(e){}
-  r=(Array.isArray(r)?r:[]).filter(v=>Number.isInteger(v)&&v>=1&&v<=NCOL);
-  for(const c of RECENT_DEFAULT){const v=CODE_IDX[c];if(v&&!r.includes(v))r.push(v)}
-  recent=r.slice(0,16);
-}
-function pushRecent(v){recent=[v,...recent.filter(x=>x!==v)].slice(0,16);try{localStorage.setItem(RECENT_KEY,JSON.stringify(recent))}catch(e){}}
+/* Cores (2026-10-31, pedido do usuário): a faixa de 16 "cores recentes" saiu (mostrava cores que o molde nem usa). As cores do desenho são as linhas clicáveis
+   de "Contas por cor" (painel da direita) e as outras ficam no menu expansível "Todas as cores". Sem o painel à vista, a faixa #palUsed mostra só as cores do desenho. */
 /* família de cor (só para agrupar as 120 no painel "Todas as cores") */
 function colorFamily(p){
   const [L,a,b]=p.lab,C=Math.hypot(a,b),h=p.h;
@@ -1921,7 +1924,6 @@ function mkHex(i){
   b.addEventListener('click',()=>{selectColor(i);closePalPop()});return b;
 }
 function buildPalette(){
-  loadRecent();
   const body=$('#palBody');body.innerHTML='';
   const groups=FAMILY_NAMES.map(()=>[]);
   PALETTE.forEach((p,i)=>groups[colorFamily(p)].push(i+1));
@@ -1932,19 +1934,19 @@ function buildPalette(){
     const grid=g.querySelector('.pgrid');list.forEach(i=>grid.appendChild(mkHex(i)));body.appendChild(g);
   });
   const em=document.createElement('div');em.className='pempty';em.id='palEmpty';em.hidden=true;em.textContent='Nenhuma cor encontrada.';body.appendChild(em);
-  renderRecent();
 }
-function renderRecent(){
-  const box=$('#palette');box.innerHTML='';
-  recent.slice(0,16).forEach(i=>box.appendChild(mkHex(i)));
+function styleHex(b){const i=+b.dataset.i,p=PALETTE[i-1],f=b.firstChild;f.style.background=p.hex;f.style.color=p.ink;b.style.color=p.ink;b.classList.toggle('on',i===S.color);b.classList.toggle('used',counts[i]>0)}
+function renderUsed(list){      // faixa só com as cores do desenho (aparece quando o painel da direita está escondido ou a tela é estreita)
+  const box=$('#palUsed');box.innerHTML='';
+  list.forEach(v=>{const b=mkHex(v);styleHex(b);box.appendChild(b)});
 }
 function selectColor(i){
   S.color=i; if(S.tool==='eraser'||S.tool==='picker'&&false)setTool('pencil');
-  pushRecent(i);renderRecent();
   refreshPalette();scheduleSave();
 }
 function refreshPalette(){
-  $$('#palette .hexbtn, #palPop .hexbtn').forEach(b=>{const i=+b.dataset.i,p=PALETTE[i-1],f=b.firstChild;f.style.background=p.hex;f.style.color=p.ink;b.style.color=p.ink;b.classList.toggle('on',i===S.color);b.classList.toggle('used',counts[i]>0)});
+  $$('#palUsed .hexbtn, #palPop .hexbtn').forEach(styleHex);
+  $$('#countList .crow').forEach(r=>{const on=+r.dataset.v===S.color;r.classList.toggle('on',on);if(on)r.setAttribute('aria-current','true');else r.removeAttribute('aria-current')});
   const p=PALETTE[S.color-1],big=$('#curBig');big.style.background=p.hex;big.style.color=p.ink;big.textContent=p.code;
   $('#curName').textContent=p.name;$('#curMeta').textContent=counts[S.color]?`${fmt(counts[S.color])} ${counts[S.color]===1?'conta':'contas'} no desenho`:'ainda não usada';
 }
@@ -1983,12 +1985,13 @@ function renderCounts(){
   if(S.sort==='count')list.sort((a,b)=>counts[b]-counts[a]||a-b);else list.sort((a,b)=>PALETTE[a-1].code.localeCompare(PALETTE[b-1].code));
   const max=Math.max(1,...list.map(v=>counts[v]));
   const box=$('#countList');
+  renderUsed(list);
   box.classList.toggle('stock-on',!!S.showStock);$('#stockOn').checked=!!S.showStock;
-  if(!list.length){box.innerHTML='<p class="note" style="margin:0">Nenhuma conta ainda. Pinte no quadriculado e a lista aparece aqui.</p>';$('#countNote').style.display='none';$('#stockAlert').innerHTML='';return}
+  if(!list.length){box.innerHTML='<p class="note" style="margin:0">Nenhuma conta ainda. Escolha uma cor em <b>Todas as cores</b> (na faixa embaixo do desenho) e pinte: as cores que você usar passam a aparecer aqui, e é só clicar numa delas para pintar com ela.</p>';$('#countNote').style.display='none';$('#stockAlert').innerHTML='';return}
   $('#countNote').style.display='';
   box.innerHTML=list.map(v=>{
     const p=PALETTE[v-1],n=counts[v],st=S.stock[p.code];
-    return `<div class="crow${S.hlLock===v?' lock':''}" data-v="${v}">
+    return `<div class="crow${S.color===v?' on':''}${S.hlLock===v?' lock':''}" data-v="${v}" tabindex="0"${S.color===v?' aria-current="true"':''} title="Clique para pintar com ${p.code} — ${p.name}">
       <span class="swb"><span class="sw" style="background:${p.hex};color:${p.ink}">${p.code}</span></span>
       <div class="nm"><b>${p.name}</b><small>${(n/total*100).toFixed(1).replace('.',',')}% do desenho</small></div>
       <div class="num">${fmt(n)}</div>
@@ -2022,9 +2025,19 @@ $('#countList').addEventListener('input',e=>{
 });
 $('#countList').addEventListener('mouseover',e=>{const r=e.target.closest('.crow');const v=r?+r.dataset.v:0;if(v!==S.hl){S.hl=v;requestDraw()}});
 $('#countList').addEventListener('mouseleave',()=>{if(S.hl){S.hl=0;requestDraw()}});
+/* clique = pinta com essa cor (como o menu "Todas as cores"); dois cliques = deixa o destaque fixo no desenho (de novo para soltar); Enter/Espaço também escolhem */
 $('#countList').addEventListener('click',e=>{
+  if(e.target.closest('input'))return;const r=e.target.closest('.crow');if(!r)return;
+  selectColor(+r.dataset.v);
+});
+$('#countList').addEventListener('dblclick',e=>{
   if(e.target.closest('input'))return;const r=e.target.closest('.crow');if(!r)return;const v=+r.dataset.v;
   S.hlLock=S.hlLock===v?0:v;$$('#countList .crow').forEach(x=>x.classList.toggle('lock',+x.dataset.v===S.hlLock));requestDraw();
+  toast(S.hlLock?`Destaque fixo em ${PALETTE[v-1].code}: dois cliques de novo para soltar`:'Destaque solto');
+});
+$('#countList').addEventListener('keydown',e=>{
+  const r=e.target.classList&&e.target.classList.contains('crow')?e.target:null;
+  if(r&&(e.key==='Enter'||e.key===' ')){e.preventDefault();selectColor(+r.dataset.v)}
 });
 $('#stockOn').addEventListener('change',e=>{S.showStock=e.target.checked;renderCounts();scheduleSave()});
 $('#sortSeg').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;S.sort=b.dataset.sort;$$('#sortSeg button').forEach(x=>x.classList.toggle('on',x===b));renderCounts();scheduleSave()});
@@ -3709,8 +3722,9 @@ var HELP=[
   <li><b>Exibir</b>: liga a grade, os códigos das cores em cada conta (com zoom alto) e troca o desenho entre contas e pixels.</li>
   <li>O botão no canto direito da barra esconde o painel de contas, para sobrar mais espaço.</li></ul>
   <h4>Cores</h4>
-  <ul><li>A faixa de baixo tem as 16 cores usadas por último. Um pontinho na cor = ela já está no desenho.</li>
-  <li><b>Todas as cores 120</b> abre o kit inteiro, por família. Busque pelo código (<code>B13</code>) ou pelo nome (<code>verde</code>); <kbd>Enter</kbd> escolhe a primeira e <kbd>Esc</kbd> fecha.</li></ul>
+  <ul><li>As cores <b>do desenho</b> ficam na lista <b>Contas por cor</b>, no painel da direita: <b>clique numa para pintar com ela</b>. A cor em uso fica marcada e aparece também na faixa de baixo.</li>
+  <li><b>Todas as cores 120</b> (faixa de baixo) abre o kit inteiro, por família, para pegar uma cor que ainda não está no desenho. Busque pelo código (<code>B13</code>) ou pelo nome (<code>verde</code>); <kbd>Enter</kbd> escolhe a primeira e <kbd>Esc</kbd> fecha. Um pontinho na cor = ela já está no desenho.</li>
+  <li>Quando o painel da direita está escondido (ou a tela é pequena), a faixa de baixo mostra só as cores do desenho, para você trocar de cor sem abrir nada.</li></ul>
   <p><kbd>Ctrl</kbd>+<kbd>Z</kbd> desfaz e <kbd>Ctrl</kbd>+<kbd>Y</kbd> refaz.</p>`},
  {id:'selecionar',t:'Selecionar contas',ic:'select',html:`
   <h3>Selecionar contas</h3><p class="hlead">Para saber quantas contas tem num pedaço do desenho e de quais cores.</p>
@@ -3723,7 +3737,7 @@ var HELP=[
  {id:'contas',t:'Contas e estoque',ic:'hash',html:`
   <h3>Contas e estoque</h3><p class="hlead">O painel <b>Contas</b>, à direita, diz quanto material o desenho usa.</p>
   <ul><li>No alto: total de contas, número de cores e o tamanho (em contas e em centímetros, pelo diâmetro da conta escolhido em Ajustes).</li>
-  <li><b>Contas por cor</b>: a lista de cada cor, por quantidade ou por código. <b>Passe o mouse</b> numa cor para ver onde ela está no desenho; <b>clique</b> para deixar destacada.</li>
+  <li><b>Contas por cor</b>: a lista de cada cor, por quantidade ou por código. <b>Clique</b> numa cor para pintar com ela; <b>passe o mouse</b> para ver onde ela está no desenho e dê <b>dois cliques</b> para deixar o destaque fixo (de novo para soltar).</li>
   <li><b>Conferir meu estoque</b>: aparece um campo “tenho” em cada cor. Digite quantas contas você tem e o app avisa o que falta.</li>
   <li><b>Menu → Copiar lista de contas</b> copia a lista para colar onde quiser (WhatsApp, bloco de notas, lista de compras).</li></ul>`},
  {id:'ajustes',t:'Ajustes do desenho',ic:'rotate',html:`
@@ -3914,7 +3928,10 @@ var CAT_MINI_PICK={
  'tensura':['Rimuru (slime)','f'],'the-ancient-magus-bride':['Elias Ainsworth (pixel)','h'],'the-last-of-us':['Símbolo dos Vagalumes (The Last of Us)','f'],'tokyo-ghoul':['Kaneki (Tokyo Ghoul)','f'],
  'trigun':['Vash the Stampede (chibi)','h'],'turma-da-monica':['Mônica (pulando)','h'],'uno':['Carta UNO','f'],'ursinho-pooh':['Ursinho Pooh (pixel)','f'],'wwe':['Paige (WWE, com cinturão)','h'],
  'winx-club':['Bloom (Winx)','f'],'yu-gi-oh':['Yami Yugi (padrão)','h'],'zelda':['Link (Zelda, chibi pixel)','f'],'zootopia':['Judy Hopps (Zootopia)','h'],
- 'c_mvpi8rwj':['Retrato com gorro de Natal e cachorro (malha 1)','h'],'c_mvpi8krk':['Emblema de máscara vermelha em chama roxa','h']
+ 'c_mvpi8rwj':['Retrato com gorro de Natal e cachorro (malha 1)','h'],'c_mvpi8krk':['Emblema de máscara vermelha em chama roxa','h'],
+ 'yu-yu-hakusho':['Yusuke Urameshi (Yu Yu Hakusho, chibi, folha)','h'],'death-note':['Ryuk (Death Note, chibi)','f'],'inazuma-eleven':['Yuuto Kidou (Inazuma Eleven, chibi, explosão)','f'],
+ 'how-i-met-your-mother':['Casal sob o guarda-chuva amarelo (How I Met Your Mother, ilustração)','f'],'la-la-land':['Casal dançando (La La Land)','f'],'divertida-mente':['Tristeza (Divertida Mente, gráfico)','h'],
+ 'hellsing':['Alucard (Hellsing, chibi, pistolas)','h'],'god-of-war':['Kratos (God of War, chibi, gráfico)','f'],'kung-fu-panda':['Panda (Kung Fu Panda, chibi, adesivo)','h']
 };
 var catMiniPick={},catMiniCache=new Map();
 function autoMini(ts){

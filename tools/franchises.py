@@ -20,17 +20,19 @@ CATEGORIES = [
     ('tokyo-ghoul', 'Tokyo Ghoul', A), ('re-zero', 'Re:Zero', A), ('black-clover', 'Black Clover', A), ('dan-da-dan', 'Dan Da Dan', A),
     ('inuyasha', 'Inuyasha', A), ('assassination-classroom', 'Assassination Classroom', A), ('soul-eater', 'Soul Eater', A),
     ('kaiju-n-8', 'Kaiju nº 8', A), ('frieren', 'Frieren', A), ('tensura', 'Tensura (Slime)', A),
+    ('yu-yu-hakusho', 'Yu Yu Hakusho', A), ('death-note', 'Death Note', A), ('inazuma-eleven', 'Inazuma Eleven', A), ('hellsing', 'Hellsing', A),
     # --- jogos
     ('pokemon', 'Pokémon', G), ('mario', 'Mario', G), ('minecraft', 'Minecraft', G), ('plants-vs-zombies', 'Plants vs Zombies', G),
     ('crash-bandicoot', 'Crash Bandicoot', G), ('sonic', 'Sonic', G), ('angry-birds', 'Angry Birds', G), ('stardew-valley', 'Stardew Valley', G),
     ('pou', 'Pou', G), ('skyrim', 'Skyrim', G), ('red-dead-redemption', 'Red Dead Redemption', G), ('assassins-creed', "Assassin's Creed", G),
-    ('kirby', 'Kirby', G), ('duolingo', 'Duolingo', G), ('google-chrome', 'Google Chrome', G), ('uno', 'UNO', G),
+    ('kirby', 'Kirby', G), ('duolingo', 'Duolingo', G), ('google-chrome', 'Google Chrome', G), ('uno', 'UNO', G), ('god-of-war', 'God of War', G),
     # --- quadrinhos
     ('marvel', 'Marvel', H), ('dc-comics', 'DC Comics', H),
     # --- filmes e séries
     ('harry-potter', 'Harry Potter', C), ('studio-ghibli', 'Studio Ghibli', C), ('star-wars', 'Star Wars', C), ('chaves-e-chapolin', 'Chaves e Chapolin', C),
     ('o-mentalista', 'O Mentalista', C), ('doctor-who', 'Doctor Who', C), ('senhor-dos-aneis', 'O Senhor dos Anéis', C), ('power-rangers', 'Power Rangers', C),
     ('percy-jackson', 'Percy Jackson', C), ('michael-jackson', 'Michael Jackson', C),
+    ('how-i-met-your-mother', 'How I Met Your Mother', C), ('la-la-land', 'La La Land', C),
     # --- desenhos
     ('lilo-stitch', 'Lilo & Stitch', T), ('hello-kitty', 'Hello Kitty', T), ('meninas-superpoderosas', 'Meninas Superpoderosas', T),
     ('avatar', 'Avatar: A Lenda de Aang', T), ('winx-club', 'Winx Club', T), ('looney-tunes', 'Looney Tunes', T),
@@ -38,6 +40,7 @@ CATEGORIES = [
     ('bob-esponja', 'Bob Esponja', T), ('hora-de-aventura', 'Hora de Aventura', T), ('phineas-e-ferb', 'Phineas e Ferb', T),
     ('turma-da-monica', 'Turma da Mônica', T), ('ursinho-pooh', 'Ursinho Pooh', T), ('peter-pan', 'Peter Pan', T), ('ratatouille', 'Ratatouille', T),
     ('coragem', 'Coragem, o Cão Covarde', T), ('jovens-titas', 'Jovens Titãs', T), ('ben-10', 'Ben 10', T), ('tartarugas-ninja', 'Tartarugas Ninja', T),
+    ('divertida-mente', 'Divertida Mente', T), ('kung-fu-panda', 'Kung Fu Panda', T),
     # --- temas específicos
     ('egito-antigo', 'Egito Antigo', S), ('religiao', 'Religião', S), ('gato-da-sorte', 'Gato da sorte', 'cAnimals'),
     ('earrings', 'Brincos', 'cEarrings'),
