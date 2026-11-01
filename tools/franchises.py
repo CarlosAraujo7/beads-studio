@@ -41,6 +41,11 @@ CATEGORIES = [
     ('turma-da-monica', 'Turma da Mônica', T), ('ursinho-pooh', 'Ursinho Pooh', T), ('peter-pan', 'Peter Pan', T), ('ratatouille', 'Ratatouille', T),
     ('coragem', 'Coragem, o Cão Covarde', T), ('jovens-titas', 'Jovens Titãs', T), ('ben-10', 'Ben 10', T), ('tartarugas-ninja', 'Tartarugas Ninja', T),
     ('divertida-mente', 'Divertida Mente', T), ('kung-fu-panda', 'Kung Fu Panda', T),
+    # --- remessa 24
+    ('nanatsu-no-taizai', 'Nanatsu no Taizai', A), ('mortal-kombat', 'Mortal Kombat', G), ('shovel-knight', 'Shovel Knight', G), ('devil-may-cry', 'Devil May Cry', G),
+    ('invencivel', 'Invencível', H), ('spawn', 'Spawn', H), ('hellboy', 'Hellboy', H), ('coraline', 'Coraline', T),
+    ('piratas-do-caribe', 'Piratas do Caribe', C), ('john-wick', 'John Wick', C), ('game-of-thrones', 'Game of Thrones', C), ('brinquedo-assassino', 'Brinquedo Assassino', C),
+    ('o-silencio-dos-inocentes', 'O Silêncio dos Inocentes', C), ('queen', 'Queen', C), ('alien', 'Alien', C),
     # --- temas específicos
     ('egito-antigo', 'Egito Antigo', S), ('religiao', 'Religião', S), ('gato-da-sorte', 'Gato da sorte', 'cAnimals'),
     ('earrings', 'Brincos', 'cEarrings'),

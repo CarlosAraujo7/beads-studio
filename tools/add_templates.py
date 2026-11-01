@@ -32,7 +32,10 @@ ap.add_argument('--replace', action='store_true', help='nome que já existe: TRO
 ap.add_argument('--fill-holes', action='store_true', help='preenche buraquinhos (vazios de até 3 contas cercados por contas): use nas remessas de ILUSTRAÇÃO (convert4); em pixel art copiado de gráfico o vazio pode ser de propósito')
 ap.add_argument('--keep-big', action='store_true', help='NÃO reduz para 1 placa (por padrão todo molde novo com mais de 50 em algum lado é reduzido: política do catálogo desde 2026-10-27)')
 ap.add_argument('--templates', default=os.path.join(os.path.dirname(HERE), 'templates.js'))
+ap.add_argument('--autorizado', action='store_true', help='obrigatório com --replace ou --readd: só use quando o usuário pediu exatamente esses moldes (CLAUDE.md §4.9)')
 a = ap.parse_args()
+if (a.replace or a.readd) and not a.autorizado:
+    raise SystemExit('RECUSADO: --replace e --readd mexem no que o usuário decidiu. Só com --autorizado, e só se ele pediu esses moldes pelo nome.')
 
 d = tplfile.parse(a.templates)
 items = d['items']
@@ -70,7 +73,7 @@ def ensure_cat(cat, label):
     cfg['order'] = order[:at] + [cat] + order[at:] + ['other']
     print('categoria nova criada na galeria:', F.NAME_BY_ID.get(cat, label))
 
-added = 0; skipped = 0; replaced = 0; nloose = 0
+added = 0; skipped = 0; replaced = 0; nloose = 0; allow = set(); readd = set()
 for f in a.files:
     path = f if os.path.exists(f) else os.path.join(HERE, 'data', f)
     for item in json.load(open(path, encoding='utf-8')):
@@ -81,11 +84,12 @@ for f in a.files:
         if n in names:
             if a.replace:
                 t = next(x for x in items if x['name'] == n)
-                if t['rows'] != rows: t['rows'] = rows; replaced += 1
+                if t['rows'] != rows: t['rows'] = rows; replaced += 1; allow.add(t['id'])
                 continue
             print('AVISO: nome repetido, pulado:', n); skipped += 1; continue
         if n in removed and not a.readd:
             print('pulado (o usuário excluiu este template antes; use --readd para recolocar):', n); skipped += 1; continue
+        if n in removed: readd.add(n)
         w = {len(r) for r in rows}
         bad = {c for r in rows for c in r if c != '.' and c not in letters}
         if len(w) != 1 or bad:
@@ -114,5 +118,5 @@ if nloose: print('contas soltas removidas/ligadas nos itens recebidos:', nloose)
 print('acrescentados:', added, '| pulados:', skipped, '| trocados:', replaced, '| total:', len(items))
 if a.dry: print('(--dry: nada foi gravado)')
 elif added or replaced:
-    tplfile.write(a.templates, d['legend'], d['cfg'], items, d.get('removed'))
+    tplfile.write(a.templates, d['legend'], d['cfg'], items, d.get('removed'), allow=allow, readd=readd)
     print('gravado:', a.templates, '(cópia de segurança em tools/backups/)')

@@ -64,6 +64,30 @@ def backup(path, keep=30):
     return dst
 
 
-def write(path, legend, cfg, items, removed=None, do_backup=True):
+class CatalogoProtegido(Exception):
+    pass
+
+
+MAX_POR_VEZ = 40
+
+
+def guard(path, items, removed=None, allow=(), readd=()):
+    """TRAVA pedida pelo usuário (2026-10-31; CLAUDE.md §4.9): gravar só pode ACRESCENTAR moldes. Mudar ou apagar um molde existente exige o id dele em `allow`, recolocar um nome que ele excluiu exige o nome em `readd`
+    e nunca mais de MAX_POR_VEZ moldes de uma vez. Assim nenhuma ferramenta antiga ou algoritmo em massa consegue mexer no catálogo, mesmo por engano."""
+    if not os.path.exists(path): return
+    old = parse(path); new = {t['id']: t for t in items}; allow = set(allow); readd = set(readd)
+    changed = [t for t in old['items'] if t['id'] not in new or any(t[k] != new[t['id']][k] for k in ('rows', 'name', 'cat'))]
+    bad = [t['name'] for t in changed if t['id'] not in allow]
+    if bad: raise CatalogoProtegido('GRAVAÇÃO RECUSADA: mudaria %d molde(s) sem autorização, ex.: %s' % (len(bad), bad[:8]))
+    if len(changed) > MAX_POR_VEZ: raise CatalogoProtegido('GRAVAÇÃO RECUSADA: %d moldes de uma vez (máximo %d)' % (len(changed), MAX_POR_VEZ))
+    oldids = {t['id'] for t in old['items']}; oldrem = set(old.get('removed') or [])
+    back = [t['name'] for t in items if t['id'] not in oldids and t['name'] in oldrem and t['name'] not in readd]
+    if back: raise CatalogoProtegido('GRAVAÇÃO RECUSADA: traria de volta molde(s) que ele excluiu: %s' % back[:8])
+    lost = oldrem - set(removed or []) - readd
+    if lost: raise CatalogoProtegido('GRAVAÇÃO RECUSADA: apagaria %d nome(s) da lista de excluídos, ex.: %s' % (len(lost), sorted(lost)[:5]))
+
+
+def write(path, legend, cfg, items, removed=None, do_backup=True, allow=(), readd=()):
+    guard(path, items, removed, allow, readd)
     if do_backup: backup(path)
     open(path, 'w', encoding='utf-8').write(render(legend, cfg, items, removed))

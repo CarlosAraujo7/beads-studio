@@ -1,6 +1,6 @@
 """Cubos 3D DE ENCAIXE gerados por tools/cube3d.py (a junta é a de dentes alternados dos cubos lidos das fotos: Abelha, Presente).
-Hoje só o DADO (cubo de 6 lados, 5×5×5, o menor possível: a borda de cada face é dividida com as vizinhas, então as pintas só cabem no miolo, e 5 é o primeiro tamanho com miolo 3×3, a grade de pintas de um dado;
-com 4 o miolo é 2×2 e não cabem 5 nem 6 pintas; 7 é o menor com todas as pintas separadas). Os 12 cubos de personagens feitos em 2026-10-29 (Pikachu, Kirby, Creeper, Minion, Batman, Homem de Ferro, Darth Vader, Toad,
+Hoje só o DADO (cubo de 6 lados, 7×7×7 desde 2026-10-31: o de 5×5×5 ficou ruim de encaixar na mão, a pedido do usuário. 7 é o menor tamanho com todas as pintas separadas;
+5 era o menor possível: a borda de cada face é dividida com as vizinhas, então as pintas só cabem no miolo, e com 4 o miolo é 2×2 e não cabem 5 nem 6 pintas). Os 12 cubos de personagens feitos em 2026-10-29 (Pikachu, Kirby, Creeper, Minion, Batman, Homem de Ferro, Darth Vader, Toad,
 Groot, Hello Kitty, Naruto e o Dado 13×13×13) foram APAGADOS a pedido do usuário; o que se aprendeu com eles está em CLAUDE.md (§3, "Cubos GERADOS").
 make_3d.py usa cubes() daqui. Para um cubo novo: monte um `spec` (veja cube3d.cube_project) com a textura de cada face.
 """
@@ -28,12 +28,12 @@ def die_face(n, N=5):
 
 
 def build():
-    N = 5
+    N = 7
     return [{'id': 'cubo-dado', 'name': f'Cubo Dado ({N}×{N}×{N})', 'size': (N, N, N), 'level': 'Fácil', 'solid': True,
              'tex': {'front': die_face(1, N), 'back': die_face(6, N), 'right': die_face(2, N), 'left': die_face(5, N), 'top': die_face(3, N), 'bottom': die_face(4, N)},
              'fill': {'*': 'w'}, 'ears': None, 'steps': steps(),
-             'desc': f'O menor dado de 6 lados possível nesta montagem: {N}×{N}×{N} contas (cerca de {N * 0.26:.1f} cm), branco com pintas pretas, em 6 peças planas com dentes alternados que se encaixam sem sobrar nem faltar conta. '
-                     'As 6 faces têm de 1 a 6 pintas e as opostas somam 7 (1×6, 2×5, 3×4). Neste tamanho as pintas do 6 se encostam e formam duas barras de 3. As peças são pequenas: passe pouco o ferro, para os dentes não encolherem. '
+             'desc': f'Dado de 6 lados de {N}×{N}×{N} contas (cerca de {N * 0.26:.1f} cm), branco com pintas pretas, em 6 peças planas com dentes alternados que se encaixam sem sobrar nem faltar conta. '
+                     'As 6 faces têm de 1 a 6 pintas e as opostas somam 7 (1×6, 2×5, 3×4). Passe pouco o ferro, para os dentes não encolherem. '
                      'É um projeto desenhado (não é de uma foto de peça pronta): teste o encaixe antes.'}]
 
 

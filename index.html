@@ -1164,7 +1164,7 @@ kbd{display:inline-block;min-width:22px;padding:1px 7px;border:1px solid var(--l
 <input type="file" id="fileImg" accept="image/*" hidden>
 <div id="toast" role="status"></div>
 
-<script>(function(){var b='20261031i',v=b;try{var s=JSON.parse(localStorage.getItem('beadstudio.tplv')||'null');if(s&&s.base===b)v=b+'-'+s.t}catch(e){}window.TPL_BASE_V=b;document.write('<script src="templates.js?v='+v+'"><\/script><script src="projetos3d.js?v='+b+'"><\/script>')})();</script>
+<script>(function(){var b='20261031t',v=b;try{var s=JSON.parse(localStorage.getItem('beadstudio.tplv')||'null');if(s&&s.base===b)v=b+'-'+s.t}catch(e){}window.TPL_BASE_V=b;document.write('<script src="templates.js?v='+v+'"><\/script><script src="projetos3d.js?v='+b+'"><\/script>')})();</script>
 <script>
 'use strict';
 /* =====================================================================
@@ -2362,6 +2362,7 @@ function mergeStaleCfg(b,l){
 const saveCatCfg=o=>lsSet(CATS_KEY,{...o,base:window.TPL_BAKED||''});
 /* ao abrir: se as categorias locais são de um catálogo mais antigo, troca pela organização nova e avisa uma vez */
 function reconcileCats(){
+  dropStaleEdits();
   const loc=lsGet(CATS_KEY,null);
   if(!loc||(loc.base||'')===(window.TPL_BAKED||''))return;
   const had=loc.custom&&loc.custom.length;
@@ -2390,7 +2391,7 @@ function decodeTemplates(){
   const built=decodeBuiltin().map(t=>{
     const e=ed[t.id],m=meta[t.id]||{};
     let u=t;
-    if(e&&e.grid&&e.grid.length===e.w*e.h)u={...t,w:e.w,h:e.h,grid:Uint8Array.from(e.grid),beads:e.grid.filter(Boolean).length,edited:true};
+    if(e&&e.grid&&e.grid.length===e.w*e.h&&(!e.base||e.base===t.base))u={...t,w:e.w,h:e.h,grid:Uint8Array.from(e.grid),beads:e.grid.filter(Boolean).length,edited:true};
     const mc=m.cat&&(m.cat==='mine'||vis.has(m.cat))?m.cat:'';
     const p=place(mc||t.cat);
     const r={...u,name:m.name||(e&&e.name)||t.name,cat:p.cat,reqCat:p.reqCat,group:nameOf(p.cat),origName:t.name,origCat:t.cat,renamed:!!m.name,moved:!!mc};
@@ -2398,12 +2399,19 @@ function decodeTemplates(){
   });
   return [...mine,...built];
 }
+/* marca de QUAL desenho do catálogo um ajuste partiu: o navegador guarda cópias (molde aberto, ajustes não gravados), e uma cópia velha não pode passar por cima de um molde atualizado depois (Lula voltou de 17×25 para 13×21 assim) */
+function tplRowsKey(rows){let h=7;for(const r of rows){for(let i=0;i<r.length;i++)h=(h*31+r.charCodeAt(i))|0;h=(h*31+10)|0}return String(h)}
+function dropStaleEdits(){
+  const ed=loadEdits(),b=decodeBuiltin(),old=[];
+  Object.keys(ed).forEach(id=>{const o=b.find(x=>x.id===id);if(o&&ed[id].base&&ed[id].base!==o.base){old.push(ed[id].name||o.name);lsSet('beadstudio.edits.old',{...lsGet('beadstudio.edits.old',{}),[id]:ed[id]});delete ed[id]}});
+  if(old.length){saveEdits(ed);toast(`${old.length===1?`O molde “${old[0]}” mudou`:`${old.length} moldes mudaram`} no catálogo depois do seu ajuste: valeu a versão nova do catálogo`)}
+}
 function decodeBuiltin(){
   if(tplDecoded)return tplDecoded;
   tplDecoded=(window.TEMPLATES||[]).map(t=>{
     const h=t.rows.length,w=Math.max(...t.rows.map(r=>r.length)),g=new Uint8Array(w*h);let n=0;
     t.rows.forEach((row,y)=>{for(let x=0;x<row.length;x++){const code=TPL_LEGEND[row[x]];if(code){g[y*w+x]=CODE_IDX[code];n++}}});
-    return {...t,w,h,grid:g,beads:n};
+    return {...t,w,h,grid:g,beads:n,base:tplRowsKey(t.rows)};
   });
   return tplDecoded;
 }
@@ -2647,7 +2655,7 @@ function openTpl(t){
   const nb=captureNav(t);
   if(!okToReplace())return;
   $('#dlgTemplates').close();if(S.mode!=='create')setMode('create');setGrid(t.w,t.h,t.grid.slice(),t.name);
-  S.tpl={kind:t.mine?'mine':'builtin',id:t.id,name:t.name};S.tplDirty=false;refreshAll();scheduleSave();
+  S.tpl={kind:t.mine?'mine':'builtin',id:t.id,name:t.name,base:t.base};S.tplDirty=false;refreshAll();scheduleSave();
   navBack=nb;syncBack();
   setView('edit');
   toast(`“${t.name}” aberto — pinte para ajustar ou use Montar para começar`);
@@ -2978,7 +2986,12 @@ $('#stOverwrite').onclick=()=>{
     const m=loadMine(),i=m.findIndex(x=>x.id===t.id);
     if(i<0){toast('Esse molde não existe mais — use “Salvar como novo molde”');return}
     m[i]={...m[i],name,w:a.w,h:a.h,grid:a.g};if(!saveMine(m))return;
-  }else{const ed=loadEdits();ed[t.id]={name,w:a.w,h:a.h,grid:a.g};if(!saveEdits(ed))return}
+  }else{
+    const o=decodeBuiltin().find(x=>x.id===t.id);
+    if(o&&t.base!==o.base&&!confirm(`“${t.name}” mudou no catálogo depois que você abriu este desenho. O que está na tela é a versão antiga: salvar faz a versão antiga voltar. Salvar mesmo assim?`))return;
+    const ed=loadEdits();ed[t.id]={name,w:a.w,h:a.h,grid:a.g,base:o&&o.base};if(!saveEdits(ed))return;
+    t.base=o&&o.base;
+  }
   if(cur&&(cur.cat!==cat||cur.name!==name))applyPlacement([t.id],{name:name!==cur.name?name:undefined,cat:cur.cat===cat?undefined:cat});
   S.name=name;afterTplSave(`Ajustes gravados em “${name}”`,{...t,name});
 };
@@ -2994,7 +3007,7 @@ $('#stRestore').onclick=()=>{
   if(!confirm(`Voltar “${t.name}” ao desenho original? O que você ajustou nele será descartado (dá para desfazer na tela com Ctrl+Z).`))return;
   const ed=loadEdits();delete ed[t.id];saveEdits(ed);
   const o=decodeBuiltin().find(x=>x.id===t.id);
-  if(o){setGrid(o.w,o.h,o.grid.slice(),o.name);S.tpl={kind:'builtin',id:o.id,name:o.name};S.tplDirty=false;refreshAll();scheduleSave()}
+  if(o){setGrid(o.w,o.h,o.grid.slice(),o.name);S.tpl={kind:'builtin',id:o.id,name:o.name,base:o.base};S.tplDirty=false;refreshAll();scheduleSave()}
   $('#dlgSaveTpl').close();toast('Desenho original restaurado');if($('#dlgTemplates').open)renderTemplates();
 };
 $('#stDelete').onclick=()=>{
@@ -3931,7 +3944,8 @@ var CAT_MINI_PICK={
  'c_mvpi8rwj':['Retrato com gorro de Natal e cachorro (malha 1)','h'],'c_mvpi8krk':['Emblema de máscara vermelha em chama roxa','h'],
  'yu-yu-hakusho':['Yusuke Urameshi (Yu Yu Hakusho, chibi, folha)','h'],'death-note':['Ryuk (Death Note, chibi)','f'],'inazuma-eleven':['Yuuto Kidou (Inazuma Eleven, chibi, explosão)','f'],
  'how-i-met-your-mother':['Casal sob o guarda-chuva amarelo (How I Met Your Mother, ilustração)','f'],'la-la-land':['Casal dançando (La La Land)','f'],'divertida-mente':['Tristeza (Divertida Mente, gráfico)','h'],
- 'hellsing':['Alucard (Hellsing, chibi, pistolas)','h'],'god-of-war':['Kratos (God of War, chibi, gráfico)','f'],'kung-fu-panda':['Panda (Kung Fu Panda, chibi, adesivo)','h']
+ 'hellsing':['Alucard (Hellsing, chibi, pistolas)','h'],'god-of-war':['Kratos (God of War, chibi, gráfico)','f'],'kung-fu-panda':['Panda (Kung Fu Panda, chibi, adesivo)','h'],
+ 'mortal-kombat':['Sub-Zero (Mortal Kombat, pixel)','h'],'nanatsu-no-taizai':['Meliodas (Nanatsu no Taizai, pixel)','h'],'invencivel':['Omni-Man (Invencível, pixel)','h'],'spawn':['Spawn (gráfico)','f'],'shovel-knight':['Shovel Knight (gráfico)','h'],'devil-may-cry':['Dante (Devil May Cry, pixel)','h'],'piratas-do-caribe':['Jack Sparrow (Piratas do Caribe, chibi, adesivo)','h'],'john-wick':['John Wick e cachorro (chibi, adesivo)','h'],'game-of-thrones':['Jon Snow (Game of Thrones, retrato)','h'],'brinquedo-assassino':['Chucky (chibi)','h'],'o-silencio-dos-inocentes':['Hannibal Lecter (chibi)','h'],'queen':['Freddie Mercury (Queen, chibi)','h'],'alien':['Xenomorfo (Alien, chibi)','h'],'hellboy':['Hellboy (chibi)','h'],'coraline':['Coraline (contas redondas)','h']
 };
 var catMiniPick={},catMiniCache=new Map();
 function autoMini(ts){

@@ -165,6 +165,7 @@ for name, grp, rows in J:
     out.append(',\n'.join(json.dumps(r) for r in rows))
     out.append(']},')
 out.append('];')
+raise SystemExit('DESATIVADO (2026-10-31): reconstruir o catálogo apagaria o trabalho do usuário. Veja CLAUDE.md §4.9.')
 import tplfile; tplfile.backup(os.path.join(os.path.dirname(SP), 'templates.js'))
 open(os.path.join(os.path.dirname(SP), 'templates.js'), 'w', encoding='utf-8').write('\n'.join(out) + '\n')
 from collections import Counter
