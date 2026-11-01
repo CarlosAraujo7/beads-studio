@@ -82,7 +82,7 @@ for k, v in sorted(match.items()):
     if score < 0.78 or id_ in SKIP: continue
     key = (rem, idx)
     if key not in convs:
-        r6.FILES = sorted(glob.glob(os.path.join(ROOT, f'remessa {rem}', '*.*')))
+        r6.FILES = sorted(glob.glob(os.path.join(ROOT, 'remessas', f'remessa {rem}', '*.*')))
         import r5 as _r5; _r5.SKIN_ON = _r5.skin_for(name, cat[id_]['group'])
         try: convs[key] = r6.exact6(idx)
         except Exception: convs[key] = None

@@ -20,7 +20,7 @@ from flat import render_flat
 
 
 def R(n):
-    r6.FILES = sorted(glob.glob(os.path.join(ROOT, f'remessa {n}', '*.*')))
+    r6.FILES = sorted(glob.glob(os.path.join(ROOT, 'remessas', f'remessa {n}', '*.*')))
 
 
 def E(rem, idx, **kw):

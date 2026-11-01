@@ -27,9 +27,34 @@ def die_face(n, N=5):
     return [''.join(r) for r in g]
 
 
+# cubo mágico da remessa 3D 3 (foto PandaHall): os 6 painéis numerados da foto, 3×3 quadrados de 3×3 contas separados por linhas pretas; a contagem fecha: 9 quadrados de cada uma das 6 cores
+R_PAINEIS = {'top': ['RBG', 'RYG', 'GRY'], 'front': ['ROW', 'YOY', 'YWB'], 'right': ['OWO', 'ORR', 'WYB'], 'left': ['RRO', 'BGB', 'GWW'], 'back': ['ROO', 'GWB', 'YOY'], 'bottom': ['BGG', 'YBW', 'BGW']}
+R_COR = {'R': 'r', 'B': 'b', 'G': 'L', 'Y': 'y', 'O': 'o', 'W': 'w'}
+
+
+def rubik_face(p):
+    g = [['k'] * 13 for _ in range(13)]
+    for j in range(3):
+        for i in range(3):
+            for y in range(3):
+                for x in range(3): g[1 + j * 4 + y][1 + i * 4 + x] = R_COR[p[j][i]]
+    return [''.join(r) for r in g]
+
+
+def rubik():
+    n = 13
+    return {'id': 'cubo-magico', 'name': f'Cubo mágico ({n}×{n}×{n})', 'size': (n, n, n), 'level': 'Médio',
+            'tex': {f: rubik_face(p) for f, p in R_PAINEIS.items()}, 'fill': {'*': 'k'}, 'ears': None,
+            'names': {'top': 'Painel 1 (cima)', 'front': 'Painel 2 (frente)', 'right': 'Painel 3 (direita)', 'left': 'Painel 4 (esquerda)', 'back': 'Painel 5 (costas)', 'bottom': 'Painel 6 (base)'},
+            'steps': ['Monte os 6 painéis e passe o ferro em cada um, dos dois lados, com papel de forno; deixe esfriar sob um peso.',
+                      'Os dentes pretos alternam de propósito: onde um painel tem conta na borda, o vizinho tem vão. Comece pela base e erga os 4 painéis dos lados.',
+                      'Feche com o painel de cima. Se ficar frouxo, uma gota de cola nos cantos.'],
+            'desc': f'Cubo mágico de {n}×{n}×{n} contas (cerca de {n * 0.26:.1f} cm): 6 painéis planos com 9 quadrados de 3×3 contas separados por linhas pretas. As cores de cada painel são as da foto (6 cores, 9 quadrados de cada, como num cubo embaralhado). Os dentes das bordas seguem a junta dos nossos cubos, que fecha sem sobrar nem faltar conta; na foto eles podem ficar em outra posição.'}
+
+
 def build():
     N = 7
-    return [{'id': 'cubo-dado', 'name': f'Cubo Dado ({N}×{N}×{N})', 'size': (N, N, N), 'level': 'Fácil', 'solid': True,
+    return [rubik(), {'id': 'cubo-dado', 'name': f'Cubo Dado ({N}×{N}×{N})', 'size': (N, N, N), 'level': 'Fácil', 'solid': True,
              'tex': {'front': die_face(1, N), 'back': die_face(6, N), 'right': die_face(2, N), 'left': die_face(5, N), 'top': die_face(3, N), 'bottom': die_face(4, N)},
              'fill': {'*': 'w'}, 'ears': None, 'steps': steps(),
              'desc': f'Dado de 6 lados de {N}×{N}×{N} contas (cerca de {N * 0.26:.1f} cm), branco com pintas pretas, em 6 peças planas com dentes alternados que se encaixam sem sobrar nem faltar conta. '

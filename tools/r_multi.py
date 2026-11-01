@@ -16,7 +16,7 @@ sys.path.insert(0, SP)
 import r5, outline as O, illus, shrink, tplfile
 from flat import render_flat
 from palette import sfx
-FILES = sorted(glob.glob(os.path.join(ROOT, 'remessa 14', '*.*')))
+FILES = sorted(glob.glob(os.path.join(ROOT, 'remessas', 'remessa 14', '*.*')))
 DK = dict(dark_frac=0.26, dark_L=28.0, ncolors=20)
 
 

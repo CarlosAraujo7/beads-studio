@@ -5,7 +5,7 @@ sys.path.insert(0, SP)
 import numpy as np
 from PIL import Image
 import cellread as C, outline as O, polish as PL, grid2 as G2, img2tpl as T
-REM = os.path.join(os.path.dirname(SP), 'remessa 5')
+REM = os.path.join(os.path.dirname(SP), 'remessas', 'remessa 5')
 
 def pat(idx, tol=26, px=None, mp=None, drop='', crop=None, mode='recolor', keep=(), clear=(), despeckle=True, crop_img=None, post=None, colors=False):
     """padrao com grade (remessa 5): le as celulas, tira o fundo, ajusta o contorno e apara"""

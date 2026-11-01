@@ -120,3 +120,5 @@ if a.dry: print('(--dry: nada foi gravado)')
 elif added or replaced:
     tplfile.write(a.templates, d['legend'], d['cfg'], items, d.get('removed'), allow=allow, readd=readd)
     print('gravado:', a.templates, '(cópia de segurança em tools/backups/)')
+    if a.templates == os.path.join(os.path.dirname(HERE), 'templates.js'):
+        import make_remessas; make_remessas.write(); print('remessas.js atualizado (tela Novos moldes)')

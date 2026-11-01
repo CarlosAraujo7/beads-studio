@@ -27,7 +27,7 @@ def comb(d, lo, hi):
 
 def main():
     rem = int(sys.argv[1]); i = int(sys.argv[2]); lo = float(sys.argv[3]) if len(sys.argv) > 3 else 2; hi = float(sys.argv[4]) if len(sys.argv) > 4 else 40
-    files = sorted(glob.glob(os.path.join(ROOT, f'remessa {rem}', '*')))
+    files = sorted(glob.glob(os.path.join(ROOT, 'remessas', f'remessa {rem}', '*')))
     im = Image.open(files[i]).convert('RGB'); a = np.array(im).astype(float); h, w, _ = a.shape
     edge = np.concatenate([a[0], a[-1], a[:, 0], a[:, -1]]); bgc = np.median(edge, axis=0)
     diff = np.abs(a - bgc).sum(axis=2) > 40

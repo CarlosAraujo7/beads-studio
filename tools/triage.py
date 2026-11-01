@@ -13,7 +13,7 @@ from PIL import Image, ImageDraw
 import r6, tplfile, layoutsim as L
 ROOT = os.path.dirname(SP)
 cat = tplfile.parse(os.path.join(ROOT, 'templates.js'))['items']
-files = sorted(f for f in glob.glob(os.path.join(ROOT, f'remessa {N}', '*')) if os.path.isfile(f))
+files = sorted(f for f in glob.glob(os.path.join(ROOT, 'remessas', f'remessa {N}', '*')) if os.path.isfile(f))
 a = [int(x) for x in sys.argv[2:4] if x.isdigit()]
 lo, hi = (a[0], a[1]) if len(a) == 2 else (0, len(files))
 PER = 18

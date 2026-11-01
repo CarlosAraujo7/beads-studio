@@ -163,7 +163,7 @@ def reconv(name, skin=None, **over):
         r5.SKIN_ON = sk
         import glob
         oldF = R22.F
-        if rem == 23: R22.F = sorted(glob.glob(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'remessa 23', '*.*')))      # o R22 foi importado com REMNUM=22
+        if rem == 23: R22.F = sorted(glob.glob(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'remessas', 'remessa 23', '*.*')))      # o R22 foi importado com REMNUM=22
         try:
             if big: return R22.ill(idx, dict(kw), plates=plates, box=box, skin=sk)
             return R22.ill(idx, kw, box=box, skin=sk)
@@ -206,7 +206,7 @@ def _kratos_conv(big):
     import r6, r5, shrink, loose
     from PIL import Image
     import glob
-    fl = sorted(glob.glob(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'remessa 23', '*.*')))
+    fl = sorted(glob.glob(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'remessas', 'remessa 23', '*.*')))
     W, H = Image.open(fl[20]).size
     px, py, ox, oy = 9.07, 9.08, 8.10, 11.70
     r5.SKIN_ON = False

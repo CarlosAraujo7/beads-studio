@@ -18,7 +18,7 @@ RED_T = 0.032          # fração (dos pontos claros da janela) de vermelho vivo
 EDGE_RED = 0.26        # contorno com >= 16% de vermelho vivo (e < 55% de preto) vira vermelho
 EDGE_DRED = 0.40
 DRED_T = 0.30         # vermelho escuro (asas/aura): fração maior, para não pintar contornos
-SRC = sorted(glob.glob(os.path.join(ROOT, 'remessa 16', '*.*')))[17]
+SRC = sorted(glob.glob(os.path.join(ROOT, 'remessas', 'remessa 16', '*.*')))[17]
 
 
 def classify(px):

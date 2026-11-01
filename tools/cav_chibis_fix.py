@@ -137,7 +137,7 @@ def fix_shunfull():
     from palette import ALL
     code = {p['code']: p['letter'] for p in ALL}
     r5.SKIN_ON = True
-    src = sorted(glob.glob(os.path.join(ROOT, 'remessa 14', '*.*')))[5]
+    src = sorted(glob.glob(os.path.join(ROOT, 'remessas', 'remessa 14', '*.*')))[5]
     base = illus.convert4(src, dark_frac=0.40, dark_L=16.0, sat=1.4, ncolors=22)       # mesma máscara (777 contas) e mesmo tamanho do original
     orig = orig_rows('shun-de-andromeda-chibi-corpo-inteiro')
     assert len(base) == len(orig) and len(base[0]) == len(orig[0])

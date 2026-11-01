@@ -47,6 +47,6 @@ def fund(path, crop_img=None, kmax=5, need=0.72, force=None):
 
 if __name__ == '__main__':
     import glob
-    rem = sys.argv[1]; fs = sorted(glob.glob(os.path.join(os.path.dirname(HERE), 'remessa ' + rem, '*.*')))
+    rem = sys.argv[1]; fs = sorted(glob.glob(os.path.join(os.path.dirname(HERE), 'remessas', 'remessa ' + rem, '*.*')))
     for i in [int(a) for a in sys.argv[2:]] or range(len(fs)):
         g = fund(fs[i]); print('%3d k=%d nota %.2f passo %.2f×%.2f fase %.1f,%.1f  %d×%d' % (i, g['k'], g['score'], g['px'], g['py'], g['ox'], g['oy'], g['W'], g['H']), flush=True)

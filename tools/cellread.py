@@ -8,7 +8,7 @@ base = os.path.dirname(SP)
 PAL = {c: tuple(int(h[i:i + 2], 16) for i in (1, 3, 5)) for c, h in T.PAL}
 LET = {T.LETTER[c]: PAL[c] for c in PAL}
 def cells(remessa, idx, crop=None, px=None, mode=False):
-    f = sorted(glob.glob(os.path.join(base, f'remessa {remessa}', '*.*')))[idx]
+    f = sorted(glob.glob(os.path.join(base, 'remessas', f'remessa {remessa}', '*.*')))[idx]
     im = Image.open(f).convert('RGBA')
     if crop: im = im.crop(crop)
     rgba = np.array(im).astype(np.uint8)

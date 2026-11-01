@@ -250,6 +250,10 @@ PROJECTS = [maca, camarao, abelha, stitch, presente]
 from r3d2_projects import R3D2
 PROJECTS += R3D2
 
+# remessa 3D 3: Minion (gráfico VitrumUP)
+from r3d3_projects import R3D3
+PROJECTS += R3D3
+
 # cubos GERADOS a partir de moldes do catálogo (tools/cube3d.py + tools/make_cubes.py): mesma junta de dentes alternados dos cubos lidos das fotos
 from make_cubes import cubes
 for _c in cubes():

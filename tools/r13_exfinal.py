@@ -16,7 +16,7 @@ from flat import render_flat
 import glob
 from palette import sfx
 E = r6.exact6
-FILES = sorted(glob.glob(os.path.join(os.path.dirname(SP), 'remessa 13', '*.*')))
+FILES = sorted(glob.glob(os.path.join(os.path.dirname(SP), 'remessas', 'remessa 13', '*.*')))
 
 
 def S(idx, size=50, **kw): return illus.convert(FILES[idx], size=size, **kw)

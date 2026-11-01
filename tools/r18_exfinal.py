@@ -12,7 +12,7 @@ sys.path.insert(0, SP)
 import r5, outline as O, illus
 from flat import render_flat
 from palette import sfx
-FILES = sorted(glob.glob(os.path.join(os.path.dirname(SP), 'remessa 18', '*.*')))
+FILES = sorted(glob.glob(os.path.join(os.path.dirname(SP), 'remessas', 'remessa 18', '*.*')))
 DK = dict(dark_frac=0.28, dark_L=28.0)
 DKM = dict(dark_frac=0.26, dark_L=28.0, ncolors=20)
 

@@ -23,7 +23,7 @@ print(len(targets), 'moldes sem fonte conhecida', flush=True)
 cache_path = os.path.join(SP, 'out', 'conv24_old.json')
 conv = json.load(open(cache_path, encoding='utf-8')) if os.path.exists(cache_path) else {}
 for rem in (1, 2, 3, 4):
-    r6.FILES = sorted(glob.glob(os.path.join(ROOT, f'remessa {rem}', '*.*')))
+    r6.FILES = sorted(glob.glob(os.path.join(ROOT, 'remessas', f'remessa {rem}', '*.*')))
     for i in range(len(r6.FILES)):
         key = f'{rem}:{i}'
         if key in conv: continue

@@ -11,7 +11,7 @@ sys.path.insert(0, SP)
 import r5, illus, illus5, beadclean, loose, shrink
 from flat import render_flat
 from palette import sfx
-F = sorted(glob.glob(os.path.join(ROOT, 'remessa 21', '*.*')))
+F = sorted(glob.glob(os.path.join(ROOT, 'remessas', 'remessa 21', '*.*')))
 BASE = dict(K=20, thr=200, bg='white', hatch=3, dark_frac=0.45, black_L=16.0, seal=0.0, smooth_de=16.0, sat=1.1, contrast=1.05, sharp=0.0)
 
 

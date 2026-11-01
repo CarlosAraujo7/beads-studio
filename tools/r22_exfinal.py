@@ -86,6 +86,12 @@ def kit_letter(code, rgb):
     return best[1], best[0], best[2]
 
 
+def nearest_letter(rgb):
+    """letra do kit mais próxima de uma cor (gráficos em códigos MARD: o mesmo código é outra cor no kit Pindou)"""
+    lab = illus._lab(np.array(rgb, float))
+    return (min(ALL, key=lambda c: float(np.linalg.norm(illus._lab(np.array([int(c['hex'].lstrip('#')[i:i + 2], 16) for i in (0, 2, 4)], float)) - lab)))['letter'],)
+
+
 def ring_cells(idx, grid, lo=0.10, hi=0.30):
     """cor de cada célula pela MEDIANA da moldura da célula (a faixa entre lo e hi do passo a partir da borda): o código escrito no centro (texto branco numa célula preta chegava a dominar a
     amostra central e a célula virava "branca" = fundo) não entra; as linhas da grade, que ficam na própria borda, também não"""

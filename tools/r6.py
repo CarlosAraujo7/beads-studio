@@ -5,7 +5,7 @@ sys.path.insert(0, SP)
 import numpy as np
 from PIL import Image
 import r5, outline as O, grid2 as G2, cellread as C
-REM6 = os.path.join(os.path.dirname(SP), 'remessa ' + os.environ.get('REMNUM', '6'))
+REM6 = os.path.join(os.path.dirname(SP), 'remessas', 'remessa ' + os.environ.get('REMNUM', '6'))
 FILES = sorted(glob.glob(os.path.join(REM6, '*.*')))
 
 def mapc(rgb):

@@ -18,7 +18,7 @@ CODE2L = {p['code']: p['letter'] for p in ALL}
 
 
 def src_path(rem, idx):
-    return sorted(glob.glob(os.path.join(ROOT, 'remessa %s' % rem, '*.*')))[idx]
+    return sorted(glob.glob(os.path.join(ROOT, 'remessas', 'remessa %s' % rem, '*.*')))[idx]
 
 
 def src_raw(rem, idx, box=None):

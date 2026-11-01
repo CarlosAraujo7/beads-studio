@@ -4,7 +4,7 @@ SP = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(SP, 'out'); os.makedirs(OUT, exist_ok=True)
 base = os.path.dirname(SP)
 r = sys.argv[1]; a = int(sys.argv[2]); b = int(sys.argv[3])
-fs = sorted(glob.glob(os.path.join(base, f'remessa {r}', '*.*')))[a:b]
+fs = sorted(glob.glob(os.path.join(base, 'remessas', f'remessa {r}', '*.*')))[a:b]
 T = 230; cols = 6
 rows = (len(fs) + cols - 1) // cols
 sheet = Image.new('RGB', (cols * T, rows * (T + 16)), (40, 40, 44)); d = ImageDraw.Draw(sheet)

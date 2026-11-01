@@ -28,7 +28,7 @@ def hsv(c):
 
 
 def cells(rem, idx, p0, spread=0.08, bbox=None, ring=(0.2, 0.42), angles=np.arange(-3, 3.1, 1.0), check=None):
-    files = sorted(glob.glob(os.path.join(ROOT, f'remessa {rem}', '*.*')))
+    files = sorted(glob.glob(os.path.join(ROOT, 'remessas', f'remessa {rem}', '*.*')))
     im = Image.open(files[idx]).convert('RGB'); path = os.path.join(OUT, f'p7_tmp_{rem}_{idx}.png'); im.save(path)
     w, h = im.size
     if bbox is None: bbox = (0, 0, w, h)

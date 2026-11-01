@@ -62,7 +62,7 @@ def fox38():
     Converte tudo (sem tirar fundo) e esvazia as células claras sem pontinho."""
     import glob, numpy as np
     from PIL import Image
-    f = sorted(glob.glob(os.path.join(os.path.dirname(SP), 'remessa 19', '*.*')))[38]
+    f = sorted(glob.glob(os.path.join(os.path.dirname(SP), 'remessas', 'remessa 19', '*.*')))[38]
     im = np.array(Image.open(f).convert('L')).astype(float)
     W, H = 38, 40
     rows = E(38, crop_img=(17, 17, 17 + 15 * W, 17 + 15 * H), px=dict(px=15, py=15, ox=0, oy=0, W=W, H=H), mode=True, ref=(0, 255, 0), tol=1)

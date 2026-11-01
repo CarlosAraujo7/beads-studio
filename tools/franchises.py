@@ -46,6 +46,12 @@ CATEGORIES = [
     ('invencivel', 'Invencível', H), ('spawn', 'Spawn', H), ('hellboy', 'Hellboy', H), ('coraline', 'Coraline', T),
     ('piratas-do-caribe', 'Piratas do Caribe', C), ('john-wick', 'John Wick', C), ('game-of-thrones', 'Game of Thrones', C), ('brinquedo-assassino', 'Brinquedo Assassino', C),
     ('o-silencio-dos-inocentes', 'O Silêncio dos Inocentes', C), ('queen', 'Queen', C), ('alien', 'Alien', C),
+    # --- remessa 25
+    ('final-fantasy', 'Final Fantasy', G), ('fallout', 'Fallout', G), ('overlord', 'Overlord', A), ('round-6', 'Round 6', C), ('o-pequeno-principe', 'O Pequeno Príncipe', T),
+    # --- remessa 26
+    ('darling-in-the-franxx', 'Darling in the Franxx', A), ('black-butler', 'Black Butler', A), ('hajime-no-ippo', 'Hajime no Ippo', A), ('himouto-umaru-chan', 'Himouto! Umaru-chan', A), ('mega-man', 'Mega Man', G),
+    # --- remessa 27
+    ('donkey-kong', 'Donkey Kong', G),
     # --- temas específicos
     ('egito-antigo', 'Egito Antigo', S), ('religiao', 'Religião', S), ('gato-da-sorte', 'Gato da sorte', 'cAnimals'),
     ('earrings', 'Brincos', 'cEarrings'),
