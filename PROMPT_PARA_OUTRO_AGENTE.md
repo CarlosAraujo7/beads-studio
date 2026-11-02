@@ -4,7 +4,7 @@
 
 ```
 Você vai continuar o projeto "Bead Studio" (editor de moldes para contas de fusão Hama/Pindou), na pasta
-C:\Users\vinic\OneDrive\Documentos\Hama beads  (repositório https://github.com/CarlosAraujo7/beads, branch main).
+C:\Users\vinic\OneDrive\Documentos\Hama beads  (repositório https://github.com/CarlosAraujo7/beads-studio, branch main).
 Responda SEMPRE em pt-BR. O dono é um hobbista, direto, que confere tudo OLHANDO AS IMAGENS: nunca diga que
 algo ficou bom sem ter renderizado e olhado (e diga com franqueza o que ficou fraco).
 

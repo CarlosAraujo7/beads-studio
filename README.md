@@ -2,7 +2,7 @@
 
 Editor local de moldes para contas de fusão (hama/Pindou), em português do Brasil: desenhe, escolha um molde do catálogo, converta uma imagem em contas, veja quantas contas de cada cor precisa e monte linha por linha.
 
-**Usar online:** https://carlosaraujo7.github.io/beads/
+**Usar online:** https://carlosaraujo7.github.io/beads-studio/
 
 Não precisa instalar nada. O site é só HTML + JavaScript (`index.html` e o catálogo `templates.js`); também funciona abrindo o `index.html` com duplo clique. Seu desenho, seus ajustes e seus moldes próprios ficam guardados **no seu navegador** (nada é enviado a servidor nenhum).
 
