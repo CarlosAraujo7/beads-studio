@@ -16,13 +16,17 @@ html_path = os.path.join(ROOT, 'index.html')
 html = open(html_path, encoding='utf-8', newline='').read()
 nl = '\r\n' if '\r\n' in html else '\n'
 
-rows = ',\n'.join('  [%s,%s,%s]' % (json.dumps(c['code']), json.dumps(c['name'], ensure_ascii=False), json.dumps(c['hex'])) for c in P.ALL)
+rows = ',\n'.join('  [%s,%s,%s,%s]' % (json.dumps(c['code']), json.dumps(c['name'], ensure_ascii=False), json.dumps(c['hex']), json.dumps(c.get('hex_foto', c['hex']))) for c in P.ALL)
+VIVID = json.load(open(os.path.join(SP, 'data', 'palette.json'), encoding='utf-8')).get('vivacidade', 1.0)
 est = ', '.join(json.dumps(c['code']) for c in P.ALL if c['est'])
 block = (f"{BEGIN}\n"
          "/* Paleta Pindou de 120 cores — gerada por tools/sync_palette_to_app.py a partir de tools/data/palette.json.\n"
          "   As 24 primeiras são as do kit antigo (ordem da tabela impressa); o ÍNDICE (1..120) é o que o desenho guarda: não reordene. */\n"
          f"const DEFAULT_PALETTE = [\n{rows}\n];\n"
          f"/* cores novas cujo hex foi ESTIMADO da foto do anúncio (marcadas com ~ em Ajustar cores) */\n"
+         f"const VIVID_DEFAULT = {int(round(VIVID * 100))};   /* vivacidade padrão (%): o 3º valor de cada cor já vem com ela; o 4º é a medida crua da foto (100%) */\n"
+         f"/* contas que na prática são OUTRA (o H12 é o mesmo creme da A1): não aparecem para escolher e nunca são destino de troca de cores; os moldes antigos que tinham H12 já foram trocados */\n"
+         f"const ALIAS_OF = {json.dumps({c['code']: c['alias'] for c in P.ALL if c.get('alias')})};\n"
          f"const EST_CODES = new Set([{est}]);\n"
          f"{END}")
 block = block.replace('\n', nl)

@@ -1,0 +1,845 @@
+{
+"fonte": "candidata: cores medidas nas fotos das contas (paleta 120/foto-contas-N.jpg, 2026-11-02); só muda onde a conta destoa da antiga por mais de 5 ΔE; cinzas e H1/H2 ficam",
+"colors": [
+{
+"code": "B3",
+"name": "Verde",
+"hex": "#30C28F",
+"letter": "g",
+"est": true
+},
+{
+"code": "C3",
+"name": "Azul bebê",
+"hex": "#C3E5F3",
+"letter": "e",
+"est": false
+},
+{
+"code": "D9",
+"name": "Lavanda",
+"hex": "#C8C4E4",
+"letter": "x",
+"est": false
+},
+{
+"code": "E2",
+"name": "Rosa claro",
+"hex": "#F1C4D1",
+"letter": "q",
+"est": false
+},
+{
+"code": "G1",
+"name": "Bege",
+"hex": "#E4C7B5",
+"letter": "s",
+"est": false
+},
+{
+"code": "A4",
+"name": "Amarelo",
+"hex": "#EBC22F",
+"letter": "y",
+"est": false
+},
+{
+"code": "B5",
+"name": "Verde (B5)",
+"hex": "#299B67",
+"letter": "f",
+"est": true
+},
+{
+"code": "C5",
+"name": "Verde-água",
+"hex": "#0790BD",
+"letter": "c",
+"est": true
+},
+{
+"code": "D6",
+"name": "Lilás",
+"hex": "#A89BC6",
+"letter": "v",
+"est": false
+},
+{
+"code": "E4",
+"name": "Rosa",
+"hex": "#EA9BB8",
+"letter": "p",
+"est": false
+},
+{
+"code": "G5",
+"name": "Salmão",
+"hex": "#D99479",
+"letter": "t",
+"est": false
+},
+{
+"code": "A6",
+"name": "Amarelo claro",
+"hex": "#FFCA4B",
+"letter": "a",
+"est": true
+},
+{
+"code": "B8",
+"name": "Verde escuro",
+"hex": "#3F8761",
+"letter": "h",
+"est": false
+},
+{
+"code": "C8",
+"name": "Azul",
+"hex": "#6B98D3",
+"letter": "b",
+"est": false
+},
+{
+"code": "D7",
+"name": "Roxo",
+"hex": "#75609A",
+"letter": "u",
+"est": false
+},
+{
+"code": "F5",
+"name": "Vermelho",
+"hex": "#BD3A4B",
+"letter": "r",
+"est": false
+},
+{
+"code": "G7",
+"name": "Marrom",
+"hex": "#8F5E50",
+"letter": "n",
+"est": false
+},
+{
+"code": "A7",
+"name": "Laranja",
+"hex": "#EC8546",
+"letter": "o",
+"est": false
+},
+{
+"code": "H1",
+"name": "Cinza gelo",
+"hex": "#E4E7EA",
+"letter": "i",
+"est": false
+},
+{
+"code": "H2",
+"name": "Branco",
+"hex": "#FFFFFF",
+"letter": "w",
+"est": false
+},
+{
+"code": "H3",
+"name": "Cinza claro",
+"hex": "#B5B8BE",
+"letter": "l",
+"est": false
+},
+{
+"code": "H4",
+"name": "Cinza",
+"hex": "#8A8D93",
+"letter": "m",
+"est": false
+},
+{
+"code": "H5",
+"name": "Cinza escuro",
+"hex": "#5F6065",
+"letter": "d",
+"est": false
+},
+{
+"code": "H7",
+"name": "Preto",
+"hex": "#2E2E32",
+"letter": "k",
+"est": false
+},
+{
+"code": "A1",
+"name": "Creme",
+"hex": "#E3D893",
+"letter": "j",
+"est": true
+},
+{
+"code": "A3",
+"name": "Creme (A3)",
+"hex": "#EFDF9B",
+"letter": "z",
+"est": true
+},
+{
+"code": "A5",
+"name": "Amarelo claro (A5)",
+"hex": "#FEC333",
+"letter": "A",
+"est": true
+},
+{
+"code": "A8",
+"name": "Amarelo claro (A8)",
+"hex": "#FFCC20",
+"letter": "B",
+"est": true
+},
+{
+"code": "A9",
+"name": "Laranja (A9)",
+"hex": "#E59E66",
+"letter": "C",
+"est": true
+},
+{
+"code": "A10",
+"name": "Laranja (A10)",
+"hex": "#F6AA65",
+"letter": "D",
+"est": true
+},
+{
+"code": "A11",
+"name": "Amarelo claro (A11)",
+"hex": "#FAD177",
+"letter": "E",
+"est": true
+},
+{
+"code": "A12",
+"name": "Salmão (A12)",
+"hex": "#EBB289",
+"letter": "F",
+"est": true
+},
+{
+"code": "A13",
+"name": "Amarelo claro (A13)",
+"hex": "#FCCC6B",
+"letter": "G",
+"est": true
+},
+{
+"code": "A14",
+"name": "Coral",
+"hex": "#F8917B",
+"letter": "H",
+"est": true
+},
+{
+"code": "A15",
+"name": "Amarelo (A15)",
+"hex": "#D5C83B",
+"letter": "I",
+"est": true
+},
+{
+"code": "B1",
+"name": "Amarelo claro (B1)",
+"hex": "#D7D43C",
+"letter": "J",
+"est": true
+},
+{
+"code": "B2",
+"name": "Verde (B2)",
+"hex": "#23D445",
+"letter": "K",
+"est": true
+},
+{
+"code": "B4",
+"name": "Verde (B4)",
+"hex": "#19DA52",
+"letter": "L",
+"est": true
+},
+{
+"code": "B6",
+"name": "Verde-água (B6)",
+"hex": "#0ABFAA",
+"letter": "M",
+"est": true
+},
+{
+"code": "B7",
+"name": "Verde-petróleo",
+"hex": "#38796D",
+"letter": "N",
+"est": true
+},
+{
+"code": "B10",
+"name": "Verde-água (B10)",
+"hex": "#0AB2A3",
+"letter": "O",
+"est": true
+},
+{
+"code": "B11",
+"name": "Verde (B11)",
+"hex": "#50785F",
+"letter": "P",
+"est": true
+},
+{
+"code": "B12",
+"name": "Verde-petróleo (B12)",
+"hex": "#1F493D",
+"letter": "Q",
+"est": true
+},
+{
+"code": "B13",
+"name": "Verde-limão",
+"hex": "#81C45D",
+"letter": "R",
+"est": true
+},
+{
+"code": "B14",
+"name": "Verde-limão (B14)",
+"hex": "#7CAB43",
+"letter": "S",
+"est": true
+},
+{
+"code": "B15",
+"name": "Verde-petróleo (B15)",
+"hex": "#2D6A5F",
+"letter": "T",
+"est": true
+},
+{
+"code": "B16",
+"name": "Verde (B16)",
+"hex": "#9DD394",
+"letter": "U",
+"est": true
+},
+{
+"code": "B17",
+"name": "Verde-oliva",
+"hex": "#64943C",
+"letter": "V",
+"est": true
+},
+{
+"code": "B18",
+"name": "Amarelo (B18)",
+"hex": "#D6CD37",
+"letter": "W",
+"est": true
+},
+{
+"code": "B19",
+"name": "Verde-água (B19)",
+"hex": "#029983",
+"letter": "X",
+"est": true
+},
+{
+"code": "B20",
+"name": "Verde claro (B20)",
+"hex": "#E0FFDF",
+"letter": "Y",
+"est": true
+},
+{
+"code": "C1",
+"name": "Verde claro (C1)",
+"hex": "#C7E3C6",
+"letter": "Z",
+"est": true
+},
+{
+"code": "C2",
+"name": "Verde-água claro",
+"hex": "#B0EEED",
+"letter": "0",
+"est": true
+},
+{
+"code": "C4",
+"name": "Azul (C4)",
+"hex": "#3FA7CD",
+"letter": "1",
+"est": true
+},
+{
+"code": "C6",
+"name": "Azul (C6)",
+"hex": "#82AACE",
+"letter": "2",
+"est": true
+},
+{
+"code": "C7",
+"name": "Azul (C7)",
+"hex": "#4B9ED9",
+"letter": "3",
+"est": true
+},
+{
+"code": "C9",
+"name": "Azul escuro",
+"hex": "#44498F",
+"letter": "4",
+"est": true
+},
+{
+"code": "C10",
+"name": "Verde-água (C10)",
+"hex": "#1BB5CB",
+"letter": "5",
+"est": true
+},
+{
+"code": "C11",
+"name": "Verde-água (C11)",
+"hex": "#5CA6B3",
+"letter": "6",
+"est": true
+},
+{
+"code": "C13",
+"name": "Verde-água claro (C13)",
+"hex": "#DAF9FF",
+"letter": "7",
+"est": true
+},
+{
+"code": "C14",
+"name": "Cinza claro (C14)",
+"hex": "#C5D7D6",
+"letter": "8",
+"est": true
+},
+{
+"code": "C15",
+"name": "Verde-água (C15)",
+"hex": "#06BCB5",
+"letter": "9",
+"est": true
+},
+{
+"code": "C16",
+"name": "Azul escuro (C16)",
+"hex": "#3E5073",
+"letter": "!",
+"est": true
+},
+{
+"code": "C17",
+"name": "Verde-água (C17)",
+"hex": "#26ACCC",
+"letter": "#",
+"est": true
+},
+{
+"code": "D1",
+"name": "Azul (D1)",
+"hex": "#90A6D4",
+"letter": "$",
+"est": true
+},
+{
+"code": "D2",
+"name": "Azul (D2)",
+"hex": "#647EC4",
+"letter": "%",
+"est": true
+},
+{
+"code": "D3",
+"name": "Azul escuro (D3)",
+"hex": "#434990",
+"letter": "&",
+"est": true
+},
+{
+"code": "D5",
+"name": "Rosa (D5)",
+"hex": "#BD86B3",
+"letter": "(",
+"est": true
+},
+{
+"code": "D8",
+"name": "Cinza gelo (D8)",
+"hex": "#E6E9ED",
+"letter": ")",
+"est": true
+},
+{
+"code": "D11",
+"name": "Azul claro (D11)",
+"hex": "#B8CBE5",
+"letter": "*",
+"est": true
+},
+{
+"code": "D12",
+"name": "Rosa (D12)",
+"hex": "#C69EC6",
+"letter": "+",
+"est": true
+},
+{
+"code": "D13",
+"name": "Magenta",
+"hex": "#AD6598",
+"letter": ",",
+"est": true
+},
+{
+"code": "D14",
+"name": "Roxo (D14)",
+"hex": "#70487A",
+"letter": "-",
+"est": true
+},
+{
+"code": "D15",
+"name": "Azul-marinho",
+"hex": "#443F73",
+"letter": "/",
+"est": true
+},
+{
+"code": "D16",
+"name": "Branco (D16)",
+"hex": "#F0F7FC",
+"letter": ":",
+"est": true
+},
+{
+"code": "D17",
+"name": "Azul claro (D17)",
+"hex": "#9AAFCD",
+"letter": ";",
+"est": true
+},
+{
+"code": "D18",
+"name": "Lilás (D18)",
+"hex": "#957AAF",
+"letter": "<",
+"est": true
+},
+{
+"code": "D19",
+"name": "Cinza gelo (D19)",
+"hex": "#DDDADC",
+"letter": "=",
+"est": true
+},
+{
+"code": "D20",
+"name": "Roxo (D20)",
+"hex": "#966BA7",
+"letter": ">",
+"est": true
+},
+{
+"code": "D21",
+"name": "Roxo (D21)",
+"hex": "#805289",
+"letter": "?",
+"est": true
+},
+{
+"code": "E1",
+"name": "Rosa claro (E1)",
+"hex": "#FCD0C0",
+"letter": "@",
+"est": true
+},
+{
+"code": "E3",
+"name": "Rosa (E3)",
+"hex": "#FBA6B5",
+"letter": "[",
+"est": true
+},
+{
+"code": "E5",
+"name": "Vermelho (E5)",
+"hex": "#C7577A",
+"letter": "]",
+"est": true
+},
+{
+"code": "E6",
+"name": "Coral (E6)",
+"hex": "#FF8095",
+"letter": "^",
+"est": true
+},
+{
+"code": "E7",
+"name": "Vinho",
+"hex": "#903C59",
+"letter": "_",
+"est": true
+},
+{
+"code": "E8",
+"name": "Branco (E8)",
+"hex": "#FFF4F1",
+"letter": "`",
+"est": true
+},
+{
+"code": "E9",
+"name": "Rosa (E9)",
+"hex": "#EF9ABD",
+"letter": "{",
+"est": true
+},
+{
+"code": "E10",
+"name": "Vermelho (E10)",
+"hex": "#D96488",
+"letter": "|",
+"est": true
+},
+{
+"code": "E11",
+"name": "Bege (E11)",
+"hex": "#FFDFD1",
+"letter": "}",
+"est": true
+},
+{
+"code": "E12",
+"name": "Rosa claro (E12)",
+"hex": "#FFBED3",
+"letter": "~",
+"est": true
+},
+{
+"code": "E13",
+"name": "Magenta (E13)",
+"hex": "#974969",
+"letter": "À",
+"est": true
+},
+{
+"code": "E14",
+"name": "Rosa claro (E14)",
+"hex": "#FFE0D6",
+"letter": "Á",
+"est": true
+},
+{
+"code": "E15",
+"name": "Rosa claro (E15)",
+"hex": "#F6D7D1",
+"letter": "Â",
+"est": true
+},
+{
+"code": "F1",
+"name": "Rosa claro (F1)",
+"hex": "#FEC5BA",
+"letter": "Ã",
+"est": true
+},
+{
+"code": "F2",
+"name": "Vermelho (F2)",
+"hex": "#F78578",
+"letter": "Ä",
+"est": true
+},
+{
+"code": "F3",
+"name": "Vermelho (F3)",
+"hex": "#E87D6C",
+"letter": "Å",
+"est": true
+},
+{
+"code": "F4",
+"name": "Vermelho (F4)",
+"hex": "#D9624B",
+"letter": "Æ",
+"est": true
+},
+{
+"code": "F6",
+"name": "Vermelho (F6)",
+"hex": "#A26553",
+"letter": "Ç",
+"est": true
+},
+{
+"code": "F7",
+"name": "Preto avermelhado",
+"hex": "#4F2628",
+"letter": "È",
+"est": true
+},
+{
+"code": "F8",
+"name": "Vermelho escuro",
+"hex": "#84332B",
+"letter": "É",
+"est": true
+},
+{
+"code": "F9",
+"name": "Rosa (F9)",
+"hex": "#EF9194",
+"letter": "Ê",
+"est": true
+},
+{
+"code": "F10",
+"name": "Vinho (F10)",
+"hex": "#693A2C",
+"letter": "Ë",
+"est": true
+},
+{
+"code": "F11",
+"name": "Vinho (F11)",
+"hex": "#5D3C34",
+"letter": "Ì",
+"est": true
+},
+{
+"code": "F12",
+"name": "Vermelho (F12)",
+"hex": "#F78076",
+"letter": "Í",
+"est": true
+},
+{
+"code": "F13",
+"name": "Vermelho (F13)",
+"hex": "#B84E3D",
+"letter": "Î",
+"est": true
+},
+{
+"code": "F14",
+"name": "Rosa pastel",
+"hex": "#FEB5B5",
+"letter": "Ï",
+"est": true
+},
+{
+"code": "G2",
+"name": "Salmão pastel",
+"hex": "#F1BC9D",
+"letter": "Ð",
+"est": true
+},
+{
+"code": "G3",
+"name": "Salmão (G3)",
+"hex": "#E2AE8E",
+"letter": "Ñ",
+"est": true
+},
+{
+"code": "G6",
+"name": "Caramelo",
+"hex": "#B26E47",
+"letter": "Ò",
+"est": true
+},
+{
+"code": "G8",
+"name": "Preto avermelhado (G8)",
+"hex": "#4A2E2C",
+"letter": "Ó",
+"est": true
+},
+{
+"code": "G9",
+"name": "Salmão (G9)",
+"hex": "#DAA671",
+"letter": "Ô",
+"est": true
+},
+{
+"code": "G13",
+"name": "Vermelho escuro (G13)",
+"hex": "#8C5944",
+"letter": "Õ",
+"est": true
+},
+{
+"code": "G14",
+"name": "Caramelo (G14)",
+"hex": "#8A725F",
+"letter": "Ö",
+"est": true
+},
+{
+"code": "G17",
+"name": "Cinza escuro (G17)",
+"hex": "#605A53",
+"letter": "Ø",
+"est": true
+},
+{
+"code": "H6",
+"name": "Cinza escuro (H6)",
+"hex": "#494B49",
+"letter": "Ù",
+"est": true
+},
+{
+"code": "H12",
+"name": "Creme (H12)",
+"hex": "#D9D1B0",
+"letter": "Ú",
+"est": true
+},
+{
+"code": "M5",
+"name": "Bege (M5)",
+"hex": "#BAB194",
+"letter": "Û",
+"est": true
+},
+{
+"code": "M6",
+"name": "Bege (M6)",
+"hex": "#A4997D",
+"letter": "Ü",
+"est": true
+},
+{
+"code": "M9",
+"name": "Bege escuro",
+"hex": "#A99A82",
+"letter": "Ý",
+"est": true
+},
+{
+"code": "M12",
+"name": "Cinza escuro (M12)",
+"hex": "#4C443E",
+"letter": "Þ",
+"est": true
+}
+]
+}

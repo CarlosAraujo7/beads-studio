@@ -12,6 +12,7 @@ import cv2
 import r5, r6, outline as O, illus, shrink, loose
 import r22_exfinal as R
 import weak_cm as WC
+import darkramp as DR
 import r23_exfinal as R23
 import palette as P
 from palette import sfx
@@ -186,7 +187,7 @@ ILL = [
  ('Red Hood (DC, chibi)', 'DC Comics', 40, dict(CH, dark_frac=0.45, black_L=8.0)),
  ('Titã Colossal e Eren (Attack on Titan, chibi)', 'Attack on Titan', 42, dict(CH, **NONE, K=36, dark_frac=0.2, black_L=14.0, pale_skin=False, warm_white=0, center_map=None)),
  ('Freddie Mercury (Queen, chibi)', 'Queen', 43, dict(CH, dark_frac=0.36, center_map=WC.CM_NEUT)),
- ('Xenomorfo (Alien, chibi)', 'Alien', 49, dict(CH, pale_skin=False, warm_white=0, dark_frac=0.5, black_L=7.0, K=30)),
+ ('Xenomorfo (Alien, chibi)', 'Alien', 49, dict(CH, pale_skin=False, warm_white=0, dark_frac=0.62, black_L=7.0, K=40, hl_gain=1.0, center_map=DR.ramp(lo=14.0, mid2=26.5))),     # rampa de cinzas (darkramp.py): o corpo azul-petróleo escuro não vira mais tudo preto
  ('Pennywise (chibi, corpo inteiro)', 'It: A Coisa', 62, dict(CH, dark_frac=0.45, pale_skin=False, warm_white=0, center_map=WC.CM_NEUT)),
  ('Hellboy (chibi)', 'Hellboy', 64, dict(CH, pale_skin=False, warm_white=0, dark_frac=0.42)),
  ('Cavaleiro da Lua azul (Marvel, chibi)', 'Marvel', 67, dict(CH, pale_skin=False, warm_white=0, smooth_de=14.0, dark_frac=0.36)),

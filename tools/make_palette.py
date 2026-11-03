@@ -122,6 +122,9 @@ def name_of(hexc):
 
 
 def main():
+    if '--force' not in sys.argv:
+        print('OBSOLETO (2026-11-02): make_palette.py reescreve data/palette.json com as ESTIMATIVAS da foto do anúncio (a paleta SUPERADA). A das contas sem tampa vale: tools/build_bead_palette2.py, CLAUDE.md 7.38. Só roda com --force.')
+        return
     im = np.asarray(Image.open(PHOTO).convert('RGB')).astype(float)
     samp = sample(im)
     known = {c: h for c, _, h, _ in BASE}

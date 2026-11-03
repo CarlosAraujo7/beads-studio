@@ -185,6 +185,7 @@ _A_COL = _PAL120.ALL
 _A_LET = [c['letter'] for c in _A_COL]
 _A_LAB = np.array([T.rgb2lab(np.array([int(c['hex'][i:i + 2], 16) for i in (1, 3, 5)], float)) for c in _A_COL])
 _A_NEUTRAL = np.array([c['code'] in ('H1', 'H2', 'H3', 'H4', 'H5', 'H6', 'H7') for c in _A_COL])
+_A_ALIAS = np.array([bool(c.get('alias')) for c in _A_COL])      # H12 = A1 (mesma conta): as conversões novas nunca escolhem o H12
 _A_BASE = np.arange(len(_A_COL)) < 24      # as 24 do kit antigo têm hex "conhecido": ganham 1 ΔE de vantagem no empate
 
 def _de2000(l1, L2):
@@ -229,6 +230,7 @@ def skin_for(name, series):
     return series not in _NOSKIN_SERIES and not _NOSKIN_NAME.search(name)
 
 # vivo demais para a paleta estimada: vermelho puro -> F5 (o "r" que o usuário aprovou nas 24 cores); amarelo vivo nunca vira o amarelo-oliva (A1/A3/A15/B1/B18/A8…)
+_F8_LET = _A_LET[[c['code'] for c in _A_COL].index('F8')]
 _A_GREENBLACK = np.array([c['code'] in ('B11', 'B15') for c in _A_COL])
 _A_YELLOWBAD = np.array([c['code'] in ('A1', 'A3', 'A15', 'B1', 'B18', 'A8', 'H12', 'B13', 'B14', 'B16') for c in _A_COL])
 
@@ -239,6 +241,7 @@ def near120(rgb, allowed=None, dark=False, skin=None):
     if k in _near_cache: return _near_cache[k]
     l = np.array(T.rgb2lab(np.array(rgb, float)))
     d = _de2000(l, _A_LAB) - _A_BASE * 1.0
+    d = np.where(_A_ALIAS, 1e9, d)
     if np.hypot(l[1], l[2]) < 7: d = np.where(_A_NEUTRAL, d, 1e9)
     elif skin and not dark and is_skin(rgb): d = np.where(_A_SKIN, d, 1e9)
     # quase pretos: cor de contorno vira o PRETO (H7) e não "preto amarelado/esverdeado" (B11/B15/G8), que misturados no mesmo contorno dão um tracejado;
@@ -249,6 +252,9 @@ def near120(rgb, allowed=None, dark=False, skin=None):
     if not dark:
         h_, s_, v_ = colorsys.rgb_to_hsv(*(np.array(rgb, float) / 255)); h_ *= 360
         if s_ >= 0.78 and v_ >= 0.60 and (h_ <= 10 or h_ >= 350): _near_cache[k] = 'r'; return 'r'
+        # vermelho ESCURO e saturado (carmim do capuz do Red Hood, Hulkbuster, rosas do brasão, traje do Homem-Aranha): o ΔE2000 o manda para o marrom F11 (distância parecida) e a peça fica MARROM;
+        # com matiz de vermelho de verdade (h <= 8 ou >= 348) e saturação alta (>= 0,64: o marrom-avermelhado da jaqueta da Ellie tem 0,57) vira o F8, o vermelho mais escuro do kit (2026-11-03)
+        if s_ >= 0.64 and 0.45 <= v_ < 0.60 and (h_ <= 8 or h_ >= 348): _near_cache[k] = _F8_LET; return _F8_LET
         if 38 <= h_ <= 62 and s_ >= 0.50 and v_ >= 0.85: d = np.where(_A_YELLOWBAD, 1e9, d)
     if allowed: d = np.where(np.array([c in allowed for c in _A_LET]), d, 1e9)
     if dark:        # contorno: só cores escuras (L < 38 ou a lista de escuras) e o preto H7 ganha 6 de vantagem

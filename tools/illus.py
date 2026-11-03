@@ -84,7 +84,7 @@ def _nearest_pale(rgb):
     return r5._A_LET[int(np.argmin(d))]
 
 
-def _cells(rgb, mask_bg, size, over=8, dark_L=32.0, dark_frac=0.30, cover=0.5, trace=None, rgb_raw=None, pale_skin=False):
+def _cells(rgb, mask_bg, size, over=8, dark_L=32.0, dark_frac=0.30, cover=0.5, trace=None, rgb_raw=None, pale_skin=False, dark_map=None):
     """reduz a figura (sem o fundo) para até size x size contas: cada conta olha uma janela over x over da imagem grande.
     - conta vazia se menos de `cover` da janela é figura;
     - 'contorno': se >= dark_frac dos pontos são escuros (L < dark_L) a conta é do contorno (cor = média dos escuros -> letra mais próxima, com preferência pelo preto);
@@ -117,7 +117,12 @@ def _cells(rgb, mask_bg, size, over=8, dark_L=32.0, dark_frac=0.30, cover=0.5, t
         r = ''
         for x in range(nw):
             if nfg[y, x] < cover * over * over: r += '.'; continue
-            if ndk[y, x] >= dark_frac * nfg[y, x] or nfg[y, x] - ndk[y, x] < 1: r += r5.near120(tuple(float(v) for v in mean_dk[y, x]), dark=True)
+            if ndk[y, x] >= dark_frac * nfg[y, x] or nfg[y, x] - ndk[y, x] < 1:
+                mdk = tuple(float(v) for v in mean_dk[y, x]); l0 = r5.near120(mdk, dark=True)
+                if dark_map:           # rampa de cinzas (darkramp.py): o escuro que não é contorno (corpo azul-petróleo, cabelo azulado...) vira H5 em vez de H7
+                    l1 = dark_map(mdk, float(_lab(np.array([[mdk]], np.float32))[0, 0, 0]), l0, False)
+                    if l1: l0 = l1
+                r += l0
             else:
                 if raw_lit is not None:
                     _h, _s, _v = colorsys.rgb_to_hsv(*(raw_lit[y, x] / 255.0)); _h *= 360

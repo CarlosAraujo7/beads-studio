@@ -1,0 +1,4552 @@
+{
+"hagrid-chibi-pixel": {
+"sha": "26541bc0c7562e0ba3838564908f1edf72e3a0d0",
+"mapa": "reconversão +cur G7=F11,F10=G8,F7=G8,F8=F11",
+"data": "2026-11-03"
+},
+"megumin-pixel-de-chapeu": {
+"sha": "d026c7794fc4680f01ea76f4bb58ce52c20272c9",
+"mapa": "reconversão",
+"data": "2026-11-03"
+},
+"mona-lisa": {
+"sha": "ab5a29551464ce0a18da0cf14e77bec96371501e",
+"mapa": "reconversão",
+"data": "2026-11-03"
+},
+"jiraiya-chibi-grafico": {
+"sha": "67c0f270ed77500650bd47ca80a1794817425924",
+"mapa": "reconversão",
+"data": "2026-11-03"
+},
+"jon-snow-game-of-thrones-retrato": {
+"sha": "52564bb90fe86abb955905b8e875204537bd38af",
+"mapa": "rampa de cinzas (ramp_apply)",
+"data": "2026-11-03"
+},
+"darkness-konosuba-grafico": {
+"sha": "009e9e1c650a25c39af97e1ce6d7c3984dd58981",
+"mapa": "reconversão +over A1=A3",
+"data": "2026-11-03"
+},
+"inuyasha-chibi": {
+"sha": "a8a190174eb639e1805b2ff2b4f317f265992cb6",
+"mapa": "reconversão +over E15=E1",
+"data": "2026-11-03"
+},
+"dabi-my-hero-academia-chibi": {
+"sha": "e1b44e2d8b7ecb33979224fe816ed0aa559a0712",
+"mapa": "rampa de cinzas (ramp_apply)",
+"data": "2026-11-03"
+},
+"xenomorfo-alien-chibi": {
+"sha": "114e2349328475cfbd122335a91064586e559867",
+"mapa": "rampa de cinzas (darkramp.py): cinza no corpo, luz de menta nas bordas, dentes e costelas",
+"data": "2026-11-03"
+},
+"red-angry-birds": {
+"sha": "b2073018031d887b9c640076d8ab792a4e292e2b",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"koro-sensei-corpo-inteiro": {
+"sha": "a1f3e4a4e59ea8b9d373687ab8090edd0fd70fd5",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"koro-sensei-emblema": {
+"sha": "cfa9b4baabb4b94af420740c7b9afbfccd9e3e07",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"ezio-auditore-pixel-grafico": {
+"sha": "929d129764660abec33f125029a4c097c3d5e8dc",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"soldada-da-tropa-de-exploracao-attack-on-titan-pixel": {
+"sha": "e69047673b643624321fc9f5bfc71b3ceb20881b",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"tita-bestial-attack-on-titan-pixel": {
+"sha": "b24e15c080ff5d4817d862c20a727dfe07bd9635",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"tita-colossal-chibi": {
+"sha": "51ca6a335f9f52fbed48ef6bc25280bcf3dc7099",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"aang-chibi-dobrando-pedras": {
+"sha": "9919f23a5c3ab8e14d330bbda1285b7dfc0a47d1",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"aang-chibi-saltando": {
+"sha": "c1f1ffced878695f76e98eb669f2aa3500d6d89c",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"aquatico-ben-10-pixel": {
+"sha": "1cd9059ce4229250a37855bb624727b9f29741ba",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"omnitrix-ben-10-ilustracao": {
+"sha": "af5e4641a3a1829910b23dbc34356c05167bac82",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"asta-black-clover-forma-demonio-adesivo": {
+"sha": "3aefc10207e4118323f8ce4129345d6836e37c27",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"bruxa-de-cabelo-rosa-pixel": {
+"sha": "23beaf06a479678dab780efd991eed9a2ab297e4",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"guerreira-de-armadura-azul-e-lanca-broca-pixel": {
+"sha": "1bdb15fd46842ddfd1f5d6e34bf4893c8d14bd93",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"maga-de-cabelo-castanho-e-fogo-pixel": {
+"sha": "f74d8e6ae38d19611175e6310feb20b91e31c7bf",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"mago-de-cabelo-escuro-e-fogo-pixel": {
+"sha": "7e7380c18032bb877916151d8455f948a71e6b87",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"grimmjow-bleach-grafico": {
+"sha": "fe968b647e144399c5f9ed5f0a17e14b7d75e0e2",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"guerreiro-de-cabelo-cacheado-e-camiseta-branca-pixel": {
+"sha": "b282364c3325707fa1690a472c3ddafd756f2ba2",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"ichigo-kurosaki": {
+"sha": "4edbd2f4b588cc7497edf162e5f3225dc0bc9a95",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"ichigo-kurosaki-bleach-pixel-zangetsu": {
+"sha": "e2e90cd14f29e60dac06353135770363f9f32b35",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"ikkaku-madarame-bleach-chibi-lanca": {
+"sha": "37bd4af8d07bdf01e722a9741131e12d48d98254",
+"mapa": "rampa de cinzas (ramp_apply)",
+"data": "2026-11-03"
+},
+"jushiro-ukitake-bleach-chibi": {
+"sha": "af9076570c4938f46c60b057f708f98cbe0346fc",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"kenpachi-zaraki-bleach-chibi": {
+"sha": "ca179893f0d7c5f415723f7e9cf83eced02af129",
+"mapa": "rampa de cinzas (ramp_apply)",
+"data": "2026-11-03"
+},
+"kisuke-urahara-bleach-chibi": {
+"sha": "0af31c3934e6ce90c722f0bd022cbfdc58704a20",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"rukia-kuchiki-chibi": {
+"sha": "e7a329e1a14a6709b8bee4764a2cd6062910c385",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"toshiro-hitsugaya-bleach-chibi-katana": {
+"sha": "104b71fa3fc9a23865a0e7c9b7eae2a0440027a5",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"tousen-kaname-bleach-chibi-grafico": {
+"sha": "3b5e397a6611a9f860615bd80866d79644491d79",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"gary-pixel": {
+"sha": "91f6347528fc1da26f8bf2386b68fb3d0fe9f4d4",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"lula-molusco-pixel": {
+"sha": "dc8fe105ac438111f9fc2cdadab8f7a762ab9fc3",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"patrick-e-bob-esponja-pixel": {
+"sha": "a9c8c974f8ccf26c2a91ff7d87a262ba44d174c8",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"sr-sirigueijo-pixel": {
+"sha": "b2a91f711c21f13ff3f5e820bee18ac8eae92156",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"chibi-de-casaco-preto": {
+"sha": "e850a2aafba1ce84e40bed6f1b6db0a92119efe8",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"chibi-de-cabelo-loiro-e-olhos-pretos-grandes": {
+"sha": "3a45f9db4ab828d05f68166daeab175dd6711e51",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"homem-de-terno-pixel": {
+"sha": "1d897773f7675077c9e40210135e142eca8eb627",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"chibi-de-capacete-de-gato": {
+"sha": "064c715b6466453adba7e9ef678b940f43d1588c",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"bruxinha-pixel": {
+"sha": "144b48565f6ab481ad9d40cb2bedae6d2b92f03b",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"chapeu-de-bruxa-pixel": {
+"sha": "018dfed3a005b4682d203e10c213f6d755529509",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"demonio-vermelho-de-chifres-pixel": {
+"sha": "c8dcde7518e8e7ba617a90e8b443ba41cfe80c1d",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"espantalho-de-abobora-pixel": {
+"sha": "00d12fe8f98b9878ef40625d9721c3b59eb2d72a",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"lobisomem-pixel-grande": {
+"sha": "a399009d5001560e745a6255c1da282a73bcef7a",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"mumia-pixel": {
+"sha": "0eb582332aedde99093abe167b6cf18420cabd19",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"vampiro-pixel": {
+"sha": "cb0a2e6ac02619e02ddf8194b5362d5ecf8ed401",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"zumbi-pixel": {
+"sha": "6423dc95e5f0945e6ec705a53419ac4856958ebe",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"baleia-azul-grafico": {
+"sha": "6bd4374d53178bd0230749aac827a2581f5bd614",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"cachorro-marrom-de-lingua-de-fora-pixel": {
+"sha": "2f828f9d5b75d28be596a1f4457c14c83f383209",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"casal-de-esquilos-com-coracao-pixel": {
+"sha": "3632a0b8eb08f4c1bab264da9fff2636e4356418",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"coala-pixel": {
+"sha": "5ef533e97a58d7b0974d16a28ecb728d289c91ac",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"cobrinha-verde-pixel": {
+"sha": "e0f57a086608765d2ee71573765511449fe813ae",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"crocodilo-fofo": {
+"sha": "6ecdb2ff0726359a55afaf7539fce63543480848",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"dinossauro-verde-pixel": {
+"sha": "682a88ec9f89fb56fbf4ac7119c0b82cc715408d",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"dinossauro-verde-pixel-versao-2": {
+"sha": "bf61699901577999bfdf4b45f2b8e9f3a1acfef4",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"dragao-azul-pixel": {
+"sha": "1677b96f01e8c3817274ac5bb085d87a357b48c0",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"dragao-verde-de-asas-lilas-grafico": {
+"sha": "55a8ae778bcc677090b5a645c341452169113bcb",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"dragao-verde-fofo-grafico": {
+"sha": "5ad9ea5eb26373a16e31b2cbe70ee566fbd88fe6",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"dragao-verde-agua-chibi-pixel": {
+"sha": "4bf4ce5848de5b01a74fd2784bfa48abda4b9e0d",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"esquilo-grafico": {
+"sha": "6c2f5ba4e3214aab049744b70032673b8b7791dc",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"flamingo-grafico": {
+"sha": "473da24abc258faa3e1e1bd923ee3676c8b0c4c5",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"gato-banana-banana-cat": {
+"sha": "5dd16468ef10177f1db3e053cb9a22e834021737",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"gato-siames-chibi": {
+"sha": "144af42c82514fd3cdc5c650dfaebbd3547dc99b",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"gato-siames-ilustracao": {
+"sha": "f47753219123bbb89ee32d6c77bb81f32460ecb0",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"keroppi": {
+"sha": "1d1037f121c80d4510facb70ad0c6e7c2cc2934d",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"patinho-amarelo-grafico": {
+"sha": "b5055c3fb5bc3bc9493b93ab884bcc8dde2dfafa",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"patinho-de-guarda-chuva-pixel": {
+"sha": "0293cb6dc1b6ee41f23803ce09cab550957339e1",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"pato-real-grafico": {
+"sha": "c19bc1c54d44ff020c9e9a2576f34b81a87f661f",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"periquito-foto-de-peca-pronta": {
+"sha": "23f90faf44a1e9e389a4b04d1ff000328370ef17",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"raposa-laranja-grafico": {
+"sha": "a6837ab84d86809f5450c546232813b1b8c2c3ac",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"sapo-mago-de-chapeu-roxo-pixel": {
+"sha": "9605b5396f139c43aca11db11b7fdf73b9753c5c",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"tartaruga-verde-pixel": {
+"sha": "316c18137c344c75d896dfb3bff2280730aee067",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"tigre-pixel": {
+"sha": "adeebdef74f93bd7756c60b04254e91011cb6e21",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"triceratops-verde-pixel": {
+"sha": "6aaa49108804b41116315712020fd8bb8e3292f5",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"tubarao-fofo-pixel": {
+"sha": "a83c8d7e7f6b80c49b93bfbc26604730ffce798d",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"unicornio-arco-iris-pixel-versao-2": {
+"sha": "d3eac64a203c99edf6a994955736a01b2b963fe1",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"vaquinha": {
+"sha": "b1e0839371931ac59ff366204b27c4fc1a7690e6",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"planeta-terra": {
+"sha": "5cf7f6d30f3d60ba3909e49bc262392e954bbfc9",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"taco": {
+"sha": "9ad888d8342439e96ac8d70d0a931e64af8221d7",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"lula-estilo-mario-pixel": {
+"sha": "8ce196e8f007cf802b69cec6122cdbb3766793de",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"emblema-de-mascara-vermelha-em-chama-roxa": {
+"sha": "a69fc8da5ee13559b4f9892b14156a98aa6c90a0",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"retrato-de-homem-de-barba-malha-2": {
+"sha": "94418ed48d85cdc49d7b3be0760d7fe442061d59",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"jogador-de-futebol-loiro-pixel": {
+"sha": "9b7d2ac27ccc54a15598c76fa60e7c4cfe21fb7a",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"atirador-de-chapeu-e-bandeira-chibi-pixel": {
+"sha": "60e46e0e682c92b5a1a490fd875c2f94a46cfda2",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"broto-no-vaso-pixel": {
+"sha": "f2deb4015460027a47b3581e9fe3b957855f5c44",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"caixinha-de-suco-de-maca-pixel": {
+"sha": "078fa69df5f4a29dbe3fd8c224deaeb80e26eb22",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"cavaleira-de-armadura-prateada-chibi-pixel": {
+"sha": "f51b583633531de035504c5ef470d4df4585b1a2",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"cavaleiro-de-cabelo-preto-e-espadao-chibi-pixel": {
+"sha": "afae14fee61f98bf4f5e9545e15ec9a7e6319c5e",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"golem-de-pedra-pixel": {
+"sha": "3ec7c8ab67c9151cde51715fddb29cd946e4b8d9",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"guerreira-raposa-com-cetro-chibi-pixel": {
+"sha": "3a4e5acc5fb05a04c67ff89227a793ff94a01501",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"playstation-1-grafico": {
+"sha": "b9435f963aeb8cb1df4d119ad9f6625978660a5a",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"qilin-verde-e-dourado-contas": {
+"sha": "1e4afa9ca6b3bb93573af02390b8b1dfca8ff962",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"rosquinha-grafico": {
+"sha": "5afb76eab2e06022d0eef08c25e58be9903d100e",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"unicornio-contas": {
+"sha": "9108c8badbae47d83693855042678ddd03d55c8a",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"boneca-de-cabelo-listrado-chibi": {
+"sha": "e6d0fc589120de160686433479f93f98a784572c",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"camus-de-aquario-pixel-rajada": {
+"sha": "73e9787a03f421e7f45ba7e959c12a688f753ce8",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"hyoga-de-cisne-chibi": {
+"sha": "6ca27db0cd32872e251e1ea73e3afd44adabfdee",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"ikki-de-fenix-chibi": {
+"sha": "fc5b09d9c3285202307928353d16e92096fd414f",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"shaka-de-virgem-chibi": {
+"sha": "051283daf7586a287719fba31209167d29a73ba8",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"shun-de-andromeda-chibi": {
+"sha": "56997e28ee817211c935dba75bdcf221918ca4e3",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"shun-de-andromeda-chibi-corpo-inteiro": {
+"sha": "f1e0813bf7be68fd976eb6dc9d9a77ab2f684106",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"power-chainsaw-man-chibi": {
+"sha": "fe7160d78e22297f33c26f6cf2603cbd5b174335",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"chaves-no-barril-adesivo": {
+"sha": "6990d04bbdb509626e96326673840ff91f5d0f22",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"chiquinha": {
+"sha": "fdd958c986932132757c9bf13848bc4840b78ec6",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"menino-de-bone-com-bola": {
+"sha": "1ef4ddd0abbb301dd6758704c35b626cf7a8cd5a",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"kiko-chaves-ilustracao": {
+"sha": "8f9d2aef8f7447f004e0ae9c940839c7278daa10",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"c-c-code-geass-chibi-versao-2": {
+"sha": "500636ac8a6aa7860d6ffd7e253746ae2b3f2d39",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"c-c-code-geass-desenho-sobre-a-grade": {
+"sha": "02348d572496a7645cb151faf672e24194756284",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"lelouch-chibi-traje-de-zero": {
+"sha": "39877a1a5a81ab3ed42d2f4507f79bb52c5dc974",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"banguela-chibi": {
+"sha": "63ec91df30b4489fdb5073e2592fa974f3c36017",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"coragem-ilustracao-assustado": {
+"sha": "94f61c06c1555f550e8329431935eb6b78a16b73",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"coraline-contas-redondas": {
+"sha": "55e626756119977eea1eda9877bdaa6e6f74b1a0",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"crash-bandicoot": {
+"sha": "7ad5126d54a7816f1b97719fedaf4af2b29cffa1",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"allen-walker-d-gray-man-grafico-olho-vermelho": {
+"sha": "548090cb2ae38313db9e8423bda94af0d2fc5af8",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"allen-walker-d-gray-man-pixel-braco-de-garra": {
+"sha": "7922db225fad78978993c31f962e4410be878d06",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"garoto-de-oculos-redondos-retrato": {
+"sha": "861577a8a3a577065aeb3aac82be5e6b2b1f453f",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"kaiju-de-juba-branca-chibi": {
+"sha": "b07fd98b0500dda0684de589697d3096abb72b32",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"batman-chibi": {
+"sha": "6fb803abfb75d604d93017ccb434512af46fc9eb",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"batman-pixel-capa": {
+"sha": "7f123f7b0b73685a39362feffe0070dbcbff6f08",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"flash-chibi-pixel": {
+"sha": "243ea39da769505ad902045a954581cdfa3083ec",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"lanterna-verde-pixel-corpo-inteiro": {
+"sha": "7ce00ea709dc10061517b4edd5dba42d51d8b31b",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"logo-do-superman": {
+"sha": "0b36f864bad11d30e37ebf5ab6761d26f36b4c8a",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"mulher-maravilha-chibi-pixel": {
+"sha": "e79ee2bb798556420f7bd89169fb25fc6729753d",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"red-hood-dc-chibi": {
+"sha": "023e77b0559d0aa83c6341780b80dfb06eaa58a9",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"zoom-dc-pixel": {
+"sha": "94a26052b0ff9595ef43e08f04409af65ba8ee2e",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"ryuk-death-note-chibi": {
+"sha": "97362a432a2493638607faa3019f258bd9c08d6f",
+"mapa": "rampa de cinzas (ramp_apply)",
+"data": "2026-11-03"
+},
+"giyu-tomioka-chibi-pixel": {
+"sha": "53a02d93429ca5707b8894a6fab491b7d58350d6",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"kyojuro-rengoku-chibi": {
+"sha": "956e85af45d8873e05078331f5b9c1fab7e9fcf2",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"kyojuro-rengoku-chibi-pixel": {
+"sha": "8424b8fc628939e84500249036f1e095d241eb91",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"muzan-kibutsuji-demon-slayer-chibi": {
+"sha": "301501450bcbea895214cbd07ebd9701fc3c1c18",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"nezuko-kamado-pixel-grafico": {
+"sha": "c0ec5e89496ac9f3e908aa91d498042d9179d1bc",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"obanai-iguro-demon-slayer-chibi-adesivo": {
+"sha": "6d64fe60e8739d035e10af6c783c128b4149fb30",
+"mapa": "rampa de cinzas (ramp_apply)",
+"data": "2026-11-03"
+},
+"obanai-iguro-chibi-pixel": {
+"sha": "e161093c8560c2432eb0ca0e53d5a4244cfeafcb",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"shinobu-kocho-chibi": {
+"sha": "e19b9b060da15d8684fcea27f67e52bff868edfa",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"tanjiro-kamado-chibi-grafico": {
+"sha": "083e66be6665d287d93a08b5470d16ebed090c30",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"dante-devil-may-cry-pixel": {
+"sha": "37440b012d52c833d2d3e9fae2a1b405f3736703",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"carro-azul-carros": {
+"sha": "ed037f14fe777d0119aeb92ebb7a729f9406b9e1",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"malevola-pixel": {
+"sha": "533a8522e770629bc2803fdf7540f41da242b458",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"merida-valente-pixel": {
+"sha": "d338c196456b5b2eb00b8243cf983c32daaa1988",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"stitch-rosto-grande": {
+"sha": "748b9f7c7b556a523fabb137d9bae816c3454596",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"nojinho-divertida-mente-grafico": {
+"sha": "48fcc5bf10fc9528724d08550a3dd52808303db1",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"tristeza-divertida-mente-grafico": {
+"sha": "3940b37f24456d9142d0d8a36d2d9c8679600879",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"chibi-de-oculos-escuros-com-guitarra": {
+"sha": "e12c84549dc8ab1e35a2acedf9a96095f7ff2160",
+"mapa": "rampa de cinzas (ramp_apply)",
+"data": "2026-11-03"
+},
+"doctor-who-chibi-e-tardis": {
+"sha": "06d9b97732d691f4795c23734d9398ea02d26257",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"diddy-kong-grafico": {
+"sha": "61cfb2b1ce14da51f9da073e79819387d28cdb21",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"donkey-kong-grafico": {
+"sha": "70787cdaac31d51ea7adad55b8c6b838ca22b2db",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"senku-ishigami-adesivo-soco": {
+"sha": "38ff9461a57d59b897f0eb48b17d31c2135cdf2c",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"bardock-super-saiyajin-pixel": {
+"sha": "054ef83960d2cae3533e983dbb3938919298c80b",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"broly-dragon-ball-chibi": {
+"sha": "e214aea46939ac5c705330bf129f7f377458ad02",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"esfera-do-dragao-de-4-estrelas": {
+"sha": "1df711ef2819e6271c56c36b8a24802e5e723b8b",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"gogeta-super-saiyajin-4": {
+"sha": "f4ed794af026546d9f4ba06559386f48047ad78e",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"gohan-dragon-ball-chibi": {
+"sha": "5d8a2f3c23dc29f5d6d9a8a9ee1ca1c07bbb3d0a",
+"mapa": "rampa de cinzas (ramp_apply)",
+"data": "2026-11-03"
+},
+"goku-chibi-pixel": {
+"sha": "c0cdb46f9e6e09f21ec4bd2a012d5c4d048799c3",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"goku-em-pe": {
+"sha": "0f46129bc02c5ac58d27a961fa460427610b2fa8",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"goku-retrato": {
+"sha": "c3cee1efa43a004dd59fd1592364043467b26a6d",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"goku-kaioken-adesivo-pixel": {
+"sha": "efe387ac3f0556741f262b9c29bfcf76b12a4b25",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"goku-super-saiyajin-4-pixel": {
+"sha": "758426c64176d079f9a51909be4b0f2b1a225ef3",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"goku-super-saiyajin-4-limit-breaker-pixel": {
+"sha": "9833524971d30303b6b998ae0ba1be560f4b5d62",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"goku-super-saiyajin-blue-aura-pixel": {
+"sha": "ddaab303720b3f7da13fc17c31b846576827112b",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"kuririn-chibi": {
+"sha": "17e5a0b1d2bfb42ee54e5ccdbb9e87af54af61fa",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"mestre-kame-grafico": {
+"sha": "1870a8ace2d51783288f838efd6c40c217069f59",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"piccolo-dragon-ball-pixel": {
+"sha": "520880b6903e01e4ce7402cba08a789d31e7b1f8",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"radar-do-dragao-dragon-ball": {
+"sha": "97ea4eb60462c9e6a134cf6ffdd8c4f5f5756ab9",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"shenlong-dragon-ball-chibi-pixel": {
+"sha": "9642ee7c3f6103c3027957ccf0197adfdf903163",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"shenlong-cabeca-grafico": {
+"sha": "c93c0ac1698559c9cd0c050690de5ffe09f1f9aa",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"super-buu-pixel": {
+"sha": "b8ee99f23a9f42850d0e3597c60b06c26dd37fd6",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"vegeta-super-saiyajin-blue-pixel": {
+"sha": "7be7f6441f093e1914d09e7195d9ddb37bcb989f",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"whis-dragon-ball-pixel": {
+"sha": "e8ccebfa23974d3648056e260139319a082e05ec",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"coruja-do-duolingo-versao-2": {
+"sha": "f15dc93d441c1998824935be60a6f5f7c8a937f1",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"esfinge": {
+"sha": "058a1b9380bbe3da367c077ea6a71dcd303fedb6",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"farao-mini": {
+"sha": "75c1328a87a859d0250fbacb568a77e9e71ab5c4",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"olho-de-horus": {
+"sha": "8f3c529b8a6f2868fb48d838c95d44a6f4063497",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"piramide-egito-antigo-tijolos": {
+"sha": "3462cf85a2c9f84143f17cec1a9b90d57bcce30a",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"lucy-heartfilia-fairy-tail-chibi": {
+"sha": "2983359306e8c04ef048c94e75e94e59e6099bf5",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"natsu-dragneel-chibi": {
+"sha": "e3a204a055ac30ab95cb884094153dda5151962e",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"vault-boy-fallout-grafico": {
+"sha": "63d4b1fcb22b83e5c0d8aaa28f7073f0e45c664d",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"fern-frieren-contas-redondas": {
+"sha": "8e453e4fe385422bb8a6e5c4e5b076bec5e9041e",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"edward-elric-pixel": {
+"sha": "15a5ee0d4ef63955f90058bae68d935e3daea95f",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"roy-mustang-fullmetal-alchemist-contas-redondas": {
+"sha": "2de55dae148c9a2bf6259db97ed89e891ab5e2dd",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"kratos-god-of-war-pixel-em-pe": {
+"sha": "75bc5c5fe9bf9b4edccb60c72954a0446ab787b8",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"dumbledore-chibi-pixel": {
+"sha": "0fc1c727ef975ccb72778adce799d9dfbdc39471",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"harry-potter-chibi-grafico": {
+"sha": "2e4edf81f0145f5bd6c36d3962ca7241e94c7219",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"hermione-granger-pixel": {
+"sha": "34c7befe704cff6f163e5dd8ec4b194b8bc77ae9",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"professora-mcgonagall-chapeu-grafico": {
+"sha": "72f575bf9a734e5b44dba2b97450616e23814ccf",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"professora-mcgonagall-pixel-corpo-inteiro": {
+"sha": "2f6bb349317cd0cd3faf064fa0dbbaecdbdcb352",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"hellboy-chibi": {
+"sha": "1f222f61f5bdccfb509b3b3a8127f616f7a41d1e",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"cinnamoroll-sanrio-grafico": {
+"sha": "fcfceca3dfb17bbbcf5a2685428055372222ef76",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"hello-kitty-de-luffy-pixel": {
+"sha": "36ff9437ec3945b969bf3c0b1437ac9e18c63301",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"hello-kitty-zumbi": {
+"sha": "8355a2404a08510b1d2e08307b7bb8197ea08c47",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"alucard-hellsing-chibi-pistolas": {
+"sha": "b8a51ef6b1fff34cff376fefc843e9d0338b41fd",
+"mapa": "rampa de cinzas (ramp_apply)",
+"data": "2026-11-03"
+},
+"alucard-hellsing-chibi-sentado": {
+"sha": "75d8c0e26ad5eb2641a87abd802f3fea5ccfc70b",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"bmo-pixel": {
+"sha": "518fac40c7625f5e43c310c2de918b3654c6a062",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"jake-hora-de-aventura-grafico": {
+"sha": "9897b93b8389487a262c594845c8c4ea831d08c4",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"lady-rainicorn-hora-de-aventura": {
+"sha": "91fe473bef91bd832486d30df2530912a4568767",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"chibi-de-roupa-listrada-verde-e-roxa-sobre-uma-tabua": {
+"sha": "c506b0b3e170ba24ee8438cb0fe38ed455747c5e",
+"mapa": "rampa de cinzas (ramp_apply)",
+"data": "2026-11-03"
+},
+"killua-zoldyck-chibi-grafico": {
+"sha": "1895f7651fc06b0ef9fd7ceaed49520f68d9df57",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"kurapika-chibi-espadas-de-madeira": {
+"sha": "a862623a262143e7c7d2eecb5727f4b2878b4350",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"endou-mamoru-inazuma-eleven-mugen-the-hand": {
+"sha": "ba32409e97180776b49ed3603fa19a86b419f636",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"ichirouta-kazemaru-inazuma-eleven-shippuu-dash": {
+"sha": "6c36eb560e79d03e441aa1e5a0e5c9d2867a6921",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"yuuto-kidou-inazuma-eleven-chibi-explosao": {
+"sha": "ef11b67b73507466e1a2eaf708cfbc9a1ad5d921",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"yuuto-kidou-inazuma-eleven-oculos-e-capa": {
+"sha": "502375a193a79fdcfddebad9d21f39bd4fceaedd",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"pennywise-chibi-balao-versao-2": {
+"sha": "79aea58e850f4d106855d0921a0a8bed2919f5e4",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"john-wick-com-cachorro-chibi": {
+"sha": "a8254e8a37c56c31c20de05fb8aa259b70fae2b3",
+"mapa": "rampa de cinzas (ramp_apply)",
+"data": "2026-11-03"
+},
+"estelar-jovens-titas-grafico": {
+"sha": "189338b8514a4e3d89a0c5df82c60cddc4614270",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"mutano-jovens-titas": {
+"sha": "89b611e2ac66f42b88c06dad83d987e6ff67834a",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"robin-jovens-titas-apontando": {
+"sha": "da959218feaf983ffe5bda6ae429c4407814b2e2",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"robin-jovens-titas-grafico": {
+"sha": "5857e26c72f9bbee758e6ae3f98457fcca2341dc",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"gojo-chibi-roxo": {
+"sha": "049c8d35968ca8d51b1f191cc09dc2f28a7bee35",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"kento-nanami-jujutsu-kaisen-chibi-correndo": {
+"sha": "f2964aa5c1abcc13d707165b8753ffd1a6676209",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"lutador-de-cabelo-preto-e-gi-branco-pixel": {
+"sha": "38eaaa07d0b8951619c1e2f5fce994bc7ff27de4",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"megumi-fushiguro-jujutsu-kaisen-pixel": {
+"sha": "6af3c777afe820050f58535814e766486be1a61d",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"kaiju-n-8-chibi-sentado": {
+"sha": "c34ae26e7d3871fde53af195f35dfa779e39455d",
+"mapa": "rampa de cinzas (ramp_apply)",
+"data": "2026-11-03"
+},
+"gokudera-hayato-katekyo-hitman-reborn-chibi": {
+"sha": "ff179b463e96f53c1ede48c5909b3d5ccc9716f9",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"lambo-hitman-reborn-chibi": {
+"sha": "f67b6a961865eba7bb1fbfbb4d11ba3c8ec77e05",
+"mapa": "rampa de cinzas (ramp_apply)",
+"data": "2026-11-03"
+},
+"tsuna-chibi-capa-preta": {
+"sha": "29f27e46b1fbc1cf36347ece05d52eb76ad99138",
+"mapa": "rampa de cinzas (ramp_apply)",
+"data": "2026-11-03"
+},
+"tsuna-chibi-chama-na-testa": {
+"sha": "b4eedb944ca6f9250d5806cf50df65016b68653a",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"chibi-de-cabelo-castanho-e-capa-azul-pixel": {
+"sha": "7f83d05b30aba51840a059eaec59a6c5026ae2a7",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"darkness-konosuba-pixel": {
+"sha": "c4c2a98d533b2706f9847861c4c9335c0dd4db92",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"megumin-chibi": {
+"sha": "9c1e8725aa2fd27b379df4ca55b2a8a50be5e39f",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"panda-kung-fu-panda-chibi-adesivo": {
+"sha": "49c8d0741ede0c635783353d88a1978104c35238",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"po-kung-fu-panda-chutando": {
+"sha": "77aed63c1b3b6ef4c93330ac7ff8edc10d2f3d82",
+"mapa": "rampa de cinzas (ramp_apply)",
+"data": "2026-11-03"
+},
+"po-kung-fu-panda-corpo-inteiro": {
+"sha": "90120e2856e97d1f8eb79f6953fef38f1e41e4fc",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"stitch-pixel-versao-2": {
+"sha": "cf87691ac7972e714e88d2bde12f2977b8ac209f",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"stitch-sobre-livros": {
+"sha": "35d0793a42d6e17ee757b8723c7f61e7567b4519",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"toad-mario": {
+"sha": "8c4432c556e43e4d2a3b97247943fc173f5ef7e9",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"yoshi": {
+"sha": "5a8ac9074c71bbe943efdbb199c6cefc7292cd2c",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"deadpool-pixel-corpo-inteiro": {
+"sha": "2be9a8d45c98da28d86748cf080e5e24fc37e7cb",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"doutor-estranho-marvel-chibi-adesivo": {
+"sha": "8481bb070d7f9961eebbe7390e01a29991b41d54",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"doutor-estranho-chibi-pixel": {
+"sha": "24fc3170e79d321cbab749ff51055dfec588ce72",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"homem-aranha-chibi-classico": {
+"sha": "9228659d2dc286df3f85a6374f246ac82f6a52e0",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"homem-aranha-de-ferro-grafico": {
+"sha": "8c0dd6e736ebe84e2c5d73787a15f714ad203d14",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"hulk-marvel-pixel-corpo-inteiro": {
+"sha": "dc7ce42224d76dffed60901e0e0c3971ee16c9e7",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"hulk-chibi": {
+"sha": "8fa98dfd589e6d48aac28a69290b18d94a95ac25",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"loki-chibi-pixel": {
+"sha": "34776ce316dfe1e2a316b3778a2135d4ee2b85f0",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"reator-arc-homem-de-ferro": {
+"sha": "1b858d9a5b6ecd869cd2fb13a1a81deceabb9efe",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"visao-pixel-voando": {
+"sha": "1f6f8024a30d61db0e18ecf2ca467adef1ed1d49",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"wolverine-logan-chibi": {
+"sha": "5b9ccd1f282619a8e25ee16ea71934ad8bfcf024",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"wolverine-marvel-grafico": {
+"sha": "c468f87400cbe05d83566db482b62dd98644f069",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"wolverine-mascara": {
+"sha": "0e26a59a8ec806afa446e083f3d9bc0911982478",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"mega-man-x-armadura-ultimate-pixel": {
+"sha": "4ef64c8ed9eb998254d475228fafbae372bda9bc",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"docinho-meninas-superpoderosas": {
+"sha": "2458c73666d9943d455b989e443c80b36989bfe0",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"docinho-meninas-superpoderosas-ilustracao": {
+"sha": "89d8e407f251c11b0a0f126ec7f053f146fbbfc5",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"florzinha-meninas-superpoderosas": {
+"sha": "f98cb4fbdd12fc6b3c54de9a37dedc47efcc2780",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"lindinha-meninas-superpoderosas": {
+"sha": "190cbfdc6469d409cde11142228e68cdc80c1783",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"lindinha-meninas-superpoderosas-ilustracao": {
+"sha": "ce09865012454e4c1268ccaa8d85e5cb89c702f7",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"meninas-superpoderosas-trio": {
+"sha": "dbf51b2c8dc585550972b2d3d5886e1140e4e4f5",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"armadura-de-diamante-minecraft": {
+"sha": "b9f199520c01f36385b2676d0d259af457f9b8ce",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"espada-de-diamante-minecraft": {
+"sha": "bc19003e626dd477f07d1674d1cd61f37ec710a6",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"espada-de-diamante-versao-2": {
+"sha": "060bf1b7bc303ce10bc9438d297cb543e5e58baf",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"steve-minecraft-grafico": {
+"sha": "5cd393f64bccc57e4873446862cdc9410e9bc4f7",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"sub-zero-mortal-kombat-pixel": {
+"sha": "9aa80f1c7e15c1af00ac59577904a14f849c418c",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"all-might-forma-magra-pixel": {
+"sha": "c4233af6d76bf2bd37790743ada13640d2202bef",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"dabi-my-hero-academia-chibi-pixel": {
+"sha": "9377c8c84c3452b16ff40ab761bf90eddc0bb183",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"endeavor-my-hero-academia-chibi-adesivo": {
+"sha": "7177ff387f1abda23e1096a44bf725785afe6b98",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"endeavor-my-hero-academia-pixel": {
+"sha": "e8543e1c2428b8dc72bbea5c245591196b15b17d",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"gran-torino-my-hero-academia-pixel": {
+"sha": "518f471a7ddbff9aaa40965bad22a41e4777a0bf",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"stain-my-hero-academia-pixel": {
+"sha": "49b5b2ef0a7f73a6daeb296ded3e0b780bde33dd",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"tokoyami-e-dark-shadow-my-hero-academia-pixel": {
+"sha": "faed565dfee1b174302615134d439caa7d552797",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"velho-de-manto-dourado-e-tapa-olho-pixel": {
+"sha": "ead2a67e29b52d5c66374e1378fa5ad7a77096ef",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"rainbow-dash-pixel": {
+"sha": "a6672acd96a4f76716aba3452cb6cbe67f26cd59",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"ban-nanatsu-no-taizai-pixel": {
+"sha": "8821286799320f4abca6a6bcf3d3317421c33e20",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"meliodas-nanatsu-no-taizai-pixel": {
+"sha": "738687ad051402185583ea6b226ae5dc19ef2478",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"meliodas-com-espada-nanatsu-no-taizai-pixel": {
+"sha": "33a3aee2a88546ad58dc2a27f838903bb6d27a4c",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"esfera-vermelha-manchada": {
+"sha": "c7dac1ef5da9def82a7c61c2e0dd86ae52183c0c",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"jiraiya-chibi": {
+"sha": "5239e66a6d4b7a01d5b09b6a7f7b3a5a2cd1ac49",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"kakashi-chibi": {
+"sha": "1b2146479de8b3e0d561233e807b95891faf1a3d",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"kakashi-chibi-com-livro-pixel": {
+"sha": "5d37bcc60f01cbefe21f1a8344cca0544553df2f",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"kakashi-pixel": {
+"sha": "4a8c11de2e9df2c552022c3656c6810dfb9ad6e9",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"kurama-raposa-de-nove-caudas": {
+"sha": "bf5520dfdb17d096c17fd9e87ab89a8d05119e31",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"naruto-cabeca-chibi": {
+"sha": "540e12b7d9b18fe3d2fab980e0a54297996b5ac1",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"naruto-chibi-com-rasengan": {
+"sha": "2d279a1967c1c84a9b84f6bd1eb4c9925132fb7d",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"naruto-chibi-pixel": {
+"sha": "f5b0fdae13fd94fe277b53964ce854ec9444e454",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"naruto-modo-sapo": {
+"sha": "d3518d995d98dabbee55ae09fc2e682b01edb885",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"sakura-haruno-chibi-de-corpo-inteiro": {
+"sha": "50de9b0ec4530cddfad584bcbee8902599d9355c",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"sakura-haruno-chibi-cabelo-longo": {
+"sha": "37f7866c7c65db8fd8e48ec2b8420fa3744839e3",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"sasuke-chibi-cabeca": {
+"sha": "3c8a57014828851d277062c7849e06c8f6309775",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"sasuke-uchiha-chibi-grafico": {
+"sha": "845bdc476b45f47f72102858a4182e66ffc8c865",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"pequeno-principe-e-a-raposa-grafico": {
+"sha": "d404c67d3348b3a515e473b11f7c53443abc8eda",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"hannibal-lecter-chibi": {
+"sha": "0e42a25fefe2f62f377e4259d665451585ec095c",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"ace-chibi": {
+"sha": "6d6d0151336aa912394c4f77aa4c3b3be975af20",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"ace-chibi-grafico": {
+"sha": "41172110d877da9b1073f31ee6eed20548900d63",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"akuma-no-mi-padrao": {
+"sha": "e3f2f25de8ce9f2d92fc836b0aceb67a4b010024",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"barba-branca-edward-newgate-one-piece-v2-contas-redondas": {
+"sha": "6e68056afc1fcca428ae3be7f8c77586f8296ae8",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"barba-branca-one-piece-chibi-pixel": {
+"sha": "656b9fbc797785614d3a12ef469f06eeb0c49e3c",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"barba-negra-one-piece-v2-contas-redondas": {
+"sha": "dbf223e633096c78b8aa77ad3dffa97f21c39a03",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"brook-one-piece-grafico": {
+"sha": "4e74560bdb6dd08423a10041c1ca6d4e806f28e2",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"chopper-one-piece-grafico": {
+"sha": "6f46396c2b6bfd029b55e1e1c475cfc10095c237",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"dracule-mihawk-one-piece-chibi": {
+"sha": "51724dd0e4c3d86e89191d96a1b6b828ab5a5a09",
+"mapa": "rampa de cinzas (ramp_apply)",
+"data": "2026-11-03"
+},
+"emblema-do-sol-dos-chapeus-de-palha-one-piece": {
+"sha": "e428257bd17a94bbed67c93484b219d14cd20360",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"going-merry-one-piece-grafico": {
+"sha": "2b67f6954a3d459b9854a8bc882a63625912c6ce",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"kaido-one-piece-v2-contas-redondas": {
+"sha": "d756d5a8f228ada9f032ae27c9b6bf831e2dd24d",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"luffy-one-piece-grafico": {
+"sha": "4da8f4b934ddc6b8c8451365b84c1877e827421e",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"luffy-chibi-grande-pixel": {
+"sha": "5bac95b38a9bcc38f29072a97474e94b1026b660",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"luffy-gear-5-rosto": {
+"sha": "0aaa0ed6b6c8dee2c700ed75d04a9cdde988b073",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"mera-mera-no-mi-one-piece-pixel": {
+"sha": "b619b3fdb6d1f5b008a2ee90300bfb90c0a05726",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"monkey-d-garp-one-piece-chibi": {
+"sha": "a64efd6f4a905fa99edc37867d6c91ec53dcc75b",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"mr-2-bon-clay-one-piece-v2-contas-redondas": {
+"sha": "b49bf57e10759ae9fc68119e5cd3ba34d76e43e3",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"nami-one-piece-grafico": {
+"sha": "e33fbbbc7cca1b85f1fb09a324e4e1e44169869d",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"portgas-d-ace-one-piece-v2-contas-redondas": {
+"sha": "78d899db1399974b36fa1278d14f1027d61a540b",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"sabo": {
+"sha": "6b714a7c245127381fe6fa232d430d8351de2cb7",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"sabo-one-piece-v2-contas-redondas": {
+"sha": "a5e4f561a9d9bcc3ddca48cd92c433fa512a47e9",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"sanji": {
+"sha": "acb3ea825e86bf4533945f4a11e0c90f185cf154",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"sanji-one-piece-grafico": {
+"sha": "091f27c6beb61fa4a9158e4c261d0c5e1c2f883c",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"sanji-one-piece-perna-em-chamas-pixel": {
+"sha": "6dcb429054d4f1b3035c83b37d6a04c3086eccbd",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"sanji-pixel-fumando": {
+"sha": "d62efe6cfd1f3def7145c9e8f04e683d1c583c7a",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"shanks-one-piece-v2-contas-redondas": {
+"sha": "bdd5ed65c70fd8196a3545dbaaef8aa8e2a1ef17",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"thousand-sunny-one-piece-grafico": {
+"sha": "8cbce069866522f861d21483db164a7875dd8351",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"trafalgar-law": {
+"sha": "a816adac3b2558400f8684822908cd29ebb27ae5",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"trafalgar-law-one-piece-v2-contas-redondas": {
+"sha": "e2c96b23febaf62d0ac400e69521c933f033bf28",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"zoro-chibi-versao-2": {
+"sha": "b00c01495780bfa2d1a5da3b753c84c3c6f238a0",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"zoro-pixel": {
+"sha": "bada97d774db4b435c14d7345b742f653a5f6913",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"saitama-one-punch-man-chibi": {
+"sha": "af94578073baa550a1a942a7f08f6cdf07160d64",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"ceu-dividido-noite-e-dia-pixel": {
+"sha": "ee26d2dfa23986e012369ec6416c55c67b7d63f2",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"porta-aberta-com-olhos-pixel": {
+"sha": "44241e4aa8592511b71f951fde4cd31dfa619bb2",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"praia-com-tartaruga-pixel": {
+"sha": "3e1d7cd52dfe2fee0293a1f5ec800de882670692",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"annabeth-chase-pixel": {
+"sha": "d24c9ade56aeebb39aa408b3909cf509e519946c",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"percy-jackson-pixel-com-espada": {
+"sha": "9291c228448e27c0071df9dd521e36dd2cc072c5",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"perry-padrao-de-lado": {
+"sha": "1b0b1601f98f53d6f71be6a6b374b83917522965",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"perry-o-ornitorrinco-ilustracao": {
+"sha": "2440dcacd9dc9c038af0fbe7f43f8c1f4700cbb3",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"perry-o-ornitorrinco-ilustracao-pose-2": {
+"sha": "46e1e43a2049e5b5b8728fb8a3f2a9b7ff8ac89b",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"cattail-plants-vs-zombies": {
+"sha": "933c850d3805ca1ad82988a26f249e2ab150b944",
+"mapa": "B8=B5",
+"data": "2026-11-03"
+},
+"girassol-plants-vs-zombies": {
+"sha": "13e69a4f203213043055c453828f73324b008969",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"peashooter-plants-vs-zombies": {
+"sha": "1f27c1f9e630b05b5639f2740b7de02bc06dbde1",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"zumbi-com-placa-vermelha-plants-vs-zombies": {
+"sha": "ed43de4551fcdc70e94b3029ca3b04eeb174ec21",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"ash-ketchum-chibi-versao-2": {
+"sha": "278905b516cab50aa16b6e3413434ab96387de60",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"ash-e-pikachu-chibi": {
+"sha": "3ee14d111ddaaeb645f142061b387d27292a4852",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"bulbasaur-pixel": {
+"sha": "910e5df9ed6bd8fe53fc159dbeb98872c268e56f",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"bulbasaur-versao-azul": {
+"sha": "8ffe204348ff11abefa1021d8e678f8b674622c1",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"charmander-sprite": {
+"sha": "b3e458cbf1cc96d48f7c290543b2f5e872faa02c",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"charmander-versao-2": {
+"sha": "a265760bcbfb73737c1d0752d251f2b5acc9e19c",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"criatura-amarela-e-marrom-tabela": {
+"sha": "b1760e25ad78825560c7cc3d5b9b07932e822f00",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"eevee-na-pokebola": {
+"sha": "a96f77630d54fd35b6f07b964d664fcf8f855a7c",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"espeon-na-pokebola": {
+"sha": "9dbbae1042c205b9043654921ea158ef18056d20",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"flareon-na-pokebola": {
+"sha": "ad99d686059601ab9cab638d42a39d84aac82163",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"gengar-padrao": {
+"sha": "135f283cc07349c5fcfb7f29afebd9408e5e2e44",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"glaceon-na-pokebola": {
+"sha": "5e99d3b71d827cfb78afa2df42ead82865961726",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"groudon-primal-pixel": {
+"sha": "836ea22b0fd7ecb9858dba864af33c0eb27a054a",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"raposa-branca-de-caudas-vermelhas-pixel": {
+"sha": "c9ae613b9cdad95cf33368df50ea595b664c8858",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"ivysaur-pixel": {
+"sha": "6b508c3c57680a02425340c099c28f2ba56f0a3a",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"james-equipe-rocket-pixel": {
+"sha": "3160b35a3f0ffec1dca6fce1ec357afd9f6c9c17",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"jessie-equipe-rocket-pixel": {
+"sha": "352677c4b95af46bb4826983cf2abc3b67b9cb7c",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"jigglypuff-ilustracao": {
+"sha": "b40960e045fcfe0ba651b9f9174b68ca764e8a78",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"leafeon-na-pokebola": {
+"sha": "19f6e4e6e124894481550665e97bc7445e57b250",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"lucario": {
+"sha": "4334b426840bb37fde456a68a95b79660f7858ac",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"meowth-equipe-rocket-pixel": {
+"sha": "2b48791cd3e9eec99b5ea0e830068165630e775a",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"mimikyu-padrao": {
+"sha": "97c869f9ad5d808e071d66610eca44ae296a9c7f",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"pokebola-fundo-amarelo": {
+"sha": "bad71e11c38e1692be0961ff5140b46f3336e485",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"rayquaza": {
+"sha": "a005b63572b43e5169e825595038d0b25dde4f56",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"red-pokemon-treinador-pixel": {
+"sha": "59dcf4fa6aed1abdc4745b4c70ee9e45ad8a29bf",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"snorlax-de-batman-pokemon": {
+"sha": "38d432e3ae025cb43fc8be421d4f5902a78ed46d",
+"mapa": "rampa de cinzas (ramp_apply)",
+"data": "2026-11-03"
+},
+"squirtle-ilustracao": {
+"sha": "cbfe04a2430051c46d7611a46f781b72b0762519",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"sylveon-na-pokebola": {
+"sha": "a9de7a2cc75620f6736d457621cc7208b63c6782",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"togepi-ilustracao-versao-2": {
+"sha": "486a5dae51ada3d5da44d8395cefb55389945fb4",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"tyranitar": {
+"sha": "31ef358d4e3c5e98c824318b9ea7c32a0fa2d7ee",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"vaporeon-padrao": {
+"sha": "f288a517670e3bc957f3157ece873bc4b9e1ee86",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"vaporeon-na-pokebola": {
+"sha": "a880888907774f56093b39982868591c9aa1d955",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"pou-padrao": {
+"sha": "8dfe4ebeff60ef6b3f35dc8db3023b7db6036ad2",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"power-ranger-verde-chibi": {
+"sha": "e51631cea4a169d0ec1ad13e691461bcc886700b",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"power-ranger-verde-pixel-corpo-inteiro": {
+"sha": "8219c9c05fad8cfe8499009655a877cd336cc8a3",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"remy-ratatouille": {
+"sha": "bb6b8d006d894733668ece054da5ff559c59032c",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"beatrice-re-zero-chibi": {
+"sha": "4e2c60cf8c9b325b5dcdbf543093cdd799a20d4f",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"subaru-natsuki-adesivo": {
+"sha": "6056e32107c04a0f8ba233fe58f9f337c4887515",
+"mapa": "rampa de cinzas (ramp_apply)",
+"data": "2026-11-03"
+},
+"arthur-morgan-red-dead-redemption-ilustracao": {
+"sha": "ba19557f04dbe66877e9f8d4523bc8c99a3cc9ee",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"jesus-chibi": {
+"sha": "14606f789422b5dd9e4c12697da1a40d12d08078",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"leon-s-kennedy-chibi": {
+"sha": "a3198bcbce8385a50dbcd2264cbe73c2a2addaf6",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"heroi-de-armadura-azul-e-dourada-chibi": {
+"sha": "adec335200d587397c4adbe7c1e8cc6f91d2629a",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"sailor-moon-chibi-pixel": {
+"sha": "2efdc6773d596e9fd01d2251505a6bda9fe1d134",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"gandalf-adesivo": {
+"sha": "0841d34a368630d40346e024b4159fed236c90c5",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"bola-de-basquete": {
+"sha": "4085def15522572f8d520ada039727be0cf14a90",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"chibi-de-cabelo-preto-espetado-e-sacola-vermelha-slam-dunk": {
+"sha": "4156722799c3039d99cf0732a88adbc7db8896c2",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"chibi-de-chapeu-e-oculos-escuros-slam-dunk": {
+"sha": "5c7975f2733624307a6d16e91dfb3b026584f954",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"chibi-de-regata-azul-e-sacola-vermelha-slam-dunk": {
+"sha": "0b5671d80cd92b8f47e1beb9f1836d762b9ef99f",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"hanamichi-sakuragi-slam-dunk": {
+"sha": "8dd909b1365d5fae8d3cd2dcf2536392a1b5ef96",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"shadow-sonic": {
+"sha": "16282fd47452b9da7355fb7ccb2a1500ad684efe",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"shadow-sonic-grafico": {
+"sha": "8e92ac0a9c389c33c16af1f9c040f77f13b2a616",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"sonic-chibi": {
+"sha": "a577e22c704ca3074e7c32b6b19132e511e609a1",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"crona-chibi": {
+"sha": "0474be2a60179b12c09befe2575f2ea2685d632f",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"maka-albarn-soul-eater-chibi": {
+"sha": "95034d34a30c2a07197126b5aaa4c6ccd6cf267e",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"sol-soul-eater": {
+"sha": "813f415a8aa5b4aef2e5759901987e6cb937733a",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"chibi-de-cabelo-branco-e-joia-na-testa": {
+"sha": "10dea9d95765e270454c1351b124db197c4682fb",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"anya-forger-chibi": {
+"sha": "465fe7ca44bfaf788071043ee3aa3077e1f84afb",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"chewbacca-chibi": {
+"sha": "1a8eb71074dd65ea2faf9b5edfdd36d5efbaae90",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"darth-vader-chibi-ilustracao": {
+"sha": "c262012be18c02e9362a7fdf7dc534088cf0d91c",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"grogu-baby-yoda-no-berco": {
+"sha": "f8e8b9eefcdc5bfda07f408b6bbaa1118fe0619a",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"stormtrooper-ilustracao": {
+"sha": "75f3d6c036916f912cb16c46f2536f0f5a398531",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"galinha-versao-grande": {
+"sha": "908c9336b0aa45103033cb5452d01d96dfee778a",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"calcifer": {
+"sha": "0e8f00305465fc0e42869a3263b60ab25247006e",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"michelangelo-tartarugas-ninja": {
+"sha": "ed64280d7e8fcaa588c19005c2fbc8d2fa5ae38a",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"rimuru-tempest-adesivo": {
+"sha": "139611c66096eff8081112f443be3a684955ad31",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"esqueleto-de-manto-azul-pixel": {
+"sha": "00c4fdc20203bcf386382c0284ed62d8541f8a77",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"ellie-the-last-of-us": {
+"sha": "85a24c376ec114e76fb607753ac4c04ea43268db",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"kaneki-tokyo-ghoul": {
+"sha": "aafcba9c5797e4028e1d73a08020fecaa7c5269d",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"vash-the-stampede-chibi": {
+"sha": "264537b23a411b8ed9aaf02791e964deffc4d2d0",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"monica-com-o-sansao": {
+"sha": "3d3c1746ad3abe6b40a2ce03d8585ce6b05033e6",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"sansao-coelho-azul": {
+"sha": "cbb51c8da970c247c1c4740547cea76bc5d590d2",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"bisonho-ursinho-pooh": {
+"sha": "614e3abca9fa6d4542270ccf1e0ae6ba96a8b38a",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"bisonho-pixel": {
+"sha": "873820a53d9433ec44e1453451be5795ffb6e19d",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"leitao-pixel": {
+"sha": "207b39364eb84fbe9b15a631368bc37eedbc13c3",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"tigrao-pixel": {
+"sha": "b4c40a5af6a5341b7774495daee7dd14e730d1a0",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"ursinho-pooh-pixel": {
+"sha": "fff76ace86b643fc7a6e13b69ed1291cfa72d8ab",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"ursinho-pooh-com-pote-de-mel": {
+"sha": "0d09253ee923c1111a2ff2a1c0dea4f92612cad2",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"stella-winx": {
+"sha": "6d03f5d9829e737a212a43767e9103205d11f01f",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"tecna-winx": {
+"sha": "667cc5c00a6f000d60236b56c5e441c3dbe08b4d",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"menina-de-cabelo-preto-e-mechas-azuis-pixel": {
+"sha": "7f59db2a7c3e7e33d3ce5332fe66f0c5a3f12500",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"dragao-branco-de-olhos-azuis-chibi": {
+"sha": "60df5a921389aeb2588411699997c135f5ba4f96",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"duel-disk-yu-gi-oh": {
+"sha": "ac2b1077c0b1c5f746d70e030536d54312d26204",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"kuriboh-de-chapeu-de-mago": {
+"sha": "f31bd898856163d5d9e72b492fee309517b195e2",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"maga-negra-yu-gi-oh-pixel": {
+"sha": "ee29d035d3815f452b30f69a33c808e3e3a91302",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"mago-negro-arte-circulo-dourado": {
+"sha": "bb2919de8d0af7fd11b5b7bf78e2771452c5a488",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"mago-negro-chibi-circulo-dourado": {
+"sha": "89d21f4dc9f53f040c6f10e37ad08ef63fd3b2f9",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"obelisco-o-atormentador-chibi": {
+"sha": "2166ff897bde2e0b662115c7273b3cabc2942243",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"yami-yugi-padrao": {
+"sha": "e471f846e6badbbb293c7ce9dc4808c13cbacbfd",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"kazuma-kuwabara-yu-yu-hakusho-espada-espiritual": {
+"sha": "d4377831306ded9bab3a332e908f3ff2d38b09e7",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"koenma-yu-yu-hakusho-chibi": {
+"sha": "5c88902d1cfdad8a2b38fc8c4903c616b1914e28",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"link-com-escudo-hylian-pixel": {
+"sha": "73489bc1ec1c25d64d5911f2fb4a4155af181d93",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"judy-hopps-zootopia": {
+"sha": "d2583fc9cb4db0d4769710772aaa5c509b0e16cf",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"nick-wilde-zootopia": {
+"sha": "cc5db673064280de8f6c013466634be23e2e4a3b",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"takenori-akagi-slam-dunk": {
+"sha": "859266ba3b4fd45314b7771842686f980e276cb7",
+"mapa": "G7=M9",
+"data": "2026-11-03"
+},
+"porco-verde-angry-birds": {
+"sha": "87f2db70052b261fe5f28ddc8e80b3056b5ef2ef",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"brasao-da-policia-militar-attack-on-titan-grafico": {
+"sha": "c148c228bc431a131470408e03fd81aafa378ac1",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"omnitrix-ben-10": {
+"sha": "b4fbe8ec1b6e8e4a1a4b6caae2ac8a4170f830d2",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"omnitrix-ben-10-vetor": {
+"sha": "11f74579273b988fe2351487b998ce8cb7aa9355",
+"mapa": "rampa de cinzas (ramp_apply)",
+"data": "2026-11-03"
+},
+"chibi-sombrio-de-antenas": {
+"sha": "2ec7fa2b24c067bb4c1c2370136a06f46177bbd0",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"yoruichi-shihouin-bleach-chibi-agachada": {
+"sha": "c23abdad38de85774db9f7501b3eb90b649452d2",
+"mapa": "rampa de cinzas (ramp_apply)",
+"data": "2026-11-03"
+},
+"bob-esponja-pixel": {
+"sha": "f2f13cef1bdb42029540836ac50d50b79c09dac1",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"patrick-estrela-pixel": {
+"sha": "824d2979499814ab358d111d24cf5991dcf862f0",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"guitarra-vermelha": {
+"sha": "262045e33cc5683e814c663324f7982cd02de24c",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"casa-assombrada-pixel": {
+"sha": "a7bbcbfe1023376cfc59a3990e1e40bcfe9c040a",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"gato-preto-pixel": {
+"sha": "fd77124c3ce31544f25462e024fadffd0349e95c",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"mago-de-chapeu-roxo-pixel": {
+"sha": "83e789470a2bf10c56e02cebb6e0b9205840dae8",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"coelhinho-branco-grafico": {
+"sha": "8bc5ed56d39b96b371afb383c7b59e1c9c5aa2ea",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"coruja-marrom-contas": {
+"sha": "ea65f2af4b585cbc7e1381085d06c84883c71f72",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"golfinho-pixel": {
+"sha": "81cecf1ddc8061756183ffbf75a83002ee4bc1a1",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"guaxinim-pixel": {
+"sha": "9d1ebb53909aa62531a8c353543ace183f1a4489",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"pintinho": {
+"sha": "c37a6d59ecf5cde734e4f26333ce5fdf6b4a5890",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"alienigena-inseto-de-asas-azuis-ben-10": {
+"sha": "874416728ba5fa982175f1af8d8301f8774f7b8b",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"criatura-redonda-preta-com-chamas-azuis": {
+"sha": "6940d1affa621e311487655734d7cf08f9779b4d",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"igris-solo-leveling-contas-redondas": {
+"sha": "7ce372daa17f2100cbac3143ddf369d4ae0fec73",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"pipoca-de-oculos-3d-pixel": {
+"sha": "75e3d0299f4ae49c0e7a0113b862d74a5a4c0bc0",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"robo-fofo-azul-pixel": {
+"sha": "90cd285ff2b1a124490235350c219633b8a8216e",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"okarun-dan-da-dan": {
+"sha": "f02a29ee1301c9346f7111f3d15f750ba8856f63",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"inosuke-mascara-de-javali": {
+"sha": "90e49d3c85edcd2103c97e211c7ebe146818cdc5",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"zenitsu-dormindo-demon-slayer-grafico": {
+"sha": "c3f6a781a3d63d7daee4d753f73e5f8a4bd312c8",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"alice-pixel": {
+"sha": "ccf2dec8103ead58ac51442afbea5fff73049cb4",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"raiva-divertida-mente-grafico": {
+"sha": "0888184f652b57b10b2d817c2a3ee8ac70d7051b",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"dalek-doctor-who": {
+"sha": "031384dc35da502d178cc652aaafc1dc6f2c2026",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"majin-boo": {
+"sha": "0a49c73e7cbe9d983c4199c133568b10f968c956",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"mago-negro-final-fantasy-grafico": {
+"sha": "31c32ad6c019f0628fe71765e224ec4198c1c119",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"severo-snape-pixel": {
+"sha": "386a9df4addb39aa237687b0afcbc8026b6ce31a",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"hello-kitty-homem-aranha": {
+"sha": "d7557affecb221ffe71b364826b2dbf5557462dd",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"hello-kitty-musculosa-grafico": {
+"sha": "cb621cc6c89db810681f0be0118f49b60a939376",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"criatura-robotica-com-coracao-pixel": {
+"sha": "7b99065e840c955860ca5ea22b3111d82abb9a9b",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"chibi-de-cabelo-cinza-e-olhos-amarelos-pixel-grafico": {
+"sha": "93595638aafafeffdba1d33f11f50949142239cd",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"pennywise-chibi-com-balao-pixel": {
+"sha": "f2c361ffdc9a35861ce9d6c75ebfedfb5f742291",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"ciborgue-jovens-titas-grafico": {
+"sha": "afb781bac219b0063478f142da59eb9dd60bcdbf",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"mutano-jovens-titas-grafico": {
+"sha": "8cc60bd52b080476cb938e93170f4ffa6d95fc2c",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"ravena-jovens-titas-grafico": {
+"sha": "4086095423b62b3c6159f19047e583c9ee863e1b",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"ravena-capuz-roxo-ilustracao": {
+"sha": "5badb1bdd0974fad15b7ac95a10e565d8f3a0545",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"gojo-chibi": {
+"sha": "833db0fc4a927468af23048b861b78ed6f990b28",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"kaiju-n-8-caveira-circulo": {
+"sha": "6e3423d6413873668648dc0787ef2c7aa0be5f68",
+"mapa": "rampa de cinzas (ramp_apply)",
+"data": "2026-11-03"
+},
+"aqua-konosuba-grafico": {
+"sha": "a92ad013efbe000bbd3ef4686f38839256dd6a3c",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"angel-lilo-stitch-pixel": {
+"sha": "7d3b76e12374c82bcf9fad2672ba5f840f8e2f18",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"pernalonga-pixel": {
+"sha": "91a07840ab7ddd322f33cd81f6660ecb21ab9fab",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"yoshi-grafico-fundo-verde-escuro": {
+"sha": "4e173e6b7fa36177ec052aeb226bf4abd4a6a02e",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"doutor-destino-marvel-grafico": {
+"sha": "09e4b27c8b5d2c4d8f1672d74f639b0899b4843b",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"homem-de-ferro-chibi": {
+"sha": "dd24367f93213f2e6a0f862da88058cf7f439a67",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"motoqueiro-fantasma-marvel-grafico": {
+"sha": "62cfd3de2c0d3e95cbb6016e7374eab4ede7d56e",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"macaco-louco-mojo-jojo": {
+"sha": "cb921d706acba98e7f9359386eb106044187e866",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"diamante-minecraft": {
+"sha": "cdf85fcc479e0033af48998b9dee1bfa10a996b7",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"heroi-de-armadura-prateada-e-azul-pixel": {
+"sha": "3f6a718d9b789f2750292930585d92a47269923b",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"sasuke-chibi-de-corpo-inteiro": {
+"sha": "4e876478474c798205dc01490dfc4efa5a6b2d2b",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"bepo-one-piece-pixel": {
+"sha": "54fd4e62bd649ec5a0f54cabd7a6eb98c91b3654",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"jolteon-na-pokebola": {
+"sha": "93c98a1ba3b38a9e042a1026bf18be6a3671907a",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"lugia": {
+"sha": "555043a51c85e925de05e13787b39e5dfbb9a3d8",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"onix": {
+"sha": "6332e79453d20c292e93cfe46802191bfbfda9ed",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"pikachu-yoda-grafico": {
+"sha": "d23c5b56624c115218a6fd04bf06204de4055ec2",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"emilia-re-zero-chibi-adesivo": {
+"sha": "d439c385023b3a8208882fcc333b288dfad7c90d",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"red-dead-redemption-ii-poster-pixel": {
+"sha": "01f61c90bda7557e9075980cb65d9539e4699681",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"jesus-chibi-com-aureola-pixel": {
+"sha": "383a4e8cbdb13551024693b23edaeba68ab87eaa",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"nossa-senhora-aparecida-padrao": {
+"sha": "6997dc03f3f31a16bebe94ac222f17c5518be7cf",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"guarda-triangulo-round-6-grafico": {
+"sha": "1df873225bf9c156ab98f4de1d58d664a65eff88",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"shovel-knight-grafico": {
+"sha": "73783346731648a98f3e14528ab7c571c71af9c8",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"rimuru-lorde-demonio-tensura-chibi-pixel": {
+"sha": "3d38bc838f0c969a9804de3963dd27b2d8e64739",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"bidu-cachorro-azul": {
+"sha": "ea8779546e15414071228c154fad8333c22936db",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"planta-verde-de-olho-vermelho-grafico": {
+"sha": "6a0f5647aedb0a06977bc99b5b2630ba3d7d680e",
+"mapa": "grade certa + legenda (planta_verde_fix.py)",
+"data": "2026-11-03"
+},
+"tita-blindado-e-reiner-chibis": {
+"sha": "c7629e42bf9ba3192daee556d70a403c0ef2a057",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"tita-colossal-attack-on-titan-pixel": {
+"sha": "78a5eb25dba6902032f4fe3e0dda82b0ce6ed5db",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"grell-sutcliff-black-butler-grafico": {
+"sha": "87d7e9cb2e3fee3a1a8cdafe6ca269fb1be46ab3",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"yoruichi-shihouin-bleach-chibi-gata": {
+"sha": "96bb977d262884bf5dec65dd4eae09244943c8fa",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"bob-esponja-corpo-inteiro": {
+"sha": "670fa55457945a145fd7b862bf7d6f45f84db1b9",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"dragao-de-fogo-grafico": {
+"sha": "24e18e45a61e534958b41180e49181d98c64c174",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"galinha-preta-grande": {
+"sha": "4213c05d3f7f3f7d514743f93ecd1f34e16f3b63",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"ceifador-de-lanterna-adesivo": {
+"sha": "8921affd699ada949ea25089f74793643dfad01c",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"retrato-com-gorro-de-natal-e-cachorro-malha-1": {
+"sha": "dae5b72f92c742c8965ea9dea3af4ed575cac69c",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"carro-de-corrida-vermelho-pixel": {
+"sha": "10d7313d42b4d03f7dc0c053c88a71ae5e229f1e",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"cavaleiro-de-elmo-e-escudo-pixel": {
+"sha": "e0e14721ab42139df1684f0be2497430db2b70a6",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"ceifador-de-capuz-vermelho-e-tocha-pixel": {
+"sha": "4e3a3f4d46ff0141f2a45f6769943c3521ea3c35",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"detetive-de-lupa-pixel": {
+"sha": "333207b9804f4d453d9197d0c461c9fb6d08410b",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"dragao-vermelho-com-orbe-azul-pixel": {
+"sha": "09bda5cda10241c21837f18c305e1a3949d78c0a",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"playstation-2-grafico": {
+"sha": "2e8b40dfe209b534aa51ce5ce1c7e4d4e54fa39a",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"relampago-mcqueen-ilustracao": {
+"sha": "84b4993a7fe13a203e8a298349716d8811f4f46c",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"hyoga-de-cisne-pixel-rajada": {
+"sha": "a58bd9d6cfaf73905dd1ba43a55d636f6d9322de",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"seiya-de-pegaso-pixel-corpo-inteiro-versao-3": {
+"sha": "79bbc018ce776ca7f4620af51d713f26b64eb530",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"kallen-stadtfeld-code-geass-chibi": {
+"sha": "422dbf88af57ba44cb10505679430eccf05fefed",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"sigilo-do-geass-vinho": {
+"sha": "53ac56275f4f6c2b57d3009396f969a44a5519b0",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"allen-walker-d-gray-man-pixel-capa": {
+"sha": "f5fe155be6798cc7d929c596b55fd31ea8f68683",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"allen-walker-d-gray-man-pixel-de-frente": {
+"sha": "214f9cb097a73369f42cb44b09689f34dbd9fed4",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"zero-two-darling-in-the-franxx-grafico": {
+"sha": "649c8c3fe4b33967bd09de8a606cb35b29f22436",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"superman-chibi": {
+"sha": "ebb399ba8a3c7d2f457897993f765ede94251000",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"nezuko-kamado-demon-slayer-chibi-coracoes": {
+"sha": "5753717433449a1d7c65085bebba63fbdae4472a",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"tanjiro-kamado-chibi": {
+"sha": "de19867dd977719d25c11e73b557ef6b8115a51e",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"greymon-pixel": {
+"sha": "4547ec82d4ff040eaba96151c0537907619da0f4",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"rainha-de-copas-pixel": {
+"sha": "f5f22a3b2c2393b025db1cd31b0c597a4d2aa749",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"relampago-mcqueen-carros": {
+"sha": "0428b7bb20b2db0db67cf3bedd81c4c442e18356",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"goku-black-rose-dragon-ball-chibi": {
+"sha": "10ea10a59f28408f4a5e2c2c67d88a221e12312d",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"goku-instinto-superior-ataque-grafico": {
+"sha": "f7952e653e9521458058f5bbb72adeea189fef03",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"goku-instinto-superior-pixel-corpo-inteiro": {
+"sha": "cf7b9ae4304a8af9e1297f1efce3d8161c6e54c5",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"goku-na-nuvem-voadora-pixel": {
+"sha": "3610178f2324b010e7884c83c5c217fa4581fb5f",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"piramide-egito-antigo-vetor": {
+"sha": "c76ec9b0ae9969f2db516f2f3126ad79480c12fe",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"cloud-strife-chibi-pixel": {
+"sha": "9035d2e2ffe2988dd6e4131de30a7d54056966a0",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"fern-frieren-chibi-adesivo": {
+"sha": "47a1737aba87b558dd92ffe9e06660bb3c8814d3",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"kratos-god-of-war-pixel-corpo-inteiro-grande": {
+"sha": "16b9b995d8721e471aa4c1f2e6746b5e1f433870",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"ippo-makunouchi-hajime-no-ippo-pixel-guarda": {
+"sha": "7da7771d3e5cd7cd4534cf49cd70cea5c81b2031",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"hermione-granger-chibi-grafico": {
+"sha": "bbe7c5ab6885cbc661c5e52fef79e291bbd645fc",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"hello-kitty-bruxa-na-vassoura": {
+"sha": "427cea90c8c08e17e679b483d3019d85712fd466",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"gon-freecss-adesivo": {
+"sha": "a537953cf8627e82aa84cb3ad84e360e0e65eab8",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"kento-nanami-jujutsu-kaisen-chibi-sentado": {
+"sha": "5e344c23aece8a2491dc4244b0eea36c19e96761",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"sukuna-jujutsu-kaisen-pixel-corpo-inteiro": {
+"sha": "5d529a54d21f468b706afecc635ac3440bb034d7",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"casal-dancando-a-noite-la-la-land": {
+"sha": "9e057b36dcfdd7db43bf21eb6f869b05b9695d70",
+"mapa": "pretos de fundo viram azul-índigo escuro (D15); preto só nos contornos, na calça e na base",
+"data": "2026-11-03"
+},
+"taz-diabo-da-tasmania": {
+"sha": "f4ce4be5aadf6ac8a19e5f6c2b40df8ea030a2b7",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"princesa-peach-brava-grafico": {
+"sha": "69a1f93fe1c676ee4f474f73e5a15884e49af554",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"homem-aranha-chibi": {
+"sha": "ad7463cb44edf3257f521c6ab45ad8f945acbdbc",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"homem-aranha-traje-vermelho-e-preto-chibi": {
+"sha": "d5c9baea2ca2cd77bffb7a19ef348ff667caf47b",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"hulkbuster-marvel-grafico": {
+"sha": "697207a5463e68c0e46e47102b32f156a4d7a111",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"hulkbuster-marvel-pixel-acao": {
+"sha": "e572bdcd5c25688fb680b63d083b722e04c42592",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"thor-pixel": {
+"sha": "bdeb48b1fe89dc15ceaf2fb0a8b59080a918b353",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"visao-marvel": {
+"sha": "758609b8a91610f982b53f61469474b5695b021a",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"hawks-my-hero-academia-chibi-grafico": {
+"sha": "2177e35c8f1cf11bbcd681eb4135920d1abe9674",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"hawks-my-hero-academia-pixel": {
+"sha": "cf8db5146992b2ac7388f09d3f919a46a60b3856",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"kamui-woods-my-hero-academia-pixel": {
+"sha": "5f7b5e471aec378491872511122a49df3e2314d2",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"katsuki-bakugo-granada-pixel": {
+"sha": "1d3cefba616b79ba112f780efe918cbeb3793a4f",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"eustass-kid-one-piece-pixel": {
+"sha": "88d828c2eeb640b6675a3714c5d90325d1f27187",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"shoto-todoroki-pixel-corpo-inteiro": {
+"sha": "e0df32b62f712d1794fb005bbd65b63cc8451aeb",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"cabaca-de-areia-do-gaara": {
+"sha": "12c5fecc016c784b881a3acab57c6a865228268c",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"franky-one-piece-grafico": {
+"sha": "09a663087d20a287df646842e0eb7e0acaa766ef",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"going-merry-ponto-cruz-grafico-grande": {
+"sha": "7934d62a858b6d02e6da957b17bf3b49de55ed8a",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"jinbe-one-piece-grafico": {
+"sha": "49a1d9618f5ef43efa191fd6f24b37de9319dce8",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"nico-robin-one-piece-grafico": {
+"sha": "71781997faa4bb25fc17a26ee498d1608bbec900",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"usopp-one-piece-grafico": {
+"sha": "f5b8bc95662e230cdce91cea31c9a593aef039da",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"zoro-one-piece-grafico": {
+"sha": "e7324a49e044610e0bd0d933cc1c8c053fd673a1",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"ainz-ooal-gown-overlord-pixel": {
+"sha": "de33544b0b838b2bebecbc2b2d09ca75debbcf73",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"charizard-sprite": {
+"sha": "e597c78706fdd8561bf0d0e188a458598dc1663f",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"charmeleon-sprite": {
+"sha": "ec9de016249cf3479d8e85cf7fab2482abf5a3fe",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"freddie-mercury-queen-chibi": {
+"sha": "aca3e0e2c4d841f997a306e527c5c6b29da3dce5",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"arthur-morgan-chibi-fogueira": {
+"sha": "8dc8a56d09a671013944d844adef3b1ac04c47d4",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"cetro-da-sailor-moon-pixel": {
+"sha": "5045f3200cf7f5b4dea3ea36dd3e7737a35ac5b5",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"sonic-pixel": {
+"sha": "238a18010696614ea4b00a75935b83439096f4c4",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"maka-albarn-soul-eater-foice-pixel": {
+"sha": "59678be59a341e615ed0ca8d33feae45be622f63",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"soul-eater-evans-chibi": {
+"sha": "56a7b51fbb0b8a1e25b881747c2045581403aa8e",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"chibi-de-cabelo-azul-e-vestido-vermelho": {
+"sha": "5242b41507039d8a4ddb1085c44a5ce36b2c5ee7",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"galinha-preta-pequena": {
+"sha": "85d9cf7e2a759823a186a1c8dba299cfd4c52f58",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"diablo-tensura-chibi-pixel": {
+"sha": "6024bdbe1ccce92522fa1af25a94e23b4f1e60d3",
+"mapa": "olhos em dourado mais escuro (A13) e a conta amarela extra do lado esquerdo volta a preto",
+"data": "2026-11-03"
+},
+"kaneki-de-kagune-pixel": {
+"sha": "2f3b220ac766a21ec435a616736db9b8045b22d0",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"slifer-o-dragao-do-ceu-chibi": {
+"sha": "da04954ce9e2a513f5b1b0854624fd12aa22298a",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"yusuke-urameshi-yu-yu-hakusho-pose": {
+"sha": "22ca5a20521c095dc65f49abb25c66850a9e7bb7",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"leonardo-tartarugas-ninja": {
+"sha": "30d645742a28328563ce69ed52da17532fdcf564",
+"mapa": "reconversão (lote)",
+"data": "2026-11-03"
+},
+"bandeira-dos-chapeus-de-palha": {
+"sha": "32b38200dee68056fcaf65c73f4d07e4d96ea6a9",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"akuma-no-mi-fruta-do-diabo": {
+"sha": "9a90fffabc5deff2a2f99354800a29f61c53e27a",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"levi-attack-on-titan": {
+"sha": "4bcc9b357d9caf6407b6afd10b9b2c0fffe518ea",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"tanjiro-respiracao-da-agua": {
+"sha": "66024fbc1a839234af788e77ffad738e4e8e6551",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"kazuma-konosuba": {
+"sha": "2dca40db44be4915bece3c6760d49e22e57c2e20",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"gojo": {
+"sha": "2c44e98ffff6384d2b1ec57557b6c6ac24572e9a",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"gojo-peca": {
+"sha": "4c076421c53fd425239236d676b162af538eafaf",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"yami-yugi-pixel": {
+"sha": "8595d5a63cc780113a1b652d8cce05858485fe0d",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"rimuru-slime": {
+"sha": "e78887266cbf7e9f53986108fbbb389e25dd9f5f",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"deku": {
+"sha": "a2b64619bacfe88c49d2d6bad0169efcd75c854b",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"chibi-de-cabelo-vermelho-e-branco": {
+"sha": "ecdad47586b6ebb81d738f7a508de75dc4c81d99",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"emblema-de-fairy-tail": {
+"sha": "b177ca2af0d89d1d7ecbb53e059a517678c056c2",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"garota-de-cabelo-castanho-chibi": {
+"sha": "9abdebf1488aaab2650062be31b41bdc982ae659",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"vash-the-stampede-com-arma": {
+"sha": "6e9ce09a701283b93c659c1d608e63d058256d1a",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"chibi-de-cabelo-preto-e-olhos-turquesa": {
+"sha": "5ce5b8a77ef9231c3ee800ffdfdf8c037b385eb1",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"shoto-todoroki-chibi": {
+"sha": "32b5a8ec6764c0e8a4da2fecfdad4e302a2e318c",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"charmander": {
+"sha": "bcf8037e6cf09d4773c95be51b3924c7497f4704",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"psyduck": {
+"sha": "9602a3da8ecf85314d27ba3eb4de694e61f04739",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"pikachu-rosto": {
+"sha": "b47ac2212bd58dfe744585a52dc5c02acbb656ae",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"squirtle": {
+"sha": "1ce18890bb8a6b230f2b547e5ea41cbddb78b73e",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"charizard": {
+"sha": "8b1b8be0c463f1494f4f13224dc465c150936bad",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"chikorita-pixel": {
+"sha": "eb6a17c56b39f2942cfd0d9ae5aed1e8a0cd69ce",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"snorlax": {
+"sha": "b21a0a771d533dbcc05e02378f706e0352de7fdc",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"charmander-esqueleto": {
+"sha": "65035e98cfd299a741457a547d00276d97a1c111",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"pikachu-de-mewtwo": {
+"sha": "b580e6792fa4435db51592e49f6bf418b5a7560f",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"dragonite": {
+"sha": "e61b9edd2f5d5967d024eb91d17434d678971c00",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"clefairy-e-gengar": {
+"sha": "46b1cd4f08e3ed0e012180ef7ddf9c22fa9f78e4",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"pikachu-com-capuz-de-vulpix": {
+"sha": "ae41897f234f94b8d4a1edec992e8cb67826a81a",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"magikarp": {
+"sha": "dd34c5d8db261ff2ee972455105cbb3b0c1f1bc6",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"mario-peca": {
+"sha": "3562f8757bc3b2c31f6456937293373ed6c024d2",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"dovahkiin-skyrim": {
+"sha": "bf7ebf651874d6b2c4ebe005e282638b9d241136",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"logo-de-red-dead-redemption-ii": {
+"sha": "5f599e2cfe50f4bf7f184f2327850004ad60d312",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"pou": {
+"sha": "442489bf45b035fc23e4d82eca9d346af233e625",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"aku-aku-crash-bandicoot": {
+"sha": "a7dcc1cb1dedfc3b00d15e93f751a76fdf4f4326",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"simbolo-do-lanterna-verde": {
+"sha": "7c2fc2910d6f19d73e1557477fc912f40d1eb700",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"groot-chibi": {
+"sha": "06b1581129f52b813130057a82f679e1319cb7e4",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"wanda-maximoff-feiticeira-escarlate": {
+"sha": "c58f3311add20a629c6e57aa30c6a4a100e01a63",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"batman-pixel": {
+"sha": "44b5c927614e2a1eb05e2ebfa312a20fa7ae4cb4",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"professora-mcgonagall": {
+"sha": "f8e0f477fd2f77b2f8ef87c039ce4710629924bc",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"sem-rosto-mini": {
+"sha": "9c9f4a6849a2ae490e06015c44fc828a409407a1",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"haku-viagem-de-chihiro": {
+"sha": "cc0adbd90bf472e86d0c835cefe9268e9bfce671",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"haku-versao-pastel": {
+"sha": "12957ab012d3a91cc778debb0e537c9d0bacc353",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"chapolin-colorado": {
+"sha": "4a17a2807a2b7a4e6f409e559e82ad4fd92a2987",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"chaves": {
+"sha": "af34b696521ee0dd7257743b83141f66b06255fa",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"gandalf": {
+"sha": "0e053d597135883870c913bfc9f7b3171d3ad713",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"stitch": {
+"sha": "f57f9ec15113e701d774a2c9a9b8a299815bc4db",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"stitch-como-link-zelda": {
+"sha": "ab72ac4dd9f56a0d3e14707748a3165df7585caa",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"sininho-tinker-bell": {
+"sha": "64c4502a095941ef81e7895287fb65eb3a52365e",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"hello-kitty": {
+"sha": "e39ef8217b3f96a3e57dab3a00f1c065b40c1028",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"hello-kitty-com-coracao": {
+"sha": "05430067141786c906549ae5826c63ad0a6721a5",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"minion": {
+"sha": "adb9e267718c60c32eaf30e0e21476ba7a015d7b",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"minion-pirata": {
+"sha": "8f7ad2b5ea37f8088dcb0ec451da067ebdd5c329",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"bob-esponja": {
+"sha": "b0aa87593c39e5b68ed9c75d97fb1079355b7cea",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"patrick-estrela": {
+"sha": "9b7e8bb648bc39e90a705f67e967b57b498d764b",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"avatar-tribo-da-agua": {
+"sha": "1c6277cf8d1aa39cbeb6ce5655cd7879337e38e2",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"avatar-reino-da-terra": {
+"sha": "2a521f2ae8e90565496620473e063a2ae0dd334d",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"avatar-nomades-do-ar": {
+"sha": "749318d196b7153da829c966d7a3aa6a66b7d997",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"avatar-nacao-do-fogo": {
+"sha": "ce142e5d8a0fd3d38a96402d6b65e7ec686f41aa",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"bmo-hora-de-aventura": {
+"sha": "0feedc62a7ed75ba5ba8ffd7a85c2f5507530ab5",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"finn-hora-de-aventura": {
+"sha": "0bef9ed78792e120e44113b45c9759b3c551bf69",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"patolino-de-vestido": {
+"sha": "1b2ff224e272897802123ab0833b38bf37962dbf",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"coragem-o-cao-covarde": {
+"sha": "b08afa6ab1c9690aeadf2a2beff5f645563937f0",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"corvo-e-dragao-roxo": {
+"sha": "f85423f4aa06fa3c445636605c9a322e3aaf8079",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"gato-da-sorte-chibi": {
+"sha": "66bd1dab1d1507772097bbea214f3b5ea1475f14",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"a-noite-estrelada": {
+"sha": "0bc2784aa5d89e6ce075167981add57adffcf31b",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"carta-uno": {
+"sha": "ab661921f39355c4e94436642b2b08168b161cf2",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"atomo": {
+"sha": "34403090c8b3af981af80996176b26382a2f20ba",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"controle-de-super-nintendo": {
+"sha": "de411e2caee9bf982e91ff84ada73de1f0ef1f2f",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"michael-jackson": {
+"sha": "c0bd1dabb2e6e409b2cee3e544194aaf7a9c9815",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"chibi-de-jaqueta-azul": {
+"sha": "91320b2774ee38ddd891b76f09a7fe42030785df",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"gogeta-super-saiyajin-pixel": {
+"sha": "57c33cdb219287ba5b1f872840da3e1a14f1d001",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"sakura-haruno-chibi-cabeca": {
+"sha": "6b0ba78b1d6f09d37d114c0fe16de5e1dcfa253d",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"reborn-e-leon-hitman-reborn": {
+"sha": "599714020ff6f76e9e9b606edc1e400e24caad00",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"zumbi-plants-vs-zombies": {
+"sha": "7baeaedc9e6e453033566a5dcce72271437847df",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"echo-echo-ben-10": {
+"sha": "49b17f351c5d5301abec950cd8de018b0f667f7a",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"alienigena-branco-de-linhas-verdes-ben-10": {
+"sha": "f7bdf2b08ab88abc0bf685b27cc354d6af75ba61",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"heatblast-ben-10": {
+"sha": "b09758be8e1ea917beb48d51300485790b14d6b8",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"xlr8-ben-10": {
+"sha": "ccc969f65bdf94af92dd72882fe5d10a2792e7bb",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"ghostfreak-ben-10": {
+"sha": "beb1da0386814eb2ff39e81250f26dcda7a47751",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"scott-pilgrim": {
+"sha": "76814826607f1788a3cd6ee21e4944e4df8c6c34",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"naruto-corpo-inteiro": {
+"sha": "b593fdb7361d7d79481faea3b5112fb934195d9f",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"hange-zoe-attack-on-titan": {
+"sha": "135907ed0fae159ad9c8ada5b4cc8180bd0911c2",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"koro-sensei": {
+"sha": "72127307cd5d249c069c5addfd59fcfef7e3a681",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"mario-pixel": {
+"sha": "50e925957dcca7b90d5cb8addcaab029d3b8e64b",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"sagrado-coracao-de-jesus": {
+"sha": "41f69c3f189fc479f4ed4f582887b3406db63a0c",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"izuku-midoriya-deku-rosto": {
+"sha": "354abf5613890bb987fba23b4f9d7ffd3dfcd6b8",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"levi-ackerman-limpeza-ponto-cruz": {
+"sha": "37005d18ccec42c11c53a2cbac62c5c186f88cfa",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"homem-de-jaqueta-e-cabelo-longo-pixel": {
+"sha": "cefa75d0ab89698acdddbcb732c2d9cd7637b624",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"link-zelda-chibi-pixel": {
+"sha": "6141e816ba5beb1a8d4aa4636e4bc8e0fba7dbc1",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"homem-de-ferro-voando-pixel": {
+"sha": "920fb030e3088cd2635fe62ce62f0472815c2253",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"naruto-chibi-pixel-brilho-verde": {
+"sha": "65246424891a6ab86b6e864eba83c952c654f7ab",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"mirio-togata-pixel": {
+"sha": "d26375f9e0281de1aac424500bce6821dd76d3dd",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"ichigo-kurosaki-pixel-corpo-inteiro": {
+"sha": "eca7e60b9926f86c939cd1ad6ac1de350f56e9df",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"kurama-pixel-laranja": {
+"sha": "eca4002da06039713e272049c998612148e3a2b2",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"shinra-kusakabe-fire-force": {
+"sha": "16dd88e4f15b2d95174b66aa77a8be9411bd92eb",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"toji-fushiguro-adesivo": {
+"sha": "d2e4bb3ac231ebf4f973775b7eb6d3f7d338cda9",
+"mapa": "rampa de cinzas (ramp_apply)",
+"data": "2026-11-03"
+},
+"passaro-de-mascara-vermelha-adesivo": {
+"sha": "a81178fa5c6cc92859576e92bb89fc78eba5d959",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"seiya-de-pegaso-chibi-capacete": {
+"sha": "806ccf898d662787f22ab9cd306f178769830743",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"seiya-de-pegaso-chibi-armadura-de-prata": {
+"sha": "5b7f6f7a141b8d9dc277ad813653b85566b48b3e",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"seiya-de-sagitario-chibi": {
+"sha": "0bc5d71b9215482f2eebc2cb6786fb18791c3146",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"shiryu-de-dragao-chibi": {
+"sha": "2a63a78ef513c7178447dafc99f80a6129b7a7c9",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"shiryu-de-dragao-chibi-capacete": {
+"sha": "bcd61123fedc3c61b7baf6746f41484d8467ef41",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"panda-jujutsu-kaisen": {
+"sha": "ccc8a90937ced4a16924759181862534e45e9bf0",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"tatsumaki-one-punch-man-chibi": {
+"sha": "22a2fd56eb0da91568615eb9bf249208e0926da0",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"homem-de-cabelo-branco-com-chamas-vermelhas-retrato": {
+"sha": "295a60290abbb2da770d779d3ad95e4dcfa0ded6",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"seiya-de-sagitario-chibi-asas": {
+"sha": "693cf90c1d588b8456877e6191779d6dca93d947",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"colar-do-ace-chamas": {
+"sha": "431c1483ad664506094bb7b726f62d8f2ce62218",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"haku-viagem-de-chihiro-grande": {
+"sha": "4fa48d2eaac78eeeb70f066b46642d18d2a04a96",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"reiner-chibi-tita-blindado": {
+"sha": "15d141e043eed8f2e2362175b32f3fd777ccd92c",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"tita-blindado-e-reiner-chibis-grande": {
+"sha": "3afa19baa967e5e9c2999248d5863de555196ce7",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"eren-jaeger-chibis-grande": {
+"sha": "c26284a68ef9545397ac0807ad269f6b7b98a08c",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"aang-corpo-inteiro-grande": {
+"sha": "dc5e2ef5121c3308c3e8077cbd5fd30c0210a074",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"aang-quatro-elementos-adesivo-grande": {
+"sha": "bb27c769134245db8cdd72c0a810ed19896bfc6a",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"asta-black-clover-fundo-escuro-grande": {
+"sha": "af545d06ecdae940fa2e3ef8175c557cf469e8fc",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"asta-black-clover-forma-demonio-adesivo-grande": {
+"sha": "350ce1150ad7ba26b9fc6e79ec4f13e8fa9f8851",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"denji-chainsaw-man-chibi": {
+"sha": "2930ef531429df90650262de4027d131818f2c65",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"mate-carros": {
+"sha": "9ff89aa0d06bd7d927c613bd1ca00de5964d4b46",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"guren-code-geass-mecha-de-asas-rosas": {
+"sha": "eed4a9b4992a7c8af4723334e9b31a0456824dd8",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"kaiju-n-8-forma-kaiju-busto": {
+"sha": "0cd6463b2133bbfea456cbe5696f1f7c3d297fc7",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"neferpitou-hunter-x-hunter-adesivo": {
+"sha": "88c30ffce40dbbbb9ebf7a121c7ffce427a6021e",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"capacete-de-skyrim-com-flecha-adesivo": {
+"sha": "38dbe5da6b6af845db91d2a3b77daf23e7255f42",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"hobbit-chibi-com-trouxa": {
+"sha": "fee6d13b20a1a8ddef26d76f9894a36b513f3872",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"lua-soul-eater": {
+"sha": "e60d344214cc367ff9c01bbbbd7dd76dec78ac42",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"rem-chibi-maos-na-cabeca": {
+"sha": "a9ad99e023f9a237b20cacbd582fc8d69d5c36f5",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"heroi-de-armadura-vermelha-e-branca-chibi": {
+"sha": "d79cf12bb12f375d83495d00941f1f57feb1cb67",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"kurapika-retrato-hunter-x-hunter-grande": {
+"sha": "6c95957faa3ee608be9ccced2fe8755daff6be2c",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"gon-freecss-adesivo-grande": {
+"sha": "a25a139aabf5513992038c9e75193313ef773f31",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"poster-de-skyrim-dovahkiin-e-dragao-grande": {
+"sha": "db9581ee2a95f5b03c2c771abba9a932c0797f74",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"power-ranger-verde-chibi-grande": {
+"sha": "be93c071283c11a6111cc6d6dcd1b7abb9b44cd8",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"leonardo-tartarugas-ninja-grande": {
+"sha": "d701215415d640d685428cf87391d369df194964",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"dragao-alado-de-ra-chibi": {
+"sha": "bb3a971d3966e298386487342c29bec2eed5b883",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"kaneki-chibi-com-kagune": {
+"sha": "b03b4cb7a9f691b94b32d55b7eb7d99890fb600a",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"monica-pulando": {
+"sha": "f2d95a66c9a8abf28806bdd33f80e382b03a06ad",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"mago-negro-chibi-circulo-dourado-grande": {
+"sha": "7c57414394011db1341f87ee862533acf33b0a39",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"mago-negro-arte-circulo-dourado-grande": {
+"sha": "732a5c56a6a7b0a0df27e2c8be0e3bfc4dd0b8b5",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"jaden-yuki-chibi-com-winged-kuriboh-grande": {
+"sha": "80105b93ad208a98a2ac3fdc7249b606bcc0a9d1",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"dragao-alado-de-ra-chibi-grande": {
+"sha": "f643c7e4790da500bb4b632f72f10142d0e4edd9",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"obelisco-o-atormentador-chibi-grande": {
+"sha": "190d76176bc5575ddb6525422d321caacc80b37b",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"slifer-o-dragao-do-ceu-chibi-grande": {
+"sha": "ab0926b81f24b2951fa69dd04ac30bbf84f7bb94",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"dragao-branco-de-olhos-azuis-chibi-grande": {
+"sha": "30023eafa64cbd4cb1c3274c77158a9115a4e919",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"kaneki-chibi-olho-vermelho-grande": {
+"sha": "83ecadc1edb142c51ac4f50cda74c441701c0329",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"kaneki-chibi-com-kagune-grande": {
+"sha": "d7ec8cab5e6c21d3a296d56b71ede2f3bcd5c266",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"bloom-winx": {
+"sha": "3f980a549d81e08895ae5019333a6c120a8498e8",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"coruja-do-duolingo": {
+"sha": "6d075ac49180b17e7c3459a3966b57ae39ba44b2",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"cowboy-red-dead-redemption": {
+"sha": "e1500a3418ef8cbd0895d4ec8db608bbf62533a6",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"ezio-auditore-assassin-s-creed": {
+"sha": "6c36401e47c5b552d6ba40be282c16b1c61c900a",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"kazuma-konosuba-versao-2": {
+"sha": "1a70f41e6322c3ec661ba5b09ece5b555bdb9c5d",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"perry-o-ornitorrinco": {
+"sha": "ebd8d559ddd62a4677c2a8f1449ae1bddc75e649",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"piu-piu": {
+"sha": "e9195113d8467392c0ab8b81e35ae5ace64f2d03",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"tardis-doctor-who": {
+"sha": "e828c388fd06e6d9fa5726b925e117cd58e565f7",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"tsuna-chibi": {
+"sha": "e834848adafc05a0ca9828dd34cc4b2a82e86e93",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"tsuna-no-modo-dying-will": {
+"sha": "43d9948455ce39dd542c89b13df585399ddeb37e",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"frieren-chibi": {
+"sha": "90fd8de1fc9d98407a1d45b95361b63b74914061",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"creeper-chibi-pixel": {
+"sha": "9d9490e62a2ac9fbad6839872b867b339ce5a8ce",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"violao-roxo-pixel": {
+"sha": "dbb0eb1bdff0f7c50a39797fb701d628e3ddbb37",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"bakugo-katsuki-chibi-pixel": {
+"sha": "af08610b4124ed419390b284f75d6becb0d2e7e0",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"cranio-de-t-rex-pixel": {
+"sha": "44d7c06e826a205474ea2efbe7b2fc083e21b9ab",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"triceratops-azul-pixel": {
+"sha": "ec1966d80ad6b8b9bf4c87fe9dbd638d1e6c1731",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"sandy-bochechas-pixel": {
+"sha": "cba7840c6674e0ba3fa94540bcac19a3d8aa8d9a",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"luffy-chibi-one-piece-grande": {
+"sha": "1f3bee295af653e0e47c76419bd0479c5749d51f",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"zoro-chibi-one-piece-grande": {
+"sha": "b09996b58ae7e2480f65e39a1355b17414de27cf",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"nami-chibi-one-piece-grande": {
+"sha": "60777e757e00f6b963df62a2964445dfee6e12e7",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"usopp-chibi-one-piece-grande": {
+"sha": "7e37c1262c11fb544cf6656728f4b2016596df53",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"sanji-chibi-one-piece-grande": {
+"sha": "8386820663d562995b4e5d8195de20ade74c2281",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"nico-robin-chibi-one-piece-grande": {
+"sha": "d80f41acb6de4aeaeccefdecc76ef60625f544a1",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"franky-chibi-one-piece-grande": {
+"sha": "8d3d17e8814725c2c7c7e2d69fd9681e83383e83",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"brook-chibi-one-piece-grande": {
+"sha": "b6c415fa7cff50b7eec4f34f10afd7e516c0809c",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"jinbe-chibi-one-piece-grande": {
+"sha": "ce214340999ced20b1e88ac15e6bdba03d8e6569",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"angel-dormindo-pixel": {
+"sha": "6c5ec99727016ee786b7c7bb8523b54d21c843d6",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"gaara-chibi-pixel": {
+"sha": "0ca332797e8861213069ec0bcbb368ae1d16a89b",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"lobisomem-pixel": {
+"sha": "4e8595e1865e664ec4d4a5d45168fc324a3e2d3c",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"boneco-de-pano-costurado-pixel": {
+"sha": "cfc747ef12d6b4ca396f818764cd1bc4a56307e4",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"balde-de-abobora-pixel": {
+"sha": "10c1c6cd3bcdc0e1840457a7ce557f4e8c9385e2",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"goku-super-saiyajin-pixel": {
+"sha": "f579bce538bc528849ce78507cedb036efed0275",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"goku-pixel-corpo-inteiro": {
+"sha": "4df21b14e7f04293da86c38661515f40962b672f",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"gon-freecss-pixel-fundo-azul": {
+"sha": "d5d530e679f38d31f06c4c585fd74787ae173927",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"vi-arcane-pixel": {
+"sha": "c733e6d5bc3659e09e99439a8de73b9b63eea2e1",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"pomo-de-ouro-pixel": {
+"sha": "ea312c293b1a2048f333b5f618d07c0935c661b7",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"papai-noel-pixel": {
+"sha": "db1b5cb0801a50933485660bd3464ca7c9a27881",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"killua-zoldyck-pixel-fundo-azul": {
+"sha": "0f29044c5e45b38a8a4f8304994ac5e6a4278f76",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"seto-kaiba-pixel": {
+"sha": "37a53c810e13b2b7e222f517db8a812874f61021",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"seiya-de-pegaso-pixel-corpo-inteiro": {
+"sha": "5cfdbacba13364db3936e17568405e160a1a79f9",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"hyoga-de-cisne-pixel-corpo-inteiro": {
+"sha": "d1e92e8b926324c4cbb7288880f2cf602efbbfb7",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"shiryu-de-dragao-pixel-corpo-inteiro": {
+"sha": "351b501bd1791b66a0fbebff52a6b40c6742bb98",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"shun-de-andromeda-pixel-corpo-inteiro": {
+"sha": "a33641d206d7b09438decd0f79ac6cb3e83f5f02",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"ikki-de-fenix-pixel-corpo-inteiro": {
+"sha": "ceb74836b213dc5d15ffbd4025885f481a8df99a",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"brasao-da-grifinoria-escudo": {
+"sha": "97c66452a35235acfaa5b7a4e34cb92d8c0d6a76",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"brasao-da-sonserina-escudo": {
+"sha": "ed3b0e25e4eeac66233217928b5088a76a5498b6",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"cavaleiro-de-ouro-de-cabelo-roxo-chibi-risada": {
+"sha": "270d2c20df5400a481eb15e6b4f8c4a4e3aeb865",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"hyoga-de-cisne-chibi-adesivo": {
+"sha": "460f54d6560efd924912df98b9e7ddf5dcf556a4",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"shiryu-de-dragao-chibi-escudo": {
+"sha": "14187c7e3281607a68e8120c666209cb77636c0a",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"seiya-de-pegaso-chibi-rosto-grande": {
+"sha": "e74cf6a6358795f389674e41ba7e7d19a34ec802",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"shiryu-de-dragao-chibi-piscando": {
+"sha": "27a9a25e5edc952727ba121f218d23e764926330",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"milo-de-escorpiao-chibi": {
+"sha": "bce7c2a7989dee799d76315ba293e9726cbfbaaf",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"shun-de-andromeda-chibi-cabelo-verde-vivo": {
+"sha": "e526545ab43d47317f50b380dba6da4a58fa53ce",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"ikki-de-fenix-chibi-adesivo": {
+"sha": "6cd74ab30455e0cec6ccbc5ead71dd3a27823681",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"shun-de-andromeda-chibi-correntes": {
+"sha": "afa29d5e82bcf98486418995210eba0a4a171ae7",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"seiya-de-pegaso-chibi-folha-1": {
+"sha": "d4dd02ae338c5521183e349098ece0f022e3ccd6",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"shiryu-de-dragao-chibi-folha-1": {
+"sha": "b1bb9071c044fa621dba67c5a367177be1d2a9e0",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"shun-de-andromeda-chibi-folha-1": {
+"sha": "970f24a7d940b780700cd691665266f4f81fafc2",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"hyoga-de-cisne-chibi-folha-1": {
+"sha": "8daa2f98e375174b505b218acdf2e46720a4cfb1",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"ikki-de-fenix-chibi-folha-1": {
+"sha": "c0b02acb81709ae4369d493751f2e294b23863b0",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"shiryu-de-dragao-chibi-folha-2": {
+"sha": "9fa4458a17031b7f84c8aa99c69b0c6a98e9b52e",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"hyoga-de-cisne-chibi-folha-2": {
+"sha": "cfccfa8863bf98e9acc3b37119f901bf097cbd22",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"seiya-de-pegaso-chibi-folha-2": {
+"sha": "73baa7e88767a18bc32cec94a8632293eb287300",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"ikki-de-fenix-chibi-folha-2": {
+"sha": "862010080e9fd7b6e198aa66b42af94b6ff99788",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"shun-de-andromeda-chibi-folha-2": {
+"sha": "9b8aae412a9e805857a754f410b9347423ef2ef9",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"yami-yugi-pixel-versao-2": {
+"sha": "8595d5a63cc780113a1b652d8cce05858485fe0d",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"stitch-dormindo-pixel-grande": {
+"sha": "54ac1094f426ae19161cd219b4003a20a7cbec99",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"armadura-de-cisne-objeto-azul-grande": {
+"sha": "e5722a451dcc7912465545062991aeecd3cc93be",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"armadura-de-cisne-objeto-branca-grande": {
+"sha": "a1178434d1805995a02acbfbde58e70662e6239a",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"armadura-de-cisne-objeto-voando-grande": {
+"sha": "6b6c38836b08ca617c568bbfbfc922fd291ec478",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"armadura-de-dragao-objeto-grande": {
+"sha": "2919b1dac9496b09620d37e28ee050debeaec10d",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"armadura-de-dragao-busto-grande": {
+"sha": "95b03279a78b6cefcfe9c5cc49c774a42bfd420b",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"armadura-de-fenix-objeto-branca-e-laranja-grande": {
+"sha": "a639cb16e2ced791ff696d41f60453c5f39d5841",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"armadura-de-fenix-objeto-vermelha-grande": {
+"sha": "17a7f13b8de94197bbada3fc6a5099e56f927eaa",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"armadura-de-fenix-objeto-azul-grande": {
+"sha": "94fb57a42ab716f91f71cf03d807f4ed21d5549b",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"armadura-de-pegaso-objeto-prata-grande": {
+"sha": "48f29aaf2a0d70c89d018147b00a97d3e3936c05",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"armadura-de-pegaso-objeto-azul-grande": {
+"sha": "ca323405e99f99541fb681b6b6c74c75e2b66e66",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"armadura-de-pegaso-objeto-vermelha-grande": {
+"sha": "cf82516128601559f31c9f75169a8bb3f6903ae3",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"armadura-de-pegaso-objeto-dourada-grande": {
+"sha": "d6ee78aea85cf822587fa539cfe2fbd41e7972ba",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"armadura-de-andromeda-objeto-correntes-grande": {
+"sha": "bcdb209ebd850c5d9f9ea0edb9b683c0d3cc87d2",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"armadura-de-andromeda-objeto-rosa-grande": {
+"sha": "a56e54ae75cc5d7eaaef3c9f47fa81c40bafdb1f",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"armadura-de-ouro-de-aquario-objeto-grande": {
+"sha": "33bf41c0537516e2f928295e71ac1c319cb965d4",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"shiryu-de-dragao-chibi-folha-2-grande": {
+"sha": "3c6160661439bf0543ea96a824edbb5e590fd720",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"hyoga-de-cisne-chibi-folha-2-grande": {
+"sha": "e788fc8000e6b1251d4346b75d82aae83d0f995b",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"seiya-de-pegaso-chibi-folha-2-grande": {
+"sha": "9181ff6827f7a73c2c79cb0b9aa2bcf93527c345",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"ikki-de-fenix-chibi-folha-2-grande": {
+"sha": "4cd2764db31b57bb10b37c254530c52e6a1e050f",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"shun-de-andromeda-chibi-folha-2-grande": {
+"sha": "aa7bcf5855bd69c60c99430350e195669f0c5578",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"cinturao-das-divas-wwe": {
+"sha": "ca91f07ca67bc7c032830022da0bb19b6480ad7b",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"paige-wwe-com-cinturao": {
+"sha": "2bf2161b906a0cf5eee34cbdd3523ec08622aa5a",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"paige-wwe-top-roxo": {
+"sha": "9dbef8d77648ffbb9ebd8d53d4582f2761c193ad",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"paige-wwe-erguendo-o-cinturao": {
+"sha": "a6ec3967b4a1bcc583a60e014f9d31e0a4a54369",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"cinturao-das-divas-wwe-grande": {
+"sha": "37284d94ecad3cba94c37f5f08afc1c8ac55cd4c",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"paige-wwe-com-cinturao-grande": {
+"sha": "a5201919a6ff395a9ff73a72b3bc6678961dbc8b",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"paige-wwe-top-roxo-grande": {
+"sha": "b274c7b742865b9485ab914da65c8d46cfac89f4",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"paige-wwe-erguendo-o-cinturao-grande": {
+"sha": "0b4272af7e287c8d9999ff8b73fbd58f5d1d4d44",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"ansiedade-divertida-mente-grafico": {
+"sha": "e6097105ed433f4f14f0af65c31aeb3f2bfafd4b",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"peashooter-de-gelo-plants-vs-zombies-grafico": {
+"sha": "e3b9efd88a9c7d143ebfacf2a8c77ee50a0e2e14",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"choso-jujutsu-kaisen-chibi-grafico": {
+"sha": "c9efdcb7eae5925d122905178084a0637cf6316e",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"suguru-geto-chibi-pixel-grafico": {
+"sha": "7051150199ff41f22669683dae0ef29fc7e0e61b",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"doflamingo-one-piece-pixel": {
+"sha": "6d8762b32cf0b1fae262e709ac6622f202aee7f1",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"dragonair-pixel": {
+"sha": "1880d8d69b84d06c1df46c7244c472b91813f811",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"kento-nanami-jujutsu-kaisen-chibi-bracos-cruzados": {
+"sha": "803fc959a5db645b02f3b2f20dc13aa064d78d3a",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"quebra-cabeca-do-milenio-ilustracao": {
+"sha": "edd39c575839e90841cb7cadb5c94210518ed757",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"casal-sob-o-guarda-chuva-amarelo-how-i-met-your-mother-ilustracao": {
+"sha": "4110d84501b34703fae2e29acc01374f2acb37cc",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"casal-dancando-la-la-land": {
+"sha": "1610b68a1ea6a00cfad6c54db319e8ae7220a925",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"endeavor-my-hero-academia-rosto-em-chamas": {
+"sha": "b2e555af85563ef1f897a7257c254932fffd321a",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"gouenji-shuuya-inazuma-eleven-fire-tornado": {
+"sha": "6527aa3228af7e5557474885a4d54feab796ab4a",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"endou-mamoru-inazuma-eleven-god-hand": {
+"sha": "648b52f3148e83b79dda022396c13036f28c78c4",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"toshiro-hitsugaya-bleach-chibi-katana-grande": {
+"sha": "ecda70bbdfbfddc2fd0171d9e148c46e7d49beb3",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"emblema-do-sol-dos-chapeus-de-palha-one-piece-grande": {
+"sha": "c8f15a53f8c7bf12a7e55d65964ed3680044422a",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"shikamaru-nara-naruto-chibi-fumaca-grande": {
+"sha": "c2f8dad3f198a0bbd354d9dc5ea5705fd07f28e1",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"sukuna-jujutsu-kaisen-chibi-adesivo-grande": {
+"sha": "eefa1c983fc3adb5d6ec9813a915cf45f4ad158e",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"endou-mamoru-inazuma-eleven-mao-de-fogo-grande": {
+"sha": "31b6257b5f8b68db2faf864a8a4bd8c9b9eef410",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"mulher-do-guarda-chuva-amarelo-how-i-met-your-mother-grande": {
+"sha": "c2085adb33ebc17ac43fe4505b3a102b798d17fe",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"quebra-cabeca-do-milenio-ilustracao-grande": {
+"sha": "4367ee4cdfc17cd99b3ccfe0c69e7da2c6318448",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"shoto-todoroki-my-hero-academia-chibi-adesivo-grande": {
+"sha": "40e2619ced13a0540de438de12864ce035ae10ea",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"muzan-kibutsuji-demon-slayer-chibi-grande": {
+"sha": "957dce9ef44929864c3d1eb05874a41ab3bbbc3e",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"naruto-modo-sabio-dos-seis-caminhos-chibi-grande": {
+"sha": "04c3af1437ca3ecc7fd31389fbf9a99bc3de7b8a",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"saitama-one-punch-man-chibi-grande": {
+"sha": "4399cdf334f8170b18030fd5f6d5055ff6cdeeba",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"ikkaku-madarame-bleach-chibi-lanca-grande": {
+"sha": "992ee2374bb4b375b3ca2856286cb4b41603828f",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"yusuke-urameshi-yu-yu-hakusho-pose-grande": {
+"sha": "5f1cd87ca6e19445406cf892d217b5f62d3b65fc",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"sasuke-e-a-cobra-de-orochimaru-naruto-chibi-grande": {
+"sha": "70d657a7c29f520b9fe6eb0ff4b41e5948067f1e",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"obanai-iguro-demon-slayer-chibi-adesivo-grande": {
+"sha": "877ca9982577925f7f254f3d57f92337dbaed734",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"kazuma-kuwabara-yu-yu-hakusho-espada-espiritual-grande": {
+"sha": "9ad68f82c9e72d9d39886fc19c9e06fe02832a5d",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"kisuke-urahara-bleach-chibi-grande": {
+"sha": "506475841187b10dcf9587563b231d7331d4729e",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"itachi-uchiha-naruto-chibi-corvos-grande": {
+"sha": "e1b777ca4e99ec89f8f592dc8a32459dd3c31145",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"yu-yu-hakusho-quarteto-em-circulo-grande": {
+"sha": "7e5015c0fdd92579036af24a9b479dc7a89d6489",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"going-merry-ilustracao-grande": {
+"sha": "df1ba1be00577febe8de5d38f7e04335dfa38104",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"naruto-modo-baryon-chibi-grande": {
+"sha": "089650e0f85cc2f0e516df654f913748a0732849",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"bartholomew-kuma-one-piece-chibi-grande": {
+"sha": "e9e6827b88028022c362116e196de8ba04c45973",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"casal-sob-o-guarda-chuva-amarelo-how-i-met-your-mother-pintura-grande": {
+"sha": "43533b2d13812ac2deb3df020eada0497db6a149",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"yoruichi-shihouin-bleach-chibi-agachada-grande": {
+"sha": "9460322e5076186861bca116ca25c270e541aefb",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"yoruichi-shihouin-bleach-chibi-gata-grande": {
+"sha": "f38dfee84662b74cc6cec56281cd75b01f2e21f0",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"kenpachi-zaraki-bleach-chibi-grande": {
+"sha": "96193c4d24049ba26d563b3113c0a47a73e732d9",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"itachi-uchiha-naruto-chibi-com-o-corvo-grande": {
+"sha": "56f673d6b60ab8b799fea4523d404c8cfd183681",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"silhuetas-sob-o-guarda-chuva-amarelo-how-i-met-your-mother-grande": {
+"sha": "7f5d92ce7b07d1eb85df633463d819a5dd24d7de",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"might-guy-naruto-oitavo-portao-grande": {
+"sha": "96a973c0daab618600a1437d3285b28bd865cb77",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"monkey-d-garp-one-piece-chibi-grande": {
+"sha": "1df91c31420037dbeb827dc163872a54c4a7049b",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"casal-dancando-la-la-land-grande": {
+"sha": "b3098e9690905b16e973458c427769b72676da04",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"casal-dancando-a-noite-la-la-land-grande": {
+"sha": "c4bfe73f506a46a6195d29e3a42cef15fd61ef93",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"jiraiya-naruto-chibi-modo-sabio-grande": {
+"sha": "d1685fd5f72feb62804dfb64817948f77c49dd89",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"thousand-sunny-ilustracao-grande": {
+"sha": "395f2886cb0badf406ac13bf3869de3300f9921e",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"yuuto-kidou-inazuma-eleven-chibi-explosao-grande": {
+"sha": "2cfab0d8315410b9ebecd5ff8a920d3e8109461c",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"kaido-one-piece-chibi-grande": {
+"sha": "243d97b4747ee6401fddc22bdd1147395e916e7c",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"jushiro-ukitake-bleach-chibi-grande": {
+"sha": "01a9345002c339e8bbf761169294c4a278c5b92b",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"dracule-mihawk-one-piece-chibi-grande": {
+"sha": "a35351f3877736fc5caa995c5be7297db9e82c7e",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"sanemi-shinazugawa-demon-slayer-chibi-adesivo-grande": {
+"sha": "058a1e7c22759e077cfc15f548b9ed17851370e1",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"hinata-hyuga-naruto-chibi-chamas-azuis-grande": {
+"sha": "25f09e1e41940604aee9b9f48601c45b87f34c62",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"gouenji-shuuya-inazuma-eleven-fire-tornado-grande": {
+"sha": "44d5cb07a2e7288a8646cfb5f3169504559f75a9",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"endou-mamoru-inazuma-eleven-punho-gigante-grande": {
+"sha": "9b2a29079a73c2def5e9dd316da54035d5fcaa7c",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"fubuki-shirou-inazuma-eleven-eternal-blizzard-grande": {
+"sha": "69d2760c790c6529f5b4e77d2afcfb7c7d3d597f",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"jogador-de-cabelo-verde-escuro-e-faixa-vermelha-inazuma-eleven-heat-tackle-grande": {
+"sha": "a4befc9e5ba77e72c2c3ce06a3e7a3c2ca9560e1",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"endou-mamoru-inazuma-eleven-god-hand-grande": {
+"sha": "ac8428cc919df8fcc2a59201d821ef8e89cd6844",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"ichirouta-kazemaru-inazuma-eleven-shippuu-dash-grande": {
+"sha": "35b447741f1e51f14d704bda69995d9d809ab914",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"yuuto-kidou-inazuma-eleven-oculos-e-capa-grande": {
+"sha": "527c0788493290a7fe7a7c39783ad76c77366278",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"endou-mamoru-inazuma-eleven-mugen-the-hand-grande": {
+"sha": "69f58d2d510b3e778f35f24ff27664767123efcf",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"kratos-god-of-war-pixel-corpo-inteiro": {
+"sha": "afdca1ac625ac2ef539f9fa9a60a723088da1d8f",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"edward-elric-pixel-sprite": {
+"sha": "4f6de8842a73c547e82a3fb4392356eb92b98b36",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"alphonse-elric-pixel-sprite": {
+"sha": "ff11d7833b20cc77c4109ac0b16c0afd0f182d80",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"elias-ainsworth-the-ancient-magus-bride-chibi-adesivo": {
+"sha": "ddffd39d2e74998aa80c7ddaf8b3a5f9320f7381",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"frieren-chibi-cajado": {
+"sha": "67f1c1077a694d2da3d92c8864efc84560e09f39",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"loid-forger-spy-x-family-chibi": {
+"sha": "e444efb9f531b1290945b991a23bf7aa9a9ac21a",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"yor-forger-spy-x-family-chibi": {
+"sha": "ee314700e300ca036ad5b4bc9c717c03cca175aa",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"happy-fairy-tail": {
+"sha": "8b619db19a8efc85c4ccd3d1d10f7670ef4cc510",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"c-c-code-geass-retrato-grande": {
+"sha": "15a9b0fd200fbecf17a892a0512fb45cfa5b4173",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"alucard-hellsing-chibi-pistolas-grande": {
+"sha": "af80dee476ea8a45ee7c6ec5c426333d3598217f",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"alucard-hellsing-chibi-sentado-grande": {
+"sha": "037413dd769c6d9fb7ef6c82fcd48c83720874de",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"luva-de-roy-mustang-fullmetal-alchemist-adesivo-grande": {
+"sha": "3160aeef9845ad0afad1a1189e4e7675aff103ea",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"snorlax-de-batman-pokemon-grande": {
+"sha": "f2062110999759c2ad485167eb193f230edca1b4",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"alucard-hellsing-chibi-adesivo-grande": {
+"sha": "76887a70a8a561371a75ea196a5466b8c933361c",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"lula-chibi-grafico": {
+"sha": "de091dab43ac71a38abff791f50a12c0d67986b5",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"lula-de-chapeu-chibi-grafico": {
+"sha": "3dcc22bbbe742c884cdc87bcd8f71f6bcf47f14e",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"carnificina-marvel-grafico": {
+"sha": "72475d8e8cca120c5d2f7fa62349ad0d29f57c2d",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"dragao-vermelho-voando-pixel": {
+"sha": "48f21587c6231fd1a3f5e2ee478b76064d5f5edc",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"quatro-bracos-ben-10-pixel": {
+"sha": "182f00ec2d2eff39efd933bb3b7de5d8c2156d67",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"hidan-naruto-pixel": {
+"sha": "ad539d9334bc89f9f584f48a4f26d6d6fe5733dc",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"jack-sparrow-piratas-do-caribe-chibi-adesivo": {
+"sha": "e14fce34ed8a89408273476e650d488fc3b363ed",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"pennywise-de-capa-amarela-chibi": {
+"sha": "15c6d44d49f4106c39933a73147f64186e0a7e86",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"chucky-chibi": {
+"sha": "4b3c9d545c28a946b6e65ffe1f0e7b19f5ffc9f7",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"john-wick-e-cachorro-chibi-adesivo": {
+"sha": "f6144df7025f1e20b431c84a976e4f60ce66f134",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"trunks-super-saiyajin-aura-pixel": {
+"sha": "3d67c38bd94201c9d7798cf1ba0735920f556df7",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"cloud-strife-final-fantasy-vii-pixel": {
+"sha": "76f02a2a673109399a5c02316bb568d1f38603e3",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"ciclope-x-men-rajada-pixel": {
+"sha": "2197e299d7454d9eab7e67e6d768e70fc0a72f28",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"gogeta-blue-pixel": {
+"sha": "dcdd00edf104df7d8e939738c7391a699ccb132f",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"yuga-aoyama-my-hero-academia-pixel": {
+"sha": "927e9bdf3151519b52ce96eac915c782097008fc",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"mago-grisalho-de-sobretudo-preto-chibi-pixel": {
+"sha": "f1b8fba7df25383dba9dbec2d9ccf1e7e4cc190e",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"eijiro-kirishima-my-hero-academia-pixel": {
+"sha": "ded1675480d616c04a0ca9f314aa41d5edd6cb94",
+"mapa": "cores refeitas pela imagem (reconversão tolerante; rosto mantido)",
+"data": "2026-11-03"
+},
+"viajante-de-chapeu-pontudo-pixel": {
+"sha": "cb18d588f1ae862615baa9db151df4ee402b956d",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"goku-instinto-superior-aura-azul-pixel": {
+"sha": "809618ce3ce5a85c27f5123db0a814bff418d78f",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"seiya-de-pegaso-foto-de-peca-pronta-wow": {
+"sha": "7f7a5f9b684f6fce3a707b2932b33cad5c9af90f",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"goku-e-vegeta-blue-pixel": {
+"sha": "91d2f30e6fad49861d22f5c69cde373e22e63b75",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"zero-mega-man-x-pixel": {
+"sha": "62ddda32dcf1b6f00608e5a3292ec68fecc64401",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"orochimaru-naruto-chibi-grafico": {
+"sha": "25844cfae7a7656670c168828b1a1aca325ddc38",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"maga-negra-yu-gi-oh-chibi-adesivo": {
+"sha": "c7c01d15f08f8e14a5f9a841028e5a677b0befa8",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"seiya-de-pegaso-chibi-adesivo": {
+"sha": "8faf2a675c721f00a20d27640bc3295630968fa4",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"gatinho-de-contorno-rosa-e-azul-grafico": {
+"sha": "d822f398160e0713c6d22f633d15b65eed4c2c1f",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+},
+"cachorrinho-branco-de-lenco-rosa-grafico": {
+"sha": "239887210526934db3cefb45089866403aff72c7",
+"mapa": "letras (rc_letters)",
+"data": "2026-11-03"
+}
+}

@@ -77,6 +77,9 @@ def guard(path, items, removed=None, allow=(), readd=()):
     if not os.path.exists(path): return
     old = parse(path); new = {t['id']: t for t in items}; allow = set(allow); readd = set(readd)
     changed = [t for t in old['items'] if t['id'] not in new or any(t[k] != new[t['id']][k] for k in ('rows', 'name', 'cat'))]
+    if changed and os.environ.get('BEADS_ALTERAR_EXISTENTES') != '1':
+        raise CatalogoProtegido('GRAVAÇÃO RECUSADA: CATÁLOGO CONGELADO (pedido do dono, 2026-11-03: "a partir de agora não é pra mexer em nenhum molde que já está no catálogo, só em novas imagens para virar novos moldes"). '
+                                'Mudaria/apagaria %d molde(s), ex.: %s. Só se acrescenta. A trava só se solta com BEADS_ALTERAR_EXISTENTES=1, e isso só se ELE pedir NO CHAT aquele molde pelo nome.' % (len(changed), [t['name'] for t in changed[:5]]))
     bad = [t['name'] for t in changed if t['id'] not in allow]
     if bad: raise CatalogoProtegido('GRAVAÇÃO RECUSADA: mudaria %d molde(s) sem autorização, ex.: %s' % (len(bad), bad[:8]))
     if len(changed) > MAX_POR_VEZ: raise CatalogoProtegido('GRAVAÇÃO RECUSADA: %d moldes de uma vez (máximo %d)' % (len(changed), MAX_POR_VEZ))

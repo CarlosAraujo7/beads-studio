@@ -1,0 +1,23 @@
+{
+"skip": [
+"Caldeirão (pixel)",
+"Morcego (pixel)",
+"Morcego fofo",
+"Máscara de raposa (kitsune, pixel)",
+"Dimple (Mob Psycho 100)",
+"Ned Stark (Game of Thrones, pixel)",
+"Insectoide (Ben 10, pixel)",
+"Esqueleto (pixel)",
+"Fantasminha com balde (pixel)",
+"Yin-yang",
+"Galinha",
+"Ovo de Yoshi",
+"Anya Forger (pixel, gráfico)",
+"Vergonha (Divertida Mente, gráfico)"
+],
+"over": {
+"Grell Sutcliff (Black Butler, gráfico)": "F11=F8",
+"Cloud Strife (chibi, pixel)": "M5=A3",
+"Casal dançando à noite (La La Land)": "D14=G8"
+}
+}

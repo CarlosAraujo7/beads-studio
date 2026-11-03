@@ -46,7 +46,7 @@ def _centers(lab_pix, K, rare_thr, rare_n, min_blob, seed=3):
 
 
 def convert5(path=None, size=50, rgb=None, box=None, thr=205, bg='auto', refs=None, tol=45, white_outside=None, mask=None, plates=None, K=18, over=8, dark_frac=0.28, black_L=13.0, dark_L=34.0, cover=0.5,
-             sat=1.2, contrast=1.05, sharp=0.3, skin_safe=True, pale_skin=False, seal=None, peel=0.0, rare_thr=16.0, rare_n=6, min_blob=None, smooth_de=22.0, trace=None, post=None, pre_blur=0, hatch=0, warm_white=0, holes_bg=0.0, center_map=None):
+             sat=1.2, contrast=1.05, sharp=0.3, skin_safe=True, pale_skin=False, seal=None, peel=0.0, rare_thr=16.0, rare_n=6, min_blob=None, smooth_de=22.0, trace=None, post=None, pre_blur=0, hatch=0, warm_white=0, holes_bg=0.0, center_map=None, hl_gain=0.0):
     if rgb is None: rgb = illus._load(path, box)
     if mask is not None: m = mask(rgb)
     else:
@@ -128,7 +128,7 @@ def convert5(path=None, size=50, rgb=None, box=None, thr=205, bg='auto', refs=No
             if c.sum() == 0: grid[y][x] = blk_letter; continue
             # soma por LETRA (centros diferentes que viram a mesma letra somam juntos)
             tot = {}
-            for k in np.nonzero(c)[0]: tot[letters[k]] = tot.get(letters[k], 0) + c[k]
+            for k in np.nonzero(c)[0]: tot[letters[k]] = tot.get(letters[k], 0) + ((c[k] * (1.0 + hl_gain * min(1.0, max(0.0, (float(cen[k][0]) - 20.0) / 60.0)))) if hl_gain else c[k])
             grid[y][x] = max(tot, key=tot.get)
     if warm_white:                   # rosto quase branco que o k-means juntou com o branco de verdade: conta branca cuja cor original é quente (R-B >= warm_white) vira o tom de pele mais claro
         wt = isfg.astype(np.float32)[..., None]

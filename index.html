@@ -119,6 +119,8 @@ body[data-view="edit"] .home{display:none!important}
 #cv{display:block;touch-action:none;cursor:crosshair}
 .stage.grab #cv{cursor:grab} .stage.grabbing #cv{cursor:grabbing}
 .empty{position:absolute;inset:0;display:grid;place-items:center;pointer-events:none;z-index:2}
+.mirbadge{position:absolute;top:3px;left:50%;transform:translateX(-50%);z-index:3;padding:2px 12px;border-radius:999px;background:var(--accent);color:var(--accent-ink);font-size:11px;font-weight:700;letter-spacing:.05em;white-space:nowrap;pointer-events:none;opacity:.94;box-shadow:var(--shadow-lg)}
+.mirbadge[hidden]{display:none}
 .empty .card button{pointer-events:auto}
 .empty .card{pointer-events:none;max-width:360px;background:var(--panel);border:1px solid var(--line-strong);border-radius:var(--r-lg);padding:22px 24px;box-shadow:var(--shadow);text-align:center}
 .empty h2{margin:0 0 6px;font-size:18px} .empty p{margin:0 0 14px;color:var(--muted)}
@@ -161,6 +163,32 @@ body[data-view="edit"] .home{display:none!important}
 .hexbtn:hover{background:var(--ink)}
 .hexbtn.on{background:var(--accent)} .hexbtn.on .hexfill{inset:3px}
 .hexbtn.used::after{content:"";position:absolute;left:50%;bottom:5px;width:4px;height:4px;margin-left:-2px;border-radius:50%;background:currentColor;opacity:.85;pointer-events:none}
+/* cores substitutas (parecidas): faixa no menu "Todas as cores", botão ⇄ nas linhas de "Contas por cor", submenu .subpop e atalhos em "Trocar uma cor por outra" */
+.palsugg{padding:8px 12px 6px;border-bottom:1px solid var(--line);background:var(--panel-2)}
+.palsugg[hidden]{display:none}
+.palsugg .pst{font-size:12px;color:var(--muted);margin-bottom:3px}
+.palsugg .pst b{color:var(--ink)}
+.psrow,.repsugg{display:flex;flex-wrap:wrap;gap:3px 2px;align-items:center}
+.psrow .hexbtn{width:40px}
+.repsugg{margin:2px 0 8px}
+.repsugg .rst{flex-basis:100%;font-size:11.5px;color:var(--muted)}
+.repsugg .hexbtn{width:36px}
+.subpop{position:fixed;z-index:70;width:min(330px,calc(100vw - 16px));max-height:min(74vh,540px);display:flex;flex-direction:column;background:var(--panel);border:1px solid var(--line-strong);border-radius:14px;box-shadow:0 10px 34px rgba(0,0,0,.3)}
+.subpop[hidden]{display:none}
+.subpop-h{display:grid;grid-template-columns:38px 1fr auto;gap:10px;align-items:center;padding:10px 12px;border-bottom:1px solid var(--line)}
+.subpop-h b{display:block;line-height:1.2} .subpop-h small{color:var(--muted);font-size:11.5px}
+.subpop-b{overflow:auto;padding:6px}
+.subpop .sw{width:34px;height:38px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);display:grid;place-items:center;font-size:11px;font-weight:700}
+.subrow{display:grid;grid-template-columns:38px 1fr auto;align-items:center;gap:10px;width:100%;padding:6px 8px;border:1px solid transparent;border-radius:10px;background:none;color:inherit;font:inherit;text-align:left;cursor:pointer}
+.subrow:hover{background:var(--panel-2)} .subrow:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+.subrow .nm b{display:block;font-weight:600;line-height:1.15} .subrow .nm small{color:var(--muted);font-size:11.5px}
+.subrow .tag{font-size:11px;font-weight:650;padding:2px 8px;border-radius:999px;background:var(--panel-2);color:var(--muted);white-space:nowrap}
+.subrow .tag.t1{background:color-mix(in srgb,var(--ok) 18%,transparent);color:var(--ok)}
+.subrow .tag.t2{background:var(--accent-soft);color:var(--accent)}
+.subrow .tag.t4,.subrow .tag.t5{background:color-mix(in srgb,var(--warn) 18%,transparent);color:var(--warn)}
+.subpop-f{padding:8px 12px 10px;border-top:1px solid var(--line);display:flex;gap:10px;align-items:center;justify-content:space-between;color:var(--muted);font-size:11.5px;line-height:1.3}
+.crow .swapbtn{width:28px;height:28px;display:grid;place-items:center;padding:0;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--muted);cursor:pointer;opacity:.75}
+.crow .swapbtn:hover,.crow .swapbtn:focus-visible,.crow .swapbtn[aria-expanded="true"]{opacity:1;color:var(--accent);border-color:var(--accent)}
 
 /* ---------- painel da direita ---------- */
 .tabs{display:flex;padding:10px 12px 0;gap:4px;border-bottom:1px solid var(--line);background:var(--panel);position:sticky;top:0;z-index:5}
@@ -176,8 +204,8 @@ body[data-view="edit"] .home{display:none!important}
 .listhead h3{margin:0}
 .stockchk{display:flex;align-items:center;gap:8px;margin:0 0 10px;font-size:13px;cursor:pointer}
 .stockchk input{width:16px;height:16px;accent-color:var(--accent)}
-.crow{display:grid;grid-template-columns:38px 1fr auto;align-items:center;gap:10px;padding:7px 8px;border-radius:10px;border:1px solid transparent;position:relative;cursor:pointer;touch-action:manipulation}
-#countList.stock-on .crow{grid-template-columns:38px 1fr auto 70px}
+.crow{display:grid;grid-template-columns:38px 1fr auto auto;align-items:center;gap:10px;padding:7px 8px;border-radius:10px;border:1px solid transparent;position:relative;cursor:pointer;touch-action:manipulation}
+#countList.stock-on .crow{grid-template-columns:38px 1fr auto 70px auto}
 .crow .stockbox{display:none} #countList.stock-on .crow .stockbox{display:flex}
 .crow:hover{background:var(--panel-2)}
 .crow.on{border-color:var(--accent);background:var(--accent-soft)}                     /* a cor com que o pincel está pintando agora */
@@ -198,6 +226,15 @@ body[data-view="edit"] .home{display:none!important}
 .alertbox{margin-top:10px;padding:9px 12px;border-radius:10px;font-size:13px;border:1px solid var(--line)}
 .alertbox.bad{background:color-mix(in srgb,var(--danger) 10%,var(--panel));border-color:color-mix(in srgb,var(--danger) 45%,var(--line))}
 .alertbox.good{background:color-mix(in srgb,var(--ok) 10%,var(--panel));border-color:color-mix(in srgb,var(--ok) 45%,var(--line))}
+.alertbox.warn{background:color-mix(in srgb,var(--warn) 10%,var(--panel));border-color:color-mix(in srgb,var(--warn) 45%,var(--line))}
+/* cores parecidas dentro do molde: selo "≈ G1" e aviso da linha (ajuda a não confundir bege com creme) */
+.conf{display:inline-block;margin-left:6px;padding:0 6px;border-radius:999px;font-size:10.5px;font-weight:700;line-height:16px;white-space:nowrap;color:var(--warn);background:color-mix(in srgb,var(--warn) 14%,transparent);border:1px solid color-mix(in srgb,var(--warn) 40%,transparent);cursor:help;vertical-align:1px}
+.conf.sm{margin-left:3px;padding:0 4px}
+.confbox{margin:8px 0 6px;font-size:12.5px;line-height:1.35}
+.confbox .cpair{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-top:8px}
+.confbox .cpair .sw2{display:inline-grid;place-items:center;min-width:34px;height:22px;padding:0 6px;border-radius:6px;border:1px solid var(--bead-edge);font-size:11px;font-weight:700}
+.confbox .cpair .x{color:var(--muted)}
+.confbox .cpair small{flex-basis:100%;color:var(--muted);font-size:12px}
 .field{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px;font-size:13px}
 .field>span{color:var(--muted)}
 .field input[type=number],.field select,.num-in{width:78px;padding:5px 8px;border:1px solid var(--line-strong);border-radius:8px;background:var(--panel);font-variant-numeric:tabular-nums}
@@ -313,7 +350,7 @@ body[data-view="edit"] .home{display:none!important}
 .cfocus{display:grid;grid-template-columns:38px 1fr auto;gap:10px;align-items:center;padding:7px 8px;border-radius:10px;border:1px solid transparent;background:transparent;width:100%;text-align:left}
 .cfocus:hover{background:var(--panel-2)} .cfocus.on{border-color:var(--accent);background:var(--accent-soft)}
 .cfocus .sw{width:34px;height:38px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);display:grid;place-items:center;font-size:11px;font-weight:700}
-.cfocus .nm b{display:block;font-weight:600;line-height:1.15} .cfocus .mini{height:4px;border-radius:3px;background:var(--line);margin-top:5px;overflow:hidden} .cfocus .mini i{display:block;height:100%;background:var(--ok)}
+.cfocus .nm b{display:block;font-weight:600;line-height:1.15} .cfocus .cbar{display:block;height:4px;border-radius:3px;background:var(--line);margin-top:5px;overflow:hidden} .cfocus .cbar i{display:block;height:100%;background:var(--ok)}
 .cfocus .fr{font-variant-numeric:tabular-nums;font-weight:700;text-align:right} .cfocus .fr small{display:block;color:var(--muted);font-weight:500;font-size:11px}
 
 /* dialogs */
@@ -454,6 +491,14 @@ button.cr-icon:hover{border-color:var(--accent);color:var(--accent)}
 .colrow .sw{width:30px;height:34px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)}
 .colrow input[type=color]{width:50px;height:30px;border:1px solid var(--line-strong);border-radius:8px;padding:2px;background:var(--panel)}
 .colgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:0 28px}
+.recgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:10px 0 6px}
+.recgrid figure{margin:0;display:flex;flex-direction:column;align-items:center;gap:6px;padding:8px;border:1px solid var(--line);border-radius:12px;background:var(--panel-2)}
+.recgrid canvas{max-width:100%;image-rendering:pixelated;background:repeating-conic-gradient(#0000000f 0% 25%,transparent 0% 50%) 0 0/12px 12px}
+.recgrid.two{grid-template-columns:repeat(2,1fr)}
+.recgrid figcaption{text-align:center;font-size:12.5px;line-height:1.25} .recgrid figcaption small{display:block;color:var(--muted);font-size:11px}
+@media(max-width:700px){.recgrid{grid-template-columns:1fr}}
+.vivrow{display:grid;grid-template-columns:auto 1fr 46px;align-items:center;gap:12px;margin:0 0 4px}
+.vivrow input[type=range]{width:100%;accent-color:var(--accent)} .vivrow output{font-weight:700;font-variant-numeric:tabular-nums;text-align:right}
 #toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:var(--bg);padding:9px 16px;border-radius:999px;font-size:13px;opacity:0;pointer-events:none;transition:.25s;z-index:100;box-shadow:var(--shadow)}
 #toast.show{opacity:1;transform:translateX(-50%)}
 .swatch-pop{position:fixed;z-index:60;background:var(--panel);border:1px solid var(--line-strong);border-radius:14px;box-shadow:var(--shadow);padding:10px;display:none}
@@ -770,6 +815,7 @@ kbd{display:inline-block;min-width:22px;padding:1px 7px;border:1px solid var(--l
         <div class="mlabel">Exportar</div>
         <button id="mPng" data-icon="image">Imagem (PNG)</button>
         <button id="mGuide" data-icon="hash">Guia de montagem (PNG)</button>
+        <button id="mMirror" data-icon="mirrorH" aria-pressed="true" title="A Montar e o Guia de montagem mostram a figura espelhada, para quem vira a peça com a fita">Montagem e guia espelhados: <b id="mMirrorTxt">sim</b></button>
         <button id="mList" data-icon="copy">Copiar lista de contas</button>
         <hr>
         <div class="mlabel">Mais</div>
@@ -865,6 +911,7 @@ kbd{display:inline-block;min-width:22px;padding:1px 7px;border:1px solid var(--l
           </div>
         </div>
       </div>
+      <div class="mirbadge" id="mirBadge" hidden title="A Montar mostra a figura espelhada, para virar com a fita (dá para desligar no painel da direita)">ESPELHADO</div>
       <div class="selchip" id="selChip" hidden role="status" aria-live="polite">
         <span class="n" id="selN">0</span>
         <div class="t"><b id="selLabel">contas selecionadas</b><small id="selSize"></small></div>
@@ -887,6 +934,7 @@ kbd{display:inline-block;min-width:22px;padding:1px 7px;border:1px solid var(--l
     <div id="palUsed" aria-label="Cores deste desenho"></div>
     <div id="palPop" class="palpop" hidden role="dialog" aria-label="Todas as cores">
       <div class="palpop-h"><input id="palSearch" type="search" placeholder="Buscar: código (B13) ou nome (verde)" autocomplete="off" aria-label="Buscar cor"><button class="btn sm" id="palClose">Fechar</button></div>
+      <div class="palsugg" id="palSugg" hidden><div class="pst" id="psTitle"></div><div class="psrow" id="psRow"></div></div>
       <div class="palpop-b" id="palBody"></div>
     </div>
   </footer>
@@ -916,6 +964,10 @@ kbd{display:inline-block;min-width:22px;padding:1px 7px;border:1px solid var(--l
         <label class="stockchk"><input type="checkbox" id="stockOn"> Conferir meu estoque</label>
         <div id="countList"></div>
         <p class="note" id="countNote">Clique numa cor para pintar com ela. Passe o mouse para ver onde ela está no desenho; dois cliques deixam o destaque fixo.</p>
+        <div class="btnrow" style="margin-top:6px">
+          <button class="btn sm" id="btnRecolor" type="button" title="As cores deste molde saíram diferentes do que você via antes? Veja a proposta: cada cor troca para a conta real mais parecida com a de antes (pele lisa, nada mais vivo que antes)">Refazer as cores…</button>
+          <button class="btn sm" id="btnMerge" type="button" title="Quando o molde usa vários tons que são praticamente a mesma conta (3 vermelhos quase iguais), fica só um: mais simples de montar. As parecidas continuam no botão ⇄ para o caso de a conta acabar.">Juntar cores quase iguais…</button>
+        </div>
       </div>
     </section>
 
@@ -962,6 +1014,7 @@ kbd{display:inline-block;min-width:22px;padding:1px 7px;border:1px solid var(--l
         <div class="accbody">
           <div class="field"><span>Trocar</span><select id="repFrom"></select></div>
           <div class="field"><span>por</span><select id="repTo"></select></div>
+          <div class="repsugg" id="repSugg" aria-live="polite"></div>
           <button class="btn sm" id="btnReplace">Trocar em todo o desenho</button>
         </div>
       </details>
@@ -978,6 +1031,8 @@ kbd{display:inline-block;min-width:22px;padding:1px 7px;border:1px solid var(--l
           <div class="pbar"><i id="pFill" style="width:0"></i></div>
         </div>
         <div class="seg small" id="asmSeg"><button data-view="row" class="on">Linha por linha</button><button data-view="color" >Cor por cor</button></div>
+        <label class="stockchk" style="margin:12px 0 4px" title="Você monta na placa, cobre com fita e vira a peça: ela sai espelhada. Ligado, a tela e o Guia de montagem já mostram a figura espelhada."><input type="checkbox" id="asmMirror" checked> Espelhado (para virar com fita)</label>
+        <div class="note" id="mirNote" style="margin:0"></div>
       </div>
       <div class="sec" id="asmBody"></div>
       <div class="sec"><button class="btn sm danger" id="btnResetProg" data-icon="trash">Zerar progresso</button></div>
@@ -1139,13 +1194,30 @@ kbd{display:inline-block;min-width:22px;padding:1px 7px;border:1px solid var(--l
   <footer><button class="btn" data-close>Cancelar</button><button class="btn primary" id="impGo" disabled>Usar no projeto</button></footer>
 </div></dialog>
 
+<dialog id="dlgRecolor"><div class="dlg">
+  <header><h2 id="recTitle">Refazer as cores deste molde</h2><button class="btn sm" data-close>Fechar</button></header>
+  <div class="body">
+    <p class="note" id="recIntro" style="margin-top:0"></p>
+    <div class="vivrow" id="mergeRow" hidden><label for="mergeT"><b>Juntar se a diferença for menor que</b></label><input type="range" id="mergeT" min="3" max="12" step="0.5"><output id="mergeTVal" for="mergeT"></output></div>
+    <div class="recgrid" id="recGrid">
+      <figure><canvas id="recA"></canvas><figcaption><b>Agora</b></figcaption></figure>
+      <figure id="recBfig"><canvas id="recB"></canvas><figcaption><b>Como era antes</b><small>cores da versão antiga</small></figcaption></figure>
+      <figure><canvas id="recC"></canvas><figcaption><b>Proposta</b><small id="recCsub">contas reais parecidas com o antes</small></figcaption></figure>
+    </div>
+    <p class="note" id="recInfo"></p>
+  </div>
+  <footer><button class="btn" data-close>Deixar como está</button><button class="btn primary" id="recApply">Usar a proposta</button></footer>
+</div></dialog>
+
 <dialog id="dlgColors" class="narrow"><div class="dlg">
   <header><h2>Ajustar cores</h2><button class="btn sm" data-close>Fechar</button></header>
   <div class="body">
-    <p class="note" style="margin-top:0">As cores foram estimadas a partir da foto da tabela; as marcadas com <b>~</b> (as 96 do kit de 120) saíram de uma foto de anúncio e são só uma aproximação. Se alguma cor na tela estiver diferente da conta real, ajuste aqui — só muda a aparência, os códigos continuam os mesmos.</p>
+    <div class="vivrow"><label for="vivSlider"><b>Vivacidade das cores</b></label><input type="range" id="vivSlider" min="30" max="100" step="5" aria-describedby="vivNote"><output id="vivVal" for="vivSlider"></output></div>
+    <p class="note" id="vivNote" style="margin:0 0 12px"></p>
+    <p class="note" style="margin-top:0">As cores da tela foram medidas em <b>fotos das contas do kit de 120</b> (bandejas sem tampa); as marcadas com <b>~</b> são estimativas de foto de celular, que muda um pouco a saturação e a luz, então podem destoar da conta real. Se alguma estiver diferente, ajuste aqui — só muda a aparência, os códigos continuam os mesmos. <b>Voltar às cores antigas</b> traz a paleta de antes (estimada da foto de um anúncio); <b>Restaurar padrão</b> volta às das contas.</p>
     <div class="colgrid" id="colList"></div>
   </div>
-  <footer><button class="btn" id="colReset">Restaurar padrão</button><button class="btn primary" data-close>Pronto</button></footer>
+  <footer><button class="btn" id="colLegacy" title="Usa na tela as cores da versão anterior (da foto do anúncio) em todas as 120">Voltar às cores antigas</button><button class="btn" id="colReset">Restaurar padrão</button><button class="btn primary" data-close>Pronto</button></footer>
 </div></dialog>
 
 <dialog id="dlgHelp"><div class="dlg">
@@ -1168,8 +1240,13 @@ kbd{display:inline-block;min-width:22px;padding:1px 7px;border:1px solid var(--l
 <input type="file" id="fileTplIn" accept=".json,application/json" hidden>
 <input type="file" id="fileImg" accept="image/*" hidden>
 <div id="toast" role="status"></div>
+<div id="subPop" class="subpop" hidden role="dialog" aria-label="Cores substitutas">
+  <div class="subpop-h"><span class="sw" id="subSw"></span><div><b id="subTitle"></b><small id="subSub"></small></div><button class="btn sm" id="subClose" type="button">Fechar</button></div>
+  <div class="subpop-b" id="subBody"></div>
+  <div class="subpop-f"><span>As cores da tela são estimadas de foto: confira na conta de verdade.</span><button class="btn sm" id="subOther" type="button">Outra cor…</button></div>
+</div>
 
-<script>(function(){var b='20261102a',v=b;try{var s=JSON.parse(localStorage.getItem('beadstudio.tplv')||'null');if(s&&s.base===b)v=b+'-'+s.t}catch(e){}window.TPL_BASE_V=b;document.write('<script src="templates.js?v='+v+'"><\/script><script src="projetos3d.js?v='+b+'"><\/script><script src="remessas.js?v='+b+'"><\/script>')})();</script>
+<script>(function(){var b='20261103g',v=b;try{var s=JSON.parse(localStorage.getItem('beadstudio.tplv')||'null');if(s&&s.base===b)v=b+'-'+s.t}catch(e){}window.TPL_BASE_V=b;document.write('<script src="templates.js?v='+v+'"><\/script><script src="projetos3d.js?v='+b+'"><\/script><script src="remessas.js?v='+b+'"><\/script>')})();</script>
 <script>
 'use strict';
 /* =====================================================================
@@ -1179,130 +1256,135 @@ kbd{display:inline-block;min-width:22px;padding:1px 7px;border:1px solid var(--l
 /* Paleta Pindou de 120 cores — gerada por tools/sync_palette_to_app.py a partir de tools/data/palette.json.
    As 24 primeiras são as do kit antigo (ordem da tabela impressa); o ÍNDICE (1..120) é o que o desenho guarda: não reordene. */
 const DEFAULT_PALETTE = [
-  ["B3","Verde claro","#7FC79C"],
-  ["C3","Azul bebê","#C3E5F3"],
-  ["D9","Lavanda","#C8C4E4"],
-  ["E2","Rosa claro","#F1C4D1"],
-  ["G1","Bege","#E4C7B5"],
-  ["A4","Amarelo","#EBC22F"],
-  ["B5","Verde","#5FA66E"],
-  ["C5","Turquesa","#55BEDB"],
-  ["D6","Lilás","#A89BC6"],
-  ["E4","Rosa","#EA9BB8"],
-  ["G5","Salmão","#D99479"],
-  ["A6","Âmbar","#E9A23B"],
-  ["B8","Verde escuro","#3F8761"],
-  ["C8","Azul","#6B98D3"],
-  ["D7","Roxo","#75609A"],
-  ["F5","Vermelho","#BD3A4B"],
-  ["G7","Marrom","#8F5E50"],
-  ["A7","Laranja","#EC8546"],
-  ["H1","Cinza gelo","#E4E7EA"],
-  ["H2","Branco","#FFFFFF"],
-  ["H3","Cinza claro","#B5B8BE"],
-  ["H4","Cinza","#8A8D93"],
-  ["H5","Cinza escuro","#5F6065"],
-  ["H7","Preto","#2E2E32"],
-  ["A1","Creme","#E3D893"],
-  ["A3","Amarelo claro","#DFCF6B"],
-  ["A5","Amarelo (A5)","#E5C241"],
-  ["A8","Amarelo (A8)","#CFAC46"],
-  ["A9","Laranja (A9)","#E59E66"],
-  ["A10","Laranja (A10)","#F6AA65"],
-  ["A11","Amarelo claro (A11)","#FAD177"],
-  ["A12","Salmão (A12)","#EBB289"],
-  ["A13","Amarelo claro (A13)","#FCCC6B"],
-  ["A14","Coral","#F8917B"],
-  ["A15","Amarelo (A15)","#D5C83B"],
-  ["B1","Amarelo (B1)","#B6BB48"],
-  ["B2","Verde-limão","#68AC44"],
-  ["B4","Verde (B4)","#5EA73D"],
-  ["B6","Verde-água","#71B8A9"],
-  ["B7","Verde-petróleo","#38796D"],
-  ["B10","Verde-água (B10)","#76B8AC"],
-  ["B11","Preto amarelado","#2E2B1F"],
-  ["B12","Verde-petróleo (B12)","#1F493D"],
-  ["B13","Verde-limão (B13)","#BBDC7C"],
-  ["B14","Verde-limão (B14)","#7CAB43"],
-  ["B15","Preto (B15)","#171F1E"],
-  ["B16","Verde-limão (B16)","#C3E590"],
-  ["B17","Verde-oliva","#51672E"],
-  ["B18","Amarelo (B18)","#BDC04F"],
-  ["B19","Verde-petróleo (B19)","#4C8C7E"],
-  ["B20","Verde claro (B20)","#E0FFDF"],
-  ["C1","Verde claro (C1)","#C7E3C6"],
-  ["C2","Verde-água claro","#B0EEED"],
-  ["C4","Azul claro","#89C3E7"],
-  ["C6","Azul (C6)","#82AACE"],
-  ["C7","Azul (C7)","#6683B6"],
-  ["C9","Azul escuro","#44498F"],
-  ["C10","Verde-água (C10)","#78C2D8"],
-  ["C11","Verde-água (C11)","#5CA6B3"],
-  ["C13","Verde-água claro (C13)","#DAF9FF"],
-  ["C14","Cinza claro (C14)","#C5D7D6"],
-  ["C15","Verde-água (C15)","#4F9CA8"],
-  ["C16","Azul escuro (C16)","#3E5073"],
-  ["C17","Verde-água (C17)","#69AFC1"],
-  ["D1","Azul (D1)","#90A6D4"],
-  ["D2","Azul (D2)","#7C93B9"],
-  ["D3","Azul escuro (D3)","#434990"],
-  ["D5","Rosa (D5)","#BD86B3"],
-  ["D8","Cinza gelo (D8)","#E6E9ED"],
-  ["D11","Azul claro (D11)","#B8CBE5"],
-  ["D12","Rosa (D12)","#C69EC6"],
-  ["D13","Magenta","#AD6598"],
-  ["D14","Roxo (D14)","#70487A"],
-  ["D15","Azul-marinho","#443F73"],
-  ["D16","Branco (D16)","#F0F7FC"],
-  ["D17","Azul claro (D17)","#9AAFCD"],
-  ["D18","Lilás (D18)","#957AAF"],
-  ["D19","Cinza gelo (D19)","#DDDADC"],
-  ["D20","Roxo (D20)","#966BA7"],
-  ["D21","Roxo (D21)","#805289"],
-  ["E1","Rosa claro (E1)","#FCD0C0"],
-  ["E3","Rosa (E3)","#FBA6B5"],
-  ["E5","Vermelho (E5)","#C7577A"],
-  ["E6","Coral (E6)","#FF8095"],
-  ["E7","Vinho","#903C59"],
-  ["E8","Branco (E8)","#FFF4F1"],
-  ["E9","Rosa (E9)","#EF9ABD"],
-  ["E10","Vermelho (E10)","#D96488"],
-  ["E11","Bege (E11)","#FFDFD1"],
-  ["E12","Rosa claro (E12)","#FFBED3"],
-  ["E13","Magenta (E13)","#974969"],
-  ["E14","Rosa claro (E14)","#FFE0D6"],
-  ["E15","Rosa claro (E15)","#F6D7D1"],
-  ["F1","Rosa claro (F1)","#FEC5BA"],
-  ["F2","Vermelho (F2)","#F78578"],
-  ["F3","Vermelho (F3)","#E87D6C"],
-  ["F4","Vermelho (F4)","#D9624B"],
-  ["F6","Vermelho (F6)","#A26553"],
-  ["F7","Preto avermelhado","#4F2628"],
-  ["F8","Vermelho escuro","#84332B"],
-  ["F9","Rosa (F9)","#EF9194"],
-  ["F10","Vinho (F10)","#693A2C"],
-  ["F11","Vinho (F11)","#5D3C34"],
-  ["F12","Vermelho (F12)","#F78076"],
-  ["F13","Vermelho (F13)","#B84E3D"],
-  ["F14","Rosa pastel","#FEB5B5"],
-  ["G2","Salmão pastel","#F1BC9D"],
-  ["G3","Salmão (G3)","#E2AE8E"],
-  ["G6","Caramelo","#B26E47"],
-  ["G8","Preto (G8)","#2B211E"],
-  ["G9","Salmão (G9)","#DAA671"],
-  ["G13","Vermelho escuro (G13)","#8C5944"],
-  ["G14","Caramelo (G14)","#8A725F"],
-  ["G17","Cinza escuro (G17)","#605A53"],
-  ["H6","Cinza escuro (H6)","#494B49"],
-  ["H12","Creme (H12)","#D9D1B0"],
-  ["M5","Bege (M5)","#BAB194"],
-  ["M6","Bege (M6)","#A4997D"],
-  ["M9","Bege escuro","#A99A82"],
-  ["M12","Cinza escuro (M12)","#4C443E"]
+  ["B3","Verde claro","#67E5A8","#40E9A0"],
+  ["C3","Ciano claro","#99E3FA","#99E3FA"],
+  ["D9","Lilás claro","#D7CDFA","#D7CDFA"],
+  ["E2","Rosa claro","#FED9FA","#FED9FA"],
+  ["G1","Bege","#FAE3BB","#FAE3BB"],
+  ["A4","Amarelo","#F8DD54","#FADD18"],
+  ["B5","Verde","#5DC955","#2ECE35"],
+  ["C5","Ciano","#39B2E1","#05B3E7"],
+  ["D6","Lilás","#C1A1EB","#C39FF4"],
+  ["E4","Rosa choque","#E170AD","#EF64B2"],
+  ["G5","Laranja","#F6B753","#FEB532"],
+  ["A6","Amarelo (A6)","#FBD351","#FFD318"],
+  ["B8","Verde (B8)","#3DA862","#09AB57"],
+  ["C8","Azul","#4175D2","#0C75E6"],
+  ["D7","Roxo","#8757B4","#8B50C4"],
+  ["F5","Vermelho","#DB4D49","#ED343D"],
+  ["G7","Caramelo","#B77B57","#BA7A53"],
+  ["A7","Laranja (A7)","#F1963F","#FC9018"],
+  ["H1","Transparente (H1)","#E4E7EA","#E4E7EA"],
+  ["H2","Branco","#FFFFFF","#FFFFFF"],
+  ["H3","Cinza claro","#B5B8BE","#B5B8BE"],
+  ["H4","Cinza","#8A8D93","#8A8D93"],
+  ["H5","Cinza escuro","#5F6065","#5F6065"],
+  ["H7","Preto","#2E2E32","#2E2E32"],
+  ["A1","Creme","#F6ECC0","#F6ECC0"],
+  ["A3","Amarelo claro","#EBE279","#EBE362"],
+  ["A5","Amarelo (A5)","#FBD652","#FED617"],
+  ["A8","Amarelo (A8)","#FAD351","#FED317"],
+  ["A9","Salmão","#F7BF9D","#F8BF9C"],
+  ["A10","Laranja (A10)","#F5A24C","#FF9D2D"],
+  ["A11","Amarelo (A11)","#EBD161","#EDD142"],
+  ["A12","Salmão (A12)","#F9B294","#FDB190"],
+  ["A13","Amarelo (A13)","#F4C64C","#F9C517"],
+  ["A14","Laranja (A14)","#F08541","#FE7D23"],
+  ["A15","Amarelo (A15)","#FCF15B","#FBF318"],
+  ["B1","Amarelo (B1)","#E1E053","#DEE218"],
+  ["B2","Verde (B2)","#5CD449","#07D90C"],
+  ["B4","Verde (B4)","#5CD64B","#04DB11"],
+  ["B6","Turquesa","#42D2C9","#03D4CA"],
+  ["B7","Turquesa (B7)","#3ABEAB","#05C0AB"],
+  ["B10","Turquesa (B10)","#41D0C5","#04D2C6"],
+  ["B11","Verde-oliva","#536F36","#517031"],
+  ["B12","Verde (B12)","#298658","#088854"],
+  ["B13","Verde-limão","#A8E474","#9BE75B"],
+  ["B14","Verde-limão (B14)","#A4D74D","#95DB15"],
+  ["B15","Verde escuro","#1D6134","#0F6230"],
+  ["B16","Verde claro (B16)","#B9E8B5","#B7E9B3"],
+  ["B17","Verde-limão (B17)","#B6D74D","#ACDA15"],
+  ["B18","Amarelo (B18)","#EDE355","#ECE417"],
+  ["B19","Turquesa (B19)","#43C8A4","#06CBA2"],
+  ["B20","Verde claro (B20)","#B1E5C8","#B1E5C8"],
+  ["C1","Verde claro (C1)","#BFE9C9","#BFE9C9"],
+  ["C2","Ciano claro (C2)","#82DFF0","#81DFF0"],
+  ["C4","Ciano (C4)","#52C3ED","#3DC4F2"],
+  ["C6","Ciano (C6)","#75C8F7","#6DC9FB"],
+  ["C7","Ciano (C7)","#59B2F3","#3FB3FD"],
+  ["C9","Azul escuro","#3F46BF","#1642DC"],
+  ["C10","Ciano (C10)","#3DCAE2","#06CCE6"],
+  ["C11","Ciano (C11)","#2AA3C4","#06A4C7"],
+  ["C13","Azul claro","#B0D9F5","#B0D9F5"],
+  ["C14","Verde-água claro","#BFE4E6","#BFE4E6"],
+  ["C15","Ciano (C15)","#3CCBD1","#03CDD4"],
+  ["C16","Azul (C16)","#3E80D2","#0881E2"],
+  ["C17","Ciano (C17)","#42C7E9","#19C8EE"],
+  ["D1","Azul claro (D1)","#83B0EA","#7FB0EE"],
+  ["D2","Azul claro (D2)","#8EA5F0","#88A5FA"],
+  ["D3","Azul escuro (D3)","#4146C7","#0E41E7"],
+  ["D5","Magenta","#C46FBF","#CE66C9"],
+  ["D8","Rosa claro (D8)","#DCCFDA","#DCCFDA"],
+  ["D11","Azul claro (D11)","#B1CFF9","#B1CFF9"],
+  ["D12","Rosa","#DF8AD9","#E982E3"],
+  ["D13","Magenta (D13)","#CD449F","#DF20A8"],
+  ["D14","Roxo (D14)","#A74CD3","#B136EE"],
+  ["D15","Azul-marinho","#302081","#231995"],
+  ["D16","Azul claro (D16)","#CDDFEE","#CDDFEE"],
+  ["D17","Azul claro (D17)","#93C3EA","#93C3EA"],
+  ["D18","Lilás (D18)","#B874CB","#C06DD7"],
+  ["D19","Lilás (D19)","#DBAFE5","#DDAEE7"],
+  ["D20","Rosa (D20)","#C879D1","#D171DD"],
+  ["D21","Roxo (D21)","#9749A4","#A03EB1"],
+  ["E1","Rosa claro (E1)","#F6D7CC","#F6D7CC"],
+  ["E3","Rosa choque (E3)","#EA88B0","#F382B1"],
+  ["E5","Rosa (E5)","#F081DE","#FF73EA"],
+  ["E6","Rosa choque (E6)","#F06F91","#FF628F"],
+  ["E7","Rosa choque (E7)","#CA4378","#DA2979"],
+  ["E8","Rosa pastel","#ECC2B7","#ECC2B7"],
+  ["E9","Rosa (E9)","#DC86C8","#E57FCF"],
+  ["E10","Magenta (E10)","#C34691","#D32F97"],
+  ["E11","Bege (E11)","#FEE6D1","#FEE6D1"],
+  ["E12","Rosa claro (E12)","#FEBAD9","#FFBAD9"],
+  ["E13","Magenta (E13)","#DB53B9","#EE35C6"],
+  ["E14","Bege (E14)","#F7D7B5","#F7D7B5"],
+  ["E15","Rosa claro (E15)","#F4D3D4","#F4D3D4"],
+  ["F1","Rosa (F1)","#FDB69E","#FFB59C"],
+  ["F2","Coral","#F3866D","#FF7F62"],
+  ["F3","Coral (F3)","#E36C5C","#F16151"],
+  ["F4","Vermelho (F4)","#D44A34","#E63221"],
+  ["F6","Coral (F6)","#CB6B56","#D4654E"],
+  ["F7","Vinho","#9B385D","#A42E5D"],
+  ["F8","Rosa choque (F8)","#CB3E47","#DC213E"],
+  ["F9","Rosa choque (F9)","#E47692","#EF6E91"],
+  ["F10","Laranja (F10)","#D8824D","#E17D3E"],
+  ["F11","Vermelho escuro","#89483C","#8C463A"],
+  ["F12","Coral (F12)","#F07073","#FF646C"],
+  ["F13","Vermelho (F13)","#DF543D","#F13E2B"],
+  ["F14","Rosa pastel (F14)","#F5ACB3","#F5ACB3"],
+  ["G2","Salmão (G2)","#F7BC86","#FBBB7E"],
+  ["G3","Salmão (G3)","#F5CD97","#F7CD93"],
+  ["G6","Laranja (G6)","#E1963F","#EA921F"],
+  ["G8","Preto avermelhado","#552B24","#552B24"],
+  ["G9","Laranja (G9)","#F5C06D","#FBBE5A"],
+  ["G13","Laranja (G13)","#D18D54","#D78A47"],
+  ["G14","Caramelo (G14)","#B48671","#B48671"],
+  ["G17","Rosa antigo","#785E5E","#785E5E"],
+  ["H6","Preto (H6)","#2E333C","#2E333C"],
+  ["H12","Creme (H12)","#E9E8C4","#E9E8C4"],
+  ["M5","Bege (M5)","#C1C490","#C1C490"],
+  ["M6","Bege (M6)","#C6C097","#C6C097"],
+  ["M9","Caramelo (M9)","#BA9D7D","#BA9D7D"],
+  ["M12","Rosa antigo (M12)","#886D6F","#886D6F"]
 ];
 /* cores novas cujo hex foi ESTIMADO da foto do anúncio (marcadas com ~ em Ajustar cores) */
-const EST_CODES = new Set(["A1", "A3", "A5", "A8", "A9", "A10", "A11", "A12", "A13", "A14", "A15", "B1", "B2", "B4", "B6", "B7", "B10", "B11", "B12", "B13", "B14", "B15", "B16", "B17", "B18", "B19", "B20", "C1", "C2", "C4", "C6", "C7", "C9", "C10", "C11", "C13", "C14", "C15", "C16", "C17", "D1", "D2", "D3", "D5", "D8", "D11", "D12", "D13", "D14", "D15", "D16", "D17", "D18", "D19", "D20", "D21", "E1", "E3", "E5", "E6", "E7", "E8", "E9", "E10", "E11", "E12", "E13", "E14", "E15", "F1", "F2", "F3", "F4", "F6", "F7", "F8", "F9", "F10", "F11", "F12", "F13", "F14", "G2", "G3", "G6", "G8", "G9", "G13", "G14", "G17", "H6", "H12", "M5", "M6", "M9", "M12"]);
+const VIVID_DEFAULT = 70;   /* vivacidade padrão (%): o 3º valor de cada cor já vem com ela; o 4º é a medida crua da foto (100%) */
+/* contas que na prática são OUTRA (o H12 é o mesmo creme da A1): não aparecem para escolher e nunca são destino de troca de cores; os moldes antigos que tinham H12 já foram trocados */
+const ALIAS_OF = {"H12": "A1"};
+const EST_CODES = new Set(["B3", "C3", "D9", "E2", "G1", "A4", "B5", "C5", "D6", "E4", "G5", "A6", "B8", "C8", "D7", "F5", "G7", "A7", "A1", "A3", "A5", "A8", "A9", "A10", "A11", "A12", "A13", "A14", "A15", "B1", "B2", "B4", "B6", "B7", "B10", "B11", "B12", "B13", "B14", "B15", "B16", "B17", "B18", "B19", "B20", "C1", "C2", "C4", "C6", "C7", "C9", "C10", "C11", "C13", "C14", "C15", "C16", "C17", "D1", "D2", "D3", "D5", "D8", "D11", "D12", "D13", "D14", "D15", "D16", "D17", "D18", "D19", "D20", "D21", "E1", "E3", "E5", "E6", "E7", "E8", "E9", "E10", "E11", "E12", "E13", "E14", "E15", "F1", "F2", "F3", "F4", "F6", "F7", "F8", "F9", "F10", "F11", "F12", "F13", "F14", "G2", "G3", "G6", "G8", "G9", "G13", "G14", "G17", "H6", "H12", "M5", "M6", "M9", "M12"]);
 /*PAL-END*/
+/* paleta ANTERIOR (estimada da foto do anúncio e da tabela impressa), guardada só para o botão "Voltar às cores antigas" em Ajustar cores (2026-11-02): fora do bloco PAL, que o sync_palette_to_app.py regrava */
+const LEGACY_HEX = {"B3":"#7FC79C","C3":"#C3E5F3","D9":"#C8C4E4","E2":"#F1C4D1","G1":"#E4C7B5","A4":"#EBC22F","B5":"#5FA66E","C5":"#55BEDB","D6":"#A89BC6","E4":"#EA9BB8","G5":"#D99479","A6":"#E9A23B","B8":"#3F8761","C8":"#6B98D3","D7":"#75609A","F5":"#BD3A4B","G7":"#8F5E50","A7":"#EC8546","H1":"#E4E7EA","H2":"#FFFFFF","H3":"#B5B8BE","H4":"#8A8D93","H5":"#5F6065","H7":"#2E2E32","A1":"#E3D893","A3":"#DFCF6B","A5":"#E5C241","A8":"#CFAC46","A9":"#E59E66","A10":"#F6AA65","A11":"#FAD177","A12":"#EBB289","A13":"#FCCC6B","A14":"#F8917B","A15":"#D5C83B","B1":"#B6BB48","B2":"#68AC44","B4":"#5EA73D","B6":"#71B8A9","B7":"#38796D","B10":"#76B8AC","B11":"#2E2B1F","B12":"#1F493D","B13":"#BBDC7C","B14":"#7CAB43","B15":"#171F1E","B16":"#C3E590","B17":"#51672E","B18":"#BDC04F","B19":"#4C8C7E","B20":"#E0FFDF","C1":"#C7E3C6","C2":"#B0EEED","C4":"#89C3E7","C6":"#82AACE","C7":"#6683B6","C9":"#44498F","C10":"#78C2D8","C11":"#5CA6B3","C13":"#DAF9FF","C14":"#C5D7D6","C15":"#4F9CA8","C16":"#3E5073","C17":"#69AFC1","D1":"#90A6D4","D2":"#7C93B9","D3":"#434990","D5":"#BD86B3","D8":"#E6E9ED","D11":"#B8CBE5","D12":"#C69EC6","D13":"#AD6598","D14":"#70487A","D15":"#443F73","D16":"#F0F7FC","D17":"#9AAFCD","D18":"#957AAF","D19":"#DDDADC","D20":"#966BA7","D21":"#805289","E1":"#FCD0C0","E3":"#FBA6B5","E5":"#C7577A","E6":"#FF8095","E7":"#903C59","E8":"#FFF4F1","E9":"#EF9ABD","E10":"#D96488","E11":"#FFDFD1","E12":"#FFBED3","E13":"#974969","E14":"#FFE0D6","E15":"#F6D7D1","F1":"#FEC5BA","F2":"#F78578","F3":"#E87D6C","F4":"#D9624B","F6":"#A26553","F7":"#4F2628","F8":"#84332B","F9":"#EF9194","F10":"#693A2C","F11":"#5D3C34","F12":"#F78076","F13":"#B84E3D","F14":"#FEB5B5","G2":"#F1BC9D","G3":"#E2AE8E","G6":"#B26E47","G8":"#2B211E","G9":"#DAA671","G13":"#8C5944","G14":"#8A725F","G17":"#605A53","H6":"#494B49","H12":"#D9D1B0","M5":"#BAB194","M6":"#A4997D","M9":"#A99A82","M12":"#4C443E"};
 const PALETTE = DEFAULT_PALETTE.map(([code,name,hex])=>({code,name,hex,est:EST_CODES.has(code)}));
 const NCOL = PALETTE.length;
 const CODE_IDX = {}; PALETTE.forEach((p,i)=>CODE_IDX[p.code]=i+1);
@@ -1323,12 +1405,33 @@ function rgb2lab([r,g,b]){
   const h=t=>t>0.008856?Math.cbrt(t):7.787*t+16/116; X=h(X);Y=h(Y);Z=h(Z);
   return [116*Y-16,500*(X-Y),200*(Y-Z)];
 }
+/* Vivacidade (2026-11-02, pedido do dono: "todas as cores ficaram muito mais vivas"): o celular exagera a saturação das fotos das contas. O 4º valor de cada cor em DEFAULT_PALETTE é a medida crua da foto (100%);
+   o 3º já vem com a vivacidade padrão (VIVID_DEFAULT). Abaixo de 100% o croma que passa de 28 é comprimido (joelho): pele, creme e pastéis não mudam, o neon sim. Lembrada em beadstudio.vivid. */
+let vivid=VIVID_DEFAULT;
+try{const v=parseInt(localStorage.getItem('beadstudio.vivid'),10);if(v>=30&&v<=100)vivid=v}catch(e){}
+function lab2rgb([L,a,b]){
+  const fy=(L+16)/116,fx=fy+a/500,fz=fy-b/200,f=t=>t*t*t>0.008856?t*t*t:(t-16/116)/7.787;
+  const X=f(fx)*0.95047,Y=f(fy),Z=f(fz)*1.08883;
+  let r=3.2404542*X-1.5371385*Y-0.4985314*Z,g=-0.9692660*X+1.8760108*Y+0.0415560*Z,bl=0.0556434*X-0.2040259*Y+1.0572252*Z;
+  const e=c=>c>0.0031308?1.055*Math.pow(Math.max(c,0),1/2.4)-0.055:12.92*c;
+  return [r,g,bl].map(c=>clamp(Math.round(e(c)*255),0,255));
+}
+function toneKnee(hex,s,c0=28){
+  if(s>=1)return hex;
+  const [L,a,b]=rgb2lab(hex2rgb(hex)),c=Math.hypot(a,b);if(c<=c0)return hex;
+  const k=(c0+(c-c0)*s)/c,[r,g,bl]=lab2rgb([L,a*k,b*k]);return rgb2hex(r,g,bl);
+}
+function baseHex(i){
+  const d=DEFAULT_PALETTE[i];
+  return vivid===VIVID_DEFAULT?d[2]:toneKnee(d[3]||d[2],vivid/100);
+}
 function derivePalette(){
   PALETTE.forEach((p,i)=>{
-    p.hex = (overrides[p.code] || DEFAULT_PALETTE[i][2]).toUpperCase();
+    p.hex = (overrides[p.code] || baseHex(i)).toUpperCase();
     p.rgb = hex2rgb(p.hex); p.lab = rgb2lab(p.rgb); p.ink = inkOn(p.hex);
     [p.h,p.s,p.v] = rgb2hsv(p.rgb[0],p.rgb[1],p.rgb[2]);
   });
+  if(typeof deCache!=='undefined')deCache.clear();      // a paleta mudou (vivacidade, ajuste de cor): as diferenças entre cores mudam
 }
 const fmt = n=>n.toLocaleString('pt-BR');
 let toastT;
@@ -1355,6 +1458,7 @@ const ICONS={
   trash:'<path d="M3 6h18M8 6V4h8v2m-9 0 1 14h8l1-14"/>', check:'<path d="m5 12 5 5 9-10"/>',
   chevL:'<path d="m15 18-6-6 6-6"/>', chevR:'<path d="m9 18 6-6-6-6"/>', chevU:'<path d="m18 15-6-6-6 6"/>', chevD:'<path d="m6 9 6 6 6-6"/>',
   save:'<path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2Z"/><path d="M17 21v-8H7v8M7 3v5h8"/>',
+  swap:'<path d="M17 3l4 4-4 4"/><path d="M21 7H8"/><path d="M7 21l-4-4 4-4"/><path d="M3 17h13"/>',
   rotate:'<path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/>', flipH:'<path d="M12 3v18" stroke-dasharray="2 2.4"/><path d="M8 6 3 18h5V6Z"/><path d="m16 6 5 12h-5V6Z"/>',
   flipV:'<path d="M3 12h18" stroke-dasharray="2 2.4"/><path d="M6 8 18 3v5H6Z"/><path d="m6 16 12 5v-5H6Z"/>',
   copy:'<rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/>',
@@ -1421,7 +1525,7 @@ const S = {
   zoom:14, showGrid:true, showCodes:false, style:'bead',
   mode:'create', tab:'counts', sort:'count',
   beadMm:2.6, plate:50, stock:{},
-  asm:{view:'row',row:0,color:0,hoverRun:null,span:1},      /* span: 1 ou 2 linhas por vez na Montar (lembrado em beadstudio.asmspan) */
+  asm:{view:'row',row:0,color:0,hoverRun:null,span:1,mirror:true},      /* span: 1 ou 2 linhas por vez na Montar (lembrado em beadstudio.asmspan); mirror: Montar e Guia mostram a figura ESPELHADA (beadstudio.asmmirror) */
   hl:0, hlLock:0, hover:null,
   tpl:null, tplDirty:false,   /* molde que está sendo editado: {kind:'builtin'|'mine', id, name} */
   sel:null, selW:0, selH:0,   /* seleção de contas: máscara (1 = selecionada) do tamanho da placa */
@@ -1431,6 +1535,11 @@ const S = {
 let counts = new Uint32Array(NCOL+1), doneCounts = new Uint32Array(NCOL+1), total=0, doneTotal=0, usedColors=0;
 const hist = {undo:[],redo:[]};
 const RULER = 28;
+/* MONTAGEM ESPELHADA (pedido do usuário, 2026-11-02): ele monta na placa, cobre com fita e vira a peça, que sai espelhada. A Montar e o Guia de montagem (PNG) mostram a figura
+   espelhada da esquerda para a direita (padrão ligado), SÓ NA EXIBIÇÃO: o molde guardado, o Criar, a galeria e as miniaturas continuam como estão.
+   mx(x) troca a coluna do desenho pela coluna da tela e vice-versa (é a mesma conta nos dois sentidos). Os números de coluna da Montar são os da TELA. */
+function asmMir(){return S.mode==='assemble'&&!!S.asm.mirror}
+function mx(x){return asmMir()?S.w-1-x:x}
 
 const TOOL_HINTS = {
   pencil:'Clique e arraste para colocar contas · botão direito apaga · Alt+clique pega a cor',
@@ -1499,7 +1608,7 @@ function loadSaved(){
 const cv=$('#cv'), ctx=cv.getContext('2d'), stage=$('#stage');
 let C={}, rafP=false, preview=null;
 function readTheme(){const cs=getComputedStyle(document.documentElement),g=n=>cs.getPropertyValue(n).trim();
-  C={plate:g('--plate'),hole:g('--hole'),edge:g('--bead-edge'),guide:g('--guide'),guideStrong:g('--guide-strong'),text:g('--muted'),accent:g('--accent'),ink:g('--ink'),panel:g('--panel')}}
+  C={plate:g('--plate'),hole:g('--hole'),edge:g('--bead-edge'),guide:g('--guide'),guideStrong:g('--guide-strong'),text:g('--muted'),accent:g('--accent'),warn:g('--warn'),ink:g('--ink'),panel:g('--panel')}}
 matchMedia('(prefers-color-scheme: dark)').addEventListener('change',()=>{if(themePref()==='auto')applyTheme('auto')});
 function layout(){
   const dpr=window.devicePixelRatio||1, W=RULER+S.w*S.zoom+8, H=RULER+S.h*S.zoom+8;
@@ -1516,39 +1625,52 @@ function drawBead(c,px,py,cs,hex,dark){
   c.lineWidth=1;c.strokeStyle='rgba(0,0,0,.28)';c.stroke();
   if(cs>=12){c.fillStyle='rgba(255,255,255,.42)';c.beginPath();c.arc(mx-cs*.22,my-cs*.24,cs*.075,0,TAU);c.fill()}
 }
+let drawPartners=null;      // cores parecidas com a escolhida na "Cor por cor" (só durante o draw)
 function cellVis(i,x,y,v){
-  // devolve [alpha, destaque]
+  // devolve [alpha, destaque]  (destaque 1 = anel cheio; 2 = anel tracejado das parecidas)
   if(S.mode==='assemble'){
     if(S.done[i])return [1,0];
     const a=S.asm;
     if(a.view==='row') return (y>=a.row&&y<a.row+rowSpanLen(a.row))?[1,1]:[0.2,0];
-    if(a.color) return v===a.color?[1,1]:[0.1,0];
+    if(a.color) return v===a.color?[1,1]:(drawPartners&&drawPartners.has(v)?[0.75,2]:[0.1,0]);
     return [0.34,0];
   }
   const hl=S.hlLock||S.hl;
   if(hl) return v===hl?[1,1]:[0.2,0];
   return [1,0];
 }
+function drawCode(c,p,x,y,cs,fit){      // código da cor com um contorno de cor oposta (legível em qualquer conta); fit = encolhe para caber na conta
+  const t=p.code;let f=c.font;
+  if(fit){const px=Math.max(7,Math.floor(cs*.4)),fam=' "Segoe UI",system-ui,sans-serif';c.font=`700 ${px}px${fam}`;
+    const w=c.measureText(t).width;if(w>cs-1)c.font=`700 ${Math.max(6,Math.floor(px*(cs-1)/w))}px${fam}`}
+  c.lineJoin='round';c.lineWidth=2.4;c.strokeStyle=p.ink==='#ffffff'?'rgba(0,0,0,.42)':'rgba(255,255,255,.55)';c.strokeText(t,x,y);
+  c.fillStyle=p.ink;c.fillText(t,x,y);
+  if(fit)c.font=f;
+}
 function draw(){
   rafP=false;
-  const cs=S.zoom,w=S.w,h=S.h,x0=RULER,y0=RULER,dpr=window.devicePixelRatio||1,W=cv.width/dpr,H=cv.height/dpr;
+  const cs=S.zoom,w=S.w,h=S.h,x0=RULER,y0=RULER,dpr=window.devicePixelRatio||1,W=cv.width/dpr,H=cv.height/dpr,flip=asmMir(),dc=x=>flip?w-1-x:x;      // flip: Montar espelhada (a coluna x do desenho aparece na coluna w-1-x da tela)
   ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,W,H);
   // placa
   ctx.fillStyle=C.plate;rr(ctx,x0-5,y0-5,w*cs+10,h*cs+10,9);ctx.fill();
   ctx.strokeStyle=C.guide;ctx.lineWidth=1;ctx.stroke();
   const bead=S.style==='bead'&&cs>=7, codes=S.showCodes&&cs>=22, g=S.grid;
+  const asmCodes=S.mode==='assemble'&&cs>=14&&!codes;      // Montar: mostra o código nas contas da linha atual (e nas parecidas da "Cor por cor") mesmo sem ligar "Códigos nas contas"
+  drawPartners=S.mode==='assemble'&&S.asm.view==='color'&&S.asm.color?new Set(confOf(S.asm.color).map(q=>q.v)):null;
   ctx.font=`700 ${Math.max(8,Math.floor(cs*.36))}px "Segoe UI",system-ui,sans-serif`;ctx.textAlign='center';ctx.textBaseline='middle';
   for(let y=0;y<h;y++){
     for(let x=0;x<w;x++){
-      const i=y*w+x,v=g[i],px=x0+x*cs,py=y0+y*cs;
+      const i=y*w+x,v=g[i],px=x0+dc(x)*cs,py=y0+y*cs;
       if(!v){ if(cs>=5){ctx.fillStyle=C.hole;ctx.beginPath();ctx.arc(px+cs/2,py+cs/2,Math.max(1,cs*0.11),0,TAU);ctx.fill()} continue; }
       const [a,em]=cellVis(i,x,y,v); const p=PALETTE[v-1];
       ctx.globalAlpha=a;
       if(bead)drawBead(ctx,px,py,cs,p.hex);
       else{ctx.fillStyle=p.hex;ctx.fillRect(px,py,cs,cs)}
-      if(codes){ctx.fillStyle=p.ink;ctx.fillText(p.code,px+cs/2,py+cs/2+.5)}
+      if(codes)drawCode(ctx,p,px+cs/2,py+cs/2+.5,cs,false);
+      else if(asmCodes&&em&&!S.done[i]&&(em===2||S.asm.view==='row'))drawCode(ctx,p,px+cs/2,py+cs/2+.5,cs,true);
       ctx.globalAlpha=1;
-      if(em&&S.mode==='assemble'||em&&(S.hlLock||S.hl)){ctx.strokeStyle=C.accent;ctx.lineWidth=2;ctx.beginPath();ctx.arc(px+cs/2,py+cs/2,cs*.5,0,TAU);ctx.stroke()}
+      if(em===1){ctx.strokeStyle=C.accent;ctx.lineWidth=2;ctx.beginPath();ctx.arc(px+cs/2,py+cs/2,cs*.5,0,TAU);ctx.stroke()}
+      else if(em===2){ctx.strokeStyle=C.warn;ctx.lineWidth=2;ctx.setLineDash([3,3]);ctx.beginPath();ctx.arc(px+cs/2,py+cs/2,cs*.5,0,TAU);ctx.stroke();ctx.setLineDash([])}
     }
   }
   // grade
@@ -1566,14 +1688,14 @@ function draw(){
   const sm=selMask();
   if(sm){
     ctx.fillStyle=C.accent;ctx.globalAlpha=.2;
-    for(let y=0;y<h;y++)for(let x=0;x<w;x++)if(sm[y*w+x])ctx.fillRect(x0+x*cs,y0+y*cs,cs,cs);
+    for(let y=0;y<h;y++)for(let x=0;x<w;x++)if(sm[y*w+x])ctx.fillRect(x0+dc(x)*cs,y0+y*cs,cs,cs);
     ctx.globalAlpha=1;ctx.strokeStyle=C.accent;ctx.lineWidth=2.2;ctx.beginPath();
     for(let y=0;y<h;y++)for(let x=0;x<w;x++){const i=y*w+x;if(!sm[i])continue;
-      const X=x0+x*cs,Y=y0+y*cs;
+      const X=x0+dc(x)*cs,Y=y0+y*cs,XL=flip?X+cs:X,XR=flip?X:X+cs;      // na tela espelhada o vizinho de índice menor fica à direita
       if(y===0||!sm[i-w]){ctx.moveTo(X,Y);ctx.lineTo(X+cs,Y)}
       if(y===h-1||!sm[i+w]){ctx.moveTo(X,Y+cs);ctx.lineTo(X+cs,Y+cs)}
-      if(x===0||!sm[i-1]){ctx.moveTo(X,Y);ctx.lineTo(X,Y+cs)}
-      if(x===w-1||!sm[i+1]){ctx.moveTo(X+cs,Y);ctx.lineTo(X+cs,Y+cs)}}
+      if(x===0||!sm[i-1]){ctx.moveTo(XL,Y);ctx.lineTo(XL,Y+cs)}
+      if(x===w-1||!sm[i+1]){ctx.moveTo(XR,Y);ctx.lineTo(XR,Y+cs)}}
     ctx.stroke();
   }
   // limites de placa
@@ -1594,7 +1716,7 @@ function draw(){
   if(S.mode==='assemble'&&S.asm.view==='row'){
     const y=S.asm.row,hh=rowSpanLen(y)*cs; ctx.fillStyle=C.accent;ctx.globalAlpha=.12;ctx.fillRect(x0-5,y0+y*cs,w*cs+10,hh);ctx.globalAlpha=1;
     ctx.strokeStyle=C.accent;ctx.lineWidth=1.5;ctx.strokeRect(x0-5,y0+y*cs+.5,w*cs+10,hh-1);
-    const hr=S.asm.hoverRun; if(hr){ctx.lineWidth=3;ctx.strokeRect(x0+hr.x0*cs,y0+hr.y*cs,(hr.x1-hr.x0+1)*cs,cs)}
+    const hr=S.asm.hoverRun; if(hr){ctx.lineWidth=3;ctx.strokeRect(x0+dc(flip?hr.x1:hr.x0)*cs,y0+hr.y*cs,(hr.x1-hr.x0+1)*cs,cs)}
   }
   // prévia de formas
   if(preview){
@@ -1617,7 +1739,7 @@ function draw(){
   ctx.fillStyle=C.text;ctx.font='11px "Segoe UI",system-ui,sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';
   const step=cs>=24?1:cs>=13?5:10;
   for(let x=0;x<w;x++){const n=x+1;if(n===1||n%step===0||n===w&&step<=5){
-    const hov=S.hover&&S.hover.x===x; if(hov){ctx.fillStyle=C.accent;rr(ctx,x0+x*cs+cs/2-12,3,24,RULER-9,6);ctx.fill();ctx.fillStyle='#fff'}
+    const hov=S.hover&&dc(S.hover.x)===x; if(hov){ctx.fillStyle=C.accent;rr(ctx,x0+x*cs+cs/2-12,3,24,RULER-9,6);ctx.fill();ctx.fillStyle='#fff'}
     ctx.fillText(n,x0+x*cs+cs/2,RULER/2-1);ctx.fillStyle=C.text}}
   for(let y=0;y<h;y++){const n=y+1;if(n===1||n%step===0||n===h&&step<=5){
     const hov=(S.hover&&S.hover.y===y)||(S.mode==='assemble'&&S.asm.view==='row'&&y>=S.asm.row&&y<S.asm.row+rowSpanLen(S.asm.row)); if(hov){ctx.fillStyle=C.accent;rr(ctx,2,y0+y*cs+cs/2-9,RULER-9,18,6);ctx.fill();ctx.fillStyle='#fff'}
@@ -1712,10 +1834,11 @@ function selStats(){
 }
 /* "onde" a seleção está, em palavras: Linha 12 inteira · Coluna 5, linhas 3 a 20 · Linhas 4 a 6 · área de 8×6 pinos */
 function selWhere(st){
-  if(st.bh===1)return st.bw===S.w?`Linha ${st.y0+1} inteira`:`Linha ${st.y0+1}, colunas ${st.x0+1} a ${st.x1+1}`;
-  if(st.bw===1)return st.bh===S.h?`Coluna ${st.x0+1} inteira`:`Coluna ${st.x0+1}, linhas ${st.y0+1} a ${st.y1+1}`;
+  const ca=mx(st.x0),cb=mx(st.x1),c0=Math.min(ca,cb)+1,c1=Math.max(ca,cb)+1;      // colunas como aparecem na tela (espelhada na Montar)
+  if(st.bh===1)return st.bw===S.w?`Linha ${st.y0+1} inteira`:`Linha ${st.y0+1}, colunas ${c0} a ${c1}`;
+  if(st.bw===1)return st.bh===S.h?`Coluna ${c0} inteira`:`Coluna ${c0}, linhas ${st.y0+1} a ${st.y1+1}`;
   if(st.bw===S.w&&st.cells===S.w*st.bh)return st.bh===S.h?'Placa inteira':`Linhas ${st.y0+1} a ${st.y1+1} inteiras`;
-  if(st.bh===S.h&&st.cells===S.h*st.bw)return `Colunas ${st.x0+1} a ${st.x1+1} inteiras`;
+  if(st.bh===S.h&&st.cells===S.h*st.bw)return `Colunas ${c0} a ${c1} inteiras`;
   return `Área de ${st.bw}×${st.bh} pinos (linhas ${st.y0+1} a ${st.y1+1})`;
 }
 function renderSel(){
@@ -1742,7 +1865,7 @@ const SEL_HINTS={
   rect:'Arraste para marcar uma área · botão direito tira da seleção · Esc limpa tudo'
 };
 const ASM_HINT='Clique nas contas para marcar o que você já colocou na placa · ↑ ↓ trocam de linha (ou de duas em duas, se escolher "2 linhas") · Espaço marca a linha';
-function updHint(){$('#hint').textContent=selecting()?SEL_HINTS[S.selShape]:(S.mode==='create'?TOOL_HINTS[S.tool]:ASM_HINT)}
+function updHint(){$('#hint').textContent=selecting()?SEL_HINTS[S.selShape]:(S.mode==='create'?TOOL_HINTS[S.tool]:(S.asm.mirror?'ESPELHADO · ':'')+ASM_HINT)}
 function syncSelUI(){
   const on=selecting(),b=$('#btnSel');
   b.classList.toggle('on',on);b.setAttribute('aria-pressed',on);
@@ -1802,7 +1925,7 @@ function rulerAt(e){
   const gx=Math.floor((px-RULER)/S.zoom),gy=Math.floor((py-RULER)/S.zoom);
   if(px<RULER&&py<RULER)return {kind:'all',x:0,y:0};
   if(px<RULER&&gy>=0&&gy<S.h)return {kind:'rows',x:0,y:gy};
-  if(py<RULER&&gx>=0&&gx<S.w)return {kind:'cols',x:gx,y:0};
+  if(py<RULER&&gx>=0&&gx<S.w)return {kind:'cols',x:mx(gx),y:0};
   return null;
 }
 
@@ -1811,8 +1934,8 @@ let drag=null, spaceDown=false, pan=null;
 function cellAt(e,clampIt){
   const r=cv.getBoundingClientRect();
   let x=Math.floor((e.clientX-r.left-RULER)/S.zoom),y=Math.floor((e.clientY-r.top-RULER)/S.zoom);
-  if(clampIt){x=clamp(x,0,S.w-1);y=clamp(y,0,S.h-1);return {x,y}}
-  return (x>=0&&y>=0&&x<S.w&&y<S.h)?{x,y}:null;
+  if(clampIt){x=clamp(x,0,S.w-1);y=clamp(y,0,S.h-1);return {x:mx(x),y}}
+  return (x>=0&&y>=0&&x<S.w&&y<S.h)?{x:mx(x),y}:null;
 }
 cv.addEventListener('contextmenu',e=>e.preventDefault());
 cv.addEventListener('pointerdown',e=>{
@@ -1923,15 +2046,16 @@ function colorFamily(p){
   return 3;                                                     // vermelhos e rosas
 }
 const FAMILY_NAMES=['Neutros (branco, cinzas, preto)','Marrons e beges','Amarelos e laranjas','Vermelhos e rosas','Roxos e lilases','Azuis','Verdes e verde-água'];
-function mkHex(i){
+function mkHex(i,keepOpen){
   const p=PALETTE[i-1],b=document.createElement('button');b.className='hexbtn';b.dataset.i=i;b.title=`${p.code} · ${p.name}${p.est?' (cor estimada)':''}`;
   b.innerHTML='<span class="hexfill"></span>';b.firstChild.textContent=p.code;
-  b.addEventListener('click',()=>{selectColor(i);closePalPop()});return b;
+  b.addEventListener('click',()=>{selectColor(i);if(!keepOpen)closePalPop()});return b;
 }
+$('#palMore .palcount').textContent=NCOL-Object.keys(ALIAS_OF).length;
 function buildPalette(){
   const body=$('#palBody');body.innerHTML='';
   const groups=FAMILY_NAMES.map(()=>[]);
-  PALETTE.forEach((p,i)=>groups[colorFamily(p)].push(i+1));
+  PALETTE.forEach((p,i)=>{if(!ALIAS_OF[p.code])groups[colorFamily(p)].push(i+1)});          // o H12 (= A1) não aparece para escolher
   groups.forEach((list,gi)=>{
     if(!list.length)return;
     list.sort((a,b)=>PALETTE[b-1].lab[0]-PALETTE[a-1].lab[0]);
@@ -1950,6 +2074,7 @@ function selectColor(i){
   refreshPalette();scheduleSave();
 }
 function refreshPalette(){
+  if(!$('#palPop').hidden)renderPalSugg();
   $$('#palUsed .hexbtn, #palPop .hexbtn').forEach(styleHex);
   $$('#countList .crow').forEach(r=>{const on=+r.dataset.v===S.color;r.classList.toggle('on',on);if(on)r.setAttribute('aria-current','true');else r.removeAttribute('aria-current')});
   const p=PALETTE[S.color-1],big=$('#curBig');big.style.background=p.hex;big.style.color=p.ink;big.textContent=p.code;
@@ -1957,22 +2082,366 @@ function refreshPalette(){
 }
 function openPalPop(){
   $('#palPop').hidden=false;$('#palMore').setAttribute('aria-expanded','true');
-  const q=$('#palSearch');q.value='';filterPal('');setTimeout(()=>q.focus(),0);
-  const on=$('#palPop .hexbtn.on');if(on)on.scrollIntoView({block:'nearest'});
+  const q=$('#palSearch');q.value='';filterPal('');renderPalSugg();$$('#palPop .hexbtn').forEach(styleHex);setTimeout(()=>q.focus(),0);
+  const on=$('#palBody .hexbtn.on');if(on)on.scrollIntoView({block:'nearest'});
 }
 function closePalPop(){const pp=$('#palPop');if(pp.hidden)return;pp.hidden=true;$('#palMore').setAttribute('aria-expanded','false')}
 function filterPal(q){
   q=q.trim().toLowerCase();let any=false;
-  $$('#palPop .hexbtn').forEach(b=>{const p=PALETTE[+b.dataset.i-1],ok=!q||p.code.toLowerCase()===q||p.code.toLowerCase().startsWith(q)||p.name.toLowerCase().includes(q);b.hidden=!ok;if(ok)any=true});
-  $$('#palPop .pgroup').forEach(g=>{g.hidden=!g.querySelector('.hexbtn:not([hidden])')});
+  $$('#palBody .hexbtn').forEach(b=>{const p=PALETTE[+b.dataset.i-1],ok=!q||p.code.toLowerCase()===q||p.code.toLowerCase().startsWith(q)||p.name.toLowerCase().includes(q);b.hidden=!ok;if(ok)any=true});
+  $$('#palBody .pgroup').forEach(g=>{g.hidden=!g.querySelector('.hexbtn:not([hidden])')});
   $('#palEmpty').hidden=any;
+  $('#palSugg').hidden=!!q;                                      // buscando, a faixa de parecidas sai da frente
 }
 $('#palMore').onclick=()=>{$('#palPop').hidden?openPalPop():closePalPop()};
 $('#palClose').onclick=closePalPop;
 $('#palSearch').addEventListener('input',e=>filterPal(e.target.value));
-$('#palSearch').addEventListener('keydown',e=>{if(e.key==='Enter'){const f=$('#palPop .hexbtn:not([hidden])');if(f){f.click()}}});
+$('#palSearch').addEventListener('keydown',e=>{if(e.key==='Enter'){const f=$('#palBody .hexbtn:not([hidden])');if(f){f.click()}}});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!$('#palPop').hidden){closePalPop();e.stopPropagation();e.preventDefault()}},true);
 document.addEventListener('mousedown',e=>{const pp=$('#palPop');if(pp.hidden)return;if(!pp.contains(e.target)&&!e.target.closest('#palMore'))closePalPop()});
+
+/* =====================================================================
+   Cores substitutas (2026-11-02, pedido do usuário). O kit tem muitas cores quase iguais (bege, rosa, verde...): o conversor põe no desenho a que
+   melhor se encaixa e aqui se vê as outras, da mais parecida para a menos. Medida = CIEDE2000 (a mesma do conversor). Três lugares:
+   (1) faixa "Parecidas com…" no alto do menu Todas as cores (escolher para pintar); (2) botão ⇄ de cada linha de "Contas por cor" (troca em todo o desenho);
+   (3) atalhos de cores parecidas em Ajustes → Trocar uma cor por outra.
+   ===================================================================== */
+function de00([L1,a1,b1],[L2,a2,b2]){
+  const rad=Math.PI/180,C1=Math.hypot(a1,b1),C2=Math.hypot(a2,b2),Cb=(C1+C2)/2,Cb7=Cb**7,G=0.5*(1-Math.sqrt(Cb7/(Cb7+6103515625)));
+  const a1p=(1+G)*a1,a2p=(1+G)*a2,C1p=Math.hypot(a1p,b1),C2p=Math.hypot(a2p,b2);
+  const h1p=C1p?(Math.atan2(b1,a1p)/rad+360)%360:0,h2p=C2p?(Math.atan2(b2,a2p)/rad+360)%360:0;
+  const dLp=L2-L1,dCp=C2p-C1p;let dhp=0;
+  if(C1p*C2p){dhp=h2p-h1p;if(dhp>180)dhp-=360;else if(dhp<-180)dhp+=360}
+  const dHp=2*Math.sqrt(C1p*C2p)*Math.sin(dhp*rad/2),Lbp=(L1+L2)/2,Cbp=(C1p+C2p)/2;
+  let hbp=h1p+h2p;if(C1p*C2p)hbp=Math.abs(h1p-h2p)<=180?(h1p+h2p)/2:(h1p+h2p<360?(h1p+h2p+360)/2:(h1p+h2p-360)/2);
+  const T=1-0.17*Math.cos((hbp-30)*rad)+0.24*Math.cos(2*hbp*rad)+0.32*Math.cos((3*hbp+6)*rad)-0.20*Math.cos((4*hbp-63)*rad);
+  const dth=30*Math.exp(-(((hbp-275)/25)**2)),Rc=2*Math.sqrt(Cbp**7/(Cbp**7+6103515625));
+  const Sl=1+0.015*(Lbp-50)**2/Math.sqrt(20+(Lbp-50)**2),Sc=1+0.045*Cbp,Sh=1+0.015*Cbp*T,Rt=-Math.sin(2*dth*rad)*Rc;
+  return Math.sqrt((dLp/Sl)**2+(dCp/Sc)**2+(dHp/Sh)**2+Rt*(dCp/Sc)*(dHp/Sh));
+}
+const SIM=[[2.5,'quase idêntica'],[5,'muito parecida'],[9,'parecida'],[14,'um pouco diferente'],[1e9,'bem diferente']];
+const simKind=d=>SIM.findIndex(x=>d<x[0])+1;                       // 1 (quase idêntica) … 5 (bem diferente)
+const simText=d=>`${SIM[simKind(d)-1][1]} (ΔE ${d.toFixed(1).replace('.',',')})`;
+/* =====================================================================
+   Cores PARECIDAS dentro do molde (pedido do usuário, 2026-11-02: "confundi um bege com creme porque são muito similares").
+   Duas cores usadas no desenho com diferença (ΔE2000) menor que CONF_T são difíceis de separar a olho. Elas ganham o selo "≈ G1" (com a diferença em palavras),
+   a Montar avisa quando as duas estão na linha atual, a "Cor por cor" marca as parecidas com anel tracejado e código, e o Guia (PNG) lista os pares.
+   Alias (H12 = A1) é a MESMA conta e não conta como parecida. As funções só usam `function` (içadas) e nada de const definida mais abaixo.
+   ===================================================================== */
+const CONF_T=6;      // mesmo limite padrão do "Juntar cores quase iguais"
+const deCache=new Map();
+function deCode(v,w){      // ΔE2000 entre duas cores do kit (índices 1..120), com cache; a cache zera quando a paleta muda
+  const k=v<w?v*256+w:w*256+v;let d=deCache.get(k);
+  if(d===undefined){d=de00(PALETTE[v-1].lab,PALETTE[w-1].lab);deCache.set(k,d)}
+  return d;
+}
+function sameBead(v,w){const a=PALETTE[v-1].code,b=PALETTE[w-1].code;return ALIAS_OF[a]===b||ALIAS_OF[b]===a}
+function confEsc(t){return String(t).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function confOf(v){      // as outras cores USADAS no desenho que se confundem com a v, da mais parecida para a menos
+  const out=[];if(!counts[v])return out;
+  for(let w=1;w<=NCOL;w++){if(w===v||!counts[w]||sameBead(v,w))continue;const d=deCode(v,w);if(d<CONF_T)out.push({v:w,d})}
+  return out.sort((a,b)=>a.d-b.d);
+}
+function confPairs(list){      // as duplas parecidas entre as cores da lista (índices), da mais parecida para a menos
+  const out=[],u=[...new Set(list)];
+  for(let i=0;i<u.length;i++)for(let j=i+1;j<u.length;j++){if(sameBead(u[i],u[j]))continue;const d=deCode(u[i],u[j]);if(d<CONF_T)out.push({a:u[i],b:u[j],d})}
+  return out.sort((x,y)=>x.d-y.d);
+}
+const TONES=[[335,375,'rosada'],[10,45,'avermelhada'],[45,75,'alaranjada'],[75,105,'amarelada'],[105,170,'esverdeada'],[170,215,'azul-esverdeada'],[215,275,'azulada'],[275,335,'arroxeada']];
+function toneRegion(h){      // região do matiz (Lab) de uma cor: índice em TONES; [335,375) dá a volta no 0
+  for(let i=0;i<TONES.length;i++){const t=TONES[i];if((h>=t[0]&&h<t[1])||(h+360>=t[0]&&h+360<t[1]))return i}
+  return 0;
+}
+function diffWords(v,w){      // como a cor v é, comparada com a w, em palavras: "mais amarelada e mais clara"
+  const [L1,a1,b1]=PALETTE[v-1].lab,[L2,a2,b2]=PALETTE[w-1].lab,c1=Math.hypot(a1,b1),c2=Math.hypot(a2,b2),dL=L1-L2,dC=c1-c2;
+  const h1=(Math.atan2(b1,a1)*180/Math.PI+360)%360,h2=(Math.atan2(b2,a2)*180/Math.PI+360)%360,dh=((h1-h2+540)%360)-180;
+  const perp=Math.abs(Math.sin(dh*Math.PI/180))*(c1+c2)/2;      // quanto o TOM mudou (distância no plano a–b, sem a parte de viveza)
+  const o=[];
+  if(Math.abs(dL)>=1.2)o.push([Math.abs(dL)*.9,dL>0?'mais clara':'mais escura']);
+  if(perp>=1.3&&Math.max(c1,c2)>=6){
+    const r1=toneRegion(h1),r2=toneRegion(h2);let k=r1;
+    if(r1===r2)k=(r1+(dh>0?1:TONES.length-1))%TONES.length;      // mesma região: a cor que está mais adiante no círculo de matizes é "mais" a região vizinha dessa direção (e a outra, a vizinha oposta)
+    o.push([perp*1.05,'mais '+TONES[k][2]]);
+  }
+  if(Math.abs(dC)>=2.5&&Math.abs(dC)>=perp*.7)o.push([Math.abs(dC),dC>0?'mais viva':'mais apagada']);
+  o.sort((x,y)=>y[0]-x[0]);
+  return o.length?o.slice(0,2).map(x=>x[1]).join(' e '):'quase igual';
+}
+function nameCode(v){const p=PALETTE[v-1];return p.name.includes(`(${p.code})`)?p.name:`${p.name} (${p.code})`}      // "Bege (E14)" já traz o código; "Creme" ganha "(A1)"
+function confSay(a,b,names){      // a frase da diferença: "A1 é mais amarelada e mais clara que G1" (ou "A1 e G1 são quase iguais")
+  const w=diffWords(a,b),A=names?nameCode(a):PALETTE[a-1].code,B=names?nameCode(b):PALETTE[b-1].code;
+  return w==='quase igual'?`${A} e ${B} são quase iguais`:`${A} é ${w} que ${B}`;
+}
+const confKind=d=>d<2.5?'quase idêntica':d<5?'muito parecida':'parecida';
+function confTip(v,list){
+  return list.map(x=>`${PALETTE[x.v-1].code} (${confKind(x.d)}): ${confSay(v,x.v)}.`).join(' ')+' Confira o código ao pegar a conta.';
+}
+function confBadge(v,small){      // selo "≈ G1" ao lado da cor (vazio se ela não tem parecida neste desenho); small = só o "≈", para os chips
+  const l=confOf(v);if(!l.length)return '';
+  const t=l.slice(0,2).map(x=>PALETTE[x.v-1].code).join(', ')+(l.length>2?` +${l.length-2}`:'');
+  return `<span class="conf${small?' sm':''}" title="${confEsc(confTip(v,l))}">≈${small?'':' '+t}</span>`;
+}
+function confAlert(vs,multi){      // aviso da Montar: as cores parecidas que ainda faltam na(s) linha(s) atual(is)
+  const pr=confPairs(vs);if(!pr.length)return '';
+  const sw=v=>`<span class="sw2" style="background:${PALETTE[v-1].hex};color:${PALETTE[v-1].ink}">${PALETTE[v-1].code}</span>`;
+  return `<div class="alertbox warn confbox"><b>Cuidado: cores parecidas ${multi?'nestas linhas':'nesta linha'}</b>`+pr.slice(0,3).map(q=>
+    `<div class="cpair">${sw(q.a)}<span class="x">×</span>${sw(q.b)}<small>${confSay(q.a,q.b,true)}. Confira o código na hora de pegar a conta.</small></div>`).join('')+
+    (pr.length>3?`<div class="cpair"><small>+ ${pr.length-3} ${pr.length-3===1?'dupla parecida':'duplas parecidas'}</small></div>`:'')+`</div>`;
+}
+function similarTo(v,max){                                          // as cores do kit mais parecidas com a v (v = índice 1..120); sempre devolve pelo menos 4
+  const base=PALETTE[v-1].lab;
+  const all=PALETTE.map((p,i)=>({v:i+1,d:de00(base,p.lab)})).filter(x=>x.v!==v&&!ALIAS_OF[PALETTE[x.v-1].code]).sort((a,b)=>a.d-b.d);
+  const near=all.filter(x=>x.d<=14).slice(0,max);
+  return near.length>=4?near:all.slice(0,4);
+}
+/* (1) faixa do menu "Todas as cores": as parecidas com a cor em uso; clicar escolhe para pintar e o menu continua aberto */
+function renderPalSugg(){
+  const v=S.color,p=PALETTE[v-1],row=$('#psRow');
+  $('#psTitle').innerHTML=`Parecidas com <b>${p.code}</b> · ${p.name}`;
+  row.innerHTML='';
+  similarTo(v,8).forEach(x=>{const b=mkHex(x.v,true);b.title=`${PALETTE[x.v-1].code} · ${PALETTE[x.v-1].name} — ${simText(x.d)}`;row.appendChild(b)});
+}
+/* (2) submenu de substitutas de uma cor do desenho: clicar numa troca a cor em todo o desenho (dá para desfazer) */
+let subV=0,subBtn=null;
+function replaceColor(a,b){
+  if(a===b)return 0;
+  if(!counts[a]){toast(`${PALETTE[a-1].code} não é usada no desenho`);return 0}
+  const n=counts[a],before=snap();for(let i=0;i<S.grid.length;i++)if(S.grid[i]===a)S.grid[i]=b;commit(before);
+  toast(`${PALETTE[a-1].code} → ${PALETTE[b-1].code} em ${fmt(n)} ${n===1?'conta':'contas'} · Ctrl+Z desfaz`);
+  return n;
+}
+function placeSub(){
+  const pop=$('#subPop');if(pop.hidden||!subBtn)return;
+  const r=subBtn.getBoundingClientRect(),w=pop.offsetWidth,h=pop.offsetHeight,vw=innerWidth,vh=innerHeight;
+  let top=r.bottom+6;if(top+h>vh-8)top=r.top-h-6;if(top<8)top=Math.max(8,vh-h-8);
+  pop.style.left=clamp(r.right-w,8,Math.max(8,vw-w-8))+'px';pop.style.top=top+'px';
+}
+function openSub(v,anchor){
+  closeSub();subV=v;subBtn=anchor;
+  const p=PALETTE[v-1],n=counts[v]||0,sw=$('#subSw');
+  sw.style.background=p.hex;sw.style.color=p.ink;sw.textContent=p.code;
+  $('#subTitle').textContent=`Substitutas de ${p.code} · ${p.name}`;
+  $('#subSub').textContent=`${fmt(n)} ${n===1?'conta':'contas'} no desenho · clique numa cor para trocar`;
+  $('#subBody').innerHTML=similarTo(v,10).map(x=>{
+    const q=PALETTE[x.v-1],u=counts[x.v],st=S.stock[q.code],k=simKind(x.d);
+    const info=[u?`já está no desenho (${fmt(u)})`:'ainda não está no desenho',st!=null?`você tem ${fmt(st)}`:''].filter(Boolean).join(' · ');
+    return `<button type="button" class="subrow" data-v="${x.v}" title="Trocar ${p.code} por ${q.code} em todo o desenho — ${simText(x.d)}"><span class="swb"><span class="sw" style="background:${q.hex};color:${q.ink}">${q.code}</span></span><span class="nm"><b>${q.name}</b><small>${info}</small></span><span class="tag t${k}">${SIM[k-1][1]}</span></button>`;
+  }).join('');
+  $('#subPop').hidden=false;anchor.setAttribute('aria-expanded','true');placeSub();
+  const f=$('#subBody .subrow');if(f)f.focus({preventScroll:true});
+}
+function closeSub(){
+  const pop=$('#subPop');if(pop.hidden)return;
+  pop.hidden=true;if(subBtn){subBtn.setAttribute('aria-expanded','false');if(document.activeElement===document.body||pop.contains(document.activeElement)){try{subBtn.focus({preventScroll:true})}catch(e){}}}
+  subBtn=null;
+}
+$('#subClose').onclick=closeSub;
+$('#subBody').addEventListener('click',e=>{const b=e.target.closest('.subrow');if(!b)return;const a=subV;closeSub();replaceColor(a,+b.dataset.v)});
+$('#subBody').addEventListener('keydown',e=>{
+  if(e.key!=='ArrowDown'&&e.key!=='ArrowUp')return;
+  const rows=$$('#subBody .subrow'),i=rows.indexOf(document.activeElement);if(i<0)return;
+  e.preventDefault();rows[clamp(i+(e.key==='ArrowDown'?1:-1),0,rows.length-1)].focus();
+});
+$('#subOther').onclick=()=>{                                         // qualquer outra cor: abre Ajustes → Trocar uma cor por outra já com esta cor escolhida
+  const a=subV;closeSub();
+  $('#tabsCreate button[data-tab="project"]').click();
+  const sel=$('#repFrom');sel.value=a;renderRepSugg();
+  const d=sel.closest('details');if(d){d.open=true;d.scrollIntoView({block:'nearest'})}
+};
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!$('#subPop').hidden){closeSub();e.stopPropagation();e.preventDefault()}},true);
+document.addEventListener('mousedown',e=>{if($('#subPop').hidden)return;if(!$('#subPop').contains(e.target)&&!e.target.closest('.swapbtn'))closeSub()});
+window.addEventListener('resize',placeSub);
+document.addEventListener('scroll',e=>{if(!$('#subPop').hidden&&!$('#subPop').contains(e.target))closeSub()},true);
+/* (3) atalhos em Ajustes → Trocar uma cor por outra: as parecidas com a cor de origem; clicar escolhe a de destino */
+function renderRepSugg(){
+  const box=$('#repSugg'),a=+$('#repFrom').value,b=+$('#repTo').value;
+  if(!a){box.innerHTML='';return}
+  box.innerHTML=`<div class="rst">Parecidas com <b>${PALETTE[a-1].code}</b> (clique numa para escolher):</div>`;
+  similarTo(a,8).forEach(x=>{
+    const q=PALETTE[x.v-1],btn=document.createElement('button');btn.type='button';btn.className='hexbtn'+(x.v===b?' on':'');btn.dataset.i=x.v;
+    btn.title=`${q.code} · ${q.name} — ${simText(x.d)}`;btn.innerHTML='<span class="hexfill"></span>';
+    const f=btn.firstChild;f.textContent=q.code;f.style.background=q.hex;f.style.color=q.ink;btn.style.color=q.ink;
+    btn.onclick=()=>{$('#repTo').value=x.v;renderRepSugg()};box.appendChild(btn);
+  });
+}
+$('#repFrom').addEventListener('change',renderRepSugg);$('#repTo').addEventListener('change',renderRepSugg);
+
+/* =====================================================================
+   Refazer as cores do molde (2026-11-02, pedido do dono: os moldes antigos ficaram "estranhos" com as cores medidas nas contas e ele queria "uma forma melhor de ajustar").
+   Cada cor usada no desenho troca para a conta real mais parecida com o que o molde mostrava ANTES (LEGACY_HEX = paleta antiga): atribuição de custo mínimo (húngaro) entre os
+   grupos de cor do molde e as 120 contas, com custo = ΔE2000 + proteção do matiz + desprezo por cor mais viva que a de antes + preferência por conta mais clara que mais escura;
+   letras de pele parecidas viram UM grupo que só vai para contas de pele; repetir a mesma conta custa a mais. É a MESMA conta de tools/remap_cores.py (remap3);
+   tools/remap_js_check.py confere os dois. Aplicar usa o histórico do editor: Ctrl+Z desfaz.
+   ===================================================================== */
+const RC3={skinT:10,hueW:0.35,hueFree:12,skinHueFree:18,chromaW:0.45,chromaFree:10,dullW:0.15,dullFree:20,darkW:0.35,lightW:0.12,dupPen:5,sameT:3,countK:6,lam:1.5,cap:30,rho:0.8,top:10,passes:8,lw:1.5,slack:8};
+const SKIN_NEW_CODES=['E11','E1','E14','E15','G1','A9','A12','F1','F14','G2','G3','G9','E8','H12','A1','G14','M9'];
+/* contas que NÃO contam como separadas: o H12 é o mesmo creme da A1 (o dono, 2026-11-02, "o H12 não existe nas cartelas e dá certo trocar pela A1"); nunca é destino de uma troca */
+const ALIAS_CODES=['H12'];
+const lchOf=l=>[l[0],Math.hypot(l[1],l[2]),(Math.atan2(l[2],l[1])*180/Math.PI+360)%360];
+const angDiff=(a,b)=>{const d=Math.abs(a-b)%360;return Math.min(d,360-d)};
+function isSkinOld(l){const [L,C,h]=lchOf(l);return (L>=76&&C>=7&&C<=31&&h>=35&&h<=80)||(L>=80&&C>=7&&C<=26&&h>80&&h<=105)}
+const edgeC=(a,b)=>Math.sqrt((RC3.lw*(a[0]-b[0]))**2+(a[1]-b[1])**2+(a[2]-b[2])**2);      // contraste das bordas: Lab com a luminosidade ampliada
+function costV3(oldLab,skin){
+  const [L1,C1,h1]=lchOf(oldLab),out=new Array(NCOL);
+  for(let j=0;j<NCOL;j++){
+    const nl=PALETTE[j].lab,[L2,C2,h2]=lchOf(nl);
+    let c=de00(oldLab,nl);
+    c+=RC3.hueW*Math.min(1,C1/25)*Math.min(1,C2/25)*Math.max(0,angDiff(h1,h2)-(skin?RC3.skinHueFree:RC3.hueFree));
+    c+=RC3.chromaW*Math.max(0,C2-C1-RC3.chromaFree)+RC3.dullW*Math.max(0,C1-C2-RC3.dullFree);
+    c+=RC3.darkW*Math.max(0,L1-L2)+RC3.lightW*Math.max(0,L2-L1);
+    out[j]=c;
+  }
+  return out;
+}
+function hungarian(a){                                    // a: n x m (n <= m); devolve, para cada linha, a coluna escolhida
+  const n=a.length,m=a[0].length,INF=1e18,u=new Array(n+1).fill(0),v=new Array(m+1).fill(0),p=new Array(m+1).fill(0),way=new Array(m+1).fill(0);
+  for(let i=1;i<=n;i++){
+    p[0]=i;let j0=0;const minv=new Array(m+1).fill(INF),used=new Array(m+1).fill(false);
+    do{
+      used[j0]=true;const i0=p[j0];let delta=INF,j1=0;
+      for(let j=1;j<=m;j++)if(!used[j]){
+        const cur=a[i0-1][j-1]-u[i0]-v[j];
+        if(cur<minv[j]){minv[j]=cur;way[j]=j0}
+        if(minv[j]<delta){delta=minv[j];j1=j}
+      }
+      for(let j=0;j<=m;j++){if(used[j]){u[p[j]]+=delta;v[j]-=delta}else minv[j]-=delta}
+      j0=j1;
+    }while(p[j0]!==0);
+    do{const j1=way[j0];p[j0]=p[j1];j0=j1}while(j0);
+  }
+  const ans=new Array(n);for(let j=1;j<=m;j++)if(p[j])ans[p[j]-1]=j-1;
+  return ans;
+}
+let recStats=null;
+/* v4 = v3 + PRESERVAÇÃO DAS BORDAS: o contraste novo entre duas cores vizinhas no desenho (ΔE2000 entre as duas contas) deve ficar perto do antigo (até um teto);
+   busca local, um grupo de cores por vez, a partir da solução do húngaro. Evita o "homogêneo demais" (dois tons do molde virando a mesma conta). */
+function recolorPlan(){                                   // {índice antigo: índice novo} só das cores usadas; guarda em recStats as bordas fracas agora x na proposta
+  const used=[],first={};
+  for(let i=0;i<S.grid.length;i++){const v=S.grid[i];if(v&&first[v]===undefined){first[v]=i;used.push(v)}}
+  used.sort((a,b)=>counts[b]-counts[a]||first[a]-first[b]);    // como no Python: contagem decrescente, empate pela 1ª aparição
+  const oldLab={};used.forEach(v=>{oldLab[v]=rgb2lab(hex2rgb(LEGACY_HEX[PALETTE[v-1].code]||PALETTE[v-1].hex))});
+  const groups=[];
+  used.forEach(v=>{
+    const l=oldLab[v],sk=isSkinOld(l);
+    if(sk){const g=groups.find(g=>g.skin&&de00(l,g.rep)<RC3.skinT);if(g){g.members.push(v);g.count+=counts[v];return}}
+    groups.push({members:[v],lab:l,rep:l,count:counts[v],skin:sk});
+  });
+  groups.forEach(g=>{if(g.members.length>1){const w=g.members.map(v=>counts[v]),tot=w.reduce((x,y)=>x+y,0);g.lab=[0,1,2].map(k=>g.members.reduce((s2,v,i)=>s2+oldLab[v][k]*w[i],0)/tot)}});
+  const skinIdx=new Set(SKIN_NEW_CODES.map(c=>CODE_IDX[c]-1)),aliasIdx=ALIAS_CODES.map(c=>CODE_IDX[c]-1),G=groups.length;
+  const dmat=[],base=groups.map(g=>{
+    const d=costV3(g.lab,g.skin);aliasIdx.forEach(j=>{d[j]+=1e4});
+    if(g.skin)for(let j=0;j<NCOL;j++)if(!skinIdx.has(j))d[j]+=1e4;
+    dmat.push(d);const k=g.count+RC3.countK;return d.map(x=>x*k);
+  });
+  const kk=groups.map(g=>(g.count+RC3.countK)*RC3.dupPen);
+  const pick=G?hungarian(base.map((row,i)=>row.concat(row.map(x=>x+kk[i])))):[];
+  const assign=pick.map(j=>j%NCOL);
+  // bordas entre GRUPOS (as de dentro de um grupo de pele somem de propósito); dold por par de LETRAS
+  const gid={};groups.forEach((g,i)=>g.members.forEach(v=>{gid[v]=i}));
+  const EG=new Map(),edgeLetters=new Map();                // chave "ga,gb" -> [[n,dold]...]; chave "a,b" (letras) -> n
+  const cnt2=(a,b,n)=>{const k=a<b?a+','+b:b+','+a;edgeLetters.set(k,(edgeLetters.get(k)||0)+n)};
+  for(let y=0;y<S.h;y++)for(let x=0;x<S.w;x++){
+    const a=S.grid[y*S.w+x];if(!a)continue;
+    if(x+1<S.w){const b=S.grid[y*S.w+x+1];if(b&&b!==a)cnt2(a,b,1)}
+    if(y+1<S.h){const b=S.grid[(y+1)*S.w+x];if(b&&b!==a)cnt2(a,b,1)}
+  }
+  const letterPairs=[];
+  edgeLetters.forEach((n,k)=>{
+    const [a,b]=k.split(',').map(Number),ga=gid[a],gb=gid[b],dOldFull=de00(oldLab[a],oldLab[b]);
+    letterPairs.push([a,b,n,dOldFull]);
+    if(ga===gb)return;
+    const kk2=ga<gb?ga+','+gb:gb+','+ga,dold=Math.min(edgeC(oldLab[a],oldLab[b]),RC3.cap)*RC3.rho;
+    if(!EG.has(kk2))EG.set(kk2,[]);EG.get(kk2).push([n,dold]);
+  });
+  const DEN=[];for(let i=0;i<NCOL;i++){DEN.push(new Array(NCOL));for(let j=0;j<NCOL;j++)DEN[i][j]=j<i?DEN[j][i]:(i===j?0:edgeC(PALETTE[i].lab,PALETTE[j].lab))}
+  const nbr=groups.map(()=>[]);
+  EG.forEach((lst,k)=>{const [ga,gb]=k.split(',').map(Number);nbr[ga].push([gb,lst]);nbr[gb].push([ga,lst])});
+  const edgeCost=(g,b)=>{let s2=0;for(const [h,lst] of nbr[g]){const dn=DEN[b][assign[h]];for(const [n,dold] of lst)s2+=n*Math.max(0,dold-dn)}return RC3.lam*s2};
+  const dupCost=(g,b)=>{let s2=0;for(let h=0;h<G;h++)if(h!==g&&assign[h]===b)s2+=kk[g];return s2};
+  const own={};groups.forEach((g,i)=>{if(g.members.length===1){const c=PALETTE[g.members[0]-1].code;if(!ALIAS_CODES.includes(c))own[i]=g.members[0]-1}});
+  const order=[...Array(G).keys()].sort((a,b)=>groups[b].count-groups[a].count||a-b);
+  for(let pass=0;pass<RC3.passes;pass++){
+    let changed=false;
+    for(const g of order){
+      const dmin=Math.min(...dmat[g]),cand=new Set(base[g].map((v,j)=>[v,j]).sort((a,b)=>a[0]-b[0]||a[1]-b[1]).slice(0,RC3.top).map(x=>x[1]).filter(j=>dmat[g][j]<=dmin+RC3.slack));cand.add(assign[g]);if(g in own)cand.add(own[g]);
+      const cur=assign[g];let best=base[g][cur]+edgeCost(g,cur)+dupCost(g,cur),bj=cur;
+      for(const b of [...cand].sort((a,b2)=>a-b2)){const v=base[g][b]+edgeCost(g,b)+dupCost(g,b);if(v<best-1e-9){best=v;bj=b}}
+      if(bj!==cur){assign[g]=bj;changed=true}
+    }
+    if(!changed)break;
+  }
+  const map={};groups.forEach((g,i)=>g.members.forEach(v=>{map[v]=assign[i]+1}));
+  used.forEach((a,i)=>{                                   // letras quase iguais (fora da pele) ficam com a mesma conta
+    if(isSkinOld(oldLab[a]))return;
+    for(let k=0;k<i;k++){const b=used[k];if(!isSkinOld(oldLab[b])&&de00(oldLab[a],oldLab[b])<RC3.sameT){map[a]=map[b];break}}
+  });
+  // bordas fracas (o par era visível, ΔE antigo >= 6, e o contraste novo ficou abaixo de 60% do antigo): agora x proposta, em % das bordas
+  let tot=0,wNow=0,wNew=0;
+  letterPairs.forEach(([a,b,n,dOld])=>{tot+=n;if(dOld>=6){if(de00(PALETTE[a-1].lab,PALETTE[b-1].lab)<0.6*dOld)wNow+=n;if(de00(PALETTE[map[a]-1].lab,PALETTE[map[b]-1].lab)<0.6*dOld)wNew+=n}});
+  recStats={now:tot?100*wNow/tot:0,prop:tot?100*wNew/tot:0};
+  return map;
+}
+function drawRecolor(cv,fn){
+  const cs=Math.max(2,Math.floor(200/Math.max(S.w,S.h))),ctx=cv.getContext('2d');cv.width=S.w*cs;cv.height=S.h*cs;ctx.clearRect(0,0,cv.width,cv.height);
+  for(let y=0;y<S.h;y++)for(let x=0;x<S.w;x++){const v=S.grid[y*S.w+x];if(v){ctx.fillStyle=fn(v);ctx.fillRect(x*cs,y*cs,cs,cs)}}
+}
+/* JUNTAR TONS QUASE IGUAIS (pedido do dono, 2026-11-02: o Kurama usa 3 vermelhos que são "praticamente a mesma coisa"; basta um; se a conta padrão acabar, uma parecida no ⇄).
+   Só leva as cores do desenho que são parecidas (ΔE2000 na tela < T) para a MAIS USADA do grupo; não troca por outras contas. Mesma conta de remap_cores.merge_similar. */
+let mergeT=6;try{const v=parseFloat(localStorage.getItem('beadstudio.mergeT'));if(v>=3&&v<=12)mergeT=v}catch(e){}
+function mergePlan(T){
+  const used=[],first={};
+  for(let i=0;i<S.grid.length;i++){const v=S.grid[i];if(v&&first[v]===undefined){first[v]=i;used.push(v)}}
+  used.sort((a,b)=>counts[b]-counts[a]||first[a]-first[b]);
+  const keep=[],map={};
+  used.forEach(a=>{const k=keep.find(k=>de00(PALETTE[a-1].lab,PALETTE[k-1].lab)<T);if(k){map[a]=k}else{keep.push(a);map[a]=a}});
+  return map;
+}
+let recPlan=null,recMode='remap';
+function drawRecAll(){
+  drawRecolor($('#recA'),v=>PALETTE[v-1].hex);
+  if(recMode==='remap')drawRecolor($('#recB'),v=>LEGACY_HEX[PALETTE[v-1].code]||PALETTE[v-1].hex);
+  drawRecolor($('#recC'),v=>PALETTE[recPlan[v]-1].hex);
+}
+function mergeInfo(){
+  const pairs={};Object.keys(recPlan).forEach(v=>{const t=recPlan[v];if(t!==+v)(pairs[t]=pairs[t]||[]).push(+v)});
+  const nUsed=Object.keys(recPlan).length,nNew=new Set(Object.values(recPlan)).size;
+  const txt=Object.keys(pairs).map(t=>`${pairs[t].map(v=>PALETTE[v-1].code).join(' e ')} → <b>${PALETTE[t-1].code}</b>`).join(' · ');
+  $('#recInfo').innerHTML=Object.keys(pairs).length?`${nUsed} cores passam a ${nNew}: ${txt}. A conta que fica é a mais usada do molde; as outras continuam à mão no botão ⇄ (substitutas) se a sua acabar.`:'Nenhuma cor deste molde é parecida a esse ponto. Aumente o valor acima para juntar tons um pouco mais diferentes.';
+  $('#recApply').disabled=!Object.keys(pairs).length;
+}
+function openRecolor(mode){
+  if(!total){toast('Este desenho ainda não tem contas');return}
+  recMode=mode==='merge'?'merge':'remap';
+  const mg=recMode==='merge';
+  $('#recTitle').textContent=mg?'Juntar cores quase iguais':'Refazer as cores deste molde';
+  $('#recIntro').innerHTML=mg?'Alguns moldes usam vários tons que, na peça, são <b>praticamente a mesma conta</b> (três vermelhos quase iguais, por exemplo). Dá para usar só uma: fica mais simples de montar e de conferir. A conta que fica é a mais usada do molde; se ela acabar, o botão <b>⇄</b> mostra as parecidas. <b>Só as cores mudam</b> (onde há conta, continua igual) e <kbd>Ctrl</kbd>+<kbd>Z</kbd> desfaz.':'Os moldes mais antigos foram feitos com cores <b>estimadas</b>; com as cores medidas nas contas, algumas saem diferentes do que você via. Aqui cada cor do desenho troca para a <b>conta real mais parecida com a que o molde mostrava antes</b>: a pele fica lisa, nada fica mais vivo do que era e dois tons vizinhos não viram a mesma conta. <b>Só as cores mudam</b> (onde há conta, continua igual) e dá para desfazer com <kbd>Ctrl</kbd>+<kbd>Z</kbd>.';
+  $('#mergeRow').hidden=!mg;$('#recBfig').hidden=mg;$('#recGrid').classList.toggle('two',mg);
+  $('#recCsub').textContent=mg?'só uma conta de cada tom':'contas reais parecidas com o antes';
+  $('#recApply').textContent=mg?'Juntar':'Usar a proposta';
+  if(mg){$('#mergeT').value=mergeT;$('#mergeTVal').textContent=mergeT.toFixed(1).replace('.',',');recPlan=mergePlan(mergeT);drawRecAll();mergeInfo();$('#dlgRecolor').showModal();return}
+  recPlan=recolorPlan();
+  const changed=Object.keys(recPlan).filter(v=>recPlan[v]!==+v).length,nUsed=Object.keys(recPlan).length;
+  drawRecAll();
+  const merged=nUsed-new Set(Object.values(recPlan)).size;
+  $('#recInfo').innerHTML=changed?`${changed} de ${nUsed} cores trocam de conta${merged?` (${merged} ${merged===1?'cor se junta':'cores se juntam'} a outra parecida)`:''}. “Como era antes” é só a lembrança das cores da versão antiga: o que vale na hora de montar são as contas da <b>Proposta</b>.`:'Nenhuma cor precisa trocar: este molde já está com as contas reais mais parecidas com as de antes.';
+  if(changed&&recStats&&recStats.now>=3)$('#recInfo').innerHTML+=` Detalhes que ficam fracos (duas cores vizinhas que ficaram parecidas demais): <b>${recStats.now.toFixed(0)}%</b> das bordas agora → <b>${recStats.prop.toFixed(0)}%</b> na proposta.`;
+  $('#recApply').disabled=!changed;
+  $('#dlgRecolor').showModal();
+}
+$('#btnRecolor').onclick=()=>openRecolor('remap');$('#btnMerge').onclick=()=>openRecolor('merge');
+$('#mergeT').addEventListener('input',e=>{
+  mergeT=clamp(parseFloat(e.target.value)||6,3,12);$('#mergeTVal').textContent=mergeT.toFixed(1).replace('.',',');
+  try{mergeT===6?localStorage.removeItem('beadstudio.mergeT'):localStorage.setItem('beadstudio.mergeT',String(mergeT))}catch(err){}
+  recPlan=mergePlan(mergeT);drawRecAll();mergeInfo();
+});
+$('#recApply').onclick=()=>{
+  if(!recPlan)return;
+  const before=snap();let n=0;
+  for(let i=0;i<S.grid.length;i++){const v=S.grid[i];if(v&&recPlan[v]&&recPlan[v]!==v){S.grid[i]=recPlan[v];n++}}
+  $('#dlgRecolor').close();
+  if(commit(before))toast(`${recMode==='merge'?'Cores juntadas':'Cores refeitas'} em ${fmt(n)} contas · Ctrl+Z desfaz`);
+  recPlan=null;
+};
 
 /* =====================================================================
    Painel: Contas
@@ -1998,9 +2467,10 @@ function renderCounts(){
     const p=PALETTE[v-1],n=counts[v],st=S.stock[p.code];
     return `<div class="crow${S.color===v?' on':''}${S.hlLock===v?' lock':''}" data-v="${v}" tabindex="0"${S.color===v?' aria-current="true"':''} title="Clique para pintar com ${p.code} — ${p.name}">
       <span class="swb"><span class="sw" style="background:${p.hex};color:${p.ink}">${p.code}</span></span>
-      <div class="nm"><b>${p.name}</b><small>${(n/total*100).toFixed(1).replace('.',',')}% do desenho</small></div>
+      <div class="nm"><b>${p.name}</b><small>${(n/total*100).toFixed(1).replace('.',',')}% do desenho${ALIAS_OF[p.code]?` · é a mesma conta da ${ALIAS_OF[p.code]}`:''}${confBadge(v)}</small></div>
       <div class="num">${fmt(n)}</div>
       <div class="stockbox"><input type="number" min="0" inputmode="numeric" placeholder="tenho" value="${st==null?'':st}" data-code="${p.code}" aria-label="Quantas contas ${p.name} você tem"><small></small></div>
+      <button type="button" class="swapbtn" data-sub="${v}" title="Cores substitutas: veja as parecidas com ${p.code} e troque em todo o desenho" aria-label="Cores substitutas de ${p.code}" aria-haspopup="dialog" aria-expanded="false">${icon('swap',15)}</button>
       <div class="bar"><i style="width:${n/max*100}%"></i></div></div>`;
   }).join('');
   $$('.stockbox input',box).forEach(inp=>updateDelta(inp));
@@ -2032,11 +2502,12 @@ $('#countList').addEventListener('mouseover',e=>{const r=e.target.closest('.crow
 $('#countList').addEventListener('mouseleave',()=>{if(S.hl){S.hl=0;requestDraw()}});
 /* clique = pinta com essa cor (como o menu "Todas as cores"); dois cliques = deixa o destaque fixo no desenho (de novo para soltar); Enter/Espaço também escolhem */
 $('#countList').addEventListener('click',e=>{
+  const sb=e.target.closest('.swapbtn');if(sb){if(subBtn===sb)closeSub();else openSub(+sb.dataset.sub,sb);return}      // ⇄ = submenu de cores substitutas
   if(e.target.closest('input'))return;const r=e.target.closest('.crow');if(!r)return;
   selectColor(+r.dataset.v);
 });
 $('#countList').addEventListener('dblclick',e=>{
-  if(e.target.closest('input'))return;const r=e.target.closest('.crow');if(!r)return;const v=+r.dataset.v;
+  if(e.target.closest('input,.swapbtn'))return;const r=e.target.closest('.crow');if(!r)return;const v=+r.dataset.v;
   S.hlLock=S.hlLock===v?0:v;$$('#countList .crow').forEach(x=>x.classList.toggle('lock',+x.dataset.v===S.hlLock));requestDraw();
   toast(S.hlLock?`Destaque fixo em ${PALETTE[v-1].code}: dois cliques de novo para soltar`:'Destaque solto');
 });
@@ -2052,9 +2523,10 @@ function renderProject(){
   $('#inW').value=S.w;$('#inH').value=S.h;$('#selBead').value=String(S.beadMm);$('#inPlate').value=S.plate;
   const [pw,ph]=plates(),n=pw*ph;
   $('#plateNote').innerHTML=`Este desenho ocupa <b>${n} placa${n>1?'s':''}</b> (${pw}×${ph}) de ${S.plate}×${S.plate} pinos. Cada placa cobre cerca de ${fmtCm(realCm(S.plate))}×${fmtCm(realCm(S.plate))} cm. Os cortes tracejados no quadriculado mostram onde uma placa termina e a próxima começa.`;
-  const opts=PALETTE.map((p,i)=>`<option value="${i+1}">${p.code} — ${p.name}</option>`).join('');
+  const opts=(skipAlias)=>PALETTE.map((p,i)=>skipAlias&&ALIAS_OF[p.code]?'':`<option value="${i+1}">${p.code} — ${p.name}${ALIAS_OF[p.code]?` (= ${ALIAS_OF[p.code]})`:''}</option>`).join('');
   const f=$('#repFrom'),t=$('#repTo'),fv=f.value,tv=t.value;
-  f.innerHTML=opts;t.innerHTML=opts;f.value=fv||CODE_IDX.H2;t.value=tv||CODE_IDX.H7;
+  f.innerHTML=opts(false);t.innerHTML=opts(true);f.value=fv||CODE_IDX.H2;t.value=tv||CODE_IDX.H7;     // o H12 (= A1) só aparece no "Trocar", nunca como destino
+  renderRepSugg();
 }
 
 /* =====================================================================
@@ -2086,7 +2558,22 @@ function setAsmSpan(n){
   if(!groupHasBeads(g)){const a=nextGroup(1,g);g=groupHasBeads(a)?a:nextGroup(-1,g)}
   S.asm.row=g;renderAssemble();requestDraw();scrollToRow()}
 function asmChanged(){recount();renderAssemble();requestDraw();scheduleSave()}
+/* chave "Espelhado": no painel da Montar e no Menu (vale para a Montar e para o Guia de montagem em PNG) */
+function syncMirrorUI(){
+  const on=!!S.asm.mirror,c=$('#asmMirror');if(c)c.checked=on;
+  const n=$('#mirNote');if(n)n.innerHTML=on?'A tela mostra a figura <b>espelhada</b>, como ela fica antes de virar. Monte o que você vê; depois de virar a peça com a fita, ela fica do lado certo.':'Visão normal, igual ao molde da galeria. Se você vira a peça com a fita, ela sai espelhada.';
+  const m=$('#mMirror');if(m){m.setAttribute('aria-pressed',on);const t=$('#mMirrorTxt');if(t)t.textContent=on?'sim':'não'}
+  const bd=$('#mirBadge');if(bd)bd.hidden=!(S.mode==='assemble'&&on);
+  updHint();
+}
+function setAsmMirror(on){
+  S.asm.mirror=!!on;lsSet('beadstudio.asmmirror',S.asm.mirror?1:0);S.asm.hoverRun=null;
+  if(S.mode==='assemble'){renderAssemble();renderSel();updateHoverInfo()}else syncMirrorUI();
+  requestDraw();
+  toast(S.asm.mirror?'Montagem e guia espelhados (para virar com a fita)':'Montagem e guia na visão normal');
+}
 function renderAssemble(){
+  syncMirrorUI();
   const pct=total?Math.round(doneTotal/total*100):0;
   $('#pText').innerHTML=total?`<b>${fmt(doneTotal)}</b> de ${fmt(total)} contas colocadas · ${pct}%`:'Nada para montar ainda.';
   $('#pFill').style.width=pct+'%';
@@ -2100,7 +2587,7 @@ function renderRowView(box){
   if(!groupHasBeads(g)){const a=nextGroup(1,g);g=groupHasBeads(a)?a:nextGroup(-1,S.h)}
   S.asm.row=g;
   const rows=groupRows(g),multi=rows.length>1,sp2=asmSpan()===2;
-  const runsBy=rows.map(runsForRow),runs=runsBy.flat();
+  const runsBy=rows.map(y=>{const rs=runsForRow(y);return asmMir()?rs.reverse():rs}),runs=runsBy.flat();      // espelhada: as contas da linha em ordem da esquerda da TELA para a direita
   const n=runs.reduce((s,r)=>s+r.n,0),dn=runs.reduce((s,r)=>s+r.done,0),pend=n-dn;
   const need={};runs.forEach(r=>{need[r.v]=(need[r.v]||0)+(r.n-r.done)});
   const take=Object.keys(need).filter(v=>need[v]).sort((a,b)=>need[b]-need[a]);
@@ -2114,14 +2601,14 @@ function renderRowView(box){
       <div class="mid">${multi?'Linhas':'Linha'} <input type="number" id="rNum" min="1" max="${S.h}" value="${g+1}">${multi?` e ${g+2}`:''} de ${S.h}</div>
       <button class="btn sm icon-only" id="rNext" title="${sp2?'Duas linhas abaixo':'Próxima linha'} (↓)" ${hasNext?'':'disabled'}>${icon('chevD')}</button>
     </div>
-    <div class="note" style="margin:0 0 8px">${n} ${n===1?'conta':'contas'} ${multi?'nestas duas linhas':'nesta linha'}${dn?` · ${dn} ${dn===1?'já colocada':'já colocadas'}`:''}. Coloque da <b>esquerda para a direita</b>${multi?', as duas linhas de cada coluna juntas':''}.</div>
+    <div class="note" style="margin:0 0 8px">${n} ${n===1?'conta':'contas'} ${multi?'nestas duas linhas':'nesta linha'}${dn?` · ${dn} ${dn===1?'já colocada':'já colocadas'}`:''}. Coloque da <b>esquerda para a direita</b>${multi?', as duas linhas de cada coluna juntas':''}.${asmMir()?' A tela está <b>espelhada</b> (para virar com a fita).':''}</div>
     <canvas id="rowStrip" class="strip" title="Visão ${multi?'das linhas inteiras':'da linha inteira'} — clique numa conta para marcar"></canvas>
-    ${take.length?`<div class="take">${take.map(v=>`<span class="tk"><i style="background:${PALETTE[v-1].hex}"></i>${need[v]}× ${PALETTE[v-1].code}</span>`).join('')}</div>
-    <div class="note" style="margin:2px 0 0">↑ separe estas contas antes de começar ${multi?'as linhas':'a linha'}</div>`:''}
+    ${take.length?`<div class="take">${take.map(v=>`<span class="tk"><i style="background:${PALETTE[v-1].hex}"></i>${need[v]}× ${PALETTE[v-1].code}${confBadge(+v,true)}</span>`).join('')}</div>
+    <div class="note" style="margin:2px 0 0">↑ separe estas contas antes de começar ${multi?'as linhas':'a linha'}</div>${confAlert(take.map(Number),multi)}`:''}
     <div class="runs" id="runs">${runs.map((r,ix)=>{
       const p=PALETTE[r.v-1],st=r.done===r.n?'done':(r.done?'partial':'');
       const hd=multi&&(ix===0||runs[ix-1].y!==r.y)?`<div class="rowhd">Linha ${r.y+1}</div>`:'';
-      return hd+`<button class="run ${st}" data-ix="${ix}"><span class="ck">${icon('check',15)}</span><span class="swb"><span class="sw" style="background:${p.hex};color:${p.ink}">${p.code}</span></span><span class="tx"><b>${r.n}× ${p.name}</b><small>${p.code}${r.done&&r.done<r.n?` · ${r.done}/${r.n} colocadas`:''}</small></span><span class="cols">${r.n>1?`colunas<br>${r.x0+1}–${r.x1+1}`:`coluna<br>${r.x0+1}`}</span></button>`}).join('')}</div>
+      return hd+`<button class="run ${st}" data-ix="${ix}"><span class="ck">${icon('check',15)}</span><span class="swb"><span class="sw" style="background:${p.hex};color:${p.ink}">${p.code}</span></span><span class="tx"><b>${r.n}× ${p.name}</b><small>${p.code}${r.done&&r.done<r.n?` · ${r.done}/${r.n} colocadas`:''}${confBadge(r.v)}</small></span><span class="cols">${r.n>1?`colunas<br>${Math.min(mx(r.x0),mx(r.x1))+1}–${Math.max(mx(r.x0),mx(r.x1))+1}`:`coluna<br>${mx(r.x0)+1}`}</span></button>`}).join('')}</div>
     <div class="rowdone">
       <button class="btn sm" id="rAll">${complete?`Desmarcar ${multi?'as duas linhas':'linha'}`:`Marcar ${multi?'as duas linhas':'linha toda'}`}</button>
       ${hasNext?`<button class="btn sm ${complete?'primary':''}" id="rNext2">${sp2?'Próximas 2 linhas':'Próxima linha'} ${icon('chevR',16)}</button>`:(complete?`<span class="note" style="margin:0;align-self:center">Última${multi?'s':''} ${lines} concluída${multi?'s':''} 🎉</span>`:'')}
@@ -2150,7 +2637,7 @@ function drawRowStrip(rows){
   rows.forEach((y,k)=>{
     const cy=13+k*RH;
     for(let x=0;x<S.w;x++){
-      const v=S.grid[y*S.w+x],cx=(x+.5)*cell;
+      const v=S.grid[y*S.w+x],cx=(mx(x)+.5)*cell;
       if(!v){c.fillStyle=C.hole;c.beginPath();c.arc(cx,cy,Math.max(.8,r*.22),0,TAU);c.fill();continue}
       c.globalAlpha=S.done[y*S.w+x]?.28:1;
       c.fillStyle=PALETTE[v-1].hex;c.beginPath();c.arc(cx,cy,r,0,TAU);c.fill();
@@ -2161,7 +2648,7 @@ function drawRowStrip(rows){
   const step=cell>=11?5:10;
   for(let x=0;x<S.w;x++){const n=x+1;if(n===1||n%step===0)c.fillText(n,(x+.5)*cell,lab)}
   cvs.onclick=e=>{
-    const rc=cvs.getBoundingClientRect(),x=Math.floor((e.clientX-rc.left)/rc.width*S.w),k=clamp(Math.floor((e.clientY-rc.top-2)/RH),0,nr-1),i=rows[k]*S.w+x;
+    const rc=cvs.getBoundingClientRect(),xs=Math.floor((e.clientX-rc.left)/rc.width*S.w),x=xs>=0&&xs<S.w?mx(xs):-1,k=clamp(Math.floor((e.clientY-rc.top-2)/RH),0,nr-1),i=rows[k]*S.w+x;
     if(x>=0&&x<S.w&&S.grid[i]){S.done[i]=S.done[i]?0:1;asmChanged()}
   };
 }
@@ -2173,9 +2660,9 @@ function scrollToRow(){
 }
 function renderColorView(box){
   const list=[];for(let v=1;v<=NCOL;v++)if(counts[v])list.push(v);list.sort((a,b)=>counts[b]-counts[a]);
-  box.innerHTML=`<div class="note" style="margin:0 0 8px">Escolha uma cor: só as contas dela que ainda faltam ficam destacadas no quadriculado. Clique nas contas para marcar como colocadas.</div>`+
+  box.innerHTML=`<div class="note" style="margin:0 0 8px">Escolha uma cor: só as contas dela que ainda faltam ficam destacadas no quadriculado. Clique nas contas para marcar como colocadas. Cores <b>parecidas</b> com ela aparecem com anel tracejado e o código, para você não confundir.</div>`+
     list.map(v=>{const p=PALETTE[v-1],d=doneCounts[v],n=counts[v];
-      return `<button class="cfocus${S.asm.color===v?' on':''}" data-v="${v}"><span class="swb"><span class="sw" style="background:${p.hex};color:${p.ink}">${p.code}</span></span><span class="nm"><b>${p.name}</b><span class="mini"><i style="width:${d/n*100}%"></i></span></span><span class="fr">${fmt(n-d)}<small>faltam de ${fmt(n)}</small></span></button>`}).join('')+
+      return `<button class="cfocus${S.asm.color===v?' on':''}" data-v="${v}"><span class="swb"><span class="sw" style="background:${p.hex};color:${p.ink}">${p.code}</span></span><span class="nm"><b>${p.name}</b>${confBadge(v)?`<small style="display:block">${confBadge(v)}</small>`:''}<span class="cbar"><i style="width:${d/n*100}%"></i></span></span><span class="fr">${fmt(n-d)}<small>faltam de ${fmt(n)}</small></span></button>`}).join('')+
     `<div class="rowdone"><button class="btn sm" id="cAll" ${S.asm.color?'':'disabled'}>Marcar toda esta cor</button><button class="btn sm" id="cNone" ${S.asm.color?'':'disabled'}>Desmarcar</button></div>`;
   $$('#asmBody .cfocus').forEach(b=>b.onclick=()=>{const v=+b.dataset.v;S.asm.color=S.asm.color===v?0:v;renderAssemble();requestDraw()});
   const setC=val=>{for(let i=0;i<S.grid.length;i++)if(S.grid[i]===S.asm.color)S.done[i]=val;asmChanged()};
@@ -2194,9 +2681,12 @@ function setMode(m){
   $('#paneAssemble').classList.toggle('on',m==='assemble');
   $('#paneCounts').classList.toggle('on',m==='create'&&S.tab==='counts');
   $('#paneProject').classList.toggle('on',m==='create'&&S.tab==='project');
-  $('#hint').textContent=m==='create'?TOOL_HINTS[S.tool]:'Clique nas contas para marcar o que você já colocou na placa · ↑ ↓ trocam de linha (ou de duas em duas, se escolher "2 linhas") · Espaço marca a linha';
   if(m==='assemble'){S.asm.row=groupStart(clamp(S.asm.row,0,S.h-1));if(!groupHasBeads(S.asm.row))S.asm.row=nextGroup(1,-1);renderAssemble()}
-  S.hl=0;layout();renderSel();syncSelUI();
+  if(m==='assemble'&&stage.clientWidth){      // contas com pelo menos 14 px mostram o código na linha atual: sobe o zoom se a linha inteira ainda couber
+    const fit=Math.floor((stage.clientWidth-60-RULER)/S.w);
+    if(S.zoom<14&&fit>=14){S.zoom=Math.min(fit,24);syncZoomUI()}
+  }
+  S.hl=0;layout();renderSel();syncSelUI();syncMirrorUI();
   if(m==='assemble')setTimeout(scrollToRow,60);
 }
 $('#modeSwitch').addEventListener('click',e=>{const b=e.target.closest('button');if(b)setMode(b.dataset.mode)});
@@ -2218,7 +2708,7 @@ function refreshAll(){
 function updateHoverInfo(){
   const h=S.hover,el=$('#hoverInfo');if(!h){el.textContent='';return}
   const v=S.grid[h.y*S.w+h.x],p=v?PALETTE[v-1]:null;
-  el.innerHTML=`Coluna <b>${h.x+1}</b> · Linha <b>${h.y+1}</b> · ${p?`<span class="sw" style="background:${p.hex}"></span><b>${p.code}</b> ${p.name}`:'vazio'}`;
+  el.innerHTML=`Coluna <b>${mx(h.x)+1}</b> · Linha <b>${h.y+1}</b> · ${p?`<span class="sw" style="background:${p.hex}"></span><b>${p.code}</b> ${p.name}`:'vazio'}`;
 }
 
 /* =====================================================================
@@ -2277,10 +2767,9 @@ $$('[data-shift]').forEach(b=>b.onclick=()=>{const [dx,dy]=b.dataset.shift.split
 $('#btnRot').onclick=()=>transform(rotCW);$('#btnFlipH').onclick=()=>transform(flipH);$('#btnFlipV').onclick=()=>transform(flipV);
 $('#btnClear').onclick=()=>{if(!total||confirm('Limpar todas as contas do desenho? (dá para desfazer)')){const b=snap();S.grid.fill(0);S.done.fill(0);commit(b)}};
 $('#btnReplace').onclick=()=>{
-  const a=+$('#repFrom').value,b=+$('#repTo').value;if(a===b)return;
-  if(!counts[a]){toast(`${PALETTE[a-1].code} não é usada no desenho`);return}
-  const before=snap();for(let i=0;i<S.grid.length;i++)if(S.grid[i]===a)S.grid[i]=b;commit(before);
-  toast(`${PALETTE[a-1].code} → ${PALETTE[b-1].code} em ${fmt(counts[b])} contas`);
+  const a=+$('#repFrom').value,b=+$('#repTo').value;
+  if(a===b){toast('Escolha duas cores diferentes');return}
+  replaceColor(a,b);
 };
 $('#selBead').onchange=e=>{S.beadMm=+e.target.value;renderCounts();renderProject();scheduleSave()};
 $('#inPlate').onchange=e=>{S.plate=clamp(parseInt(e.target.value,10)||50,5,150);renderProject();renderCounts();requestDraw();scheduleSave()};
@@ -2330,6 +2819,7 @@ const MINE_KEY='beadstudio.mine';
 const lsGet=(k,d)=>{try{const v=JSON.parse(localStorage.getItem(k));return v==null?d:v}catch(e){return d}};
 const lsSet=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v));return true}catch(e){toast('Não consegui salvar (o armazenamento do navegador está cheio ou bloqueado)');return false}};
 S.asm.span=lsGet('beadstudio.asmspan',1)===2?2:1;
+S.asm.mirror=lsGet('beadstudio.asmmirror',1)!==0;
 function loadMine(){const a=lsGet(MINE_KEY,[]);return Array.isArray(a)?a:[]}
 const saveMine=a=>lsSet(MINE_KEY,a);
 /* ajustes que você fez em templates do catálogo (ficam no navegador; o original continua guardado) */
@@ -3261,13 +3751,31 @@ $('#newGo').onclick=()=>{
 };
 
 /* ---------- ajustar cores ---------- */
+function vivNote(){
+  $('#vivVal').textContent=vivid+'%';
+  $('#vivNote').textContent=vivid===VIVID_DEFAULT?`Padrão (${VIVID_DEFAULT}%). 100% = como a cor saiu da foto da conta (celular exagera); menos = cores mais apagadas. Só as muito saturadas mudam: pele, creme e pastéis ficam iguais.`:`Você escolheu ${vivid}% (padrão ${VIVID_DEFAULT}%; 100% = como saiu da foto). Só as muito saturadas mudam. Os ajustes de cor individuais, abaixo, continuam valendo.`;
+}
+function refreshColList(){
+  $$('#colList .colrow').forEach((r,i)=>{const p=PALETTE[i];if(!p)return;r.querySelector('.sw').style.background=p.hex;const inp=r.querySelector('input[type=color]');if(inp)inp.value=p.hex.toLowerCase()});
+}
 function openColors(){
+  $('#vivSlider').value=vivid;vivNote();
   const box=$('#colList');
-  box.innerHTML=PALETTE.map((p,i)=>`<div class="colrow"><div class="sw" style="background:${p.hex}"></div><div><b>${p.code}</b>${p.est?' <span title="cor estimada da foto do anúncio" style="color:var(--muted)">~</span>':''} <span style="color:var(--muted)">${p.name}</span></div><input type="color" value="${p.hex.toLowerCase()}" data-i="${i}" aria-label="Cor ${p.code}"></div>`).join('');
+  box.innerHTML=PALETTE.map((p,i)=>`<div class="colrow"><div class="sw" style="background:${p.hex}"></div><div><b>${p.code}</b>${ALIAS_OF[p.code]?` <span style="color:var(--muted)" title="Na bandeja é o mesmo creme da ${ALIAS_OF[p.code]}">(= ${ALIAS_OF[p.code]})</span>`:''}${p.est?' <span title="cor estimada de foto (do anúncio ou das bandejas de contas): pode destoar um pouco da conta de verdade" style="color:var(--muted)">~</span>':''} <span style="color:var(--muted)">${p.name}</span></div><input type="color" value="${p.hex.toLowerCase()}" data-i="${i}" aria-label="Cor ${p.code}"></div>`).join('');
   box.oninput=e=>{const inp=e.target.closest('input[type=color]');if(!inp)return;const i=+inp.dataset.i;overrides[PALETTE[i].code]=inp.value.toUpperCase();derivePalette();inp.parentElement.querySelector('.sw').style.background=inp.value;refreshAll();scheduleSave()};
   $('#dlgColors').showModal();
 }
-$('#colReset').onclick=()=>{overrides={};derivePalette();openColors();refreshAll();scheduleSave()};
+$('#colReset').onclick=()=>{overrides={};vivid=VIVID_DEFAULT;try{localStorage.removeItem('beadstudio.vivid')}catch(e){}derivePalette();openColors();refreshAll();scheduleSave()};
+$('#vivSlider').addEventListener('input',e=>{
+  vivid=clamp(parseInt(e.target.value,10)||VIVID_DEFAULT,30,100);
+  try{vivid===VIVID_DEFAULT?localStorage.removeItem('beadstudio.vivid'):localStorage.setItem('beadstudio.vivid',String(vivid))}catch(err){}
+  derivePalette();vivNote();refreshColList();refreshAll();
+});
+/* "Voltar às cores antigas": põe a paleta de antes (LEGACY_HEX) como ajuste de cor; "Restaurar padrão" volta às das contas */
+$('#colLegacy').onclick=()=>{
+  overrides={};PALETTE.forEach((p,i)=>{const o=LEGACY_HEX[p.code];if(o&&o.toUpperCase()!==DEFAULT_PALETTE[i][2].toUpperCase())overrides[p.code]=o});
+  derivePalette();openColors();refreshAll();scheduleSave();toast('Cores antigas na tela — “Restaurar padrão” volta às cores das contas');
+};
 
 /* ---------- imagem → contas ---------- */
 const imp={img:null,name:'',ratio:1,cache:null,result:null};
@@ -3520,12 +4028,15 @@ $('#fileOpen').onchange=async e=>{
   catch(err){toast('Arquivo de projeto inválido')}
 };
 function renderOffscreen(cs,{guide=false}={}){
-  const m=guide?cs*1.6:0,legendH=guide?Math.ceil(usedColors/3)*cs*1.5+cs*2:0;
+  const mir=guide&&!!S.asm.mirror;      // o guia segue a chave "Espelhado" da Montar
+  const gp=guide?confPairs(Array.from({length:NCOL},(_,k)=>k+1).filter(v=>counts[v])):[];      // duplas de cores parecidas (o guia lista, com a diferença em palavras)
+  const gpN=Math.min(gp.length,8),gpH=gp.length?cs*(1.9+gpN*1.2+(gp.length>8?1:0)):0;
+  const m=guide?cs*1.6:0,legendH=guide?Math.ceil(usedColors/3)*cs*1.5+cs*3.5+gpH:0;      // 3,5 = 2 da folga da legenda + 1,5 da faixa do título
   const c=document.createElement('canvas'),W=S.w*cs+m*2,H=S.h*cs+m*2+legendH;c.width=W;c.height=H;const x=c.getContext('2d');
   x.fillStyle=guide?'#fff':'#e9e5db';x.fillRect(0,0,W,H);
   const keep=C.edge,kp=C.plate;C={...C,edge:'rgba(0,0,0,.38)',plate:'#e3dfd4'};
   for(let y=0;y<S.h;y++)for(let xx=0;xx<S.w;xx++){
-    const v=S.grid[y*S.w+xx],px=m+xx*cs,py=m+y*cs;
+    const v=S.grid[y*S.w+xx],px=m+(mir?S.w-1-xx:xx)*cs,py=m+y*cs;
     if(!v){if(guide){x.fillStyle='#ece8df';x.beginPath();x.arc(px+cs/2,py+cs/2,cs*.09,0,TAU);x.fill()}continue}
     const p=PALETTE[v-1];
     if(guide){x.fillStyle=p.hex;x.fillRect(px,py,cs,cs)}else drawBead(x,px,py,cs,p.hex);
@@ -3544,16 +4055,29 @@ function renderOffscreen(cs,{guide=false}={}){
     for(let k=0;k<S.h;k++){const n=k+1;if(n===1||n%5===0){x.fillText(n,m*.5,m+k*cs+cs/2);x.fillText(n,m+S.w*cs+m*.5,m+k*cs+cs/2)}}
     // legenda
     const list=[];for(let v=1;v<=NCOL;v++)if(counts[v])list.push(v);list.sort((a,b)=>counts[b]-counts[a]);
-    const top=m*2+S.h*cs,colW=(W-m*2)/3;x.textAlign='left';
+    const top=m*2+S.h*cs+cs*1.5,colW=(W-m*2)/3;x.textAlign='left';
     list.forEach((v,i)=>{const p=PALETTE[v-1],cx=m+(i%3)*colW,cy=top+Math.floor(i/3)*cs*1.5;
       x.fillStyle=p.hex;x.fillRect(cx,cy,cs*1.2,cs*1.2);x.strokeStyle='rgba(0,0,0,.35)';x.lineWidth=1;x.strokeRect(cx,cy,cs*1.2,cs*1.2);
       x.fillStyle=p.ink;x.textAlign='center';x.font=`700 ${cs*.44}px "Segoe UI",sans-serif`;x.fillText(p.code,cx+cs*.6,cy+cs*.62);
-      x.fillStyle='#222';x.textAlign='left';x.font=`600 ${cs*.5}px "Segoe UI",sans-serif`;x.fillText(`${p.name} — ${counts[v]} contas`,cx+cs*1.5,cy+cs*.62)});
-    x.fillStyle='#222';x.font=`700 ${cs*.6}px "Segoe UI",sans-serif`;x.textAlign='left';x.fillText(`${S.name} · ${S.w}×${S.h} · ${total} contas`,m,top-m*.35);
+      x.fillStyle='#222';x.textAlign='left';x.font=`600 ${cs*.5}px "Segoe UI",sans-serif`;x.fillText(`${p.name} — ${counts[v]} ${counts[v]===1?'conta':'contas'}`,cx+cs*1.5,cy+cs*.62)});
+    if(gp.length){      // cores parecidas: quadradinho das duas, a diferença em palavras e o pedido para conferir o código
+      let cy=top+Math.ceil(list.length/3)*cs*1.5+cs*.3;
+      x.fillStyle='#8a5a00';x.textAlign='left';x.font=`700 ${cs*.5}px "Segoe UI",sans-serif`;x.fillText('Cores parecidas: confira o código na hora de pegar a conta',m,cy+cs*.45);cy+=cs*1.5;
+      const sq=(v,px)=>{const p=PALETTE[v-1];x.fillStyle=p.hex;x.fillRect(px,cy,cs*1.2,cs*1.0);x.strokeStyle='rgba(0,0,0,.35)';x.lineWidth=1;x.strokeRect(px,cy,cs*1.2,cs*1.0);x.fillStyle=p.ink;x.textAlign='center';x.font=`700 ${cs*.42}px "Segoe UI",sans-serif`;x.fillText(p.code,px+cs*.6,cy+cs*.52)};
+      gp.slice(0,8).forEach(q=>{sq(q.a,m);x.fillStyle='#555';x.textAlign='center';x.font=`700 ${cs*.5}px "Segoe UI",sans-serif`;x.fillText('×',m+cs*1.7,cy+cs*.5);sq(q.b,m+cs*2.2);
+        x.fillStyle='#222';x.textAlign='left';x.font=`600 ${cs*.46}px "Segoe UI",sans-serif`;x.fillText(confSay(q.a,q.b),m+cs*3.7,cy+cs*.5);cy+=cs*1.2});
+      if(gp.length>8){x.fillStyle='#555';x.textAlign='left';x.font=`600 ${cs*.44}px "Segoe UI",sans-serif`;x.fillText(`+ ${gp.length-8} duplas parecidas`,m,cy+cs*.4)}
+    }
+    const ttl=`${S.name} · ${S.w}×${S.h} · ${total} contas${mir?' · ESPELHADO (monte assim e vire com a fita)':''}`;let tfs=cs*.6;
+    x.fillStyle='#222';x.textAlign='left';x.font=`700 ${tfs}px "Segoe UI",sans-serif`;
+    while(x.measureText(ttl).width>W-m*2&&tfs>cs*.28){tfs*=.93;x.font=`700 ${tfs}px "Segoe UI",sans-serif`}      // molde estreito: o título encolhe para caber
+    x.fillText(ttl,m,m*2+S.h*cs+cs*.55);
   }
   return c;
 }
 $('#mPng').onclick=()=>renderOffscreen(Math.max(8,Math.min(28,Math.floor(2400/Math.max(S.w,S.h))))).toBlob(b=>download(safeName()+'.png',b));
+$('#asmMirror').onchange=e=>setAsmMirror(e.target.checked);
+$('#mMirror').onclick=()=>setAsmMirror(!S.asm.mirror);
 $('#mGuide').onclick=()=>{if(!total){toast('Faça um desenho primeiro');return}renderOffscreen(Math.max(20,Math.min(36,Math.floor(3000/Math.max(S.w,S.h)))),{guide:true}).toBlob(b=>download(safeName()+'-guia.png',b))};
 $('#mList').onclick=async()=>{
   const list=[];for(let v=1;v<=NCOL;v++)if(counts[v])list.push(v);list.sort((a,b)=>counts[b]-counts[a]);
@@ -3770,7 +4294,8 @@ var HELP=[
   <h4>Cores</h4>
   <ul><li>As cores <b>do desenho</b> ficam na lista <b>Contas por cor</b>, no painel da direita: <b>clique numa para pintar com ela</b>. A cor em uso fica marcada e aparece também na faixa de baixo.</li>
   <li><b>Todas as cores 120</b> (faixa de baixo) abre o kit inteiro, por família, para pegar uma cor que ainda não está no desenho. Busque pelo código (<code>B13</code>) ou pelo nome (<code>verde</code>); <kbd>Enter</kbd> escolhe a primeira e <kbd>Esc</kbd> fecha. Um pontinho na cor = ela já está no desenho.</li>
-  <li>Quando o painel da direita está escondido (ou a tela é pequena), a faixa de baixo mostra só as cores do desenho, para você trocar de cor sem abrir nada.</li></ul>
+  <li>Quando o painel da direita está escondido (ou a tela é pequena), a faixa de baixo mostra só as cores do desenho, para você trocar de cor sem abrir nada.</li>
+  <li><b>Cores parecidas (substitutas)</b>: o kit tem muitas cores quase iguais. No alto de <b>Todas as cores</b>, a faixa <b>Parecidas com…</b> mostra as mais próximas da cor em uso (clique numa para pintar com ela; o menu continua aberto). Na lista <b>Contas por cor</b>, o botão <b>⇄</b> de cada cor abre o submenu das substitutas: um selo diz o quanto cada uma é parecida e, se você usa o estoque, quantas contas tem dela. Clicar numa <b>troca a cor em todo o desenho</b> (<kbd>Ctrl</kbd>+<kbd>Z</kbd> desfaz).</li></ul>
   <p><kbd>Ctrl</kbd>+<kbd>Z</kbd> desfaz e <kbd>Ctrl</kbd>+<kbd>Y</kbd> refaz.</p>`},
  {id:'selecionar',t:'Selecionar contas',ic:'select',html:`
   <h3>Selecionar contas</h3><p class="hlead">Para saber quantas contas tem num pedaço do desenho e de quais cores.</p>
@@ -3785,15 +4310,18 @@ var HELP=[
   <ul><li>No alto: total de contas, número de cores e o tamanho (em contas e em centímetros, pelo diâmetro da conta escolhido em Ajustes).</li>
   <li><b>Contas por cor</b>: a lista de cada cor, por quantidade ou por código. <b>Clique</b> numa cor para pintar com ela; <b>passe o mouse</b> para ver onde ela está no desenho e dê <b>dois cliques</b> para deixar o destaque fixo (de novo para soltar).</li>
   <li><b>Conferir meu estoque</b>: aparece um campo “tenho” em cada cor. Digite quantas contas você tem e o app avisa o que falta.</li>
+  <li><b>Refazer as cores deste molde…</b> (embaixo da lista): a janela mostra o molde <b>agora</b>, <b>como era antes</b> (cores da versão antiga) e a <b>proposta</b>, onde cada cor troca para a conta real mais parecida com a de antes (pele lisa, nada mais vivo que antes). Serve para os moldes que saíram “estranhos” depois que as cores da tela passaram a ser as medidas nas contas. Só as cores mudam; <kbd>Ctrl</kbd>+<kbd>Z</kbd> desfaz, e para guardar use <b>Gravar no catálogo</b>.</li>
+  <li><b>Juntar cores quase iguais…</b>: quando o molde usa vários tons que são praticamente a mesma conta (3 vermelhos quase iguais, por exemplo), fica só um, o mais usado. É mais simples de montar e de conferir; se a conta que ficou acabar, o botão <b>⇄</b> mostra as parecidas. O valor “diferença menor que” decide o quanto as cores precisam ser parecidas (padrão 6; 3 junta só as idênticas, 12 junta bastante). Só as cores mudam e <kbd>Ctrl</kbd>+<kbd>Z</kbd> desfaz.</li>
+  <li>O botão <b>⇄</b> ao lado de cada cor abre as <b>cores substitutas</b> (as mais parecidas do kit). Serve quando falta uma cor ou quando a conta de verdade não combina com a da tela: escolha a substituta e ela entra no lugar em todo o desenho.</li>
   <li><b>Menu → Copiar lista de contas</b> copia a lista para colar onde quiser (WhatsApp, bloco de notas, lista de compras).</li></ul>`},
  {id:'ajustes',t:'Ajustes do desenho',ic:'rotate',html:`
   <h3>Ajustes do desenho</h3><p class="hlead">Na aba <b>Ajustes</b> do painel da direita.</p>
   <ul><li><b>Tamanho da placa</b>: mude colunas × linhas. <b>Cortar ao redor do desenho</b> tira as bordas vazias.</li>
   <li><b>Suas contas e sua placa</b>: diâmetro da conta (2,6 mm Pindou mini ou 5 mm Hama midi) e pinos por placa. Isso muda o tamanho em centímetros e as abas de placas da galeria.</li>
   <li><b>Mover, girar e espelhar</b>: setas para deslocar o desenho uma conta, centralizar, girar 90° e espelhar.</li>
-  <li><b>Trocar uma cor por outra</b> em todo o desenho (ex.: trocar um verde que você não tem por outro parecido).</li>
+  <li><b>Trocar uma cor por outra</b> em todo o desenho (ex.: trocar um verde que você não tem por outro parecido). Embaixo dos dois campos aparecem as cores parecidas com a de origem: clique numa para escolhê-la como destino.</li>
   <li><b>Limpar tudo</b> esvazia a placa (dá para desfazer com <kbd>Ctrl</kbd>+<kbd>Z</kbd>).</li></ul>
-  <div class="tip">Se uma cor na tela estiver diferente da conta de verdade, ajuste em <b>Menu → Ajustar cores</b>. Só muda a aparência; os códigos continuam os mesmos.</div>`},
+  <div class="tip">As cores da tela foram estimadas de fotos do kit (o <b>~</b> em Ajustar cores marca as estimadas). Se uma cor estiver diferente da conta de verdade, ajuste em <b>Menu → Ajustar cores</b>. Só muda a aparência; os códigos continuam os mesmos. O controle <b>Vivacidade</b>, no alto dessa janela, apaga ou avive todas as cores de uma vez (o celular exagera a saturação das fotos): 100% é a cor como saiu da foto; compare a tela com as suas contas e escolha. Só as cores muito saturadas mudam; pele, creme e pastéis ficam iguais.</div>`},
  {id:'montar',t:'Montar na placa',ic:'puzzle',html:`
   <h3>Montar na placa (modo Montar)</h3><p class="hlead">Um guia para colocar as contas sem se perder. O progresso fica salvo.</p>
   <h4>Linha por linha</h4>
@@ -3801,7 +4329,14 @@ var HELP=[
   <li><b>Por vez</b>: 1 ou 2 linhas.</li>
   <li>Clique numa conta da placa para marcá-la como colocada, ou use <b>Marcar linha toda</b> e <b>Próxima linha</b>.</li>
   <li>Teclado: <kbd>↑</kbd> <kbd>↓</kbd> trocam de linha e a <kbd>barra de espaço</kbd> marca ou desmarca a linha inteira.</li></ul>
-  <h4>Cor por cor</h4><p>Mostra uma cor de cada vez, com todas as posições dela — bom para quem gosta de colocar todas as contas de uma cor de uma vez.</p>
+  <h4>Espelhado (para virar com fita)</h4>
+  <p>Quem cobre a placa com fita e vira a peça a recebe espelhada. Por isso a <b>Montar</b> e o <b>Guia de montagem (PNG)</b> mostram a figura <b>espelhada</b> (padrão ligado): monte exatamente o que está na tela e, depois de virar, ela fica do lado certo. Os números de coluna são os da tela, da esquerda para a direita. Desligue em <b>Espelhado</b> (painel da Montar) ou em <b>Menu → Montagem e guia espelhados</b>. Só a exibição muda: o molde, o Criar, a galeria e a <b>Imagem (PNG)</b> continuam na visão normal.</p>
+  <h4>Cor por cor</h4><p>Mostra uma cor de cada vez, com todas as posições dela — bom para quem gosta de colocar todas as contas de uma cor de uma vez. As cores <b>parecidas</b> com ela (bege e creme, por exemplo) ficam marcadas com anel tracejado e o código.</p>
+  <h4>Não confundir contas parecidas</h4>
+  <ul><li>Na linha atual, cada conta mostra o <b>código</b> (se a conta tiver pelo menos 14 px; aumente o zoom se precisar).</li>
+  <li>Quando duas cores do molde são muito parecidas (diferença de cor menor que 6), elas ganham o selo <b>≈</b> com o código da outra; passe o mouse para ler como elas diferem (“A1 é mais amarelada e mais clara que G1”).</li>
+  <li>Se as duas ainda faltam na linha atual, aparece o aviso <b>Cuidado: cores parecidas nesta linha</b>.</li>
+  <li>O <b>Guia de montagem (PNG)</b> lista essas duplas no fim.</li></ul>
   <p><b>Zerar progresso</b> desmarca tudo. Na tela inicial, <b>Continuar de onde parou → Montar</b> volta direto para a montagem.</p>
   <div class="tip">Dica: use <b>Menu → Guia de montagem (PNG)</b> para ter uma imagem com a grade e os códigos, se preferir montar olhando o celular.</div>`},
  {id:'imagem',t:'Imagem → contas',ic:'image',html:`
@@ -3823,7 +4358,7 @@ var HELP=[
   <ul><li><b>Salvar molde</b> (<kbd>Ctrl</kbd>+<kbd>S</kbd>): guarda os ajustes num molde do catálogo, ou guarda o desenho como um molde novo (com nome e categoria).</li>
   <li><b>Menu → Salvar projeto (.json)</b> baixa um arquivo com o desenho e o progresso; <b>Abrir projeto</b> carrega de volta.</li></ul>
   <h4>Exportar</h4>
-  <ul><li><b>Imagem (PNG)</b>: a figura em contas.</li><li><b>Guia de montagem (PNG)</b>: com grade, números e códigos.</li><li><b>Copiar lista de contas</b>: o texto com as quantidades.</li></ul>
+  <ul><li><b>Imagem (PNG)</b>: a figura em contas.</li><li><b>Guia de montagem (PNG)</b>: com grade, números e códigos (espelhado, se a chave estiver ligada).</li><li><b>Copiar lista de contas</b>: o texto com as quantidades.</li></ul>
   <h4>Gravar no catálogo</h4>
   <p>Excluir, renomear, mover, ajustar desenhos e organizar categorias fica primeiro só neste navegador. <b>Gravar no catálogo</b> passa tudo para o arquivo <code>templates.js</code> (no Chrome ou Edge ele pede a pasta do projeto uma vez e faz cópia de segurança antes; em outros navegadores ele baixa o arquivo para você trocar).</p>
   <div class="tip">Depois que o Claude acrescentar moldes novos ao catálogo, <b>recarregue a página com <kbd>Ctrl</kbd>+<kbd>F5</kbd></b> antes de gravar. Se a página estiver desatualizada, o app recusa a gravação e avisa — assim nada se perde.</div>
@@ -3978,7 +4513,7 @@ var CAT_MINI_PICK={
  'yu-yu-hakusho':['Yusuke Urameshi (Yu Yu Hakusho, chibi, folha)','h'],'death-note':['Ryuk (Death Note, chibi)','f'],'inazuma-eleven':['Yuuto Kidou (Inazuma Eleven, chibi, explosão)','f'],
  'how-i-met-your-mother':['Casal sob o guarda-chuva amarelo (How I Met Your Mother, ilustração)','f'],'la-la-land':['Casal dançando (La La Land)','f'],'divertida-mente':['Tristeza (Divertida Mente, gráfico)','h'],
  'hellsing':['Alucard (Hellsing, chibi, pistolas)','h'],'god-of-war':['Kratos (God of War, chibi, gráfico)','f'],'kung-fu-panda':['Panda (Kung Fu Panda, chibi, adesivo)','h'],
- 'mortal-kombat':['Sub-Zero (Mortal Kombat, pixel)','h'],'nanatsu-no-taizai':['Meliodas (Nanatsu no Taizai, pixel)','h'],'invencivel':['Omni-Man (Invencível, pixel)','h'],'spawn':['Spawn (gráfico)','f'],'shovel-knight':['Shovel Knight (gráfico)','h'],'devil-may-cry':['Dante (Devil May Cry, pixel)','h'],'piratas-do-caribe':['Jack Sparrow (Piratas do Caribe, chibi, adesivo)','h'],'john-wick':['John Wick e cachorro (chibi, adesivo)','h'],'game-of-thrones':['Jon Snow (Game of Thrones, retrato)','h'],'brinquedo-assassino':['Chucky (chibi)','h'],'o-silencio-dos-inocentes':['Hannibal Lecter (chibi)','h'],'queen':['Freddie Mercury (Queen, chibi)','h'],'alien':['Xenomorfo (Alien, chibi)','h'],'hellboy':['Hellboy (chibi)','h'],'coraline':['Coraline (contas redondas)','h'],'final-fantasy':['Mago Negro (Final Fantasy, gráfico)','f'],'fallout':['Vault Boy (Fallout, gráfico)','h'],'overlord':['Ainz Ooal Gown (Overlord, pixel)','h'],'round-6':['Guarda triângulo (Round 6, gráfico)','f'],'o-pequeno-principe':['Pequeno Príncipe e a raposa (gráfico)','h'],'darling-in-the-franxx':['Zero Two (Darling in the Franxx, gráfico)','h'],'black-butler':['Grell Sutcliff (Black Butler, gráfico)','h'],'hajime-no-ippo':['Ippo Makunouchi (Hajime no Ippo, pixel, peek-a-boo)','h'],'himouto-umaru-chan':['Umaru-chan (Himouto! Umaru-chan, gráfico)','h'],'mega-man':['Mega Man X (armadura Ultimate, pixel)','h'],'donkey-kong':['Donkey Kong (gráfico)','h']
+ 'mortal-kombat':['Sub-Zero (Mortal Kombat, pixel)','h'],'nanatsu-no-taizai':['Meliodas (Nanatsu no Taizai, pixel)','h'],'invencivel':['Omni-Man (Invencível, pixel)','h'],'spawn':['Spawn (gráfico)','f'],'shovel-knight':['Shovel Knight (gráfico)','h'],'devil-may-cry':['Dante (Devil May Cry, pixel)','h'],'piratas-do-caribe':['Jack Sparrow (Piratas do Caribe, chibi, adesivo)','h'],'john-wick':['John Wick e cachorro (chibi, adesivo)','h'],'game-of-thrones':['Jon Snow (Game of Thrones, retrato)','h'],'brinquedo-assassino':['Chucky (chibi)','h'],'o-silencio-dos-inocentes':['Hannibal Lecter (chibi)','h'],'queen':['Freddie Mercury (Queen, chibi)','h'],'alien':['Xenomorfo (Alien, chibi)','h'],'hellboy':['Hellboy (chibi)','h'],'coraline':['Coraline (contas redondas)','h'],'final-fantasy':['Mago Negro (Final Fantasy, gráfico)','f'],'fallout':['Vault Boy (Fallout, gráfico)','h'],'overlord':['Ainz Ooal Gown (Overlord, pixel)','h'],'round-6':['Guarda triângulo (Round 6, gráfico)','f'],'o-pequeno-principe':['Pequeno Príncipe e a raposa (gráfico)','h'],'darling-in-the-franxx':['Zero Two (Darling in the Franxx, gráfico)','h'],'black-butler':['Grell Sutcliff (Black Butler, gráfico)','h'],'hajime-no-ippo':['Ippo Makunouchi (Hajime no Ippo, pixel, peek-a-boo)','h'],'himouto-umaru-chan':['Umaru-chan (Himouto! Umaru-chan, gráfico)','h'],'mega-man':['Mega Man X (armadura Ultimate, pixel)','h'],'donkey-kong':['Donkey Kong (gráfico)','h'],'cut-the-rope':['Om Nom (Cut the Rope, pixel)','f'],'breaking-bad':['Heisenberg (Breaking Bad, chibi, pixel)','h'],'the-amazing-digital-circus':['Jax (The Amazing Digital Circus, pixel)','h'],'rick-and-morty':['Rick Sanchez (Rick and Morty, pixel)','h'],'family-guy':['Brian Griffin (Family Guy, pixel)','h'],'pantera-cor-de-rosa':['Pantera Cor-de-Rosa (pixel)','h'],'os-simpsons':['Homer Simpson com rosquinha (pixel)','h'],'asterix':['Asterix (pixel)','h'],'pica-pau':['Woody Woodpecker (pixel)','h'],'ghostbusters':['Logo dos Caça-Fantasmas (pixel)','f'],'os-flintstones':['Fred Flintstone (pixel)','h'],'tom-e-jerry':['Jerry (Tom e Jerry, pixel)','h'],'os-smurfs':['Papai Smurf (pixel)','h'],'o-incrivel-mundo-de-gumball':['Gumball Watterson (pixel)','h'],'pusheen':['Pusheen na rosquinha (pixel)','f'],'my-dress-up-darling':['Marin Kitagawa (My Dress-Up Darling, chibi, gráfico)','h']
 };
 var catMiniPick={},catMiniCache=new Map();
 function autoMini(ts){
