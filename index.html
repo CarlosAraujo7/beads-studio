@@ -77,7 +77,7 @@ body[data-view="edit"] .home{display:none!important}
 .topbar{grid-column:1/-1;display:flex;align-items:center;gap:8px;padding:0 14px;background:var(--panel);border-bottom:1px solid var(--line);min-width:0}
 .brand{display:flex;align-items:center;gap:10px;font-weight:750;letter-spacing:-.01em;font-size:16px;white-space:nowrap}
 .projbox{display:flex;align-items:center;gap:8px;min-width:0}
-.projname{border:1px solid transparent;background:transparent;padding:7px 10px;border-radius:10px;width:220px;min-width:90px;font-weight:650;font-size:15px}
+.projname{border:1px solid transparent;background:transparent;padding:7px 10px;border-radius:10px;width:220px;min-width:90px;font-weight:650;font-size:15px;text-overflow:ellipsis}          /* nome comprido: reticências (o nome inteiro fica no title e aparece ao clicar) */
 .projname:hover{border-color:var(--line-strong)} .projname:focus{border-color:var(--accent);background:var(--panel-2);outline:none}
 
 /* ---------- editor: barra de ferramentas | tela | painel, e a paleta embaixo ---------- */
@@ -535,6 +535,15 @@ dialog::backdrop{background:rgba(15,18,28,.5);backdrop-filter:blur(2px)}
 .tpl-dragging .cblock,.tpl-dragging .tsec,.tpl-dragging .cat-btn[data-cat]:not([data-cat=all]):not([data-cat=trash]){border-style:dashed;border-color:var(--line-strong)}
 .dragover{outline:2px solid var(--accent);outline-offset:-2px;background:var(--accent-soft)!important}
 .cblock.dragover{border-style:solid;border-color:var(--accent)}
+.ins-l{box-shadow:inset 4px 0 0 var(--accent)!important}.ins-r{box-shadow:inset -4px 0 0 var(--accent)!important}
+/* Minha ordem: arrastar de verdade (o molde levanta e acompanha o ponteiro, os outros abrem espaço) */
+.cthumbs,.tgrid{position:relative}
+#tplSections.sorting .tcard,#tplSections.sorting .mini{cursor:grab;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}
+body.srt-drag,body.srt-drag *{cursor:grabbing!important;user-select:none!important;-webkit-user-select:none!important}
+body.srt-drag #tplSections .mini:hover,body.srt-drag #tplSections .tcard:hover{box-shadow:none}
+#tplSections .srt-ph{opacity:.25;outline:2px dashed var(--accent);outline-offset:-2px;transform:none!important;box-shadow:none!important}
+.srt-ghost{position:fixed!important;z-index:2147483000;margin:0!important;pointer-events:none;transform:scale(1.06);box-shadow:0 16px 36px rgba(0,0,0,.38),0 0 0 2px var(--accent)!important;opacity:.97;transition:none;animation:none!important}
+#tplSide [data-cat].srt-over{outline:2px solid var(--accent);outline-offset:-2px;background:var(--accent-soft)}
 .tpl-dragging .tcard[draggable=true],.tpl-dragging .mini{cursor:grabbing}
 .tcard[draggable=true]{cursor:grab}
 .dragghost{position:fixed;top:-100px;left:-100px;padding:6px 12px;border-radius:999px;background:var(--accent);color:var(--accent-ink);font-weight:700;font-size:13px}
@@ -551,6 +560,14 @@ dialog::backdrop{background:rgba(15,18,28,.5);backdrop-filter:blur(2px)}
 .tplbadge.dirty{background:color-mix(in srgb,var(--warn) 18%,var(--panel));color:var(--ink);border-color:var(--warn)}
 #btnSaveTpl.dirty{border-color:var(--accent);color:var(--accent);box-shadow:0 0 0 2px var(--accent-soft)}
 .stbtns{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px}
+#dlgSaveTpl .body{overflow-x:hidden}
+#dlgSaveTpl #stIntro{overflow-wrap:anywhere}
+#stIntro .stname{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin:2px 0}
+#stOverwrite{flex:1 1 100%;min-width:0;max-width:100%}
+#stOverwrite .ic{flex:none}
+#stOverwrite span{display:flex;min-width:0;max-width:100%;overflow:hidden;white-space:nowrap}
+#stOverwrite .stn{flex:0 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis}
+#stOverwrite .stq{flex:none}
 #dlgSaveTpl .field input[type=text]{width:100%;padding:9px 12px;border:1px solid var(--line-strong);border-radius:10px;background:var(--panel-2);font-size:14px}
 .field.col{flex-direction:column;align-items:stretch;gap:6px;justify-content:flex-start}
 .field.col label{color:var(--muted);font-size:13px} .field.col label small{opacity:.8}
@@ -1292,7 +1309,7 @@ kbd{display:inline-block;min-width:22px;padding:1px 7px;border:1px solid var(--l
     <button class="btn ghost icon-only" id="tplHelp" type="button" data-icon="help" title="Ajuda: como usar a galeria (tecla ?)" aria-label="Ajuda"></button>
   </header>
   <div class="body tplbody" id="tplDlgBody">
-    <div class="plate-tabs" id="tplPlates" role="tablist" aria-label="Tamanho do molde, em placas"></div>
+    <div class="plate-tabs" id="tplPlates" role="tablist" aria-label="Moldes ou projetos 3D"></div>
     <div class="tpl-wrap">
       <nav class="tpl-side" id="tplSide" aria-label="Categorias"></nav>
       <div class="tpl-main" id="tplMain">
@@ -1477,7 +1494,7 @@ kbd{display:inline-block;min-width:22px;padding:1px 7px;border:1px solid var(--l
   <div class="subpop-f"><span>As cores da tela são estimadas de foto: confira na conta de verdade.</span><button class="btn sm" id="subOther" type="button">Outra cor…</button></div>
 </div>
 
-<script>(function(){var b='20261103i',v=b;try{var s=JSON.parse(localStorage.getItem('beadstudio.tplv')||'null');if(s&&s.base===b)v=b+'-'+s.t}catch(e){}window.TPL_BASE_V=b;document.write('<script src="templates.js?v='+v+'"><\/script><script src="projetos3d.js?v='+b+'"><\/script><script src="remessas.js?v='+b+'"><\/script>')})();</script>
+<script>(function(){var b='20261104d',v=b;try{var s=JSON.parse(localStorage.getItem('beadstudio.tplv')||'null');if(s&&s.base===b)v=b+'-'+s.t}catch(e){}window.TPL_BASE_V=b;document.write('<script src="templates.js?v='+v+'"><\/script><script src="projetos3d.js?v='+b+'"><\/script><script src="remessas.js?v='+b+'"><\/script>')})();</script>
 <script>
 'use strict';
 /* =====================================================================
@@ -2987,7 +3004,7 @@ $('#tabsCreate').addEventListener('click',e=>{const b=e.target.closest('button')
    ===================================================================== */
 function refreshAll(){
   refreshPalette();renderCounts();renderProject();renderSel();
-  $('#projName').value=S.name;
+  $('#projName').value=S.name;$('#projName').title=S.name;
   updateTplUI();
   $('#emptyState').hidden=!(total===0&&S.mode==='create');
   $('#btnUndo').disabled=!hist.undo.length;$('#btnRedo').disabled=!hist.redo.length;
@@ -3063,7 +3080,7 @@ $('#btnReplace').onclick=()=>{
 };
 $('#selBead').onchange=e=>{S.beadMm=+e.target.value;renderCounts();renderProject();scheduleSave()};
 $('#inPlate').onchange=e=>{S.plate=clamp(parseInt(e.target.value,10)||50,5,150);renderProject();renderCounts();requestDraw();scheduleSave()};
-$('#projName').oninput=e=>{S.name=e.target.value;scheduleSave()};
+$('#projName').oninput=e=>{S.name=e.target.value;e.target.title=S.name;scheduleSave()};
 
 /* =====================================================================
    Barra superior / opções
@@ -3126,7 +3143,7 @@ function loadMeta(){const o=lsGet(META_KEY,{});return o&&typeof o==='object'&&!A
 const saveMeta=o=>lsSet(META_KEY,o);
 /* categorias: nomes, ícones, ordem, categorias criadas por você e as que você removeu */
 const CATS_KEY='beadstudio.cats';
-const normCfg=c=>{c=c||{};return {order:Array.isArray(c.order)?c.order.slice():[],names:{...(c.names||{})},icons:{...(c.icons||{})},custom:Array.isArray(c.custom)?c.custom.map(x=>({...x})):[],hidden:Array.isArray(c.hidden)?c.hidden.slice():[],alpha:c.alpha!==false,minis:{...(c.minis||{})}}};
+const normCfg=c=>{c=c||{};return {order:Array.isArray(c.order)?c.order.slice():[],names:{...(c.names||{})},icons:{...(c.icons||{})},custom:Array.isArray(c.custom)?c.custom.map(x=>({...x})):[],hidden:Array.isArray(c.hidden)?c.hidden.slice():[],alpha:c.alpha!==false,minis:{...(c.minis||{})},myorder:Object.fromEntries(Object.entries(c.myorder||{}).filter(([,v])=>Array.isArray(v)).map(([k,v])=>[k,v.slice()]))}};
 /* Organização das categorias = a do catálogo (templates.js) + o que o usuário mudou depois e ainda não gravou.
    Cada mudança local leva o carimbo do catálogo em que foi feita (base). Se o catálogo foi regravado/reorganizado depois (carimbo diferente),
    vale a organização do catálogo e só as categorias que o usuário criou são mantidas. */
@@ -3141,6 +3158,7 @@ function mergeStaleCfg(b,l){
   extra.forEach(c=>{b.names[c.id]=l.names[c.id]||c.name;if(l.icons[c.id])b.icons[c.id]=l.icons[c.id]});
   b.custom=[...b.custom,...extra];
   b.minis={...b.minis,...l.minis};
+  b.myorder={...b.myorder,...l.myorder};          // a ordem própria das categorias (Minha ordem) também fica
   if(extra.length)b.order=[...b.order.filter(x=>x!=='other'),...extra.map(c=>c.id),'other'];
   return b;
 }
@@ -3206,13 +3224,14 @@ function thumb(canvas,w,h,grid,max){
     if(cs>=5){c.beginPath();c.arc(x*cs+cs/2,y*cs+cs/2,cs*.46,0,TAU);c.fill();c.lineWidth=1;c.strokeStyle='rgba(0,0,0,.42)';c.stroke()}else c.fillRect(x*cs,y*cs,cs,cs)}
 }
 let tplQuery='', tplSelMode=false, tplShownIds=[], tplAutoPlate=false;
-/* abas por nº de placas: '1' | '2' | '3' | '4' | '5' (5 ou mais). Cada molde aparece SÓ na aba do seu tamanho (não existe aba "Todas": pedido do usuário).
-   Um molde "tem N placas" pela grade da placa do usuário (S.plate x S.plate pinos). */
-const PLATE_KEY='beadstudio.plates', PLATE_TABS=['1','2','3','4','5','d'];   // 'd' = Projetos 3D (peças planas que se montam; dados em projetos3d.js)
+/* abas da galeria (pedido do dono, 2026-11-04: "apague as abas de 2 e 4 placas… o sistema só deve ter moldes de 1 placa e 3D"): '1' = Moldes (todos os moldes planos; desde
+   2026-11-04 o catálogo só tem moldes de 1 placa: os 103 maiores foram apagados a pedido dele) e 'd' = Projetos 3D (peças planas que se montam; dados em projetos3d.js).
+   platesOf/plateKey continuam: a tela inicial (Novidades, molde do dia, vitrine) mostra só moldes de 1 placa (S.plate x S.plate pinos). */
+const PLATE_KEY='beadstudio.plates', PLATE_TABS=['1','d'];
 let tplPlates=lsGet(PLATE_KEY,'1');if(!PLATE_TABS.includes(tplPlates))tplPlates='1';
 const platesOf=t=>Math.ceil(t.w/S.plate)*Math.ceil(t.h/S.plate);
 const plateKey=t=>{const n=platesOf(t);return n>=5?'5':String(Math.max(1,n))};
-const inPlateTab=(t,k)=>plateKey(t)===k;
+const inPlateTab=(t,k)=>k==='1';
 /* tela "Novos moldes": a galeria mostra só uma remessa (tplBatch = nº dela; null = galeria normal). A lista vem de remessas.js, gerado por tools/make_remessas.py, fora do templates.js. */
 let tplBatch=null;
 const batchIdSet=n=>new Set((((window.REMESSAS||[]).find(b=>b.n===n))||{ids:[]}).ids);
@@ -3232,7 +3251,7 @@ function renderBatchTabs(){
   const on=$('#tplPlates').querySelector('.ptab.on');if(on)$('#tplPlates').scrollLeft=Math.max(0,on.offsetLeft-$('#tplPlates').clientWidth/2+on.offsetWidth/2);
 }
 function setPlates(v){tplPlates=PLATE_TABS.includes(v)?v:'1';lsSet(PLATE_KEY,tplPlates);tplFresh=true;renderTemplates();$('#tplMain').scrollTop=0;galAnim()}
-const plateLabel=k=>k==='d'?'Projetos 3D':k==='1'?'1 placa':k==='5'?'5 ou mais':k+' placas';
+const plateLabel=k=>k==='d'?'Projetos 3D':'Moldes';
 /* desenhinho das placas (1 quadrado; 2 lado a lado; 3 em fila; 4 em 2x2) */
 const plateIcon=k=>{if(k==='d')return '<svg class="ic" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 3.5 7.5v9L12 21l8.5-4.5v-9z"/><path d="m3.5 7.5 8.5 4.5 8.5-4.5M12 12v9"/></svg>';const g={1:[1,1],2:[2,1],3:[3,1],4:[2,2],5:[3,2]}[k];if(!g)return '';return `<span class="plate-grid" style="grid-template-columns:repeat(${g[0]},6px)" aria-hidden="true">${'<i></i>'.repeat(g[0]*g[1])}</span>`};
 
@@ -3369,8 +3388,8 @@ function openPiece(p,pc){
 }
 function renderPlateTabs(counts){
   const box=$('#tplPlates');
-  const keys=PLATE_TABS.filter(k=>(k!=='3'&&k!=='5')||counts[k]>0||tplPlates===k).filter(k=>k!=='d'||counts.d>0||tplPlates==='d');   // as abas de 3 e de 5+ placas só aparecem se houver moldes nelas (pedido do usuário: tirar a de 3, que estava vazia)
-  box.innerHTML=keys.map(k=>{const n=counts[k]||0;const tip=k==='d'?'Projetos em 3D: várias peças planas que se montam (caixinhas, dados, cubos)':k==='1'?`Cabem numa placa só (até ${S.plate}×${S.plate} pinos)`:`Ocupam ${k==='5'?'5 ou mais':k} placas de ${S.plate}×${S.plate} pinos`;
+  const keys=PLATE_TABS.filter(k=>k!=='d'||counts.d>0||tplPlates==='d');
+  box.innerHTML=keys.map(k=>{const n=counts[k]||0;const tip=k==='d'?'Projetos em 3D: várias peças planas que se montam (caixinhas, dados, cubos)':`Todos os moldes do catálogo (o foco é 1 placa de ${S.plate}×${S.plate} pinos)`;
     return `<button type="button" role="tab" class="ptab${k===tplPlates?' on':''}${n?'':' off'}" data-p="${k}" aria-selected="${k===tplPlates}" title="${esc(tip)}">${plateIcon(k)}<span>${plateLabel(k)}</span><small>${fmt(n)}</small></button>`}).join('')
     +(tplPlates==='d'?'':`<label class="pt-sort" title="Ordem dos moldes dentro de cada categoria"><span>Ordenar</span><select id="tplSort" aria-label="Ordenar os moldes">${SORTS.map(([k,l])=>`<option value="${k}"${k===tplSort?' selected':''}>${l}</option>`).join('')}</select></label>`)
     +`<span class="pt-note">placa de ${S.plate}×${S.plate} pinos</span>`;
@@ -3488,7 +3507,13 @@ function tplDragStart(e,t){
   document.body.classList.add('tpl-dragging');
   if(ids.length>1){const g=document.createElement('div');g.className='dragghost';g.textContent=ids.length+' moldes';document.body.appendChild(g);e.dataTransfer.setDragImage(g,12,12);setTimeout(()=>g.remove(),0)}
 }
-function tplDragEnd(){tplDragIds=null;document.body.classList.remove('tpl-dragging');$$('.dragover').forEach(x=>x.classList.remove('dragover'))}
+function tplDragEnd(){tplDragIds=null;document.body.classList.remove('tpl-dragging');$$('.dragover').forEach(x=>x.classList.remove('dragover'));$$('.ins-l,.ins-r').forEach(x=>x.classList.remove('ins-l','ins-r'))}
+/* em "Minha ordem": o molde sob o mouse (cartão da Lista ou miniatura dos Blocos) e se o arrastado entra depois dele (metade direita) */
+function myDropItem(e){
+  if(tplSort!=='my'||!e.target.closest)return null;
+  const el=e.target.closest('.tcard,.mini');if(!el||!el.dataset.id||(tplDragIds||[]).includes(el.dataset.id))return null;
+  const r=el.getBoundingClientRect();return {el,id:el.dataset.id,after:e.clientX>r.left+r.width/2};
+}
 const dropTarget=e=>{const el=e.target.closest&&e.target.closest('[data-cat]');if(!el)return null;const id=el.dataset.cat;return(!id||id==='all'||id==='trash')?null:el};
 function moveToCat(ids,cat){
   const all=decodeTemplates(),ts=ids.map(id=>all.find(t=>t.id===id)).filter(t=>t&&!t.trashed&&t.cat!==cat);
@@ -3498,16 +3523,25 @@ function moveToCat(ids,cat){
 }
 ['#tplSide','#tplSections'].forEach(sel=>{
   const root=$(sel);
-  root.addEventListener('dragover',e=>{if(!tplDragIds)return;const el=dropTarget(e);if(!el)return;e.preventDefault();e.dataTransfer.dropEffect='move';$$('.dragover').forEach(x=>{if(x!==el)x.classList.remove('dragover')});el.classList.add('dragover')});
+  root.addEventListener('dragover',e=>{if(!tplDragIds)return;const el=dropTarget(e);if(!el)return;e.preventDefault();e.dataTransfer.dropEffect='move';
+    const it=myDropItem(e);$$('.ins-l,.ins-r').forEach(x=>{if(x!==(it&&it.el))x.classList.remove('ins-l','ins-r')});
+    if(it){$$('.dragover').forEach(x=>x.classList.remove('dragover'));it.el.classList.toggle('ins-r',it.after);it.el.classList.toggle('ins-l',!it.after);return}
+    $$('.dragover').forEach(x=>{if(x!==el)x.classList.remove('dragover')});el.classList.add('dragover')});
   root.addEventListener('dragleave',e=>{const el=dropTarget(e);if(el&&!el.contains(e.relatedTarget))el.classList.remove('dragover')});
-  root.addEventListener('drop',e=>{if(!tplDragIds)return;const el=dropTarget(e);if(!el)return;e.preventDefault();const ids=tplDragIds;tplDragEnd();moveToCat(ids,el.dataset.cat)});
+  root.addEventListener('drop',e=>{if(!tplDragIds)return;const el=dropTarget(e);if(!el)return;e.preventDefault();const ids=tplDragIds,it=myDropItem(e);tplDragEnd();
+    if(it){const cat=el.dataset.cat,from=new Set(ids.map(id=>(tplById.get(id)||{}).cat));
+      if(from.size===1&&from.has(cat)){if(reorderInCat(ids,cat,it.id,it.after))renderTemplates();return}
+      moveToCat(ids,cat);if(reorderInCat(ids,cat,it.id,it.after))renderTemplates();return}
+    const tg=tplSort!=='my'&&e.target.closest&&e.target.closest('.tcard,.mini');
+    if(tg&&tg.dataset.id&&!ids.includes(tg.dataset.id)){const cat=el.dataset.cat,from=new Set(ids.map(id=>(tplById.get(id)||{}).cat));if(from.size===1&&from.has(cat)){srtBridge(ids,tg,e.clientX,cat);return}}
+    moveToCat(ids,el.dataset.cat)});
 });
 document.addEventListener('dragend',tplDragEnd);
 function tplCard(t){
   const d=document.createElement('div');d.className='tcard'+(tplSelMode&&tplSel.has(t.id)?' sel':'');d.dataset.id=t.id;
   const pl=Math.ceil(t.w/S.plate)*Math.ceil(t.h/S.plate);
   d.innerHTML=`<button type="button" class="tmain" title="${tplSelMode&&!t.trashed?'Marcar ou desmarcar':'Abrir no editor'}"><div class="th"><canvas></canvas></div><div><b></b><br><small>${t.w}×${t.h} · ${fmt(t.beads)} contas${pl>1?` · <span class="pl">${pl} placas</span>`:''}${t.edited?' · <span class="ed">ajustado por você</span>':''}</small></div></button><span class="tck">${icon('check',14)}</span><div class="tacts"></div>`;
-  $('b',d).textContent=t.name;
+  $('b',d).textContent=t.name;tplById.set(t.id,t);
   lazyDraw(d,()=>beadCanvas($('canvas',d),t,114));
   {const tn=tintOf(t);if(tn)d.style.setProperty('--tint',tn)}
   const vers=versionsOf(t);
@@ -3583,11 +3617,11 @@ function renderTemplates(){
   const bids=tplBatch==null?null:batchIdSet(tplBatch);                                 // tela "Novos moldes": só esta remessa, em qualquer tamanho, sem os excluídos
   if(bids)tplCat='all';
   const byText=all.filter(t=>(!bids||(bids.has(t.id)&&!t.trashed))&&(!q||norm(t.name+' '+nameOfCat(t.cat)).includes(q)));
-  // abas por nº de placas: as contagens respeitam a busca; o filtro vale para tudo (blocos, lista, barra lateral) menos "Excluídos"
-  const pcount={};byText.forEach(t=>{if(!t.trashed){const k=plateKey(t);pcount[k]=(pcount[k]||0)+1}});
+  // abas Moldes e Projetos 3D: as contagens respeitam a busca
+  const pcount={'1':0};byText.forEach(t=>{if(!t.trashed)pcount['1']++});
   pcount.d=projMatch(q).length;
-  if(tplAutoPlate){tplAutoPlate=false;if(!pcount[tplPlates]){const f=['1','2','3','4','5','d'].find(k=>pcount[k]);if(f)tplPlates=f}}   // aberta por uma busca: vai para a primeira aba que tem resultado
-  const byQuery=sortTpls(byText.filter(t=>bids||inPlateTab(t,tplPlates)),all);                  // aba de placas (cada molde em UMA delas); inclui os excluídos
+  if(tplAutoPlate){tplAutoPlate=false;if(!pcount[tplPlates]){const f=PLATE_TABS.find(k=>pcount[k]);if(f)tplPlates=f}}   // aberta por uma busca: vai para a primeira aba que tem resultado
+  const byQuery=sortTpls(byText.filter(t=>bids||inPlateTab(t,tplPlates)),all);                  // aba Moldes: todos os planos (inclui os excluídos)
   if(bids)renderBatchTabs();else renderPlateTabs(pcount);
   $('#tplTitle').textContent=bids?'Novos moldes':'Moldes';$('#tplViewSeg').style.visibility=bids?'hidden':'';$('#tplDlgBody').classList.toggle('view-batch',!!bids);   // o Blocos/Lista fica escondido mas no mesmo lugar: a busca e os botões do cabeçalho não andam entre as telas
   const is3d=!bids&&tplPlates==='d';$('#tplDlgBody').classList.toggle('view-3d',is3d);
@@ -3622,7 +3656,7 @@ function renderTemplates(){
   empty.hidden=shown.length>0||(blocks&&!q&&tplPlates==='1');
   empty.innerHTML=list.length===0
     ? '<b>Ainda não há moldes.</b><br>Abra <b>Gerenciar → Criar um molde novo</b>, ou converta uma imagem em <b>Imagem → contas</b> (ou cole com Ctrl+V), e guarde com <b>Salvar molde</b>.'
-    : !shown.length&&tplPlates!=='1'||(q&&!shown.length)?`Nenhum molde de <b>${plateLabel(tplPlates)}</b>${q?' com essa busca':tplCat!=='all'&&tplCat!=='trash'?' nesta categoria':''}.${PLATE_TABS.filter(k=>k!==tplPlates&&pcount[k]).map(k=>` <button type="button" class="btn sm" data-goplate="${k}">${plateLabel(k)} (${pcount[k]})</button>`).join('')}`
+    : (q&&!shown.length)?`Nenhum molde${tplCat!=='all'&&tplCat!=='trash'?' nesta categoria':''} com essa busca.${PLATE_TABS.filter(k=>k!==tplPlates&&pcount[k]).map(k=>` <button type="button" class="btn sm" data-goplate="${k}">${plateLabel(k)} (${pcount[k]})</button>`).join('')}`
     : (tplCat!=='all'&&tplCat!=='trash'&&!q?'Esta categoria está vazia. Arraste moldes para ela, ou use ✎ num molde (ou “Selecionar”) para movê-los para cá.':'Nenhum molde encontrado.');
   if(bids&&!shown.length)empty.textContent=q?'Nenhum molde desta remessa com essa busca.':'Esta remessa não tem mais moldes no catálogo.';
   empty.querySelectorAll('[data-goplate]').forEach(b=>b.onclick=()=>setPlates(b.dataset.goplate));
@@ -3647,7 +3681,7 @@ function renderTemplates(){
   }
   if(blocks)$('#dlgTemplates').classList.remove('cv');
   $('#tplDlgBody').classList.toggle('selecting',tplSelMode);
-  renderTplBar();updateBakeUI();
+  renderTplBar();updateBakeUI();srtSetup();
 }
 /* ---------- renomear / mover (um ou vários) ---------- */
 let editIds=[];
@@ -3806,8 +3840,8 @@ function openSaveTpl(){
   $('#stName').value=(cur&&cur.name)||S.name||'Meu molde';
   fillCatSelect($('#stCat'),cur?cur.cat:'mine',true);
   if(t){
-    $('#stIntro').innerHTML=`Você está editando <b>${esc(t.name)}</b> (${t.kind==='mine'?'dos seus moldes':'do catálogo'}). Grave os ajustes nele ou crie um molde novo a partir deste desenho.`;
-    ov.hidden=false;ov.innerHTML=icon('check',18)+'<span>Salvar alterações em “'+esc(t.name)+'”</span>';
+    $('#stIntro').innerHTML=`Você está editando ${t.kind==='mine'?'um dos seus moldes':'um molde do catálogo'}:<b class="stname" title="${esc(t.name)}">${esc(t.name)}</b>Grave os ajustes nele ou crie um molde novo a partir deste desenho.`;
+    ov.hidden=false;ov.innerHTML=icon('check',18)+'<span>Salvar alterações em&nbsp;<span class="stq">“</span><span class="stn">'+esc(t.name)+'</span><span class="stq">”</span></span>';ov.title='Salvar alterações em “'+t.name+'”';
     nw.innerHTML=icon('filePlus',18)+'<span>Salvar como novo molde</span>';
     rs.hidden=!(t.kind==='builtin'&&ed[t.id]);$('#stDelete').hidden=false;
     $('#stHint').textContent='Os ajustes ficam guardados neste navegador e o desenho original do catálogo continua guardado (dá para voltar a ele). Quando terminar, use Moldes → Gerenciar → Gravar no catálogo para gravar tudo de vez no arquivo templates.js.';
@@ -4531,7 +4565,7 @@ function beadCanvas(cv,t,px){
 function homeTile(t){
   const b=document.createElement('button');b.type='button';b.className='tile';
   b.dataset.id=t.id;b.innerHTML='<span class="th"><canvas></canvas></span><b></b><small></small>';
-  $('b',b).textContent=t.name;$('small',b).textContent=`${t.w}×${t.h} · ${fmt(t.beads)} contas`;
+  $('b',b).textContent=t.name;b.title=t.name;$('small',b).textContent=`${t.w}×${t.h} · ${fmt(t.beads)} contas`;          // nome cortado em 2 linhas: o inteiro aparece no mouse
   beadCanvas($('canvas',b),t,118);
   const tn=tintOf(t);if(tn)b.style.setProperty('--tint',tn);
   b.onclick=()=>openTpl(t);
@@ -4555,7 +4589,7 @@ function renderDay(all){
   box.hidden=false;box.dataset.id=t.id;box.style.setProperty('--tint',tintOf(t)||'var(--accent)');
   beadCanvas($('#dayCanvas'),t,176);
   $('#dayTag').innerHTML=icon('sparkle',14)+(homeDaySkip?'Sugestão de molde':'Molde do dia');
-  $('#dayName').textContent=t.name;
+  $('#dayName').textContent=t.name;$('#dayName').title=t.name;
   const cat=catInfo(t.cat,loadCatCfg()),cl=colorsOf(t);
   $('#dayMeta').innerHTML=[cat&&cat.name,`${t.w}×${t.h}`,`${fmt(t.beads)} contas`,`${cl.length} cores`].filter(Boolean).map(s=>`<span>${esc(s)}</span>`).join('');
   $('#dayDots').innerHTML=cl.slice(0,10).map(([v])=>`<i style="background:${PALETTE[v-1].hex}" title="${esc(PALETTE[v-1].code+' · '+PALETTE[v-1].name)}"></i>`).join('');
@@ -4633,7 +4667,7 @@ function renderHome(){
   }
   // novidades = os últimos moldes do catálogo
   const row=$('#homeNewRow');row.innerHTML='';
-  const fresh=all.filter(t=>plateKey(t)==='1').slice(-12).reverse();   // só os de 1 placa (a prioridade); os maiores ficam nas abas deles
+  const fresh=all.filter(t=>plateKey(t)==='1').slice(-12).reverse();   // só os de 1 placa (o foco do catálogo)
   $('#homeNew').hidden=!fresh.length;
   fresh.forEach(t=>row.appendChild(homeTile(t)));
   // categorias com mais moldes
@@ -4724,16 +4758,17 @@ var HELP=[
   <div class="tip">Tudo o que você faz fica guardado neste navegador: o desenho em andamento, o progresso da montagem e os ajustes nos moldes. Para levar os ajustes para o arquivo do catálogo, use <b>Gravar no catálogo</b> (veja “Salvar, exportar e gravar”).</div>
   <button class="btn sm hgo" data-go="atalhos" type="button">Ver os atalhos de teclado</button>`},
  {id:'galeria',t:'Galeria de moldes',ic:'layout',html:`
-  <h3>Galeria de moldes</h3><p class="hlead">Todos os moldes, organizados por categoria (franquia) e por tamanho.</p>
-  <h4>Abas por tamanho</h4>
-  <p><b>1 placa</b>, <b>2 placas</b>, <b>4 placas</b>… (de acordo com os “pinos por placa” de Ajustes, 50×50 por padrão) e <b>Projetos 3D</b>. Cada molde aparece só na aba do seu tamanho. As setas <kbd>←</kbd> <kbd>→</kbd> trocam de aba quando ela está selecionada.</p>
+  <h3>Galeria de moldes</h3><p class="hlead">Todos os moldes, organizados por categoria (franquia).</p>
+  <h4>Abas</h4>
+  <p><b>Moldes</b> (todos os moldes do catálogo, cada um numa placa só, 50×50 pinos por padrão) e <b>Projetos 3D</b>. As setas <kbd>←</kbd> <kbd>→</kbd> trocam de aba quando ela está selecionada.</p>
   <h4>Novos moldes, por remessa</h4>
   <p>Para ver só o que acabou de entrar: <b>Novos moldes</b> na tela inicial, <b>Menu → Novos moldes, por remessa</b> ou <b>Gerenciar</b> na galeria. Cada aba é uma remessa (a mais recente vem primeiro; as antigas ficam em <b>Anteriores</b>), com moldes de qualquer tamanho, separados por categoria. Dá para abrir, renomear, mover ou excluir ali mesmo, e o <b>Voltar</b> do editor retorna à mesma remessa. Molde excluído some da lista.</p>
   <h4>Blocos ou Lista</h4>
   <ul><li><b>Blocos</b>: cada categoria é um bloco com as miniaturas. Clique no nome do bloco para abrir só aquela categoria em lista.</li>
   <li><b>Lista</b>: categorias na lateral e cartões maiores, com tamanho e número de contas.</li></ul>
   <h4>Buscar e ordenar</h4>
-  <p>A busca procura no nome do molde e no nome da categoria. Em <b>Ordenar</b> (à direita das abas) escolha: ordem do catálogo, A–Z, <b>mais novos primeiro</b> (o que acabou de entrar), menos contas ou mais contas.</p>
+  <p>A busca procura no nome do molde e no nome da categoria. Em <b>Ordenar</b> (à direita das abas) escolha: ordem do catálogo, <b>minha ordem</b>, A–Z, <b>mais novos primeiro</b> (o que acabou de entrar), menos contas ou mais contas.</p>
+  <p><b>Minha ordem:</b> com ela escolhida, segure um molde e arraste (no celular, segure um instante antes de arrastar): ele acompanha o ponteiro e os outros abrem espaço para mostrar onde ele vai ficar. Solte em qualquer ponto da categoria. Perto da borda, a caixa de miniaturas (nos Blocos) ou a galeria rolam sozinhas. <b>Esc</b> cancela e <b>Ctrl+Z</b> desfaz a última mudança. Soltar em outra categoria (ou num botão da barra lateral) muda o molde de categoria. Vale nos Blocos e na Lista. A ordem fica guardada neste navegador e vai para o catálogo quando você usa <b>Gravar no catálogo</b>. Moldes que entrarem depois aparecem no fim da categoria. Nas outras ordens, arrastar um molde para cima de outro da mesma categoria já passa para Minha ordem, a partir da ordem que você estava vendo.</p>
   <h4>Versões do mesmo desenho</h4>
   <p>Quando um desenho tem outras versões (“(grande)”, “(mini)”, “(versão 2)”…), o cartão mostra o selo <b>${icon('layers',12)} N</b>. Clique nele para ver todas lado a lado, com tamanho e contas, e abrir ou excluir as que não quiser.</p>
   <h4>Nos cartões (modo Lista)</h4>
@@ -4790,7 +4825,7 @@ var HELP=[
  {id:'ajustes',t:'Ajustes do desenho',ic:'rotate',html:`
   <h3>Ajustes do desenho</h3><p class="hlead">Na aba <b>Ajustes</b> do painel da direita.</p>
   <ul><li><b>Tamanho da placa</b>: mude colunas × linhas. <b>Cortar ao redor do desenho</b> tira as bordas vazias.</li>
-  <li><b>Suas contas e sua placa</b>: diâmetro da conta (2,6 mm Pindou mini ou 5 mm Hama midi) e pinos por placa. Isso muda o tamanho em centímetros e as abas de placas da galeria.</li>
+  <li><b>Suas contas e sua placa</b>: diâmetro da conta (2,6 mm Pindou mini ou 5 mm Hama midi) e pinos por placa. Isso muda o tamanho em centímetros e quantas placas um molde ocupa.</li>
   <li><b>Mover, girar e espelhar</b>: setas para deslocar o desenho uma conta, centralizar, girar 90° e espelhar.</li>
   <li><b>Trocar uma cor por outra</b> em todo o desenho (ex.: trocar um verde que você não tem por outro parecido). Embaixo dos dois campos aparecem as cores parecidas com a de origem: clique numa para escolhê-la como destino.</li>
   <li><b>Limpar tudo</b> esvazia a placa (dá para desfazer com <kbd>Ctrl</kbd>+<kbd>Z</kbd>).</li></ul>
@@ -4864,7 +4899,7 @@ var HELP=[
   <h4>Editor — Montar</h4>
   <table><tr><td><kbd>↑</kbd> <kbd>↓</kbd></td><td>Linha anterior / próxima</td></tr><tr><td><kbd>Espaço</kbd></td><td>Marca ou desmarca a linha toda</td></tr><tr><td><kbd>S</kbd></td><td>Liga ou desliga Selecionar</td></tr><tr><td>Clique</td><td>Marca a conta como colocada</td></tr></table>
   <h4>Galeria</h4>
-  <table><tr><td><kbd>←</kbd> <kbd>→</kbd></td><td>Trocam de aba de tamanho (com a aba selecionada)</td></tr><tr><td><kbd>Enter</kbd> na busca da tela inicial</td><td>Abre a galeria com a busca</td></tr></table>`}
+  <table><tr><td><kbd>←</kbd> <kbd>→</kbd></td><td>Trocam de aba na galeria (com a aba selecionada)</td></tr><tr><td><kbd>Enter</kbd> na busca da tela inicial</td><td>Abre a galeria com a busca</td></tr></table>`}
 ];
 var helpTopic='inicio';
 function helpContext(){
@@ -4908,8 +4943,8 @@ window.addEventListener('keydown',e=>{
 /* =====================================================================
    Versões do mesmo desenho: "Nome", "Nome (grande)", "Nome (mini)", "Nome (versão 2)"… — comparar lado a lado e apagar as que não quiser
    ===================================================================== */
-var VER_RE=/\s*\((?:grande|mini|pequeno|1 placa|120 cores|vers[aã]o \d+)\)\s*$/i, verIndex=null, verCur=null;
-function baseName(n){let s=String(n).trim(),p;do{p=s;s=s.replace(VER_RE,'').trim();s=s.replace(/,\s*vers[aã]o \d+\)$/i,')')}while(s!==p);return norm(s)}
+var VER_RE=/\s*\((?:grande|mini|pequeno|1 placa|120 cores|vers[aã]o \d+|vers[aã]o anterior)\)\s*$/i, verIndex=null, verCur=null;
+function baseName(n){let s=String(n).trim(),p;do{p=s;s=s.replace(VER_RE,'').trim();s=s.replace(/,\s*vers[aã]o (?:\d+|anterior)\)$/i,')')}while(s!==p);return norm(s)}
 function buildVerIndex(list){const m=new Map();list.forEach(t=>{if(t.trashed)return;const k=baseName(t.name);if(!m.has(k))m.set(k,[]);m.get(k).push(t)});verIndex=m}
 function versionsOf(t){if(!verIndex||t.trashed)return null;const a=verIndex.get(baseName(t.name));return a&&a.length>1?a:null}
 function openVersions(t){verCur=t;renderVersions();if(!$('#dlgVersions').open)$('#dlgVersions').showModal()}
@@ -4937,18 +4972,187 @@ function renderVersions(){
 /* =====================================================================
    Ordenar os moldes da galeria (dentro de cada categoria)
    ===================================================================== */
-var SORTS=[['cat','Ordem do catálogo'],['new','Mais novos primeiro'],['az','A–Z'],['small','Menos contas'],['big','Mais contas']];
+var SORTS=[['cat','Ordem do catálogo'],['my','Minha ordem'],['new','Mais novos primeiro'],['az','A–Z'],['small','Menos contas'],['big','Mais contas']];
 var tplSort=(()=>{const v=lsGet('beadstudio.tplsort','cat');return SORTS.some(s=>s[0]===v)?v:'cat'})();
 function sortTpls(arr,all){
   if(!tplSort||tplSort==='cat')return arr;
   const idx=new Map(all.map((t,i)=>[t.id,i])),a=arr.slice();
+  if(tplSort==='my'){const k=myOrderKey(idx);return a.map(t=>[k(t),t]).sort((x,y)=>x[0]-y[0]).map(x=>x[1])}
   if(tplSort==='az')a.sort((x,y)=>catCollator.compare(x.name,y.name));
   else if(tplSort==='new')a.sort((x,y)=>idx.get(y.id)-idx.get(x.id));
   else if(tplSort==='small')a.sort((x,y)=>x.beads-y.beads);
   else if(tplSort==='big')a.sort((x,y)=>y.beads-x.beads);
   return a;
 }
-$('#tplPlates').addEventListener('change',e=>{if(e.target.id==='tplSort'){tplSort=e.target.value;lsSet('beadstudio.tplsort',tplSort);renderTemplates();$('#tplMain').scrollTop=0}});
+$('#tplPlates').addEventListener('change',e=>{if(e.target.id==='tplSort'){tplSort=e.target.value;lsSet('beadstudio.tplsort',tplSort);renderTemplates();$('#tplMain').scrollTop=0;if(tplSort==='my')toast('Minha ordem: segure um molde e arraste para o lugar que quiser (Esc cancela, Ctrl+Z desfaz)')}});
+/* ---------- Minha ordem: a ordem que ele escolhe dentro de cada categoria (arrastando) ---------- */
+function myOrderKey(idx){
+  const mo=loadCatCfg().myorder||{},pos=new Map();
+  Object.entries(mo).forEach(([c,ids])=>ids.forEach((id,i)=>pos.set(c+'\u0001'+id,i)));
+  return t=>{const p=pos.get(t.cat+'\u0001'+t.id);return p==null?1e6+(idx.get(t.id)||0):p};
+}
+/* ---------- Minha ordem: arrastar com o mouse (no toque, segurar um instante) — o molde acompanha o ponteiro e os outros abrem espaço na hora ----------
+   Só em "Minha ordem" e fora do modo Selecionar (lá continua o arrasto nativo, que leva vários de uma vez). Soltar em qualquer ponto da categoria vale; sobre outra
+   categoria (bloco, seção ou botão da barra lateral) muda de categoria e já entra no lugar. Perto da borda a caixa de miniaturas ou a galeria rolam sozinhas.
+   Esc cancela, Ctrl+Z desfaz a última mudança de ordem. */
+const SRT={st:null,undo:null,justDragged:0};
+const srtOn=()=>tplSort==='my'&&!tplSelMode&&tplPlates!=='d';
+const srtItems=box=>[...box.children].filter(n=>n.matches&&n.matches('.tcard,.mini'));
+const srtCatOk=c=>!!c&&c!=='all'&&c!=='trash'&&c!=='mine';
+function srtSetup(){
+  const on=srtOn();$('#tplSections').classList.toggle('sorting',on);
+  if(on)$$('#tplSections .tcard,#tplSections .mini').forEach(el=>{el.draggable=false});
+}
+/* a ordem que está à vista (vis) vira a ordem da categoria; os que a busca escondeu ficam nos lugares deles */
+function srtCommit(cat,vis,noUndo){
+  const all=decodeTemplates(),idx=new Map(all.map((t,i)=>[t.id,i])),key=myOrderKey(idx);
+  const full=all.filter(t=>!t.trashed&&t.cat===cat).sort((a,b)=>key(a)-key(b)).map(t=>t.id);
+  const vset=new Set(vis);let k=0;const out=full.map(id=>vset.has(id)?vis[k++]:id);
+  vis.forEach(id=>{if(!out.includes(id))out.push(id)});
+  const cfg=loadCatCfg(),prev=cfg.myorder[cat]?cfg.myorder[cat].slice():null;
+  if((prev||full).join()===out.join())return false;
+  if(!noUndo)SRT.undo={cat,prev};
+  cfg.myorder[cat]=out;saveCatCfg(cfg);updateBakeUI();return true;
+}
+/* nas outras ordens: soltou um molde sobre outro da mesma categoria = quer mudar a ordem: a ordem que ele está vendo vira a "Minha ordem" */
+function srtBridge(ids,tg,x,cat){
+  const box=tg.parentElement,r=tg.getBoundingClientRect(),after=x>r.left+r.width/2;
+  let vis=srtItems(box).map(n=>n.dataset.id);const mv=vis.filter(id=>ids.includes(id));vis=vis.filter(id=>!ids.includes(id));
+  let k=vis.indexOf(tg.dataset.id);k=k<0?vis.length:k+(after?1:0);vis.splice(k,0,...mv);
+  srtCommit(cat,vis);tplSort='my';lsSet('beadstudio.tplsort','my');renderTemplates();
+  toast('Ordenar mudou para “Minha ordem” e o molde ficou onde você soltou (Ctrl+Z desfaz)');
+}
+/* primeiro molde que vem DEPOIS do ponteiro na ordem de leitura da caixa (ou null = no fim); usa a posição de layout (offset), não a da animação */
+function srtSlot(box,x,y){
+  const br=box.getBoundingClientRect(),ox=br.left+box.clientLeft-box.scrollLeft,oy=br.top+box.clientTop-box.scrollTop;
+  for(const it of srtItems(box)){
+    if(it===SRT.st.el)continue;
+    const l=ox+it.offsetLeft,t=oy+it.offsetTop,w=it.offsetWidth,h=it.offsetHeight;
+    if(t+h<y)continue;
+    if(t>y||x<l+w/2)return it;
+  }
+  return null;
+}
+/* move o lugar vazio e anima os outros (FLIP: só transform) */
+function srtFlip(boxes,mutate){
+  const els=[...new Set(boxes)].flatMap(b=>srtItems(b)).filter(n=>n!==SRT.st.el);
+  const before=new Map(els.map(n=>[n,[n.offsetLeft,n.offsetTop,n.parentElement]]));
+  mutate();
+  const moved=[];
+  els.forEach(n=>{const b=before.get(n);if(b[2]!==n.parentElement)return;const dx=b[0]-n.offsetLeft,dy=b[1]-n.offsetTop;if(!dx&&!dy)return;
+    n.style.transition='none';n.style.transform=`translate(${dx}px,${dy}px)`;moved.push(n)});
+  if(!moved.length)return;
+  void document.body.offsetWidth;
+  moved.forEach(n=>{n.style.transition='transform .16s ease';n.style.transform=''});
+  setTimeout(()=>moved.forEach(n=>{if(!n.style.transform)n.style.transition=''}),200);
+}
+function srtTargetAt(x,y){
+  const el=document.elementFromPoint(x,y);if(!el||!el.closest)return null;
+  const sec=el.closest('#tplSections [data-cat]');
+  if(sec&&srtCatOk(sec.dataset.cat)){const box=sec.matches('.cthumbs,.tgrid')?sec:sec.querySelector('.cthumbs,.tgrid');if(box)return {box,cat:sec.dataset.cat}}
+  const side=el.closest('#tplSide [data-cat]');
+  if(side&&srtCatOk(side.dataset.cat))return {side,cat:side.dataset.cat};
+  return null;
+}
+function srtStart(x,y){
+  const s=SRT.st;s.drag=true;
+  const r=s.el.getBoundingClientRect();s.dx=x-r.left;s.dy=y-r.top;
+  const g=s.el.cloneNode(true);g.classList.add('srt-ghost');g.removeAttribute('data-id');g.style.width=r.width+'px';g.style.height=r.height+'px';g.style.left=r.left+'px';g.style.top=r.top+'px';
+  const oc=s.el.querySelectorAll('canvas'),gc=g.querySelectorAll('canvas');
+  gc.forEach((c,i)=>{const o=oc[i];if(!o)return;c.width=o.width;c.height=o.height;c.style.width=o.style.width||o.getBoundingClientRect().width+'px';c.style.height=o.style.height||o.getBoundingClientRect().height+'px';try{c.getContext('2d').drawImage(o,0,0)}catch(_){}});
+  $('#dlgTemplates').appendChild(g);s.g=g;
+  s.el.classList.add('srt-ph');document.body.classList.add('srt-drag');
+  try{getSelection().removeAllRanges()}catch(_){}
+  s.raf=requestAnimationFrame(srtAuto);
+}
+function srtMove(x,y){
+  const s=SRT.st;s.px=x;s.py=y;
+  s.g.style.left=(x-s.dx)+'px';s.g.style.top=(y-s.dy)+'px';
+  srtPlace();
+}
+function srtPlace(){
+  const s=SRT.st,tg=srtTargetAt(s.px,s.py);
+  $$('#tplSide .srt-over').forEach(n=>{if(!tg||n!==tg.side)n.classList.remove('srt-over')});
+  s.side=null;
+  if(!tg)return;
+  if(tg.side){tg.side.classList.add('srt-over');s.side=tg;return}
+  const ref=srtSlot(tg.box,s.px,s.py);
+  if(s.el.parentElement===tg.box){let n=s.el.nextElementSibling;while(n&&!(n.matches&&n.matches('.tcard,.mini')))n=n.nextElementSibling;if((n||null)===ref)return}          // já está nesse lugar
+  const from=s.el.parentElement;
+  srtFlip([from,tg.box],()=>{const empty=tg.box.querySelector('.cb-empty');if(empty)empty.remove();tg.box.insertBefore(s.el,ref)});
+}
+function srtAuto(){
+  const s=SRT.st;if(!s||!s.drag)return;
+  if(s.px!=null){
+    let sc=null,d=0;
+    const el=document.elementFromPoint(s.px,s.py),th=el&&el.closest&&el.closest('#tplSections .cthumbs');
+    if(th&&th.scrollHeight>th.clientHeight+1){const r=th.getBoundingClientRect(),m=30;
+      if(s.py<r.top+m&&th.scrollTop>0)d=-Math.ceil((r.top+m-s.py)/3);
+      else if(s.py>r.bottom-m&&th.scrollTop<th.scrollHeight-th.clientHeight-1)d=Math.ceil((s.py-(r.bottom-m))/3);
+      if(d)sc=th}
+    if(!sc){const mn=$('#tplMain'),r=mn.getBoundingClientRect(),m=72;
+      if(s.py<r.top+m&&mn.scrollTop>0)d=-Math.ceil((r.top+m-s.py)/4);
+      else if(s.py>r.bottom-m&&mn.scrollTop<mn.scrollHeight-mn.clientHeight-1)d=Math.ceil((s.py-(r.bottom-m))/4);
+      if(d)sc=mn}
+    if(sc&&d){sc.scrollTop+=Math.max(-26,Math.min(26,d));srtPlace()}
+  }
+  s.raf=requestAnimationFrame(srtAuto);
+}
+function srtEnd(){
+  const s=SRT.st;cancelAnimationFrame(s.raf);document.body.classList.remove('srt-drag');$$('#tplSide .srt-over').forEach(n=>n.classList.remove('srt-over'));
+  SRT.st=null;SRT.justDragged=Date.now();return s;
+}
+function srtDrop(){
+  const s=srtEnd();
+  if(s.side){s.g.remove();s.el.classList.remove('srt-ph');moveToCat([s.id],s.side.cat);return}
+  const box=s.el.parentElement,sec=box&&box.closest('[data-cat]'),cat=sec?sec.dataset.cat:s.cat;
+  const r=s.el.getBoundingClientRect(),g=s.g,el=s.el;
+  g.style.transition='left .14s ease,top .14s ease,transform .14s ease';g.style.left=r.left+'px';g.style.top=r.top+'px';g.style.transform='scale(1)';
+  setTimeout(()=>{g.remove();el.classList.remove('srt-ph')},150);
+  const vis=srtItems(box).map(n=>n.dataset.id);
+  if(cat===s.cat){if(srtCommit(cat,vis))toast('Ordem guardada (Ctrl+Z desfaz)');return}
+  SRT.undo=null;moveToCat([s.id],cat);srtCommit(cat,vis,true);renderTemplates();
+}
+function srtCancel(){const s=srtEnd();s.g.remove();s.el.classList.remove('srt-ph');renderTemplates()}
+$('#tplSections').addEventListener('pointerdown',e=>{
+  if(!srtOn()||SRT.st||e.button!==0)return;
+  const el=e.target.closest('.tcard,.mini');if(!el||!el.dataset.id||e.target.closest('.tacts,.tver'))return;
+  const sec=el.closest('[data-cat]');if(!sec||!srtCatOk(sec.dataset.cat))return;
+  const s=SRT.st={el,id:el.dataset.id,cat:sec.dataset.cat,x0:e.clientX,y0:e.clientY,pid:e.pointerId,touch:e.pointerType!=='mouse',drag:false,timer:0};
+  if(s.touch)s.timer=setTimeout(()=>{if(SRT.st===s&&!s.drag){srtStart(s.x0,s.y0);srtMove(s.x0,s.y0)}},320);
+});
+window.addEventListener('pointermove',e=>{
+  const s=SRT.st;if(!s||e.pointerId!==s.pid)return;
+  if(!s.drag){const d=Math.hypot(e.clientX-s.x0,e.clientY-s.y0);
+    if(s.touch){if(d>10){clearTimeout(s.timer);SRT.st=null}return}
+    if(d<6)return;
+    srtStart(e.clientX,e.clientY)}
+  srtMove(e.clientX,e.clientY);
+});
+window.addEventListener('pointerup',e=>{const s=SRT.st;if(!s||e.pointerId!==s.pid)return;clearTimeout(s.timer);if(s.drag)srtDrop();else SRT.st=null});
+window.addEventListener('pointercancel',e=>{const s=SRT.st;if(!s||e.pointerId!==s.pid)return;clearTimeout(s.timer);if(s.drag)srtCancel();else SRT.st=null});
+$('#tplSections').addEventListener('touchmove',e=>{if(SRT.st&&SRT.st.drag)e.preventDefault()},{passive:false});
+$('#tplSections').addEventListener('contextmenu',e=>{if(SRT.st||(srtOn()&&e.target.closest&&e.target.closest('.tcard,.mini')&&e.pointerType!=='mouse'&&!e.button))e.preventDefault()});          // segurar no toque não abre o menu
+$('#tplSections').addEventListener('click',e=>{if(Date.now()-SRT.justDragged<400){e.stopPropagation();e.preventDefault()}},true);
+$('#dlgTemplates').addEventListener('cancel',e=>{if(SRT.st&&SRT.st.drag){e.preventDefault();srtCancel()}});
+window.addEventListener('keydown',e=>{
+  if(e.key==='Escape'&&SRT.st&&SRT.st.drag){e.preventDefault();e.stopImmediatePropagation();srtCancel();return}
+  if((e.ctrlKey||e.metaKey)&&!e.shiftKey&&e.key.toLowerCase()==='z'&&SRT.undo&&$('#dlgTemplates').open&&!(e.target.closest&&e.target.closest('input,textarea,select'))){
+    e.preventDefault();e.stopImmediatePropagation();
+    const {cat,prev}=SRT.undo;SRT.undo=null;const cfg=loadCatCfg();if(prev)cfg.myorder[cat]=prev;else delete cfg.myorder[cat];
+    saveCatCfg(cfg);updateBakeUI();renderTemplates();toast('Mudança de ordem desfeita')}
+},true);
+/* põe `ids` (na ordem em que já estavam) antes ou depois de `targetId` dentro da categoria `cat` e guarda a ordem inteira da categoria */
+function reorderInCat(ids,cat,targetId,after){
+  const all=decodeTemplates(),idx=new Map(all.map((t,i)=>[t.id,i])),key=myOrderKey(idx);
+  let order=all.filter(t=>!t.trashed&&t.cat===cat).sort((x,y)=>key(x)-key(y)).map(t=>t.id);
+  const moving=order.filter(id=>ids.includes(id));
+  if(!moving.length||moving.includes(targetId))return false;
+  order=order.filter(id=>!ids.includes(id));
+  let k=order.indexOf(targetId);k=k<0?order.length:k+(after?1:0);
+  order.splice(k,0,...moving);
+  const cfg=loadCatCfg();cfg.myorder[cat]=order;saveCatCfg(cfg);updateBakeUI();return true;
+}
 
 /* =====================================================================
    Ícones das categorias = MINIATURA de um molde da própria categoria (pedido do usuário, 2026-10-31: "ícones genéricos; queria algo específico,
@@ -4986,7 +5190,9 @@ var CAT_MINI_PICK={
  'yu-yu-hakusho':['Yusuke Urameshi (Yu Yu Hakusho, chibi, folha)','h'],'death-note':['Ryuk (Death Note, chibi)','f'],'inazuma-eleven':['Yuuto Kidou (Inazuma Eleven, chibi, explosão)','f'],
  'how-i-met-your-mother':['Casal sob o guarda-chuva amarelo (How I Met Your Mother, ilustração)','f'],'la-la-land':['Casal dançando (La La Land)','f'],'divertida-mente':['Tristeza (Divertida Mente, gráfico)','h'],
  'hellsing':['Alucard (Hellsing, chibi, pistolas)','h'],'god-of-war':['Kratos (God of War, chibi, gráfico)','f'],'kung-fu-panda':['Panda (Kung Fu Panda, chibi, adesivo)','h'],
- 'mortal-kombat':['Sub-Zero (Mortal Kombat, pixel)','h'],'nanatsu-no-taizai':['Meliodas (Nanatsu no Taizai, pixel)','h'],'invencivel':['Omni-Man (Invencível, pixel)','h'],'spawn':['Spawn (gráfico)','f'],'shovel-knight':['Shovel Knight (gráfico)','h'],'devil-may-cry':['Dante (Devil May Cry, pixel)','h'],'piratas-do-caribe':['Jack Sparrow (Piratas do Caribe, chibi, adesivo)','h'],'john-wick':['John Wick e cachorro (chibi, adesivo)','h'],'game-of-thrones':['Jon Snow (Game of Thrones, retrato)','h'],'brinquedo-assassino':['Chucky (chibi)','h'],'o-silencio-dos-inocentes':['Hannibal Lecter (chibi)','h'],'queen':['Freddie Mercury (Queen, chibi)','h'],'alien':['Xenomorfo (Alien, chibi)','h'],'hellboy':['Hellboy (chibi)','h'],'coraline':['Coraline (contas redondas)','h'],'final-fantasy':['Mago Negro (Final Fantasy, gráfico)','f'],'fallout':['Vault Boy (Fallout, gráfico)','h'],'overlord':['Ainz Ooal Gown (Overlord, pixel)','h'],'round-6':['Guarda triângulo (Round 6, gráfico)','f'],'o-pequeno-principe':['Pequeno Príncipe e a raposa (gráfico)','h'],'darling-in-the-franxx':['Zero Two (Darling in the Franxx, gráfico)','h'],'black-butler':['Grell Sutcliff (Black Butler, gráfico)','h'],'hajime-no-ippo':['Ippo Makunouchi (Hajime no Ippo, pixel, peek-a-boo)','h'],'himouto-umaru-chan':['Umaru-chan (Himouto! Umaru-chan, gráfico)','h'],'mega-man':['Mega Man X (armadura Ultimate, pixel)','h'],'donkey-kong':['Donkey Kong (gráfico)','h'],'cut-the-rope':['Om Nom (Cut the Rope, pixel)','f'],'breaking-bad':['Heisenberg (Breaking Bad, chibi, pixel)','h'],'the-amazing-digital-circus':['Jax (The Amazing Digital Circus, pixel)','h'],'rick-and-morty':['Rick Sanchez (Rick and Morty, pixel)','h'],'family-guy':['Brian Griffin (Family Guy, pixel)','h'],'pantera-cor-de-rosa':['Pantera Cor-de-Rosa (pixel)','h'],'os-simpsons':['Homer Simpson com rosquinha (pixel)','h'],'asterix':['Asterix (pixel)','h'],'pica-pau':['Woody Woodpecker (pixel)','h'],'ghostbusters':['Logo dos Caça-Fantasmas (pixel)','f'],'os-flintstones':['Fred Flintstone (pixel)','h'],'tom-e-jerry':['Jerry (Tom e Jerry, pixel)','h'],'os-smurfs':['Papai Smurf (pixel)','h'],'o-incrivel-mundo-de-gumball':['Gumball Watterson (pixel)','h'],'pusheen':['Pusheen na rosquinha (pixel)','f'],'my-dress-up-darling':['Marin Kitagawa (My Dress-Up Darling, chibi, gráfico)','h']
+ 'mortal-kombat':['Sub-Zero (Mortal Kombat, pixel)','h'],'nanatsu-no-taizai':['Meliodas (Nanatsu no Taizai, pixel)','h'],'invencivel':['Omni-Man (Invencível, pixel)','h'],'spawn':['Spawn (gráfico)','f'],'shovel-knight':['Shovel Knight (gráfico)','h'],'devil-may-cry':['Dante (Devil May Cry, pixel)','h'],'piratas-do-caribe':['Jack Sparrow (Piratas do Caribe, chibi, adesivo)','h'],'john-wick':['John Wick e cachorro (chibi, adesivo)','h'],'game-of-thrones':['Jon Snow (Game of Thrones, retrato)','h'],'brinquedo-assassino':['Chucky (chibi)','h'],'o-silencio-dos-inocentes':['Hannibal Lecter (chibi)','h'],'queen':['Freddie Mercury (Queen, chibi)','h'],'alien':['Xenomorfo (Alien, chibi)','h'],'hellboy':['Hellboy (chibi)','h'],'coraline':['Coraline (contas redondas)','h'],'final-fantasy':['Mago Negro (Final Fantasy, gráfico)','f'],'fallout':['Vault Boy (Fallout, gráfico)','h'],'overlord':['Ainz Ooal Gown (Overlord, pixel)','h'],'round-6':['Guarda triângulo (Round 6, gráfico)','f'],'o-pequeno-principe':['Pequeno Príncipe e a raposa (gráfico)','h'],'darling-in-the-franxx':['Zero Two (Darling in the Franxx, gráfico)','h'],'black-butler':['Grell Sutcliff (Black Butler, gráfico)','h'],'hajime-no-ippo':['Ippo Makunouchi (Hajime no Ippo, pixel, peek-a-boo)','h'],'himouto-umaru-chan':['Umaru-chan (Himouto! Umaru-chan, gráfico)','h'],'mega-man':['Mega Man X (armadura Ultimate, pixel)','h'],'donkey-kong':['Donkey Kong (gráfico)','h'],'cut-the-rope':['Om Nom (Cut the Rope, pixel)','f'],'breaking-bad':['Heisenberg (Breaking Bad, chibi, pixel)','h'],'the-amazing-digital-circus':['Jax (The Amazing Digital Circus, pixel)','h'],'rick-and-morty':['Rick Sanchez (Rick and Morty, pixel)','h'],'family-guy':['Brian Griffin (Family Guy, pixel)','h'],'pantera-cor-de-rosa':['Pantera Cor-de-Rosa (pixel)','h'],'os-simpsons':['Homer Simpson com rosquinha (pixel)','h'],'asterix':['Asterix (pixel)','h'],'pica-pau':['Woody Woodpecker (pixel)','h'],'ghostbusters':['Logo dos Caça-Fantasmas (pixel)','f'],'os-flintstones':['Fred Flintstone (pixel)','h'],'tom-e-jerry':['Jerry (Tom e Jerry, pixel)','h'],'os-smurfs':['Papai Smurf (pixel)','h'],'o-incrivel-mundo-de-gumball':['Gumball Watterson (pixel)','h'],'pusheen':['Pusheen na rosquinha (pixel)','f'],'my-dress-up-darling':['Marin Kitagawa (My Dress-Up Darling, chibi, gráfico)','h'],
+ 'akame-ga-kill':['Akame (Akame ga Kill, chibi)','h'],'high-school-dxd':['Rias Gremory (High School DxD, chibi, fundo rosa)','h'],'kaguya-sama':['Kaguya Shinomiya (Kaguya-sama, chibi)','h'],'tokyo-revengers':['Takemichi Hanagaki (Tokyo Revengers, chibi, adesivo)','h'],
+ 'as-quintuplas':['Miku Nakano (As Quíntuplas, chibi)','h'],'evangelion':['Rei Ayanami (Evangelion, chibi, fundo amarelo)','h'],'mashle':['Mash Burnedead (Mashle, chibi)','h'],'the-rising-of-the-shield-hero':['Naofumi Iwatani (The Rising of the Shield Hero, chibi)','h']
 };
 var catMiniPick={};
 function autoMini(ts){

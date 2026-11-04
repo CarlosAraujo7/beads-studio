@@ -121,7 +121,7 @@ async def main():
         # ---- novos moldes
         await b.js("openNews()", 1.0)
         v = await visible_stats(b, '.tcard')
-        check('Novos moldes: cartões visíveis desenhados', v['visiveis'] > 5 and v['emBranco'] == 0, str(v))
+        check('Novos moldes: cartões visíveis desenhados', v['visiveis'] >= 3 and v['emBranco'] == 0, str(v))          # quantos cabem na tela depende das 1ªs categorias da remessa mais nova (na 29: 2 moldes cada)
         pr = [p for p in b.problems() if 'favicon' not in p]
         check('sem erros de console', not pr, json.dumps(pr, ensure_ascii=False))
     finally:

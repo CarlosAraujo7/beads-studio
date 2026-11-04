@@ -1,14 +1,14 @@
 """Gera remessas.js: de qual remessa veio cada molde do catálogo (tela "Novos moldes" do app, CLAUDE.md §3).
   python tools/make_remessas.py
 Fica FORA do templates.js de propósito: o app regrava o templates.js inteiro em "Gravar no catálogo", e este arquivo só LÊ o catálogo; nunca o altera.
-O add_templates.py chama isto sozinho depois de gravar. A remessa N (N >= 5) é data/final{N+2}[_multi][_120].json; as cópias _replace e _revisao não contam (são revisões).
+O add_templates.py chama isto sozinho depois de gravar. A remessa N (N >= 5) é data/final{N+2}[_multi|_antes][_120].json (_antes = versões anteriores que ele quis manter ao lado das refeitas, 2026-11-04); as cópias _replace e _revisao não contam (são revisões).
 O id do molde nasce do nome de origem, então um molde renomeado no app continua achado pelo id. Molde que ele excluiu não entra."""
 import os, re, sys, json, glob
 HERE = os.path.dirname(os.path.abspath(__file__)); ROOT = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
 import tplfile
 OUT = os.path.join(ROOT, 'remessas.js')
-RX = re.compile(r'^final(\d+)(_multi)?(_120)?\.json$')
+RX = re.compile(r'^final(\d+)(_multi|_antes)?(_120)?\.json$')
 
 
 def build(templates=None):

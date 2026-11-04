@@ -137,8 +137,6 @@ async def scen_galeria(b):
     await b.js(close + "tplView='blocks';openGallery()", 1.0); await tr.snap(b, 'blocos')
     await b.js("tplView='list';renderTemplates()", 0.5); await tr.snap(b, 'lista')
     await b.js("tplView='blocks';renderTemplates()", 0.4)
-    await b.js("setPlates('2')", 0.5); await tr.snap(b, '2 placas')
-    await b.js("setPlates('4')", 0.5); await tr.snap(b, '4 placas')
     await b.js("setPlates('d')", 0.6); await tr.snap(b, 'projetos 3D')
     await b.js("setPlates('1')", 0.5)
     for q in ('naruto', 'pikachu', 'zzzz', ''):

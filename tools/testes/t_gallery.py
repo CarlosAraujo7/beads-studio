@@ -52,8 +52,10 @@ async def main():
         r = json.loads(await b.js("JSON.stringify({sel:document.querySelectorAll('.tcard.sel').length,txt:document.getElementById('tbCount').textContent})"))
         check('selecionar vários marca os cartões', r['sel'] == 2 and '2' in r['txt'], str(r))
         await b.js("document.getElementById('tplSelect').click()", 0.3)
-        # --- abas: 2 placas, 4 placas e Projetos 3D
-        for k in ('2', '4', 'd', '1'):
+        # --- abas: Moldes e Projetos 3D (as de 2 e 4 placas saíram em 2026-11-04, pedido do dono)
+        tabs = json.loads(await b.js("JSON.stringify([...document.querySelectorAll('#tplPlates .ptab')].map(x=>x.dataset.p))"))
+        check('galeria só com as abas Moldes e Projetos 3D', tabs == ['1', 'd'], str(tabs))
+        for k in ('d', '1'):
             await b.js("tplView='blocks';setPlates('%s')" % k, 0.8)
             n = await b.js("document.querySelectorAll('.cblock').length+document.querySelectorAll('#tplProjects .pcard, #tplProjects .tcard, #tplProjects button').length")
             check('aba %s abre sem erro' % k, n > 0 or k == '3', str(n))

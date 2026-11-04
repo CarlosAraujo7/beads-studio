@@ -52,6 +52,9 @@ CATEGORIES = [
     ('darling-in-the-franxx', 'Darling in the Franxx', A), ('black-butler', 'Black Butler', A), ('hajime-no-ippo', 'Hajime no Ippo', A), ('himouto-umaru-chan', 'Himouto! Umaru-chan', A), ('mega-man', 'Mega Man', G),
     # --- remessa 27
     ('donkey-kong', 'Donkey Kong', G),
+    # --- remessa 29
+    ('akame-ga-kill', 'Akame ga Kill', A), ('high-school-dxd', 'High School DxD', A), ('kaguya-sama', 'Kaguya-sama', A), ('tokyo-revengers', 'Tokyo Revengers', A),
+    ('as-quintuplas', 'As Quíntuplas', A), ('evangelion', 'Evangelion', A), ('mashle', 'Mashle', A), ('the-rising-of-the-shield-hero', 'The Rising of the Shield Hero', A),
     # --- temas específicos
     ('egito-antigo', 'Egito Antigo', S), ('religiao', 'Religião', S), ('gato-da-sorte', 'Gato da sorte', 'cAnimals'),
     ('earrings', 'Brincos', 'cEarrings'),

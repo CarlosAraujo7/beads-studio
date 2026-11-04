@@ -98,7 +98,7 @@ async def main():
         if 'gal' in WANT:
             print('GALERIA (dpr %s)' % DPR)
             await timed(b, 'abrir (blocos, 1 placa: ~1000 miniaturas)', "tplView='blocks';openGallery()", 0.3)
-            await timed(b, 'trocar para a aba 2 placas', "setPlates('2')", 0.2)
+            await timed(b, 'trocar para a aba Projetos 3D', "setPlates('d')", 0.2)
             await timed(b, 'trocar para a aba 1 placa', "setPlates('1')", 0.2)
             await timed(b, 'Lista, categoria Dragon Ball (34 cartões)', "tplView='list';tplCat='dragon-ball';setTplView('list')", 0.2)
             await timed(b, 'Lista, TODAS as categorias (~1000 cartões)', "document.querySelector('#tplSide .cat-btn[data-cat=all]').click()", 0.5)
