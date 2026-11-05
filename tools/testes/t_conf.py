@@ -43,7 +43,7 @@ async def main():
         # Cor por cor: escolhe uma cor que tem parecida
         r = await b.js("""(async()=>{S.asm.view='color';renderAssemble();
           const used=[];for(let v=1;v<=NCOL;v++)if(counts[v])used.push(v);const alvo=used.find(v=>confOf(v).length);S.asm.color=alvo;renderAssemble();requestDraw();await new Promise(r=>setTimeout(r,400));
-          return JSON.stringify({cor:PALETTE[alvo-1].code,parecidas:confOf(alvo).map(q=>PALETTE[q.v-1].code),selosNaLista:document.querySelectorAll('.cfocus .conf').length,partners:drawPartners&&[...drawPartners].map(v=>PALETTE[v-1].code)})})()""")
+          return JSON.stringify({cor:PALETTE[alvo-1].code,parecidas:confOf(alvo).map(q=>PALETTE[q.v-1].code),selosNaLista:document.querySelectorAll('.cfocus .conf').length,seloNoQuadro:document.querySelectorAll('.cguide .conf').length})})()""")
         print('cor por cor:', r)
         await b.shot(OUT + 'conf_cor_por_cor.png')
         # guia PNG

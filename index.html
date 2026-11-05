@@ -444,6 +444,7 @@ body[data-view="edit"] .home{display:none!important}
 .asmnav .spanrow{margin:0 0 8px} .asmnav .rownav{margin-bottom:8px}
 .rowacts{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .rowacts .btn{width:100%;min-width:0;justify-content:center}
+.asmnav .rowacts .btn{min-height:30px}      /* com ou sem ícone, a fileira tem sempre a mesma altura (regra 4.11) */
 .phead{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:30px}
 .rownav .mid input{width:58px;text-align:center;font-weight:700;font-size:15px;padding:4px;border:1px solid var(--line-strong);border-radius:8px;background:var(--panel)}
 .strip{width:100%;display:block;margin:10px 0 2px;border-radius:9px;background:var(--panel-2);border:1px solid var(--line);cursor:pointer}
@@ -466,6 +467,28 @@ body[data-view="edit"] .home{display:none!important}
 .cfocus .sw{width:34px;height:38px;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);display:grid;place-items:center;font-size:11px;font-weight:700}
 .cfocus .nm b{display:block;font-weight:600;line-height:1.15} .cfocus .cbar{display:block;height:4px;border-radius:3px;background:var(--line);margin-top:5px;overflow:hidden} .cfocus .cbar i{display:block;height:100%;background:var(--ok)}
 .cfocus .fr{font-variant-numeric:tabular-nums;font-weight:700;text-align:right} .cfocus .fr small{display:block;color:var(--muted);font-weight:500;font-size:11px}
+/* Cor por cor: a linha de base primeiro e o caminho até a próxima conta (altura fixa: os botões de baixo nunca saem do lugar) */
+.cguide{height:168px;box-sizing:border-box;margin:0 0 10px;padding:9px 11px;border-radius:12px;border:1px solid color-mix(in srgb,var(--accent) 35%,var(--line));background:color-mix(in srgb,var(--accent) 7%,var(--panel));display:flex;flex-direction:column;gap:7px;overflow:hidden}
+.cguide.msg{justify-content:center}
+.cg-head{display:flex;align-items:center;gap:8px;min-height:24px;font-size:13.5px;white-space:nowrap}
+.cg-head .cg-n{margin-left:auto;color:var(--muted);font-size:12px;font-variant-numeric:tabular-nums}
+.cg-head .conf{margin-left:0;min-width:0;overflow:hidden;text-overflow:ellipsis}
+.cg-step{display:inline-flex;align-items:center;height:20px;padding:0 8px;border-radius:999px;background:var(--accent);color:#fff;font-size:11px;font-weight:800;letter-spacing:.02em}
+.cg-sw{display:inline-grid;place-items:center;width:22px;height:25px;flex:none;clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);font-size:8.5px;font-weight:800;vertical-align:middle}
+.cg-sw.sm{width:17px;height:19px;font-size:7px}
+.cg-steps{display:flex;flex-direction:column;gap:6px}
+.cg-st{display:grid;grid-template-columns:20px 1fr;gap:8px;align-items:center;font-size:12.5px;line-height:1.3;color:var(--ink)}
+.cg-st>i{width:20px;height:20px;border-radius:50%;display:grid;place-items:center;background:color-mix(in srgb,var(--accent) 18%,var(--panel));color:var(--accent);font-style:normal;font-weight:800;font-size:11.5px}
+.cg-st>span{min-width:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.cg-st small{color:var(--muted);font-size:12px}
+.cg-walk{display:flex;align-items:center;gap:7px;white-space:nowrap;overflow:hidden}
+.cg-chip{display:inline-flex;align-items:center;gap:4px;padding:0 11px;border-radius:999px;background:var(--accent);color:#fff;font-weight:800;font-size:18px;line-height:28px;font-variant-numeric:tabular-nums}
+.cg-walk small{white-space:normal;line-height:1.2}
+.cg-strip{display:block;width:100%;height:26px;border-radius:8px;background:var(--panel-2);border:1px solid var(--line)}
+.cg-line{font-size:12.5px;line-height:1.3;color:var(--muted);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.cg-line b,.cg-msg b{color:var(--ink)}
+.cg-msg{font-size:13px;color:var(--muted);line-height:1.35;display:-webkit-box;-webkit-line-clamp:5;-webkit-box-orient:vertical;overflow:hidden}
+.cg-ring{display:inline-block;width:10px;height:10px;border-radius:50%;border:2.5px solid var(--ok);vertical-align:-1px}
 
 /* dialogs */
 dialog{border:1px solid var(--line-strong);border-radius:18px;background:var(--panel);color:var(--ink);padding:0;box-shadow:0 20px 60px rgba(0,0,0,.35);max-width:min(980px,94vw);width:min(980px,94vw);max-height:92vh}
@@ -1775,7 +1798,7 @@ const S = {
   zoom:14, showGrid:true, showCodes:false, style:'bead',
   mode:'create', tab:'counts', sort:'count',
   beadMm:2.6, plate:50, stock:{},
-  asm:{view:'row',row:0,color:0,hoverRun:null,span:1,mirror:true},      /* span: 1 ou 2 linhas por vez na Montar (lembrado em beadstudio.asmspan); mirror: Montar e Guia mostram a figura ESPELHADA (beadstudio.asmmirror) */
+  asm:{view:'row',row:0,color:0,hoverRun:null,span:1,mirror:true,tgt:-1,last:-1},      /* span: 1 ou 2 linhas por vez na Montar (lembrado em beadstudio.asmspan); mirror: Montar e Guia mostram a figura ESPELHADA (beadstudio.asmmirror) */
   hl:0, hlLock:0, hover:null,
   tpl:null, tplDirty:false,   /* molde que está sendo editado: {kind:'builtin'|'mine', id, name} */
   sel:null, selW:0, selH:0,   /* seleção de contas: máscara (1 = selecionada) do tamanho da placa */
@@ -1859,7 +1882,7 @@ const cv=$('#cv'), ctx=cv.getContext('2d'), stage=$('#stage');
 let C={}, rafP=false, preview=null;
 function readTheme(){const cs=getComputedStyle(document.documentElement),g=n=>cs.getPropertyValue(n).trim();
   themeVer++;      // as cores do tema entram na assinatura da camada estática do desenho (ver draw)
-  C={plate:g('--plate'),hole:g('--hole'),edge:g('--bead-edge'),guide:g('--guide'),guideStrong:g('--guide-strong'),text:g('--muted'),accent:g('--accent'),warn:g('--warn'),ink:g('--ink'),panel:g('--panel')}}
+  C={plate:g('--plate'),hole:g('--hole'),edge:g('--bead-edge'),guide:g('--guide'),guideStrong:g('--guide-strong'),text:g('--muted'),accent:g('--accent'),warn:g('--warn'),ink:g('--ink'),panel:g('--panel'),ok:g('--ok')}}
 matchMedia('(prefers-color-scheme: dark)').addEventListener('change',()=>{if(themePref()==='auto')applyTheme('auto')});
 function layout(){
   const dpr=window.devicePixelRatio||1, W=RULER+S.w*S.zoom+8, H=RULER+S.h*S.zoom+8;
@@ -1868,23 +1891,25 @@ function layout(){
 }
 function requestDraw(){if(!rafP){rafP=true;requestAnimationFrame(draw)}}
 function rr(c,x,y,w,h,r){c.beginPath();c.moveTo(x+r,y);c.arcTo(x+w,y,x+w,y+h,r);c.arcTo(x+w,y+h,x,y+h,r);c.arcTo(x,y+h,x,y,r);c.arcTo(x,y,x+w,y,r);c.closePath()}
-function drawBead(c,px,py,cs,hex,dark){
+function drawBead(c,px,py,cs,hex,dark,plain){      // plain = sem o furo e o brilho: quando o código vai escrito no meio (o furo atrás das letras confundia, pedido dele em 2026-11-04)
   const mx=px+cs/2,my=py+cs/2,r=cs*0.465;
   c.fillStyle=hex;c.beginPath();c.arc(mx,my,r,0,TAU);c.fill();
   c.lineWidth=cs>=16?1.2:1;c.strokeStyle=C.edge;c.stroke();
+  if(plain)return;
   c.fillStyle=C.plate;c.beginPath();c.arc(mx,my,Math.max(1,cs*0.17),0,TAU);c.fill();
   c.lineWidth=1;c.strokeStyle='rgba(0,0,0,.28)';c.stroke();
   if(cs>=12){c.fillStyle='rgba(255,255,255,.42)';c.beginPath();c.arc(mx-cs*.22,my-cs*.24,cs*.075,0,TAU);c.fill()}
 }
-let drawPartners=null;      // cores parecidas com a escolhida na "Cor por cor" (só durante o draw)
+let drawBaseY=-1;      // "Cor por cor", 1º passo: a linha de base (só durante o draw)
+const ASM_BG=.4;      // "Cor por cor": o resto do desenho fica visível o bastante para se localizar (era 0,1 com uma cor escolhida: ele achou o fundo apagado demais, 2026-11-04)
 function cellVis(i,x,y,v){
-  // devolve [alpha, destaque]  (destaque 1 = anel cheio; 2 = anel tracejado das parecidas)
+  // devolve [alpha, destaque]  (destaque 1 = conta a pôr agora: bolinha com anel azul)
   if(S.mode==='assemble'){
     if(S.done[i])return [1,0];
     const a=S.asm;
     if(a.view==='row') return (y>=a.row&&y<a.row+rowSpanLen(a.row))?[1,1]:[0.2,0];
-    if(a.color) return v===a.color?[1,1]:(drawPartners&&drawPartners.has(v)?[0.75,2]:[0.1,0]);
-    return [0.34,0];
+    if(drawBaseY>=0) return y===drawBaseY?[1,1]:[ASM_BG,0];
+    return a.color&&v===a.color?[1,1]:[ASM_BG,0];
   }
   const hl=S.hlLock||S.hl;
   if(hl) return v===hl?[1,1]:[0.2,0];
@@ -1893,7 +1918,7 @@ function cellVis(i,x,y,v){
 function drawCode(c,p,x,y,cs,fit){      // código da cor com um contorno de cor oposta (legível em qualquer conta); fit = encolhe para caber na conta
   const t=p.code;let f=c.font;
   if(fit){const px=Math.max(7,Math.floor(cs*.4)),fam=' "Segoe UI",system-ui,sans-serif';c.font=`700 ${px}px${fam}`;
-    const w=c.measureText(t).width;if(w>cs-1)c.font=`700 ${Math.max(6,Math.floor(px*(cs-1)/w))}px${fam}`}
+    const w=c.measureText(t).width;if(w>cs*.82)c.font=`700 ${Math.max(6,Math.floor(px*cs*.82/w))}px${fam}`}      // cabe dentro da bolinha
   c.lineJoin='round';c.lineWidth=2.4;c.strokeStyle=p.ink==='#ffffff'?'rgba(0,0,0,.42)':'rgba(255,255,255,.55)';c.strokeText(t,x,y);
   c.fillStyle=p.ink;c.fillText(t,x,y);
   if(fit)c.font=f;
@@ -1918,7 +1943,7 @@ function draw(){
   rafP=false;
   const cs=S.zoom,w=S.w,h=S.h,x0=RULER,y0=RULER,dpr=window.devicePixelRatio||1,W=cv.width/dpr,H=cv.height/dpr,flip=asmMir(),dc=x=>flip?w-1-x:x;      // flip: Montar espelhada (a coluna x do desenho aparece na coluna w-1-x da tela)
   const sm=selMask();
-  drawPartners=S.mode==='assemble'&&S.asm.view==='color'&&S.asm.color?new Set(confOf(S.asm.color).map(q=>q.v)):null;      // cores parecidas com a escolhida na "Cor por cor" (só durante o draw)
+  drawBaseY=-1;if(S.mode==='assemble'&&S.asm.view==='color'){const b=cgBase();if(!b.done)drawBaseY=b.y}      // Cor por cor, 1º passo: só a linha de base acesa
   const sig=staticSig(W,H,dpr,cs,w,h,flip,sm);
   if(!baseCv){baseCv=document.createElement('canvas');baseCtx=baseCv.getContext('2d')}
   if(baseSig!==sig||baseCv.width!==cv.width||baseCv.height!==cv.height){
@@ -1937,19 +1962,23 @@ function drawStatic(ctx,cs,w,h,x0,y0,W,H,dpr,flip,dc,sm){      // `ctx` aqui é 
   const bead=S.style==='bead'&&cs>=7, codes=S.showCodes&&cs>=22, g=S.grid;
   const asmCodes=S.mode==='assemble'&&cs>=14&&!codes;      // Montar: mostra o código nas contas da linha atual (e nas parecidas da "Cor por cor") mesmo sem ligar "Códigos nas contas"
   ctx.font=`700 ${Math.max(8,Math.floor(cs*.36))}px "Segoe UI",system-ui,sans-serif`;ctx.textAlign='center';ctx.textBaseline='middle';
+  // Montar: faixa da linha atual (Linha por linha) ou da linha de base (1º passo da "Cor por cor"). O fundo dela vai POR BAIXO das contas (a cor das contas não muda); o contorno vai por cima, no fim
+  const band=S.mode!=='assemble'?null:S.asm.view==='row'?[S.asm.row,rowSpanLen(S.asm.row)]:drawBaseY>=0?[drawBaseY,1]:null;
+  if(band){ctx.fillStyle=C.accent;ctx.globalAlpha=.12;ctx.fillRect(x0-5,y0+band[0]*cs,w*cs+10,band[1]*cs);ctx.globalAlpha=1}
   for(let y=0;y<h;y++){
     for(let x=0;x<w;x++){
       const i=y*w+x,v=g[i],px=x0+dc(x)*cs,py=y0+y*cs;
       if(!v){ if(cs>=5){ctx.fillStyle=C.hole;ctx.beginPath();ctx.arc(px+cs/2,py+cs/2,Math.max(1,cs*0.11),0,TAU);ctx.fill()} continue; }
-      const [a,em]=cellVis(i,x,y,v); const p=PALETTE[v-1];
+      const [a,em]=cellVis(i,x,y,v),p=PALETTE[v-1];
+      const code=codes||(asmCodes&&em===1&&(S.asm.view==='row'||drawBaseY>=0));      // Montar: o código vai nas contas da linha atual e da linha de base
+      const dot=em===1&&!bead&&cs>=7;      // Montar no modo pixel: a conta a pôr agora é uma bolinha; a cor fica só dentro do anel azul e em volta aparece a placa, como um pino vazio (pedido dele, 2026-11-04)
       ctx.globalAlpha=a;
-      if(bead)drawBead(ctx,px,py,cs,p.hex);
+      if(bead)drawBead(ctx,px,py,cs,p.hex,false,code);
+      else if(dot){ctx.fillStyle=p.hex;ctx.beginPath();ctx.arc(px+cs/2,py+cs/2,cs*.44,0,TAU);ctx.fill()}
       else{ctx.fillStyle=p.hex;ctx.fillRect(px,py,cs,cs)}
-      if(codes)drawCode(ctx,p,px+cs/2,py+cs/2+.5,cs,false);
-      else if(asmCodes&&em&&!S.done[i]&&(em===2||S.asm.view==='row'))drawCode(ctx,p,px+cs/2,py+cs/2+.5,cs,true);
+      if(code)drawCode(ctx,p,px+cs/2,py+cs/2+.5,cs,!codes);
       ctx.globalAlpha=1;
-      if(em===1){ctx.strokeStyle=C.accent;ctx.lineWidth=2;ctx.beginPath();ctx.arc(px+cs/2,py+cs/2,cs*.5,0,TAU);ctx.stroke()}
-      else if(em===2){ctx.strokeStyle=C.warn;ctx.lineWidth=2;ctx.setLineDash([3,3]);ctx.beginPath();ctx.arc(px+cs/2,py+cs/2,cs*.5,0,TAU);ctx.stroke();ctx.setLineDash([])}
+      if(em===1){ctx.strokeStyle=C.accent;ctx.lineWidth=2;ctx.beginPath();ctx.arc(px+cs/2,py+cs/2,dot?cs*.44:cs*.5,0,TAU);ctx.stroke()}
     }
   }
   // grade
@@ -1990,16 +2019,14 @@ function drawStatic(ctx,cs,w,h,x0,y0,W,H,dpr,flip,dc,sm){      // `ctx` aqui é 
     if(S.mirrorV){ctx.moveTo(x0-6,y0+h*cs/2);ctx.lineTo(x0+w*cs+6,y0+h*cs/2)}
     ctx.stroke();ctx.setLineDash([]);
   }
-  // linha atual (montagem)
-  if(S.mode==='assemble'&&S.asm.view==='row'){
-    const y=S.asm.row,hh=rowSpanLen(y)*cs; ctx.fillStyle=C.accent;ctx.globalAlpha=.12;ctx.fillRect(x0-5,y0+y*cs,w*cs+10,hh);ctx.globalAlpha=1;
-    ctx.strokeStyle=C.accent;ctx.lineWidth=1.5;ctx.strokeRect(x0-5,y0+y*cs+.5,w*cs+10,hh-1);
-  }
+  // contorno da faixa da linha atual / da linha de base (o fundo dela foi desenhado antes das contas)
+  if(band){ctx.strokeStyle=C.accent;ctx.lineWidth=1.5;ctx.strokeRect(x0-5,y0+band[0]*cs+.5,w*cs+10,band[1]*cs-1)}
 }
 function drawDynamic(cs,w,h,x0,y0,flip,dc){      // o que muda a cada movimento do mouse: vai por cima da camada estática, no ctx da tela
   const bead=S.style==='bead'&&cs>=7;
   ctx.lineJoin=joinFor(cs);
   if(S.mode==='assemble'&&S.asm.view==='row'){const hr=S.asm.hoverRun;if(hr){ctx.strokeStyle=C.accent;ctx.lineWidth=3;ctx.strokeRect(x0+dc(flip?hr.x1:hr.x0)*cs,y0+hr.y*cs,(hr.x1-hr.x0+1)*cs,cs)}}
+  if(S.mode==='assemble'&&S.asm.view==='color')drawGuide(cs,x0,y0,dc);      // Cor por cor: etiqueta da linha de base (1º passo) ou caminho até a próxima conta
   // prévia de formas
   if(preview){
     ctx.globalAlpha=.85;
@@ -2020,11 +2047,12 @@ function drawDynamic(cs,w,h,x0,y0,flip,dc){      // o que muda a cada movimento 
   // réguas
   ctx.fillStyle=C.text;ctx.font='11px "Segoe UI",system-ui,sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';
   const step=cs>=24?1:cs>=13?5:10;
-  for(let x=0;x<w;x++){const n=x+1;if(n===1||n%step===0||n===w&&step<=5){
-    const hov=S.hover&&dc(S.hover.x)===x; if(hov){ctx.fillStyle=C.accent;rr(ctx,x0+x*cs+cs/2-12,3,24,RULER-9,6);ctx.fill();ctx.fillStyle='#fff'}
+  const gt=S.mode==='assemble'&&S.asm.view==='color'?cgTarget():-1,gtx=gt>=0?dc(gt%S.w):-1,gty=gt>=0?(gt/S.w)|0:-1;      // Cor por cor: a régua mostra a linha e a coluna do alvo
+  for(let x=0;x<w;x++){const n=x+1;if(n===1||n%step===0||n===w&&step<=5||x===gtx){
+    const hov=(S.hover&&dc(S.hover.x)===x)||x===gtx; if(hov){ctx.fillStyle=C.accent;rr(ctx,x0+x*cs+cs/2-12,3,24,RULER-9,6);ctx.fill();ctx.fillStyle='#fff'}
     ctx.fillText(n,x0+x*cs+cs/2,RULER/2-1);ctx.fillStyle=C.text}}
-  for(let y=0;y<h;y++){const n=y+1;if(n===1||n%step===0||n===h&&step<=5){
-    const hov=(S.hover&&S.hover.y===y)||(S.mode==='assemble'&&S.asm.view==='row'&&y>=S.asm.row&&y<S.asm.row+rowSpanLen(S.asm.row)); if(hov){ctx.fillStyle=C.accent;rr(ctx,2,y0+y*cs+cs/2-9,RULER-9,18,6);ctx.fill();ctx.fillStyle='#fff'}
+  for(let y=0;y<h;y++){const n=y+1;if(n===1||n%step===0||n===h&&step<=5||y===gty){
+    const hov=(S.hover&&S.hover.y===y)||(S.mode==='assemble'&&S.asm.view==='row'&&y>=S.asm.row&&y<S.asm.row+rowSpanLen(S.asm.row))||y===gty; if(hov){ctx.fillStyle=C.accent;rr(ctx,2,y0+y*cs+cs/2-9,RULER-9,18,6);ctx.fill();ctx.fillStyle='#fff'}
     ctx.fillText(n,RULER/2-3,y0+y*cs+cs/2);ctx.fillStyle=C.text}}
 }
 
@@ -2147,7 +2175,8 @@ const SEL_HINTS={
   rect:'Arraste para marcar uma área · botão direito tira da seleção · Esc limpa tudo'
 };
 const ASM_HINT='Clique nas contas para marcar o que você já colocou na placa · ↑ ↓ trocam de linha (ou de duas em duas, se escolher "2 linhas") · Espaço marca a linha';
-function updHint(){$('#hint').textContent=selecting()?SEL_HINTS[S.selShape]:(S.mode==='create'?TOOL_HINTS[S.tool]:(S.asm.mirror?'ESPELHADO · ':'')+ASM_HINT)}
+const ASM_HINT_COLOR='Primeiro a linha de base · depois siga o caminho numerado a partir da conta de anel verde · Espaço = Coloquei · → pula · ← volta';
+function updHint(){$('#hint').textContent=selecting()?SEL_HINTS[S.selShape]:(S.mode==='create'?TOOL_HINTS[S.tool]:(S.asm.mirror?'ESPELHADO · ':'')+(S.asm.view==='color'?ASM_HINT_COLOR:ASM_HINT))}
 function syncSelUI(){
   const on=selecting(),b=$('#btnSel');
   b.classList.toggle('on',on);b.setAttribute('aria-pressed',on);
@@ -2229,7 +2258,7 @@ cv.addEventListener('pointerdown',e=>{
   if(selecting()){startSelDrag(S.selShape,c,e);return}
   if(S.mode==='assemble'){
     const i=c.y*S.w+c.x; if(!S.grid[i])return;
-    const val=S.done[i]?0:1; drag={kind:'asm',val}; S.done[i]=val; asmChanged(); return;
+    const val=S.done[i]?0:1; drag={kind:'asm',val}; S.done[i]=val; if(val)S.asm.last=i; asmChanged(); return;
   }
   let tool=S.tool;
   if(e.altKey&&(tool==='pencil'||tool==='eraser'||tool==='fill'))tool='picker';
@@ -2249,7 +2278,7 @@ cv.addEventListener('pointermove',e=>{
   const prev=S.hover; S.hover=c;
   if(!prev!==!c||(prev&&c&&(prev.x!==c.x||prev.y!==c.y))){updateHoverInfo();requestDraw()}
   if(!drag){cv.style.cursor=rulerAt(e)?'pointer':'';return}
-  if(drag.kind==='asm'){if(c){const i=c.y*S.w+c.x;if(S.grid[i]&&S.done[i]!==drag.val){S.done[i]=drag.val;asmChanged()}}return}
+  if(drag.kind==='asm'){if(c){const i=c.y*S.w+c.x;if(S.grid[i]&&S.done[i]!==drag.val){S.done[i]=drag.val;if(drag.val)S.asm.last=i;asmChanged()}}return}
   const cc=cellAt(e,true);
   if(drag.kind==='select'){
     if(drag.shape==='pen')bres(drag.last.x,drag.last.y,cc.x,cc.y,(x,y)=>selStamp(drag,x,y));   // sem buracos, mesmo se o mouse andar rápido
@@ -2407,7 +2436,7 @@ const simText=d=>`${SIM[simKind(d)-1][1]} (ΔE ${d.toFixed(1).replace('.',',')})
 /* =====================================================================
    Cores PARECIDAS dentro do molde (pedido do usuário, 2026-11-02: "confundi um bege com creme porque são muito similares").
    Duas cores usadas no desenho com diferença (ΔE2000) menor que CONF_T são difíceis de separar a olho. Elas ganham o selo "≈ G1" (com a diferença em palavras),
-   a Montar avisa quando as duas estão na linha atual, a "Cor por cor" marca as parecidas com anel tracejado e código, e o Guia (PNG) lista os pares.
+   a Montar avisa quando as duas estão na linha atual, a "Cor por cor" põe o selo no quadro do guia (o anel tracejado na placa saiu em 2026-11-04: ele disse que atrapalhava), e o Guia (PNG) lista os pares.
    Alias (H12 = A1) é a MESMA conta e não conta como parecida. As funções só usam `function` (içadas) e nada de const definida mais abaixo.
    ===================================================================== */
 const CONF_T=6;      // mesmo limite padrão do "Juntar cores quase iguais"
@@ -2964,14 +2993,181 @@ function scrollToRow(){
   const top=RULER+S.asm.row*S.zoom,bot=top+rowSpanLen(S.asm.row)*S.zoom;
   if(top<stage.scrollTop+40||bot>stage.scrollTop+stage.clientHeight-80)stage.scrollTo({top:top-stage.clientHeight/2,behavior:'smooth'});
 }
+/* ---------- Cor por cor: a LINHA DE BASE primeiro e, depois, o caminho até cada conta (pedidos do dono, 2026-11-04: "andar 16 contas pra cima e colocar na
+   conta 17, ou andar 4 pra cima, 3 pra esquerda"; "minha grade não tem número: todos os desenhos vão ser feitos com a linha de base e, a partir das contas da base,
+   vai guiar para as outras cores"; "explicar os números, quanto é pra andar de fato") ----------
+   1º passo: a linha de base (a linha mais baixa do desenho), montada da esquerda para a direita; "Base pronta" a marca. Depois, para a cor escolhida: o alvo é a
+   próxima conta dela que falta, de baixo para cima e da esquerda para a direita da TELA; a partida é SEMPRE uma conta que já está na placa (a base ou uma já
+   colocada; NUNCA a borda, a placa não tem números): a mais perto, com preferência por linha reta, pela base e pela que acabou de ser colocada. O caminho é primeiro
+   na vertical e depois na horizontal, nas direções da tela (espelhada ou não), e cada casa dele ganha um número na tela. */
+function cgBase(){                        // a linha de base: a mais baixa que tem conta; cells = as contas dela da esquerda para a direita da tela
+  let y=-1;for(let i=S.grid.length-1;i>=0;i--)if(S.grid[i]){y=(i/S.w)|0;break}
+  if(y<0)return {y:-1,cells:[],done:true,left:0};
+  const cells=[];for(let x=0;x<S.w;x++)if(S.grid[y*S.w+x])cells.push(y*S.w+x);
+  cells.sort((a,b)=>mx(a%S.w)-mx(b%S.w));
+  const left=cells.filter(i=>!S.done[i]).length;
+  return {y,cells,done:left===0,left};
+}
+const cgKey=i=>(S.h-1-((i/S.w)|0))*S.w+mx(i%S.w);
+function cgOrder(v){const o=[];if(!v)return o;for(let i=0;i<S.grid.length;i++)if(S.grid[i]===v&&!S.done[i])o.push(i);return o.sort((a,b)=>cgKey(a)-cgKey(b))}
+function cgNext(after,dir=1){             // a conta da cor que falta logo depois (dir 1) ou antes (dir -1) de `after` na ordem de montagem; dá a volta
+  const o=cgOrder(S.asm.color);if(!o.length)return -1;
+  if(after==null||after<0)return o[0];
+  const k=cgKey(after);
+  if(dir>0){const n=o.find(i=>cgKey(i)>k);return n==null?o[0]:n}
+  for(let j=o.length-1;j>=0;j--)if(cgKey(o[j])<k)return o[j];
+  return o[o.length-1];
+}
+function cgTarget(){                      // a conta-alvo (ou -1: sem cor, cor acabada ou a base ainda não está pronta)
+  const v=S.asm.color;if(!v||S.mode!=='assemble'||S.asm.view!=='color'||!cgBase().done)return -1;
+  const t=S.asm.tgt;
+  if(t!=null&&t>=0&&S.grid[t]===v&&!S.done[t])return t;
+  S.asm.tgt=cgNext(t!=null&&t>=0&&S.grid[t]===v?t:-1);      // a de antes foi colocada (botão ou clique na placa): vem a seguinte
+  return S.asm.tgt;
+}
+function cgRef(t){
+  const sx=mx(t%S.w),ty=(t/S.w)|0,by=cgBase().y;let best=-1,bc=1e9;
+  for(let i=0;i<S.grid.length;i++){
+    if(!S.done[i]||!S.grid[i])continue;
+    const y=(i/S.w)|0,dx=mx(i%S.w)-sx,dy=y-ty;      // dy > 0: a partida está abaixo do alvo (o caminho sobe)
+    const c=Math.abs(dx)+Math.abs(dy)+(dx&&dy?2:0)+(dy<0?0.3:0)-(y===by?0.4:0)-(i===S.asm.last?0.6:0)+Math.abs(dx)*0.01;
+    if(c<bc){bc=c;best=i}
+  }
+  return best;
+}
+const cgRoute=(t,r)=>({v:((t/S.w)|0)-((r/S.w)|0),h:mx(t%S.w)-mx(r%S.w)});      // v < 0 = subir; h < 0 = esquerda (da tela)
+function cgWho(r){                        // como achar a conta de partida na placa (sem números): a ordem dela na base, ou a que acabou de ser posta
+  const b=cgBase(),k=b.cells.indexOf(r);
+  if(k>=0){const n=b.cells.length;return k+1<=n-k?`${k+1}ª conta da base, contando da esquerda`:`${n-k}ª conta da base, contando da direita`}      // conta pela ponta mais perto (menos contas para contar)
+  if(r===S.asm.last)return 'a que você acabou de pôr';
+  return 'a de anel verde na tela';
+}
+function cgNextColor(list){               // a próxima cor da lista (mesma ordem do painel) que ainda tem conta faltando
+  const v=S.asm.color,k=list.indexOf(v);
+  for(let j=1;j<=list.length;j++){const c=list[(k+j)%list.length];if(c!==v&&counts[c]-doneCounts[c]>0)return c}
+  return 0;
+}
+const cgSw=(p,sm)=>`<span class="cg-sw${sm?' sm':''}" style="background:${p.hex};color:${p.ink}">${p.code}</span>`;
+function cgCard(v,t){
+  const b=cgBase();
+  if(!b.done)return `<div class="cguide"><div class="cg-head"><span class="cg-step">1º passo</span><b>Linha de base</b><span class="cg-n">${b.left===b.cells.length?`${b.cells.length} contas`:`faltam ${b.left} de ${b.cells.length}`}</span></div>
+    <canvas class="cg-strip" id="cgStrip" title="A linha de base, da esquerda para a direita"></canvas>
+    <div class="cg-line">Monte a <b>linha de baixo</b> do desenho (em destaque na tela), da esquerda para a direita, e aperte <b>Base pronta</b>. Todas as outras contas são contadas a partir dela.</div></div>`;
+  if(!v)return `<div class="cguide msg"><div class="cg-msg"><b>Base pronta.</b> Agora escolha uma cor na lista abaixo: aqui aparece, conta por conta, onde pôr o dedo e <b>quantas casas andar</b> a partir de uma conta que já está na placa.</div></div>`;
+  const p=PALETTE[v-1];
+  if(t<0)return `<div class="cguide msg"><div class="cg-head">${cgSw(p)}<b>${p.name}</b></div><div class="cg-msg">Todas as contas de <b>${p.code}</b> já estão colocadas 🎉</div></div>`;
+  const left=counts[v]-doneCounts[v],r=cgRef(t);
+  if(r<0)return `<div class="cguide msg"><div class="cg-msg">Marque a linha de base para o guia ter de onde contar.</div></div>`;
+  const rp=PALETTE[S.grid[r]-1],{v:dv,h:dh}=cgRoute(t,r),cs=[];
+  if(dv)cs.push([dv<0?'↑':'↓',Math.abs(dv),dv<0?'para cima':'para baixo']);
+  if(dh)cs.push([dh<0?'←':'→',Math.abs(dh),dh<0?'para a esquerda':'para a direita']);
+  const chips=cs.map(([a,n])=>`<span class="cg-chip">${a} ${n}</span>`).join('');
+  const casa=n=>n===1?'casa':'casas',onde={'para cima':'acima','para baixo':'abaixo','para a esquerda':'à esquerda','para a direita':'à direita'};
+  const walk=cs.length===1?`conte <b>${cs[0][1]}</b> ${casa(cs[0][1])} ${cs[0][2]}, sem contar a de partida`
+    :`primeiro ${dv<0?'suba':'desça'} <b>${cs[0][1]}</b>, depois <b>${cs[1][1]}</b> ${cs[1][2]}; sem contar a de partida`;
+  const put=cs.length===1?`na ${cs[0][1]}ª casa ${onde[cs[0][2]]}`:`na ${cs[1][1]}ª casa ${onde[cs[1][2]]}, depois de ${dv<0?'subir':'descer'} ${cs[0][1]}`;
+  return `<div class="cguide"><div class="cg-head">${cgSw(p)}<b>Próxima: ${p.code}</b>${confBadge(v)}<span class="cg-n">faltam ${left}</span></div><div class="cg-steps">
+    <div class="cg-st"><i>1</i><span>Ponha o dedo na ${cgSw(rp,true)} <b>${rp.code}</b> de anel <span class="cg-ring"></span>: ${cgWho(r)}.</span></div>
+    <div class="cg-st"><i>2</i><div class="cg-walk">${chips}<small>${walk}</small></div></div>
+    <div class="cg-st"><i>3</i><span>A ${cgSw(p,true)} <b>${p.code}</b> vai ${put} (o número do selo, na tela).</span></div></div></div>`;
+}
+function cgDrawStrip(){                   // a faixa da linha de base dentro do quadro (na ordem da tela; as já colocadas ficam apagadas)
+  const cvs=$('#cgStrip');if(!cvs)return;
+  const b=cgBase(),dpr=window.devicePixelRatio||1,W=cvs.clientWidth||300,H=26,cell=W/S.w,r=Math.min(cell*.46,9);
+  cvs.width=Math.round(W*dpr);cvs.height=Math.round(H*dpr);
+  const c=cvs.getContext('2d');c.setTransform(dpr,0,0,dpr,0,0);c.clearRect(0,0,W,H);
+  for(let x=0;x<S.w;x++){
+    const i=b.y*S.w+x,v=S.grid[i],cx=(mx(x)+.5)*cell;
+    if(!v){c.fillStyle=C.hole;c.beginPath();c.arc(cx,H/2,Math.max(.8,r*.22),0,TAU);c.fill();continue}
+    c.globalAlpha=S.done[i]?.3:1;c.fillStyle=PALETTE[v-1].hex;c.beginPath();c.arc(cx,H/2,r,0,TAU);c.fill();c.lineWidth=1;c.strokeStyle=C.edge;c.stroke();c.globalAlpha=1;
+  }
+}
+function cgZoom(){if(S.zoom<20)zoomAt(22)}      // os números do caminho precisam de conta de uns 20 px
+function cgPlace(){                       // botão principal: "Base pronta" no 1º passo, "Coloquei" depois
+  const b=cgBase();
+  if(!b.done){setRowsDone([b.y],true);S.asm.tgt=-1;if(S.asm.color){cgZoom();cgFocus()}return}
+  const t=cgTarget();if(t<0)return;S.done[t]=1;S.asm.tgt=t;S.asm.last=t;asmChanged();cgFocus();      // cgTarget acha a seguinte (a colocada sai da conta)
+}
+function cgStep(dir){const t=cgTarget();if(t<0)return;S.asm.tgt=cgNext(t,dir);renderAssemble();requestDraw();cgFocus()}
+/* rola a tela para o caminho (partida e alvo) ficar à vista; no 1º passo, para a linha de base */
+function cgFocus(){
+  const cs=S.zoom,b=cgBase();let pts;
+  if(!b.done){if(b.y<0)return;pts=[[RULER,RULER+b.y*cs],[RULER+(S.w-1)*cs,RULER+b.y*cs]]}
+  else{const t=cgTarget();if(t<0)return;const r=cgRef(t);pts=[t,...(r>=0?[r]:[])].map(i=>[RULER+mx(i%S.w)*cs,RULER+((i/S.w)|0)*cs])}
+  const x0=Math.min(...pts.map(q=>q[0])),x1=Math.max(...pts.map(q=>q[0]))+cs,y0=Math.min(...pts.map(q=>q[1])),y1=Math.max(...pts.map(q=>q[1]))+cs;
+  const vw=stage.clientWidth,vh=stage.clientHeight,m=56;let L=stage.scrollLeft,T=stage.scrollTop;
+  if(x0<L+m||x1>L+vw-m)L=(x0+x1)/2-vw/2;
+  if(y0<T+m||y1>T+vh-m)T=(y0+y1)/2-vh/2;
+  if(L!==stage.scrollLeft||T!==stage.scrollTop)stage.scrollTo({left:Math.max(0,L),top:Math.max(0,T),behavior:'smooth'});
+}
+/* o guia desenhado na placa (camada dinâmica: não entra na assinatura da camada estática) */
+function drawGuide(cs,x0,y0,dc){
+  const b=cgBase();
+  ctx.save();ctx.lineCap='round';ctx.lineJoin='round';ctx.setLineDash([]);
+  const font=px=>`800 ${px}px "Segoe UI",system-ui,sans-serif`;
+  const bubble=(txt,x,y)=>{ctx.font=font(Math.round(Math.max(11,Math.min(15,cs*.6))));ctx.textAlign='center';ctx.textBaseline='middle';
+    const w=ctx.measureText(txt).width+14,h=Math.max(18,Math.min(24,cs*.95));ctx.fillStyle=C.accent;rr(ctx,x-w/2,y-h/2,w,h,h/2);ctx.fill();
+    ctx.lineWidth=1.5;ctx.strokeStyle='#fff';ctx.stroke();ctx.fillStyle='#fff';ctx.fillText(txt,x,y+.5)};
+  if(!b.done){      // 1º passo: a faixa da linha de base é da camada estática (por baixo das contas); aqui só a etiqueta acima dela
+    if(b.y>=0){const y=y0+b.y*cs,first=b.cells.length?x0+dc(b.cells[0]%S.w)*cs:x0,txt='linha de base: monte primeiro';
+      ctx.font=font(Math.round(Math.max(11,Math.min(15,cs*.6))));const bw=ctx.measureText(txt).width+14;      // a etiqueta começa na 1ª conta da base (não invade a régua)
+      bubble(txt,Math.max(x0+bw/2+2,first+bw/2),y-Math.max(14,cs*.75))}
+    ctx.restore();return;
+  }
+  const t=cgTarget();if(t<0){ctx.restore();return}
+  const r=cgRef(t);if(r<0){ctx.restore();return}
+  const X=i=>x0+dc(i%S.w)*cs+cs/2,Y=i=>y0+((i/S.w)|0)*cs+cs/2,tx=X(t),ty=Y(t),rx=X(r),ry=Y(r);
+  const dv=Math.round((ty-ry)/cs),dh=Math.round((tx-rx)/cs),sv=Math.sign(dv),sh=Math.sign(dh);
+  // a faixa do caminho: primeiro na vertical, depois na horizontal. Começa e termina NA BORDA dos anéis: não pinta por cima da conta de partida nem da conta-alvo (a cor do alvo tem que ficar limpa)
+  const pts=[[rx,ry]];if(dv)pts.push([rx,ty]);if(dh)pts.push([tx,ty]);
+  const cut=(p,q,d)=>{const L=Math.hypot(q[0]-p[0],q[1]-p[1]);return L>d?[p[0]+(q[0]-p[0])*d/L,p[1]+(q[1]-p[1])*d/L]:null};
+  const n=pts.length,s0=n>1?cut(pts[0],pts[1],cs*.58):null,e0=n>1?cut(pts[n-1],pts[n-2],cs*.66):null;
+  if(s0&&e0&&(n>2||Math.hypot(pts[1][0]-pts[0][0],pts[1][1]-pts[0][1])>cs*1.24)){
+    ctx.globalAlpha=.55;ctx.strokeStyle=C.accent;ctx.lineWidth=Math.max(3,Math.min(cs*.62,16));ctx.lineCap='butt';
+    ctx.beginPath();ctx.moveTo(s0[0],s0[1]);for(let k=1;k<n-1;k++)ctx.lineTo(pts[k][0],pts[k][1]);ctx.lineTo(e0[0],e0[1]);ctx.stroke();ctx.globalAlpha=1;ctx.lineCap='round';
+  }
+  // a partida: anel verde; o alvo: anel grosso com contorno branco (os números das casas vêm depois, por cima dos anéis)
+  ctx.lineWidth=5;ctx.strokeStyle='#fff';ctx.beginPath();ctx.arc(rx,ry,cs*.58,0,TAU);ctx.stroke();
+  ctx.lineWidth=3;ctx.strokeStyle=C.ok||'#2e9d5b';ctx.beginPath();ctx.arc(rx,ry,cs*.58,0,TAU);ctx.stroke();
+  ctx.lineWidth=6;ctx.strokeStyle='#fff';ctx.beginPath();ctx.arc(tx,ty,cs*.66,0,TAU);ctx.stroke();
+  ctx.lineWidth=3.6;ctx.strokeStyle=C.accent;ctx.beginPath();ctx.arc(tx,ty,cs*.66,0,TAU);ctx.stroke();
+  // as casas do caminho, numeradas (a contagem recomeça no trecho da horizontal); conta pequena: só de 5 em 5 e a última de cada trecho
+  const all=cs>=17,some=cs>=11,rad=Math.max(5,Math.min(cs*.4,12));
+  const pin=(x,y,n,last)=>{
+    const show=all||(some&&(n%5===0||last));
+    ctx.beginPath();ctx.arc(x,y,show?rad:Math.max(1.8,cs*.13),0,TAU);ctx.fillStyle='#fff';ctx.fill();ctx.lineWidth=show?2:1;ctx.strokeStyle=C.accent;ctx.stroke();
+    if(show){ctx.fillStyle=C.accent;ctx.font=font(Math.round(rad*(n>9?1.0:1.2)));ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(n,x,y+.5)}
+  };
+  const pins=[];
+  for(let k=1;k<=Math.abs(dv);k++)pins.push([rx,ry+sv*k*cs,k,k===Math.abs(dv)]);
+  for(let k=1;k<=Math.abs(dh);k++)pins.push([rx+sh*k*cs,ty,k,k===Math.abs(dh)]);
+  const tgtPin=pins.pop();      // a última casa é o alvo: o número dele vai num selo, para a cor da conta continuar à vista
+  pins.forEach(q=>pin(...q));
+  if(!all&&!some){if(dv)bubble((dv<0?'↑ ':'↓ ')+Math.abs(dv),rx+(dh>0?-1:1)*Math.max(cs*1.2,24),ry+(ty-ry)/2);if(dh)bubble((dh<0?'← ':'→ ')+Math.abs(dh),rx+(tx-rx)/2,ty+(dv<0?-1:1)*Math.max(cs*1.1,22))}
+  // o número do alvo, no selo
+  if(tgtPin){const n=tgtPin[2],bx=tx+cs*.55,by=ty-cs*.55,br=Math.max(8,Math.min(cs*.42,13));ctx.beginPath();ctx.arc(bx,by,br,0,TAU);ctx.fillStyle=C.accent;ctx.fill();ctx.lineWidth=1.6;ctx.strokeStyle='#fff';ctx.stroke();
+    ctx.fillStyle='#fff';ctx.font=font(Math.round(br*(n>9?1.05:1.25)));ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(n,bx,by+.5)}
+  ctx.restore();
+}
 function renderColorView(box,nav){
   const list=[];for(let v=1;v<=NCOL;v++)if(counts[v])list.push(v);list.sort((a,b)=>counts[b]-counts[a]);
-  nav.innerHTML=`<div class="rowacts"><button class="btn sm" id="cAll" ${S.asm.color?'':'disabled'}>Marcar toda esta cor</button><button class="btn sm" id="cNone" ${S.asm.color?'':'disabled'}>Desmarcar</button></div>`;
-  box.innerHTML=`<div class="note" style="margin:0 0 8px">Escolha uma cor: só as contas dela que ainda faltam ficam destacadas no quadriculado. Clique nas contas para marcar como colocadas. Cores <b>parecidas</b> com ela aparecem com anel tracejado e o código, para você não confundir.</div>`+
+  const cv0=S.asm.color,tg=cgTarget(),nextC=cgNextColor(list),bs=cgBase();
+  const goLbl=bs.done?`${icon('check',15)} Coloquei`:`${icon('check',15)} Base pronta`;
+  const second=!bs.done?`<button class="btn sm" id="cSkip" title="Abre a linha de base na Linha por linha (com a lista das contas dela)">Ver na Linha por linha</button>`
+    :(cv0&&tg<0?`<button class="btn sm" id="cSkip" ${nextC?'':'disabled'} title="Vai para a próxima cor que ainda falta">Próxima cor ${icon('chevR',16)}</button>`
+    :`<button class="btn sm" id="cSkip" ${tg>=0&&cgOrder(cv0).length>1?'':'disabled'} title="Deixa esta conta para depois (→; ← volta)">Pular ${icon('chevR',16)}</button>`);
+  nav.innerHTML=cgCard(cv0,tg)+`<div class="rowacts"><button class="btn sm primary" id="cGo" ${(!bs.done||tg>=0)?'':'disabled'} title="${bs.done?'Marca a conta e passa para a próxima':'Marca a linha de base como montada'} (barra de espaço)">${goLbl}</button>${second}</div>`+
+    `<div class="rowacts" style="margin-top:8px"><button class="btn sm" id="cAll" ${cv0?'':'disabled'}>Marcar toda esta cor</button><button class="btn sm" id="cNone" ${cv0?'':'disabled'}>Desmarcar</button></div>`;
+  cgDrawStrip();
+  $('#cGo').onclick=cgPlace;
+  $('#cSkip').onclick=()=>{
+    if(!bs.done){S.asm.view='row';S.asm.row=groupStart(bs.y);renderAssemble();requestDraw();scrollToRow();return}
+    if(cv0&&tg<0){if(nextC){S.asm.color=nextC;S.asm.tgt=-1;renderAssemble();requestDraw();cgZoom();cgFocus()}}else cgStep(1)};
+  box.innerHTML=`<div class="note" style="margin:0 0 8px">Primeiro a linha de base; depois escolha uma cor: as contas dela que ainda faltam aparecem como bolinhas de anel azul, e o quadro acima diz onde pôr o dedo e quantas casas andar até a próxima (o caminho aparece numerado na tela). Clique nas contas para marcar como colocadas. Se a cor tem uma <b>parecida</b> no desenho, o quadro mostra o selo ≈ com o código dela: confira o código ao pegar a conta.</div>`+
     list.map(v=>{const p=PALETTE[v-1],d=doneCounts[v],n=counts[v];
       return `<button class="cfocus${S.asm.color===v?' on':''}" data-v="${v}"><span class="swb"><span class="sw" style="background:${p.hex};color:${p.ink}">${p.code}</span></span><span class="nm"><b>${p.name}</b>${confBadge(v)?`<small style="display:block">${confBadge(v)}</small>`:''}<span class="cbar"><i style="width:${d/n*100}%"></i></span></span><span class="fr">${fmt(n-d)}<small>faltam de ${fmt(n)}</small></span></button>`}).join('')+
     '';
-  $$('#asmBody .cfocus').forEach(b=>b.onclick=()=>{const v=+b.dataset.v;S.asm.color=S.asm.color===v?0:v;renderAssemble();requestDraw()});
+  $$('#asmBody .cfocus').forEach(b=>b.onclick=()=>{const v=+b.dataset.v;S.asm.color=S.asm.color===v?0:v;S.asm.tgt=-1;renderAssemble();requestDraw();if(S.asm.color&&cgBase().done)cgZoom();cgFocus()});
   const setC=val=>{for(let i=0;i<S.grid.length;i++)if(S.grid[i]===S.asm.color)S.done[i]=val;asmChanged()};
   if($('#cAll')){$('#cAll').onclick=()=>setC(1);$('#cNone').onclick=()=>setC(0)}
 }
@@ -4459,10 +4655,12 @@ window.addEventListener('keydown',e=>{
   if(ctrl&&k==='a'){e.preventDefault();selectAll();if(S.mode==='create')setTool('select');else{S.selOn=true;syncSelUI()}return}
   if(k===' '&&!ctrl){e.preventDefault();
     if(S.mode==='assemble'&&S.asm.view==='row'&&!e.repeat){const rows=groupRows(S.asm.row);setRowsDone(rows,rows.some(y=>runsForRow(y).some(r=>r.done<r.n)))}
+    else if(S.mode==='assemble'&&S.asm.view==='color'&&!e.repeat)cgPlace();
     else if(S.mode==='create'){spaceDown=true;stage.classList.add('grab')}
     return}
   if(S.mode==='assemble'){
     if(k==='s'&&!ctrl){S.selOn=!S.selOn;syncSelUI();return}
+    if(S.asm.view==='color'){if(k==='arrowdown'||k==='arrowright'){e.preventDefault();cgStep(1)}if(k==='arrowup'||k==='arrowleft'){e.preventDefault();cgStep(-1)}return}
     if(k==='arrowdown'||k==='arrowright'){e.preventDefault();S.asm.row=nextGroup(1,S.asm.row);renderAssemble();requestDraw();scrollToRow()}
     if(k==='arrowup'||k==='arrowleft'){e.preventDefault();S.asm.row=nextGroup(-1,S.asm.row);renderAssemble();requestDraw();scrollToRow()}
     return;
@@ -4833,13 +5031,18 @@ var HELP=[
  {id:'montar',t:'Montar na placa',ic:'puzzle',html:`
   <h3>Montar na placa (modo Montar)</h3><p class="hlead">Um guia para colocar as contas sem se perder. O progresso fica salvo.</p>
   <h4>Linha por linha</h4>
-  <ul><li>A linha atual fica destacada. O painel mostra as contas da linha, em ordem, da esquerda para a direita, e quantas de cada cor separar antes.</li>
+  <ul><li>A linha atual fica destacada: as contas dela aparecem como bolinhas de anel azul com o código escrito no meio (no modo pixel também, para a cor não vazar para fora do anel). O painel mostra as contas da linha, em ordem, da esquerda para a direita, e quantas de cada cor separar antes.</li>
   <li><b>Por vez</b>: 1 ou 2 linhas.</li>
   <li>Clique numa conta da placa para marcá-la como colocada, ou use <b>Marcar linha toda</b> e <b>Próxima linha</b>. Esses botões, as setas e o número da linha ficam sempre no mesmo lugar, presos no alto do painel; só a lista de contas embaixo muda de uma linha para outra.</li>
   <li>Teclado: <kbd>↑</kbd> <kbd>↓</kbd> trocam de linha e a <kbd>barra de espaço</kbd> marca ou desmarca a linha inteira.</li></ul>
   <h4>Espelhado (para virar com fita)</h4>
   <p>Quem cobre a placa com fita e vira a peça a recebe espelhada. Por isso a <b>Montar</b> e o <b>Guia de montagem (PNG)</b> mostram a figura <b>espelhada</b> (padrão ligado): monte exatamente o que está na tela e, depois de virar, ela fica do lado certo. Os números de coluna são os da tela, da esquerda para a direita. Desligue em <b>Espelhado</b> (painel da Montar) ou em <b>Menu → Montagem e guia espelhados</b>. Só a exibição muda: o molde, o Criar, a galeria e a <b>Imagem (PNG)</b> continuam na visão normal.</p>
-  <h4>Cor por cor</h4><p>Mostra uma cor de cada vez, com todas as posições dela — bom para quem gosta de colocar todas as contas de uma cor de uma vez. As cores <b>parecidas</b> com ela (bege e creme, por exemplo) ficam marcadas com anel tracejado e o código.</p>
+  <h4>Cor por cor</h4><p>Mostra uma cor de cada vez, com todas as posições dela — bom para quem gosta de colocar todas as contas de uma cor de uma vez. As contas dela que ainda faltam aparecem como <b>bolinhas de anel azul</b> (no modo pixel a cor fica só dentro do anel), as que já estão na placa aparecem com a cor cheia e o resto do desenho, mais claro, ajuda a se localizar. Se ela tem uma cor <b>parecida</b> no desenho (bege e creme, por exemplo), o selo ≈ com o código da parecida aparece no quadro do guia e na lista.</p>
+  <ul><li><b>1º passo, a linha de base:</b> a linha de baixo do desenho fica acesa na tela e aparece no quadro do alto do painel. Monte-a da esquerda para a direita e aperte <b>Base pronta</b> (ou marque as contas dela). A placa não tem números: é a partir das contas da base que o guia conta.</li>
+  <li><b>Depois, cor por cor:</b> escolha uma cor e o quadro explica a próxima conta em 3 passos. <b>1</b>: onde pôr o dedo, uma conta que já está na placa, com <b>anel verde</b> na tela (por exemplo, a 8ª conta da base, contando pela ponta mais perto, da esquerda ou da direita, ou a que você acabou de pôr). <b>2</b>: quantas casas andar, <b>sem contar a de partida</b>: <b>↑ 16</b> é contar 16 casas para cima; <b>↑ 4 ← 3</b> é subir 4 e depois ir 3 para a esquerda. <b>3</b>: a conta vai na última casa contada.</li>
+  <li>Na tela o caminho aparece desenhado com cada casa numerada (1, 2, 3…) até o alvo, que tem anel e o número final num selo; a régua destaca a linha e a coluna. A tela aproxima sozinha para os números caberem.</li>
+  <li>As contas vêm de baixo para cima e da esquerda para a direita, e esquerda e direita são as da tela (espelhada ou não).</li>
+  <li><b>Coloquei</b> marca a conta e passa para a próxima; <b>Pular</b> deixa essa para depois; quando a cor acaba, <b>Próxima cor</b>. Clicar na conta da placa também marca. Teclado: <kbd>barra de espaço</kbd> = Coloquei (ou Base pronta), <kbd>→</kbd> pula e <kbd>←</kbd> volta.</li></ul>
   <h4>Não confundir contas parecidas</h4>
   <ul><li>Na linha atual, cada conta mostra o <b>código</b> (se a conta tiver pelo menos 14 px; aumente o zoom se precisar).</li>
   <li>Quando duas cores do molde são muito parecidas (diferença de cor menor que 6), elas ganham o selo <b>≈</b> com o código da outra; passe o mouse para ler como elas diferem (“A1 é mais amarelada e mais clara que G1”).</li>

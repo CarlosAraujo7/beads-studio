@@ -13,7 +13,8 @@ DPR = float(sys.argv[1]) if len(sys.argv) > 1 else 1.0
 OLD = sys.argv[2] if len(sys.argv) > 2 else '_old_index.html'
 
 SMALL = "(window.TEMPLATES.find(t=>/Pikachu sentado/.test(t.name)).id)"
-BIG = "'mago-negro-chibi-circulo-dourado-grande'"
+# o catálogo só tem moldes de 1 placa desde 2026-11-04: o cenário de 4 placas usa um desenho de teste de 100x100 montado na hora (o mesmo nas duas páginas comparadas)
+BIG_GRID = "setGrid(100,100,Array.from({length:10000},(_,i)=>{const x=i%100,y=(i/100)|0;return ((x*7+y*13)%11===0)?0:1+(((x>>3)+(y>>3))%24)}),'teste 4 placas')"
 # cada cenário: JS que põe o estado e depois chama draw() (síncrono)
 SCEN = [
     ('1 placa, contas, zoom 16', "openTpl(decodeTemplates().find(t=>t.id===%s));setMode('create');S.zoom=16;S.style='bead';S.showGrid=true;S.showCodes=false;S.hover=null;layout();draw()" % SMALL),
@@ -29,13 +30,19 @@ SCEN = [
     ('1 placa, prévia de borracha', "preview={cells:[[5,5],[6,6],[7,7]],val:0};S.tool='eraser';draw()"),
     ('1 placa, depois de pintar (grade mudou)', "preview=null;S.tool='pencil';for(let k=0;k<30;k++)S.grid[100+k]=CODE_IDX.F5;recount();draw()"),
     ('1 placa, desfazer', "undo();draw()"),
-    ('Montar, linha por linha', "applyTheme('light');setMode('assemble');S.asm.view='row';S.asm.mirror=false;S.asm.row=groupStart(20);S.hover=null;draw()"),
+    # o 'desfazer' acima desfaz a abertura do molde (o desenho ficava VAZIO): os cenários da Montar reabrem o molde (achado em 2026-11-04)
+    ('Montar, linha por linha', "openTpl(decodeTemplates().find(t=>t.id===%s));S.done.fill(0);applyTheme('light');setMode('assemble');S.asm.view='row';S.asm.mirror=false;S.asm.row=groupStart(20);S.hover=null;draw()" % SMALL),
     ('Montar, linha com a conta sob o mouse (hoverRun)', "S.asm.hoverRun={x0:10,x1:18,y:20};draw()"),
     ('Montar, espelhada', "S.asm.hoverRun=null;S.asm.mirror=true;draw()"),
     ('Montar, 2 linhas e progresso', "setAsmSpan(2);for(let x=0;x<S.w;x++)for(let y=0;y<20;y++)if(S.grid[y*S.w+x])S.done[y*S.w+x]=1;recount();draw()"),
     ('Montar, cor por cor (parecidas)', "S.asm.view='color';S.asm.color=CODE_IDX.A4;draw()"),
     ('Montar, cor por cor sem espelho', "S.asm.mirror=false;draw()"),
-    ('4 placas, contas zoom 6 (limites de placa)', "setMode('create');S.done.fill(0);openTpl(decodeTemplates().find(t=>t.id===%s));S.zoom=6;S.style='bead';S.hover=null;layout();draw()" % BIG),
+    # Montar no modo pixel (o que o dono usa) e a "Cor por cor" com alvo, caminho e fundo (2026-11-04)
+    ('Montar pixel, linha com códigos (zoom 22)', "S.style='pixel';S.zoom=22;layout();S.done.fill(0);recount();S.asm.view='row';setAsmSpan(1);S.asm.mirror=true;S.asm.row=groupStart(10);draw()"),
+    ('Montar pixel, cor por cor: 1º passo', "S.asm.view='color';S.asm.color=0;S.asm.tgt=-1;draw()"),
+    ('Montar pixel, cor por cor: alvo e caminho', "(()=>{const b=cgBase();for(let x=0;x<S.w;x++){const i=b.y*S.w+x;if(S.grid[i])S.done[i]=1}recount();const c=new Map();for(let i=0;i<S.grid.length;i++){const v=S.grid[i];if(v&&!S.done[i])c.set(v,(c.get(v)||0)+1)}S.asm.color=[...c].sort((a,b)=>b[1]-a[1])[0][0];S.asm.tgt=-1})();draw()"),
+    ('Montar contas, cor por cor: alvo e caminho', "S.style='bead';draw()"),
+    ('4 placas, contas zoom 6 (limites de placa)', "setMode('create');S.done.fill(0);" + BIG_GRID + ";S.zoom=6;S.style='bead';S.hover=null;layout();draw()"),
     ('4 placas, zoom 18', "S.zoom=18;layout();draw()"),
     ('4 placas, mouse no meio', "S.hover={x:50,y:50};S.brush=1;draw()"),
 ]
@@ -48,6 +55,7 @@ async def run(page, label):
     try:
         await b.send('Log.enable'); await b.viewport(1280, 900, DPR, False)
         await b.goto('http://localhost:8765/%s?x=dd%d' % ('index.html' if page == 'new' else OLD, int(time.time()) % 100000), 3.5)
+        await b.js("window.confirm=()=>true")      # reabrir o molde depois de pintar pergunta antes de trocar: um confirm() aberto trava o CDP
         if page == 'old':
             # a página antiga deixava o lineJoin 'round' do drawCode vazar de um quadro para o outro (e o layout() o zerava): para comparar com o novo, que o
             # define pelo que está na tela, a antiga também começa cada quadro pela mesma regra (round só com códigos nas contas)
@@ -76,7 +84,8 @@ async def main():
         ia = Image.open(io.BytesIO(base64.b64decode(a.split(',')[1]))).convert('RGBA'); io_ = Image.open(io.BytesIO(base64.b64decode(o.split(',')[1]))).convert('RGBA')
         if ia.size != io_.size:
             print('FALHA', name, 'tamanhos diferentes', ia.size, io_.size); bad += 1; continue
-        diff = ImageChops.difference(ia, io_); bbox = diff.getbbox()
+        # alpha_only=False: sem isso o Pillow (9.1 em diante) só olha o canal ALFA de uma imagem RGBA e uma mudança de cor dentro do desenho passava como "idêntico" (achado em 2026-11-04)
+        diff = ImageChops.difference(ia, io_); bbox = diff.getbbox(alpha_only=False)
         if bbox is None:
             print('OK    idêntico:', name)
         else:
