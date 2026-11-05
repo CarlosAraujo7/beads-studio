@@ -55,6 +55,11 @@ CATEGORIES = [
     # --- remessa 29
     ('akame-ga-kill', 'Akame ga Kill', A), ('high-school-dxd', 'High School DxD', A), ('kaguya-sama', 'Kaguya-sama', A), ('tokyo-revengers', 'Tokyo Revengers', A),
     ('as-quintuplas', 'As Quíntuplas', A), ('evangelion', 'Evangelion', A), ('mashle', 'Mashle', A), ('the-rising-of-the-shield-hero', 'The Rising of the Shield Hero', A),
+    # --- remessa 30
+    ('kuroko-no-basket', 'Kuroko no Basket', A), ('eyeshield-21', 'Eyeshield 21', A), ('beelzebub', 'Beelzebub', A), ('wistoria', 'Wistoria', A),
+    ('shokugeki-no-soma', 'Shokugeki no Soma', A), ('ao-no-exorcist', 'Ao no Exorcist', A), ('zero-no-tsukaima', 'Zero no Tsukaima', A),
+    ('miss-kobayashis-dragon-maid', "Miss Kobayashi's Dragon Maid", A), ('shangri-la-frontier', 'Shangri-La Frontier', A), ('record-of-ragnarok', 'Record of Ragnarok', A),
+    ('fate-grand-order', 'Fate/Grand Order', A),
     # --- temas específicos
     ('egito-antigo', 'Egito Antigo', S), ('religiao', 'Religião', S), ('gato-da-sorte', 'Gato da sorte', 'cAnimals'),
     ('earrings', 'Brincos', 'cEarrings'),
