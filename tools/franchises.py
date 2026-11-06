@@ -60,6 +60,8 @@ CATEGORIES = [
     ('shokugeki-no-soma', 'Shokugeki no Soma', A), ('ao-no-exorcist', 'Ao no Exorcist', A), ('zero-no-tsukaima', 'Zero no Tsukaima', A),
     ('miss-kobayashis-dragon-maid', "Miss Kobayashi's Dragon Maid", A), ('shangri-la-frontier', 'Shangri-La Frontier', A), ('record-of-ragnarok', 'Record of Ragnarok', A),
     ('fate-grand-order', 'Fate/Grand Order', A),
+    # --- remessa 31
+    ('toy-story', 'Toy Story', T), ('transformers', 'Transformers', T), ('godzilla', 'Godzilla', C), ('dororo', 'Dororo', A), ('zatch-bell', 'Zatch Bell!', A),
     # --- temas específicos
     ('egito-antigo', 'Egito Antigo', S), ('religiao', 'Religião', S), ('gato-da-sorte', 'Gato da sorte', 'cAnimals'),
     ('earrings', 'Brincos', 'cEarrings'),
